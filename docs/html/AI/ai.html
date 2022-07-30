@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI &mdash; WorldDoc 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Node List" href="nodes.html" />
+    <link rel="prev" title="World Variables" href="../worldVariables/worldVariables.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> WorldDoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">World Manager</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/gettingStarted.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/worldManager.html">World Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/bridge.html">Bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/foliage.html">Foliage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Player Abilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/walk.html">Walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AI</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#behavior-tree">Behavior Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nodes">Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conditional-node">Conditional Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-node">Action Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#composite-node">Composite Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decorator-node">Decorator Node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#blackboard-data">Blackboard data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-editor-window">Node Editor Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interrupts">Interrupts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspector">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fsm">FSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ai-attacks-damage">AI Attacks, Damage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nodes.html">Node List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pathfinding.html">Pathfinding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkPoint.html">Check-Point</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WorldDoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>AI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/AI/ai.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ai">
+<h1>AI<a class="headerlink" href="#ai" title="Permalink to this headline"></a></h1>
+<p>Create truly complex AI using Behavior Trees or Finite State Machines, all without
+using a single line of code. The AI system is universal so that behavior can be
+applied to all aspects of the game. Besides creating enemy AI, you can program doors, moving platforms,
+design a save system, or create any utility that requires complex logic.</p>
+<p>The two classes that implement AI is <strong>AITree</strong> and <strong>AIFSM</strong>. Before creating an AI, you should
+have an idea on how complex the behavior is. Typically, use a FSM for simple AI as this will
+generally be faster to create. Behavior Trees should be used for AI that would otherwise have too many
+states to handle in a FSM.</p>
+<p>Both AI systems utilize nodes to create behavior. The system itself comes with over forty nodes,
+allowing for a lot of functionality for creating practical AI out of the box. However, there may
+come a time when none of the nodes in the system provide the desired behavior, in which case,
+you can always create a node to fulfill this need. Below is an example of how these classes look in
+the inspector.</p>
+<img alt="../_images/AITree.png" class="align-center" src="../_images/AITree.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<img alt="../_images/AIFSM.png" class="align-center" src="../_images/AIFSM.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<hr class="docutils" />
+<section id="behavior-tree">
+<h2>Behavior Tree<a class="headerlink" href="#behavior-tree" title="Permalink to this headline"></a></h2>
+<p>Behavior Trees offer an alternative to finite state machines. They move away from the concept of state,
+and instead rely on hierarchical nodes to execute actions. This gives the developer flexibility for adding
+behavior into the tree and the ability to create truly complex designs without having
+to worry about state jumping logic.</p>
+<p>How it works: the tree will always execute from left to right and from top to bottom. That is, nodes that are the most left and highest
+on the tree will have priority over lower nodes. Once a higher priority node is no longer active, the tree will evaluate the
+next highest node, and so on.</p>
+<p>It is important to note the system will <em>not</em> reevaluate the entire tree each frame.
+This is a good thing, since we want the tree to be efficient and to only execute the current active node.
+To allow the tree to check for inactive priority nodes, the system implements interrupt checks.
+Interrupt checks must be enabled and are found in each Composite node.</p>
+</section>
+<hr class="docutils" />
+<section id="nodes">
+<h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline"></a></h2>
+<p>Each node can have one or more of three states:</p>
+<ul class="simple">
+<li><p>Success: the node is done running and succeeded.</p></li>
+<li><p>Failure: the node is done running and failed.</p></li>
+<li><p>Running: the node is still running.</p></li>
+</ul>
+<p>And there are four node types:</p>
+<section id="conditional-node">
+<h3>Conditional Node<a class="headerlink" href="#conditional-node" title="Permalink to this headline"></a></h3>
+<p>Returns Success or Failure. Its main purpose is to test a condition in the game world, like checking if the player is nearby,
+so the tree can execute an Action node in response.</p>
+</section>
+<section id="action-node">
+<h3>Action Node<a class="headerlink" href="#action-node" title="Permalink to this headline"></a></h3>
+<p>Modifies the AI by changing its state in the game world. For example, apply a velocity to the AI so that it moves towards the player.
+These nodes typically return Running.</p>
+</section>
+<section id="composite-node">
+<h3>Composite Node<a class="headerlink" href="#composite-node" title="Permalink to this headline"></a></h3>
+<p>This node runs a list of child nodes. Composite nodes come in different types, and the type will determine how these child nodes are executed.
+For example, a Sequence will run its child nodes in sequence until it finds one that returns Failure. A Parallel will run
+all its children at the same time.</p>
+</section>
+<section id="decorator-node">
+<h3>Decorator Node<a class="headerlink" href="#decorator-node" title="Permalink to this headline"></a></h3>
+<p>This node can only have one child node, and it will modify the output or behavior of this child node. For example, sometimes
+it may be necessary to execute a child node after a time delay or perhaps to invert the output of the child node.</p>
+<p>Let’s look at a very basic example for a patrolling AI. A Sequence has two child nodes. The first node, a Condition, will check if the
+player is within distance. The second node, an Action, will move the AI towards the player. Only if the Condition returns Success will the Sequence
+execute the second node. If the Condition returns Failure, the AI will not chase the player.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="blackboard-data">
+<h2>Blackboard data<a class="headerlink" href="#blackboard-data" title="Permalink to this headline"></a></h2>
+<p>The Behavior Tree also implements blackboard data, which is data that can be shared between nodes. Blackboard data is separated into three
+categories, and each category exists within its own tab.</p>
+<p><strong>Target</strong> are objects or points the AI will use for detection or following purposes. Target player is the most common, but of course targets
+can be transforms or vector points or even the mouse.</p>
+<p><strong>Territory</strong> is a rectangular area in the game world used for detection. For example, the Find Target node will alert the AI if the player
+has entered the specified territory. Territories can be dragged and resized in the scene. The other two territories are for pathfinding.</p>
+<p><strong>Variable</strong> is data that needs to be shared and <em>modified</em> by the nodes. Sometimes it is necessary for two nodes to modify the same list, in which
+case you might create a TransformListVariable. Of course, the system implements all the common data types for variables.</p>
+<hr class="docutils" />
+<p>It’s important to highlight two special variables. If using a Behavior Tree, each AI will automatically contain a <strong>Bool Variable</strong> called Reset. You cannot delete this.
+This boolean will be set true when the <strong>WorldManager</strong> triggers a game reset. Somewhere in the tree, usually at the highest priority,
+the Variable Logic node will be reading the reset boolean, and when the boolean goes true, it will reset the AI (maybe resetting its position or health).
+This boolean should then be set false using the Set Value node. Of course this is optional. If the AI doesn’t need to be reset,
+the reset bool can be completely ignored. You can also trigger this event manually by calling the ResetAI method on the AI class.</p>
+<p>The <strong>Tree Variable</strong> is extremely important for communication. If two different AI systems need to communicate with each other, then simply
+drop the reference of an AI class into this variable. All the blackboard data of an AI will become available to the AI implementing the
+Tree Variable. This means the two AI systems can read and modify the same variables.</p>
+<p>Each blackboard data you create must be given a unique name. This data, once created, will become readily available to any node that
+requires it. For example, the Follow Target node has a public member called target that is a <strong>Blackboard</strong> type. When a field is of
+this type, in the inspector, simply click on it and choose an option from the available drop-down menu. That’s it.</p>
+<p>If you are creating a node from scratch and need a blackboard data, simply add a <strong>Blackboard</strong> type as a public member and name it.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If any blackboard data is renamed, make sure to click on any node using it to refresh the references.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="node-editor-window">
+<h2>Node Editor Window<a class="headerlink" href="#node-editor-window" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="../_images/NodeEditor.png"><img alt="../_images/NodeEditor.png" class="align-center" src="../_images/NodeEditor.png" style="width: 100%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>If using AITree, a node editor will be required to create the nodes and to configure the node hierarchy.
+In Unity, go to Window/BehaviorTreeEditor to open the node editor window. The window can be zoomed and dragged. Next, select a gameobject and add the AITree component.
+You will then see a single node appear in the editor. This is Root, which is the entry point into the Behavior Tree and all nodes and branches belong to it.</p>
+<p>Right click anywhere in the node editor and the node context menu will appear. Select a node to create and it will too appear in the node editor.
+Go to the Inspector of the AITree. If you select the newly created node, the Inspect tab will display this node. This is
+where you will be changing the public fields of the node. Thus, you will be working with both the node editor window and the
+inspector to create a Behavior Tree.</p>
+<img alt="../_images/AITreeInspector.png" class="align-center" src="../_images/AITreeInspector.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Once you have created the necessary nodes, connect them. Each node that can establish a connection (Root, Composites, Decorators)
+will have a circle on the left side of the node. Click this circle then go to the node you wish to connect and click on top of the node
+(where the black mark is). If the connection worked, a blue line connecting the two nodes will appear.</p>
+<p>As a reminder, the Behavior Tree is executed from left to right and from top to bottom. If a node has two children, the child node that is on the left
+will have priority. If you click and drag the other child node, changing its position to the left of the first node, the system will
+automatically establish this node as having a higher priority.</p>
+<p>If you right click on any node, another context menu will appear. You can delete the node itself or the entire branch belonging to the node.
+You can duplicate the node. You can also add as many notes as necessary to the node. The note, if clicked, will appear in the inspector where you can
+type the necessary information. These notes can be moved and resized for convenience.</p>
+<p>You can also create branch templates. For example, maybe you have a simple patrol branch that you wish to recreate in other Behavior Trees,
+well you can save this as a template to recreate later whenever you wish. These templates will be available in the node context menu. For now, the only way
+to name these templates is by creating a note. Whatever is typed in that note will become the name of the template. You can then simply delete the note if
+it’s not necessary anymore.</p>
+<p>When the game enters play mode, the active nodes and connections will turn green for debugging.</p>
+</section>
+<hr class="docutils" />
+<section id="interrupts">
+<h2>Interrupts<a class="headerlink" href="#interrupts" title="Permalink to this headline"></a></h2>
+<p>A Behavior Tree will typically have lower and higher priority branches. Once a lower priority branch is executing, by default the system will no longer
+check if a higher priority branch needs to be executed. This is to prevent the system from executing the tree from the very beginning each frame. To
+get around this issue, <strong>Interrupts</strong> are implemented to allow higher priority branches to interrupt lower priority branches.</p>
+<p>For example, if an AI is chasing the player but the player kills the AI in the process, and the node in charge of checking the health
+of the AI is no longer being checked, the AI will not know it is dead! To avoid this scenario, the higher priority branch should have an interrupt
+enabled so that the system is always checking the health of the AI.</p>
+<p>It’s also important to note that any branch can interrupt <em>itself</em> as well. For example, in the following scenario an AI is tasked with chasing the player but only if the
+player is inside the AI’s territory. If the player is inside the territory, the AI will begin to chase the player blindly. The branch is no longer checking
+if the initial condition is true, so if the player steps outside the territory, the AI will not know and continue chasing! To avoid this scenario, the branch should enable a self
+interrupt to always check if the player is inside the territory.</p>
+<p>An interrupt will only check the first child node of a Composite. If the child node is Conditional, the system will check for Success. If the child node is a Composite, it
+will go into the Composite and check if its first child is a Conditional, and so on. All other types of nodes are ignored.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Interrupts</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>None</p></td>
+<td><p>The node will not check for any interrupts.</p></td>
+</tr>
+<tr class="row-odd"><td><p>This Node</p></td>
+<td><p>The node will be able to interrupt its own branch. A downward arrow will appear above the node.</p></td>
+</tr>
+<tr class="row-even"><td><p>Lower Priority Nodes</p></td>
+<td><p>The node will interrupt lower priority nodes. An upward arrow will appear above the node.</p></td>
+</tr>
+<tr class="row-odd"><td><p>This And Lower Priority Nodes</p></td>
+<td><p>The node will interrupt itself and lower priority nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p>Terminate Immediately</p></td>
+<td><p>If enabled and a lower priority node is interrupted, the node will terminate its job and allow the interrupt to continue.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cancel Interrupt And Complete</p></td>
+<td><p>If enabled and a lower priority node is interrupted, it will cancel the interrupt and continue executing. A black block will appear above the node.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Below is a contrived example. The nodes don’t actually do anything, but it shows how interrupts work in theory.</p>
+<img alt="../_images/Interrupts.png" class="align-center" src="../_images/Interrupts.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="inspector">
+<h2>Inspector<a class="headerlink" href="#inspector" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AI Type</p></td>
+<td><p>Regular: the AI is affected by gravity and will be able to interact with the game world via raycasts. A BoxCollider2D will be required.
+No Collision Checks: this is the complete opposite of Regular. This is meant for AI that doesn’t require complex interaction with the world.
+Moving Platform: if the AI is a moving platform, make sure it has this setting for proper function because moving platforms are
+executed before all other objects in the game world. Moving Platforms should not be rotated on their axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Collision And Gravity</p></td>
+<td><p>Refer to player for these settings.</p></td>
+</tr>
+<tr class="row-even"><td><p>Damage</p></td>
+<td><p>If enabled and if the AI has a Collider2D, it will deal damage to any object with a Health component that exists on the specified layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create Units</p></td>
+<td><p>If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (gameobjects) necessary.
+Every time you make a change to the FSM or BehaviorTree, recreate the units to ensure they all have the same code by pressing this button.
+The system will do its best to keep superficial transform settings the same.</p></td>
+</tr>
+<tr class="row-even"><td><p>Reset To First</p></td>
+<td><p>For a FSM, if this is enabled the system will move to the first state on a global reset. This only occurs if the Reset State is empty.
+Otherwise the system moves to the first state automatically after the Reset State completes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="fsm">
+<h2>FSM<a class="headerlink" href="#fsm" title="Permalink to this headline"></a></h2>
+<p>A finite state machine provides an intuitive approach to creating AI. States make it easy to reason about logic as long as the
+number of states remains small. Thus, using a FSM should be your first option when designing most basic AI.</p>
+<p>All the nodes available to a Behavior Tree are also available to a FSM, except for Composite and Decorator nodes as those concepts
+are irrelevant here. Once you create a state, click the add button to open the node context menu and create the necessary nodes (depicted in orange).</p>
+<p>There are three types of states to be aware of. First, you have the Normal States (depicted in blue).
+The first of these states will be the entry point into the state machine. When the state machine is running, only one of these states
+will be active at a time.</p>
+<p>The state bar will have two important fields. The first field is for naming the state. Name the state a unique name for
+identification purposes. The second field lets you choose how to run the nodes. If <strong>Parallel</strong> is enabled, all the
+nodes will run at the same time. If <strong>Sequence</strong> is enabled, the nodes will run in sequence. That is, the system will not move to the next node
+until the current node either succeeds or fails. This sequence will always loop automatically. If <strong>SequenceSucceed</strong> is enabled, it works
+the same as Sequence except the system only moves to the next node if the current node succeeded.  Create these states by clicking the blue
+add button at the bottom of the inspector.</p>
+<p>Next you have the Always States (depicted in purple). These states will always run because sometimes it’s necessary to have this type of functionality.
+It is not possible to jump states from an Always State. These states should contain content that are applicable to each state. You create these by clicking
+the purple add button at the bottom of the inspector.</p>
+<p>And last is the Reset State (depicted in red). This state is called when the WorldManager
+performs a game reset. The Reset State, if used, occurs in one frame and does not check for collision. Use this state to
+reset the AI’s position, health, and other important variables.</p>
+<p>Since every node can potentially have one of three states (Success, Failure, Running), the system makes use of this to figure out
+when to jump to the next state. Thus, each node will come equipped with two options. On Success and On Failure. If either of those
+are enabled, and the condition is met, the system will jump to the specified state. However, keep in mind that not every node will return
+Success or Failure. Many Action Nodes only return Running and Failure, so they will not work to jump to a new state on Success, but some
+of them will return Success. When designing state jumps, don’t lose sight of this fact.</p>
+<p>Below is a simple FSM. The AI is tasked with following the player. If the player deals damage to the AI, the AI will be pushed back,
+and then it will go into the Wait State. There it will wait for the specified time. Once the clock timer is complete,
+the On Success option will trigger a state jump to the Follow State.</p>
+<img alt="../_images/FSMNode.png" class="align-center" src="../_images/FSMNode.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="ai-attacks-damage">
+<h2>AI Attacks, Damage<a class="headerlink" href="#ai-attacks-damage" title="Permalink to this headline"></a></h2>
+<p>There are four ways an AI can perform an attack on the player. Of course, if the following ways aren’t what you are looking for,
+it is always possible to implement a custom solution.</p>
+<p>First, in the Settings options enable Damage. The system will use the existing collider on the AI. Once the player
+comes into contact with the AI, it will be dealt damage.</p>
+<p>Second, the AI can use a Firearm to shoot projectiles at the player. Somewhere in your logic, you will use an OnEvent node.
+This event should trigger the Shoot() method that belongs to the Firearm class.</p>
+<p>Third, use the MeleeAttack node. Once this node is active, it will enable a separate collider
+to damage the player. The attack animation for the melee attack is setup and executed elsewhere. The MeleeAttack
+node is only in charge of dealing damage, enabling the collider, and setting the animation signals. You can use SpriteEngine to play the animation
+and control the size and position of the collider. Once the animation is done playing, the CompleteAttack() method of the MeleeAttack class <strong>must</strong>
+be called, or else the finite state machine will get stuck in its current state.</p>
+<p>Fourth, use the <strong>Damage</strong> class. Simply add this component to any gameobject. Add a collider2D and set isTrigger to true. This will deal damage
+to any character that exists in the Damage Layer when contact is made. This is particular useful for static objects like spikes.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../worldVariables/worldVariables.html" class="btn btn-neutral float-left" title="World Variables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nodes.html" class="btn btn-neutral float-right" title="Node List" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, TwoBitMachines.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

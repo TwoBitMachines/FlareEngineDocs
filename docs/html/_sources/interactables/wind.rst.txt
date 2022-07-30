@@ -1,0 +1,16 @@
+Wind
+++++
+
+Any character that enters the collider2D on any gameobject with the Wind component will be pushed upward. 
+
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Force
+     - The force of the wind;
+

@@ -1,0 +1,213 @@
+Lets Wiggle
++++++++++++
+.. complete!
+This is a tweening library that is configured in the inspector or in code.
+The **Wiggle** component, which is different from the **LetsWiggle** component,
+must be included in the scene for proper function. The **World Manager** component will
+automatically include it for you.
+
+LetsWiggle allows you to create a series of tweens in the inspector. These tweens are chained and execute in series
+or in parallel. Each tween belongs to one of three categories: Move, Scale, or Rotate. Thus, each tween has a specific job to execute, 
+like moving or scaling a Transform. For example, Move2D will move a Transform (or Rect Transform) in 2D space. 
+
+Some tweens include the word **To** and some don't. This means, for example, MoveX will simply move in the x direction, 
+while MoveToX will move to a specific position in the x direction. 
+
+Most tweens will have a corresponding tween function. This is where the magic happens. A tween function tells the tween *how* to move. 
+Create as many tweens as necessary to accomplish the desired effect.
+
+------------
+
+**List Of Tweens:**
+
+* Move2D
+* Move3D
+* MoveX
+* MoveY
+* MoveZ
+* MoveTo2D
+* MoveTo3D
+* MoveToX
+* MoveToY
+* MoveToZ
+* ScaleTo2D
+* ScaleTo3D
+* ScaleToX
+* ScaleToY
+* ScaleToZ
+* RotateTo
+* RotateX
+* RotateY
+* RotateZ
+* RotateAroundX
+* RotateAroundY
+* RotateAroundZ
+
+------------
+
+**List of Tween Functions:**
+
+* EaseIn
+* EaseOut
+* EaseInOut
+* EaseInBack
+* EaseOutBack
+* EaseInOutBack
+* EaseInBounce
+* EaseOutBounce
+* EaseInOutBounce
+* EaseInCubic
+* EaseOutCubic
+* EaseInOutCubic
+* EaseInElastic
+* EaseOutElastic
+* EaseInOutElastic
+* EaseInExpo
+* EaseOutExpo
+* EaseInOutExpo
+* EaseInSine
+* EaseOutSine
+* EaseInOutSine
+* Spike
+* Gravity
+* GravityBounce
+* GravitySingleBounce
+* OnOff
+* Linear
+
+------------
+
+Settings
+========
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Name 
+     - Name the wiggle.
+ 
+   * - Target
+     - The gameobject that will be tweened. Set the reference here. The system will determine if the
+       gameobject belongs to a Transform or Rect Transform.
+
+   * - Loop All
+     - Once all the tweens have executed, loop all of them by the specified amount.
+  
+   * - Unscaled Time
+     - If enabled, the system will use unscaledDeltaTime instead of deltaTime.
+
+   * - Use Anchors
+     - If the gameobject is a Rect Transform, choose to move its position by anchoredPosition or position.
+
+   * - Start Position
+     - If enabled, reset the Transform to this position before executing the first tween.
+
+   * - Start Rotation
+     - If enabled, reset the Transform to this rotation before executing the first tween.
+
+   * - Start Scale
+     - If enabled, reset the Transform to this scale before executing the first tween.
+
+   * - Start On Awake
+     - If enabled, tweening execution will begin on Awake.
+  
+   * - Start On Enable
+     - If enabled, tweening execution will begin OnEnable.
+  
+   * - Off On Complete
+     - If enabled, the gameobject will deactivate once the tweening is complete.
+
+.. list-table::
+   :widths: 50 200
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - Wiggle() 
+     - Start the tweening execution.
+ 
+   * - PauseWiggle(bool value)
+     - Pause or unpause the tweening.
+
+------------
+
+Wiggle Bar
+==========
+
+Open the bar and start adding tweens. Each tween will have at least a couple of fields to set, and all of them will
+share the properties below.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Delay
+     - The wait time before the tween starts.
+ 
+   * - Loop
+     - The number of times this specific tween will loop.
+
+   * - Parallel
+     - If enabled, this tween will execute in parallel with adjacent tweens that also have Parallel enabled.
+       If not enabled, the tween will execute in series.
+  
+   * - On Complete
+     - The Unity Even invoked when the tween is complete.
+
+------------
+
+Code
+==========
+
+The Wiggle library is also accessible through static methods using the **TwoBitMachines** namespace.
+Below is an example of how to use the tweening library. It's just a very long line of C# code. To 
+get started, implement the **Wiggle.Target** static method to start chaining tweens.
+
+.. tip::
+   To deactivate the gameobject on tweening completion call the Deactivate method. 
+
+.. code-block:: c#
+
+        Wiggle.Target (this.gameObject, useAnchors: false).
+        StartPosition (Vector3.zero).
+        Move2D (Vector2.up, 2f, Tween.Linear).Loop (2).
+        ScaleToX (0.5f, 2f, Tween.EaseIn).IsParallel ( ). // Scale x to 0.5f in 2 seconds
+        ScaleToY (0.5f, 2f, Tween.EaseOut).IsParallel ( ).
+        ScaleToX (1f, 1f, Tween.EaseInBounce).
+        ScaleToY (1f, 1f, Tween.EaseInBounce).
+        LoopAll (2);                                      // Can also call Deactivate() here
+
+.. important::
+   The methods below will only work on tweens created in code.
+
+.. list-table::
+   :widths: 50 200
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - IsTweenActive (GameObject gameobject)
+     - Returns true if this gameobject has an active tween.
+
+   * - PauseTween (GameObject gameobject)
+     - Pause tweening on this gameobject.
+
+   * - UnpauseTween (GameObject gameobject)
+     - Resume tweening on this gameobject.
+
+   * - StopTween (GameObject gameobject)
+     - Stop tweening on this gameobject.
+
+   * - PauseAllTweens ()
+     - This will pause all active tweens.
+ 
+   * - StopAllTweens ()
+     - This will stop all active tweens.

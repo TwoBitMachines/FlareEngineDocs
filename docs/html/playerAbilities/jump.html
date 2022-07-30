@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jump &mdash; WorldDoc 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dash" href="dash.html" />
+    <link rel="prev" title="Crouch" href="crouch.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> WorldDoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">World Manager</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/gettingStarted.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/worldManager.html">World Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/bridge.html">Bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/foliage.html">Foliage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Player Abilities</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="walk.html">Walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pushBack.html">Push Back</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ziplining.html">Ziplining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jumpOnEnemy.html">Jump On Enemy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Node List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WorldDoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Jump</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/playerAbilities/jump.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jump">
+<h1>Jump<a class="headerlink" href="#jump" title="Permalink to this headline"></a></h1>
+<p>The most fundamental ability of any platformer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Jump height and jump time are set in the Collision settings in order to
+calculate the force of gravity. However, this ability must still be enabled
+if the player is required to jump.</p>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Button Trigger</p></td>
+<td><p>Choose the button trigger for jumping.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Min Jump Height</p></td>
+<td><p>If this value is greater than zero, the player will have a variable jump height, and min jump will be the lowest
+jump height possible.</p></td>
+</tr>
+<tr class="row-even"><td><p>Air Jumps</p></td>
+<td><p>The number of extra jumps the player can perform in the air. The second field will scale the jump force. If using a specific air jump sprite, take advantage of Sprite Engine’s
+Loop Start Index.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Air Glide</p></td>
+<td><p>If holding the glide button, the player will gently glide down instead of falling when jumping. Air Glide can only occur after all the air jumps (if any)
+have occurred. The glide value must be between 0 and 1f.</p></td>
+</tr>
+<tr class="row-even"><td><p>Jump From Fall</p></td>
+<td><p>If the player walks off a platform (without jumping), the player can still execute Air Jumps or an Air Glide if enabled.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Event</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Jump</p></td>
+<td><p>The Unity Event invoked when the player jumps. Call a World Effect with the dynamic Activate method.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Air Jump</p></td>
+<td><p>The Unity Event invoked when the player air jumps. Call a World Effect with the dynamic Activate method.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If an ability already contains a jump force, do not add the Jump ability as an exception to it. For instance, the Wall ability
+contains a few jumping options that it will execute internally. The Jump ability is only geared for jumping on ground.</p>
+</div>
+<p><strong>Signals: airGlide, airJump,  airJump1,  airJump2, airJump3</strong></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="crouch.html" class="btn btn-neutral float-left" title="Crouch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dash.html" class="btn btn-neutral float-right" title="Dash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, TwoBitMachines.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

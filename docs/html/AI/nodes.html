@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Node List &mdash; WorldDoc 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pathfinding" href="pathfinding.html" />
+    <link rel="prev" title="AI" href="ai.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> WorldDoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">World Manager</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/gettingStarted.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/worldManager.html">World Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/bridge.html">Bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/foliage.html">Foliage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Player Abilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/walk.html">Walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AI</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ai.html">AI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Node List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-nodes">Create Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pathfinding.html">Pathfinding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkPoint.html">Check-Point</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WorldDoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Node List</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/AI/nodes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="node-list">
+<h1>Node List<a class="headerlink" href="#node-list" title="Permalink to this headline"></a></h1>
+<p>The AI system comes with many built in nodes ready for creating AI. The following gives you a general understanding
+of the node’s purpose. For more information on the node, hit the show information icon in the  inspector.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Follow Target</p></td>
+<td><p>The AI will follow the specified target.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ignore Block Units</p></td>
+<td><p>The AI will ignore or block other AI units along the pathfinding path.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pathfinder</p></td>
+<td><p>The AI will follow a path generated by the pathfinding algorithm. This works with gravity, making it ideal for platformers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pathfinder Basic</p></td>
+<td><p>The AI will follow a path generated by the pathfinding basic algorithm. This ignores the effect of gravity.</p></td>
+</tr>
+<tr class="row-even"><td><p>Jump</p></td>
+<td><p>Make the AI Jump.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jump To</p></td>
+<td><p>The AI will jump towards the specified target.</p></td>
+</tr>
+<tr class="row-even"><td><p>Push Back</p></td>
+<td><p>If damaged, the AI will be pushed back (and flash).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Monitor Variable</p></td>
+<td><p>Check if a blackboard variable has changed value. Typically used for float variables.</p></td>
+</tr>
+<tr class="row-even"><td><p>Monitor World Variable</p></td>
+<td><p>Check if a world variable has changed value. This will also work with Health.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apply Gravity</p></td>
+<td><p>This will simulate gravity. Mostly needed by moving platforms.</p></td>
+</tr>
+<tr class="row-even"><td><p>Control Player</p></td>
+<td><p>Control the player in the x-direction by moving it to a point. This will also block player input.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Idle</p></td>
+<td><p>Sometimes it’s useful to have an action where the AI just waits idly.</p></td>
+</tr>
+<tr class="row-even"><td><p>Melee Attack</p></td>
+<td><p>Perform a melee attack.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Move</p></td>
+<td><p>This will move the AI with the specified velocity.</p></td>
+</tr>
+<tr class="row-even"><td><p>Nullify Gravity</p></td>
+<td><p>Stop the effect of gravity on the AI.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rotate Around</p></td>
+<td><p>Rotate the transform around the specified target.</p></td>
+</tr>
+<tr class="row-even"><td><p>Rotate Position</p></td>
+<td><p>Rotate the transform’s position around the center point at the specified radius.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Set Transform</p></td>
+<td><p>Set the position, rotation, or scale of a transform instantly or by lerping.</p></td>
+</tr>
+<tr class="row-even"><td><p>Shake</p></td>
+<td><p>This will shake the AI. Only shake an object if it’s standing still.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Water Float</p></td>
+<td><p>The AI will float on the waterline.</p></td>
+</tr>
+<tr class="row-even"><td><p>Face Target</p></td>
+<td><p>The AI will point towards the specified target in the x-axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Get Nearest Target</p></td>
+<td><p>Get the nearest target to the AI from a list and set the reference to this target.</p></td>
+</tr>
+<tr class="row-even"><td><p>Get Random Target</p></td>
+<td><p>Get a random target from a list and set the reference to this target.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nearest 2D Results</p></td>
+<td><p>Get the nearest target to the AI from a list of physics results and set the reference to this target.</p></td>
+</tr>
+<tr class="row-even"><td><p>Target Changed</p></td>
+<td><p>This will return success when the target’s position has changed by the specified distance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Add To List</p></td>
+<td><p>Add the specified item to a list.</p></td>
+</tr>
+<tr class="row-even"><td><p>Animation Signal</p></td>
+<td><p>Sets an animation signal true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chain</p></td>
+<td><p>A chain created from gameobjects.</p></td>
+</tr>
+<tr class="row-even"><td><p>Clock</p></td>
+<td><p>Wait the specified time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable Behaviour</p></td>
+<td><p>This will enable or disable the specified behaviour or renderer.</p></td>
+</tr>
+<tr class="row-even"><td><p>Enable Tree</p></td>
+<td><p>Pause or remove the BehaviorTree from executing. Also specify the active state of the gameobject that belongs to the BehaviorTree.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Event</p></td>
+<td><p>Invoke and event.</p></td>
+</tr>
+<tr class="row-even"><td><p>PauseCollisions</p></td>
+<td><p>Pause world collisions. If enabled, choose to move transform with Translate or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Remove From List</p></td>
+<td><p>Remove the specified item from a list.</p></td>
+</tr>
+<tr class="row-even"><td><p>Set As Child</p></td>
+<td><p>Set the specified transform as child of the AI or remove it as a child of the AI.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Set Value</p></td>
+<td><p>Set the value of the blackboard data variable.</p></td>
+</tr>
+<tr class="row-even"><td><p>Set Value From blackboard</p></td>
+<td><p>Set the value of the blackboard data variable with that of the blackboard from variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sprite Color</p></td>
+<td><p>This will modify a sprite’s color by lerping to a new one.</p></td>
+</tr>
+<tr class="row-even"><td><p>World Effect</p></td>
+<td><p>Call a world effect at the AI’s position.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Damage Flash</p></td>
+<td><p>Show damage flash.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Composite</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Parallel</p></td>
+<td><p>Runs all child nodes at the same time. This will return Running as long as one of them is running. Once all child nodes complete, it will return Success if one child succeeded, else failure.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Parallel Success</p></td>
+<td><p>Runs all child nodes at the same time until one of them returns Success. Returns Failure if all them fail.</p></td>
+</tr>
+<tr class="row-even"><td><p>Parallel Success All</p></td>
+<td><p>Runs all child nodes at the same time until they all return Success. Will return failure if not all of them succeeded.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Random Selector</p></td>
+<td><p>This will run one random child node.</p></td>
+</tr>
+<tr class="row-even"><td><p>Random Sequence</p></td>
+<td><p>This will shuffle the list of nodes so that the execution order is always randomized.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Selector</p></td>
+<td><p>This will run every node in the list until one returns Success.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sequence</p></td>
+<td><p>This will run every node in the list until one returns Failure.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Decorator</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Delay</p></td>
+<td><p>Run the child node after a time delay.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inverter</p></td>
+<td><p>This will invert the output logic of the child node (except for Running). Interrupt logic will work with this decorator.</p></td>
+</tr>
+<tr class="row-even"><td><p>Repeater</p></td>
+<td><p>This will execute the child node by the amount of times specified in the repeat value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Running</p></td>
+<td><p>This will always return Running.</p></td>
+</tr>
+<tr class="row-even"><td><p>Timer</p></td>
+<td><p>This will run a child node for the specified time.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Until Fail</p></td>
+<td><p>This will run the child node until it returns Failure.</p></td>
+</tr>
+<tr class="row-even"><td><p>Until Success</p></td>
+<td><p>This will run the child node until it returns Success.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Conditional</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Find Target</p></td>
+<td><p>Find the specified Target in relation to the AI or Territory.</p></td>
+</tr>
+<tr class="row-odd"><td><p>List Logic</p></td>
+<td><p>This will compare the size of the specified list to a value.</p></td>
+</tr>
+<tr class="row-even"><td><p>Variable Logic</p></td>
+<td><p>This will compare a float variable to a float value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>World Float Logic</p></td>
+<td><p>Compare a world float to a float value.</p></td>
+</tr>
+<tr class="row-even"><td><p>CircleCast</p></td>
+<td><p>Implement a CircleCast using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LineCast</p></td>
+<td><p>Implement a LineCast using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-even"><td><p>OverlapBox</p></td>
+<td><p>Implement an OverlapBox using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OverlapCircle</p></td>
+<td><p>Implement an OverlapCircle using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-even"><td><p>OverlapCollider</p></td>
+<td><p>Implement an OverlapCollider using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OverlapPoint</p></td>
+<td><p>Implement an OverlapPoint using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-even"><td><p>RayCast</p></td>
+<td><p>Implement a RayCast using Physics2D. The results can be accessed by Nearest2DResults.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Layer Result</p></td>
+<td><p>Rays casted using Single Hit can compare if the resulting object belongs to the specified layer.</p></td>
+</tr>
+<tr class="row-even"><td><p>Touching Layers</p></td>
+<td><p>Check if the specified collider is touching any other collider in the specified layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Collision Status</p></td>
+<td><p>Check what a character/AI is interacting with.</p></td>
+</tr>
+<tr class="row-even"><td><p>Return Failure</p></td>
+<td><p>This will always return Failure.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input Get</p></td>
+<td><p>Get Input KeyDown or MouseDown.</p></td>
+</tr>
+<tr class="row-even"><td><p>Positional</p></td>
+<td><p>Check the AI’s position in relation to a target.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Field Of View</p></td>
+<td><p>Returns Success if the specified target is inside the field of view.</p></td>
+</tr>
+<tr class="row-even"><td><p>Has Passengers</p></td>
+<td><p>Does this moving platform have passengers?</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<section id="create-nodes">
+<h2>Create Nodes<a class="headerlink" href="#create-nodes" title="Permalink to this headline"></a></h2>
+<p>The most common nodes to create will be Conditional and Action nodes. Once the
+script is created, place it inside the AI/BehaviorTree/Nodes folder and it will become available
+for use in the AI system. Follow the template below to code your own
+functionality. The first example is of the Move Action node, which simply adds velocity to the AI.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">TwoBitMachines.FlareEngine.AI</span><span class="c1">// Include this namespace</span>
+<span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Move</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Action</span><span class="w"> </span><span class="c1">// Specify the type of node - Action/Conditional/Composite/Decorator</span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="na">[SerializeField]</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="n">velocity</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">            </span><span class="c1">// Use this method to implement the behavior</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">NodeState</span><span class="w"> </span><span class="nf">RunNodeLogic</span><span class="w"> </span><span class="p">(</span><span class="n">Root</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nodeSetup</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">NodeSetup</span><span class="p">.</span><span class="n">NeedToInitialize</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="c1">//       Any member fields that need to be reset/initialized go here.</span>
+<span class="w">                    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">                    </span><span class="n">root</span><span class="p">.</span><span class="n">velocity</span><span class="w"> </span><span class="p">+=</span><span class="w"> </span><span class="n">velocity</span><span class="p">;</span><span class="c1">// Root is basically the AI</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Running</span><span class="p">;</span><span class="w"> </span><span class="c1">// Since this is an Action node, return Running.</span>
+<span class="w">                                              </span><span class="c1">// If the behavior completes, return Success or Failure.</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">            </span><span class="c1">// Use this to reset important variables</span>
+<span class="w">            </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnReset</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+
+<span class="c1">// Root contains a few variables to be aware of</span>
+
+<span class="c1">// root.velocity  -- the velocity of the AI, read and write to it</span>
+<span class="c1">// root.direction -- the direction of the AI on the x-axis, read and write to it</span>
+<span class="c1">// root.position  -- the position of the AI in the game world, read only</span>
+
+<span class="c1">// root.hasJumped -- set true if you have added a jumping force to the AI&#39;s root.velocity.y</span>
+<span class="c1">// root.onSurface -- set true if you are creating a hard surface for the AI to stand on</span>
+
+<span class="c1">// root.signals.Set (&quot;relevantSignalName&quot;) -- set an animation signal if necessary</span>
+<span class="c1">// root.world     -- reference to WorldCollision, read settings like onGround, onMovingPlatform, etc.</span>
+<span class="c1">// root.gravity   -- reference to Gravity, if jumping use root.gravity.SetJump (velocity.y);</span>
+<span class="c1">//                   see the Jump node for more information</span>
+<span class="c1">// root.movingPlatform   -- reference to MovingPlatform if the AI is of this type, use it to read</span>
+<span class="c1">//                          hasPassengers or passengerCount</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">TwoBitMachines.FlareEngine.AI</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="c1">// This is a Conditional node. This will simply check if the AI is on the ground.</span>
+<span class="w">     </span><span class="c1">// This class doesn&#39;t actually exist, but it can be created using this code</span>
+<span class="w">     </span><span class="c1">// to get this functionality.</span>
+<span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AIOnGround</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Conditional</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">NodeState</span><span class="w"> </span><span class="nf">RunNodeLogic</span><span class="w"> </span><span class="p">(</span><span class="n">Root</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">                     </span><span class="k">return</span><span class="w"> </span><span class="n">root</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">onGround</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Failure</span><span class="p">;</span><span class="w"></span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="w"> </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">TwoBitMachines.FlareEngine.AI</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// This is a Decorator, and it will run its child node until it fails.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UntilFail</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Decorator</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">           </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">NodeState</span><span class="w"> </span><span class="nf">RunNodeLogic</span><span class="w"> </span><span class="p">(</span><span class="n">Root</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="p">{</span><span class="w"></span>
+<span class="w">                  </span><span class="n">NodeState</span><span class="w"> </span><span class="n">nodeState</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">children</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="n">RunChild</span><span class="w"> </span><span class="p">(</span><span class="n">root</span><span class="p">);</span><span class="w"></span>
+<span class="w">                  </span><span class="k">return</span><span class="w"> </span><span class="n">nodeState</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Failure</span><span class="w"> </span><span class="p">?</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Running</span><span class="p">;</span><span class="w"></span>
+<span class="w">           </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ai.html" class="btn btn-neutral float-left" title="AI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pathfinding.html" class="btn btn-neutral float-right" title="Pathfinding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, TwoBitMachines.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

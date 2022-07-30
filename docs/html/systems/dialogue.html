@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dialogue &mdash; WorldDoc 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Camera Engine" href="cameraEngine.html" />
+    <link rel="prev" title="Jump On Enemy" href="../playerAbilities/jumpOnEnemy.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> WorldDoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">World Manager</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/gettingStarted.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/worldManager.html">World Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/bridge.html">Bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/foliage.html">Foliage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Player Abilities</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/walk.html">Walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Systems</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dialogue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dialogueui">DialogueUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cameraEngine.html">Camera Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="letsWiggle.html">Lets Wiggle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Node List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WorldDoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Dialogue</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/systems/dialogue.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dialogue">
+<h1>Dialogue<a class="headerlink" href="#dialogue" title="Permalink to this headline"></a></h1>
+<p>This is an interactive dialogue system for the player and NPCs. Create conversations, add message effects, call Unity Events, and
+even include simple animations for complex interactions. All this is accomplished within the inspector window.</p>
+<p>The setup requires at least two components: <strong>Dialogue</strong>, where the dialogue between the characters is created and stored,
+and <strong>DialogueUI</strong>, which controls the UI elements that will display the dialogue. The Dialogue component will typically
+exist on an NPC, an empty gameobject, or wherever it is needed, and the DialogueUI should exist on a canvas element, to properly
+reference all the necessary UI elements. If the UI and message need special effects, the <strong>LetsWiggle</strong> component, a tweening library,
+can move and scale UI elements, and the <strong>TextMeshProEffects</strong> can add a typewriting effect, among other effects, to the message.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When dialogue is started, player input will be automatically blocked.</p>
+</div>
+<hr class="docutils" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DialogueUI</p></td>
+<td><p>The reference to DialogueUI.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Exit Button</p></td>
+<td><p>If this button exists, the user will be able to escape any dialogue.</p></td>
+</tr>
+<tr class="row-even"><td><p>Skip Button</p></td>
+<td><p>If this button exists, the user will be able to skip to the next message in the conversation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Position Icon</p></td>
+<td><p>If enabled, the messenger icons will be positioned on the left or right of the message box,
+depending on the relative position of the messengers.</p></td>
+</tr>
+<tr class="row-even"><td><p>Is Random</p></td>
+<td><p>If enabled, this will display random conversations. If this is desired,
+enable the Is Random flag that also exists in each conversation for any conversation that should be treated as random.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BeginConversation()</p></td>
+<td><p>Call this method to begin the conversation. This will also set the gameobject active true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EndConversation()</p></td>
+<td><p>Call this method to end the conversation.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>Create any messenger that is relevant to the dialogue.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Messenger Bar</p></td>
+<td><p>Choose the messenger’s sprite icon and display name. From here, delete this messenger if necessary,
+and toggle the box open for more fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Transform</p></td>
+<td><p>If Position Icon is enabled, specify the transform of the messenger to compare its position relative to the other messengers.</p></td>
+</tr>
+<tr class="row-even"><td><p>Background</p></td>
+<td><p>This is optional. Choose a personal background image for this messenger. If left null, the default background will be used instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create Animation</p></td>
+<td><p>If applied, the messenger’s icon will be replaced by an animation. Name the animation and create it. Create as many as necessary.
+Once created, each animation will have an add button for adding each individual sprite in the animation.</p></td>
+</tr>
+<tr class="row-even"><td><p>FPS</p></td>
+<td><p>Frames per second. The rate at which the animation plays.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loop</p></td>
+<td><p>If this is enabled, the animation will loop.  This could be useful for simple talking animations.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>A dialogue is a series of conversations. Create as many as required. Each conversation will have a series of messages. Each message
+can either be of type Message or Choice. If type Choice is enabled, it should be the last message in the conversation because the player will
+be asked to make a choice, and each option in the choice will branch into another conversation. The dialogue will end once the current conversation
+reaches the final message that is of type Message.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Conversation Bar</p></td>
+<td><p>This displays the name of the conversation. From here, delete the conversation if necessary, add a new message, or open the box for more fields.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>Conversation name.</p></td>
+</tr>
+<tr class="row-even"><td><p>Is Random</p></td>
+<td><p>If enabled, this conversation will be treated as a random conversation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Message Bar</p></td>
+<td><p>This displays the messenger’s icon. Choose which messenger is talking and the type of message. From here, delete the message if necessary, or open the box
+for more fields.</p></td>
+</tr>
+<tr class="row-even"><td><p>Animation</p></td>
+<td><p>If enabled, type the name of the animation that needs to play during the conversation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Message To</p></td>
+<td><p>If Position Icon is enabled, specify who the message is being delivered to so the system can know how to position the UI icon.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Message Complete</p></td>
+<td><p>The Unity Event invoked after the message is finished loading.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Message Type</p></td>
+<td><p>If enabled, a standard message will be displayed. Type the desired message in the text box.</p></td>
+</tr>
+<tr class="row-even"><td><p>Choice Type</p></td>
+<td><p>If enabled, press the red button to create a series of options for the player to choose from. Typically, the option response should be as short as possible, since
+the options will be mapped to UI button elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Branch To</p></td>
+<td><p>If the player chooses this option, this will become the next conversation.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Choice</p></td>
+<td><p>If the player chooses this option, this will be the Unity Event that is invoked.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When dialogue is started, the first conversation in the list will be the entry point.</p>
+</div>
+<hr class="docutils" />
+<section id="dialogueui">
+<h2>DialogueUI<a class="headerlink" href="#dialogueui" title="Permalink to this headline"></a></h2>
+<p>The system implements Unity’s UI system to display the dialogue box. The UI elements in the dialogue box can be configured to your personal taste.
+The important part is to set the UI references so that the system knows when to enable them and set their content.</p>
+<p>The demo contains a basic UI dialogue structure, which can be used as a starting point for other designs, but in general, the system
+will be looking for five basic elements: an icon image, a background image, a next signal image, a TextMeshPro for the message itself
+and the messenger’s name. If any UI elements are missing, the system will simply ignore them. In reality, only one of these is truly
+needed, and that is the message element. Thus the dialogue box can be configured as complex or as simple as necessary.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>References</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Icon</p></td>
+<td><p>The image of the messenger’s avatar (or animation).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Background</p></td>
+<td><p>The image background for the entire message. This image can be personalized for each messenger in the Dialogue component.
+This UI element should be considered the main component of the dialogue box. All other UI elements should be children to it.</p></td>
+</tr>
+<tr class="row-even"><td><p>Next Signal</p></td>
+<td><p>The image that will appear once the message has been completely loaded, signaling the user to continue with the conversation. Implement a bouncing effect with LetsWiggle.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Message</p></td>
+<td><p>The TextMeshPro of the message.</p></td>
+</tr>
+<tr class="row-even"><td><p>Messenger Name</p></td>
+<td><p>The TextMeshPro of the messenger’s name.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Choices</p></td>
+<td><p>The buttons mapped to a choice in the conversation. Create the required amount. These buttons will be clicked or pressed by the user.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>The following Unity Events are optional. If they’re not used, the message will load immediately. But if used, they will be able to
+add special effects to any dialogue. It is, however, very important to connect them properly, or the dialogue system will not work correctly.</p>
+<p>The system comes included with two very useful classes that will add effects to the dialogue box. <strong>LetsWiggle</strong> is a tweening library
+that can be used in the inspector to setup tweens, like moving and scaling UI. <strong>TextMeshProEffects</strong> will add special effects, like a typewriting or wobble effect, to a message. It is these
+classes that can be used for OnTransitionIn, OnTransitionOut, and On Load Message. These classes should be placed on the background UI Element.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>On Begin</p></td>
+<td><p>The Unity Event that is invoked when a dialogue begins.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On End</p></td>
+<td><p>The Unity Event that is invoked when a dialogue ends.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Transition In</p></td>
+<td><p>Invoke this Unity Event when a new message is about to begin. How it’s intended to work: This event should call another class, like a tweening library, to move or scale the background image.
+In this case, since it’s a transition In, the background image can be scaled from a 0 to 1. Once complete, it is very <em>important</em> for this other class to call <strong>TransitionInComplete</strong> in
+DialogueUI. If this event is used, there should <em>always</em> be a return signal to let the system know it can move forward, or else the system will stay stuck.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Transition Out</p></td>
+<td><p>Invoke this Unity Event when a message ends. This works exactly as On Transition In, but in reverse. The important part is for the other class to  call
+<strong>TransitionOutComplete</strong> in DialogueUI once complete.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Load Message</p></td>
+<td><p>Once a Transition In is complete, this Unity Event will be invoked. Typically you call a class that will add special effects to the message itself. As with the previous two events,
+once the other class is complete, it must return a complete signal by calling <strong>MessageLoadingComplete</strong> in DialogueUI. If it does not, the system will get stuck.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If using OnTransitionIn, OnTransitionOut, or OnLoadMessage, it is very important to set the Unity Events properly or the system will get stuck.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../playerAbilities/jumpOnEnemy.html" class="btn btn-neutral float-left" title="Jump On Enemy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cameraEngine.html" class="btn btn-neutral float-right" title="Camera Engine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, TwoBitMachines.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

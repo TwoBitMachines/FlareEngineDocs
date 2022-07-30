@@ -1,0 +1,109 @@
+Camera Engine
++++++++++++++
+.. complete
+The camera will follow the player with a smoothing speed.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Target
+     - The transform the camera will follow.
+
+   * - Speed
+     - The follow speed. If smoothing is 1, the follow speed will be instant in that direction.
+
+   * - Smooth X
+     - The smoothing effect in the x-direction.
+
+   * - Smooth Y
+     - The smoothing effect in the y-direction.
+  
+   * - Clamp
+     - If enabled, these bounds will clamp the world position of an orthographic camera. Modify the blue gizmo in the scene 
+       to specify this area. 
+
+------------
+
+Rooms
+=====
+
+Section your game world into rooms. Once the player enters a room, the camera will start to transition into it.  
+The room will then clamp the camera's position to prevent it from escaping the room's boundaries. 
+
+Add a room in the inspector and modify the rectangular gizmo in the scene to change the room's size and position. 
+Clicking the upper right button will change the room's size to match that camera's size for convenience. 
+
+It is also possible to modify the detection area of the room. These gizmos are found at the center of the room. Once you move them a 
+red line will appear. This red line will signify the position the player must cross in order to trigger a room transition. 
+Changing the detection area is optional. If left alone, the detection area will default to the room size. 
+Regardless if the detection area is modified or not, the camera will always be clamped by the room walls.
+
+It is also possible to overlap two rooms that share a common entrance area.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Transition Tween
+     - The tween that will be used during a room transition.
+
+   * - Transition Time
+     - The duration of the room transition.
+
+   * - On Enter
+     - The Unity Event invoked when the player enters a room.
+
+   * - On Transition Complete
+     - The Unity Event invoked when the room transition completes.
+
+   * - On Exit
+     - The Unity Event invoked when the player exits a room.
+
+------------  
+
+Parallax
+========
+
+Implement a parallax effect with infinite scrolling. Create the necessary parallax layers by clicking the 
+add button. Each layer will correspond to a gameobject which contains a Sprite Renderer (set the layer order manually).
+
+In the inspector, set the reference and the parallax rate, which is the rate at which 
+the layer will move with the camera. A value of 1 means the layer moves exactly with the camera. This is 
+typically the value for the farthest layer, the background. A value of zero means the layer is standing completely still. 
+This is typically the value of the nearest layer, the foreground. The parallax rate for the y values should typically be smaller than the 
+x values.
+
+These layers can be organized outside the camera gameobject. That is, they are not required to be children of the camera.
+
+------------
+
+Shake
+=====
+
+Shake the camera!
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - Shake (float strength, float duration, float speed)
+     - Shake the camera with the specific values.
+
+   * - Shake
+     - A convenient method to shake the camera with predefined values of strength = 0.25, duration = 1f, speed =2f;
+
+   * - SmallShake
+     - A convenient method to shake the camera with predefined values of strength = 0.05, duration = 0.5f, speed =2f;
+
+It is also possible to call these methods statically. Call their alternate methods CameraEngine.ShakeNow(params), CameraEngine.ShakeNow(),
+and CameraEngine.SmallShake(). You will need to include the TwoBitMachines.FlareEngine namespace.

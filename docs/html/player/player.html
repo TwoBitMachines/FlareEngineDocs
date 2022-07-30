@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Player &mdash; WorldDoc 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Signals" href="signals.html" />
+    <link rel="prev" title="Sprite Engine" href="../spriteEngine/spriteEngine.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> WorldDoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">World Manager</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/gettingStarted.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/worldManager.html">World Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/bridge.html">Bridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/foliage.html">Foliage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Player Abilities</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Player</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#priority">Priority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edge-collider-2d">Edge Collider 2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ability">Ability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-ability">Creating An Ability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signals.html">Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/walk.html">Walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Systems</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">AI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Node List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WorldDoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Player</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/player/player.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="player">
+<h1>Player<a class="headerlink" href="#player" title="Permalink to this headline"></a></h1>
+<p>The player is the centerpiece of your game, and as such, the engine provides plenty out of the box customizable abilities.
+To get started, two components are required, a <strong>BoxCollider2D</strong> and the <strong>Player</strong> component. That’s it.
+The Player class will handle the input, abilities, and world collision settings.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BlockInputs(bool value)</p></td>
+<td><p>This will block player input if true.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<section id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline"></a></h2>
+<p>The engine implements a basic input system that can handle Keyboard and Mouse input directly. These inputs will be used
+to move the player and interact with the game world. And because each input is actually a scriptable object (<strong>InputButtonSO</strong>),
+it becomes very easy to read and set input values. So, if you wish to control the player by other means, it’s entirely possible
+to control these inputs through method calls.</p>
+<p>It’s important to note you can change Keyboard and Mouse input keys during runtime, and the system will automatically
+save these changes using PlayerPrefs.</p>
+<p>By default, the system will create common inputs for movement, jumping, and firing. To create an input of your own, click the
+add button on Create New Input. Once the input is created, an InputButtonSO is automatically created
+and placed in the AssetsFolder/Inputs folder for reference. The input you see in the inspector is directly linked to its
+InputButtonSO.</p>
+<img alt="../_images/Inputs.png" class="align-center" src="../_images/Inputs.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Inputs</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name and Type</p></td>
+<td><p>Pick the type of input, Keyboard or Mouse. If Event is chosen, this means the input will be set manually.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Button</p></td>
+<td><p>Pick which key will be used by the Keyboard or Mouse.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>InputButtonSO</p></th>
+<th class="head"><p>Methods</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ButtonPressed()</p></td>
+<td><p>This will set button pressed as true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ButtonHold()</p></td>
+<td><p>This will set button hold as true.</p></td>
+</tr>
+<tr class="row-even"><td><p>ButtonReleased()</p></td>
+<td><p>This will set button released as true and will set button hold as false.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OverrideKeyboardKey (KeyCode newKey)</p></td>
+<td><p>Override the keyboard key.</p></td>
+</tr>
+<tr class="row-even"><td><p>OverrideMouseKey (int newKey)</p></td>
+<td><p>Override the mouse key. 1 == Left. 2 == Right. 3 == Middle.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="priority">
+<h2>Priority<a class="headerlink" href="#priority" title="Permalink to this headline"></a></h2>
+<p>If the player has more than one ability enabled, you will have to assign their priority. This means that
+if two or more abilities become active at the same time, the ability with the highest priority will execute while the
+other abilities are cancelled. This is to prevent awkward situations. For example, let’s say that when the player is
+climbing a wall, the player must not have the ability to shoot its firearm or else a shooting animation might commence.
+This will look weird if the shooting animation does not account for the wall holding. With the priority system, this
+can be prevented.</p>
+<img alt="../_images/Priority.png" class="align-center" src="../_images/Priority.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>However, it’s sometimes necessary for abilities to coexist. The system implements exceptions for these situations.
+Any ability can add exceptions, which allows the specified abilities to execute concurrently with it.
+For example, when the player shoots a firearm, if the Firearms ability does not include the Jump ability as an exception,
+the player will not be able to fire a projectile and jump at the same time. To remedy this, add the Jump exception
+to the Firearms priority.</p>
+<p>To set a priority, simply drag the priority blocks over each another. <strong>Number one is the highest priority</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If using the PushBack ability, it’s recommended to set it as the highest priority so when the player is damaged,
+it will disengage from whatever ability it is currently using, like climbing a wall.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Jump</p></td>
+<td><p>The jump height and jump time dictate the value of gravity.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rays</p></td>
+<td><p>The number of raycasts that will extend horizontally and vertically from the character to detect the world. Keep this number low for efficiency.</p></td>
+</tr>
+<tr class="row-even"><td><p>Climb Slopes</p></td>
+<td><p>If enabled, the character will be able to climb slopes no higher than the max slope.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rotate To Slope</p></td>
+<td><p>If enabled, the character will rotate according to the rotate rate to be perpendicular with the ground.</p></td>
+</tr>
+<tr class="row-even"><td><p>Rotate To Wall</p></td>
+<td><p>If enabled, the character will be able to rotate from the ground to a wall below. For instance, the corner of a platform.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rectify In Air</p></td>
+<td><p>If enabled, and if the character is rotated and jumps, it will rotate to a squared position.</p></td>
+</tr>
+<tr class="row-even"><td><p>Check Corners</p></td>
+<td><p>If enabled, the system will check if platform corners are going into the side of the character and prevent it. Note, if Climb Slopes is enabled,
+the system will automatically check for corners going through the bottom of the character.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use High Jump</p></td>
+<td><p>If enabled, the character will be able to use High Jump.</p></td>
+</tr>
+<tr class="row-even"><td><p>Use Bridges</p></td>
+<td><p>If enabled, the character will be able to walk on bridges.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use Moving Platforms</p></td>
+<td><p>If enabled, the character will be able to interact with moving platforms.</p></td>
+</tr>
+<tr class="row-even"><td><p>Crushed By Platform</p></td>
+<td><p>The Unity Event invoked when the character is crushed between two hard surfaces. This happens when the character is standing on or holding a moving platform and
+is moved into a hard surface, or when the character is pushed into a hard surface. This event typically means a character death, and the character’s position
+needs to be reset, or else the character will move into a wall and create an ambiguous scenario. Call a World Effect with the dynamic Activate method.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="edge-collider-2d">
+<h2>Edge Collider 2D<a class="headerlink" href="#edge-collider-2d" title="Permalink to this headline"></a></h2>
+<p>When dealing with platforms that contain <strong>EdgeCollider2D</strong>, the character can jump through a platform if the jump button is being held. Otherwise, the system will interpret
+the platform as a ceiling. The character can jump down through a platform if the down button is being held. Of course, this can only work if the Jump
+and Down inputs exist.</p>
+</section>
+<hr class="docutils" />
+<section id="ability">
+<h2>Ability<a class="headerlink" href="#ability" title="Permalink to this headline"></a></h2>
+<p>Click the red button to add abilities into the system. Any ability can be paused by calling the Pause method from its component. For convenience, each ability
+can be paused in the inspector during development.</p>
+</section>
+<hr class="docutils" />
+<section id="creating-an-ability">
+<h2>Creating An Ability<a class="headerlink" href="#creating-an-ability" title="Permalink to this headline"></a></h2>
+<p>Create a unique ability if the engine doesn’t already provide it. Follow the template below.</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">TwoBitMachines.FlareEngine.ThePlayer</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Ability</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">// None of the methods below are required. Use them as necessary</span>
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Initialize</span><span class="w"> </span><span class="p">(</span><span class="n">Player</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">// Initialize variables here. This is called in Awake.</span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Reset</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  Reset important variables here.</span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">TurnOffAbility</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  This is called when a higher priority ability overrides this one.</span>
+<span class="w">             </span><span class="c1">//  Reset important variables. Usually the Reset method is called here.</span>
+<span class="w">             </span><span class="c1">//  Return false if this ability is doing an important task that can&#39;t be cancelled.</span>
+<span class="w">             </span><span class="c1">//  For example, the crouch ability can&#39;t be cancelled unless the player has enough</span>
+<span class="w">             </span><span class="c1">//  head room to fully stand up. Return true if it can be cancelled.</span>
+<span class="w">                     </span><span class="k">return</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsAbilityRequired</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  This is where the system checks if the ability has become active. Some condition</span>
+<span class="w">             </span><span class="c1">//  will go true, usually a button is pressed, in which case return true.</span>
+<span class="w">                     </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ExecuteAbility</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  Place the code that executes the ability here. This is only called if the ability</span>
+<span class="w">             </span><span class="c1">//  is active.</span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">EarlyExecute</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  This is always called before ExecuteAbility. Sometimes it&#39;s necessary to execute</span>
+<span class="w">             </span><span class="c1">//  code before anything else. The ability itself shouldn&#39;t execute here. However,</span>
+<span class="w">             </span><span class="c1">//  if the ability is simple enough and always needs to run, execute the ability here.</span>
+<span class="w">             </span><span class="c1">//  The Ground ability functions this way. If doing this, just make sure the ability</span>
+<span class="w">             </span><span class="c1">//  won&#39;t interfere with any other abilities.</span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">LateExecute</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  This is always called after ExecuteAbility. Firearm ability uses it to apply</span>
+<span class="w">             </span><span class="c1">//  recoil to the player.</span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">             </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">PostCollisionExecute</span><span class="w"> </span><span class="p">(</span><span class="n">AbilityManager</span><span class="w"> </span><span class="n">player</span><span class="p">,</span><span class="w"> </span><span class="n">Vector2</span><span class="w"> </span><span class="n">velocity</span><span class="p">)</span><span class="w"></span>
+<span class="w">             </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">//  This is called after all the abilities and collision checks have executed.</span>
+<span class="w">             </span><span class="c1">//  This velocity was the total velocity applied to the player during the frame.</span>
+<span class="w">             </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// The AbilityManager has many variables to be aware of.</span>
+
+<span class="c1">// player.signals    -- set relevant signals: player.signals.Set (&quot;signalName&quot;)</span>
+<span class="c1">// player.world      -- read if player is onGround, onSlope, onMovingPlatform, etc</span>
+<span class="c1">// player.inputs     -- read button inputs: player.inputs.Pressed(&quot;buttonName&quot;), etc</span>
+<span class="c1">// player.gravity    -- the value of gravity</span>
+<span class="c1">// player.maxJumpVel -- the maximum jump force</span>
+<span class="c1">// player.onSurface  -- set true if the player should be standing on a surface. Bridge uses this</span>
+<span class="c1">// player.jumpButton -- read if the jump buttons have been pressed</span>
+<span class="c1">// player.hasJumped  -- set true if the ability made the player jump</span>
+<span class="c1">// player.checkForAirJumps -- set true if the ability made the player jump</span>
+<span class="c1">// player.playerDirection -- the direction of the player in the x-direction</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../spriteEngine/spriteEngine.html" class="btn btn-neutral float-left" title="Sprite Engine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="signals.html" class="btn btn-neutral float-right" title="Signals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, TwoBitMachines.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

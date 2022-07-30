@@ -1,0 +1,31 @@
+Settings
++++++++++
+
+Set gravity and enable extra collisions.
+
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Jump
+     - These two fields are required to calculate the player's gravity. Time specifies the total duration of the jump, and Height specifies
+       how high the player can jump.
+
+   * - Climb Slopes
+     - If enabled,the player will be able to climb slopes. Specify the maximum slope that can be climbed (89 degrees will the absolute maximum).
+
+   * - Rotate To Slope
+     - If climbing slopes, this will rotate the player so that it's completely perpendicular to the ground.
+
+   * - Rectify In Air
+     - If the player becomes rotated while climbing a slope, this will rotate the player to the nearest square axis if the player jumps.
+
+   * - Use Bridges
+     - If enabled,the player will be able to walk on bridges.
+
+   * - Use Moving Platforms
+     - If enabled, moving platforms will be able to detect the player.
