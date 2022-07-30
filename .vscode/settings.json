@@ -17,6 +17,7 @@
                         "raycasts",
                         "Scriptable",
                         "Tilemap",
+                        "titlesonly",
                         "toctree",
                         "tweened",
                         "tweening",

@@ -8,6 +8,7 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
+   :titlesonly:
    :caption: Introduction
 
    worldManager/gettingStarted
@@ -15,12 +16,14 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
+   :titlesonly:
    :caption: Sprite Engine
 
    spriteEngine/spriteEngine
 
 .. toctree::
    :maxdepth: 5
+   :titlesonly:
    :caption: Player Abilities
 
    player/player
@@ -44,15 +47,17 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
+   :titlesonly:
    :caption: AI
 
    AI/ai
    AI/nodes
    AI/pathfinding
    AI/checkPoint
-   
+
 .. toctree::
    :maxdepth: 5
+   :titlesonly:
    :caption: Interactables
    
    interactables/bridge
@@ -67,6 +72,7 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
+   :titlesonly:
    :caption: Systems
 
    systems/audioManager
@@ -82,4 +88,3 @@ Flare Engine Documentation
    systems/textMesh
    systems/worldEffects
    worldVariables/worldVariables
-
