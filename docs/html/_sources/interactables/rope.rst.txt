@@ -26,14 +26,28 @@ The player can use ropes to swing or for simple idle interactions. Add this comp
    * - Rope End Radius      
      - If Swing is enabled, once player and end tether are within this radius, the player will latch onto the rope automatically.
 
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Type Idle
+     - 
+
    * - Rope Radius 
-     - If Idle is enabled, the system will check for rope collisions if the player is inside this radius. The center of this radius is set automatically.
+     - The system will check for rope collisions if the player is inside this radius. The center of this radius is set automatically.
   
    * - Tether Radius
-     - If Idle is enabled, it is the radius of each tether used to detect the player.
+     - It is the radius of each tether used to detect the player.
 
    * - Force
-     - If Idle is enabled, it is the movement force applied to a tether upon interaction.
+     - It is the movement force applied to a tether upon interaction.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
 
    * - Tethers
      - The number of tethers in the rope.

@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 from sphinx.builders.html import StandaloneHTMLBuilder
-project = 'WorldDoc'
+project = 'FlareEngine'
 copyright = '2022, TwoBitMachines'
 author = 'TwoBitMachines'
 

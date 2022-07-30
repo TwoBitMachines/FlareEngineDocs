@@ -19,19 +19,13 @@ gameobject. Once this component is in the scene, it will automatically install t
 (if they don't already exist) to ensure smooth operation of the system:
 
 **Layers**
-
 * **World** - Ground, slopes, walls, ceilings. Use this layer on any gameobject that is a solid surface.
-
 * **Platform** - Use this layer on any gameobject that is a Moving Platform.
-
 * **Player** - Use this layer on the player gameobject.
-
 * **Enemy** - Use this layer on any enemy gameobject.
 
 **Tags**
-
 * **Friction** - Use this tag on any ground gameobject that is using the Friction component.
-
 * **NoClimb** - If the player can climb walls, use this tag on any wall gameobject that is *not* meant to be climbable.
 
 And that's basically it. That's all you need to get started. From here you can add a player, choose its abilities,

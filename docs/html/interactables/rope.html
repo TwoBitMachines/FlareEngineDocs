@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rope &mdash; WorldDoc 0.1 documentation</title>
+  <title>Rope &mdash; FlareEngine 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -28,7 +28,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> WorldDoc
+            <a href="../index.html" class="icon icon-home"> FlareEngine
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -110,7 +110,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">WorldDoc</a>
+          <a href="../index.html">FlareEngine</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -157,39 +157,65 @@ will pass through the rope, causing it to move.</p></td>
 <tr class="row-odd"><td><p>Rope End Radius</p></td>
 <td><p>If Swing is enabled, once player and end tether are within this radius, the player will latch onto the rope automatically.</p></td>
 </tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type Idle</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
 <tr class="row-even"><td><p>Rope Radius</p></td>
-<td><p>If Idle is enabled, the system will check for rope collisions if the player is inside this radius. The center of this radius is set automatically.</p></td>
+<td><p>The system will check for rope collisions if the player is inside this radius. The center of this radius is set automatically.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Tether Radius</p></td>
-<td><p>If Idle is enabled, it is the radius of each tether used to detect the player.</p></td>
+<td><p>It is the radius of each tether used to detect the player.</p></td>
 </tr>
 <tr class="row-even"><td><p>Force</p></td>
-<td><p>If Idle is enabled, it is the movement force applied to a tether upon interaction.</p></td>
+<td><p>It is the movement force applied to a tether upon interaction.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Tethers</p></td>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tethers</p></td>
 <td><p>The number of tethers in the rope.</p></td>
 </tr>
-<tr class="row-even"><td><p>Gravity</p></td>
+<tr class="row-odd"><td><p>Gravity</p></td>
 <td><p>The force of gravity acting on the rope.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Stiffness</p></td>
+<tr class="row-even"><td><p>Stiffness</p></td>
 <td><p>The larger the number, the less sag the rope will have. For performance, keep this value below 30.</p></td>
 </tr>
-<tr class="row-even"><td><p>Double Anchor</p></td>
+<tr class="row-odd"><td><p>Double Anchor</p></td>
 <td><p>Both the start and end of the rope are anchored.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Rope Sprite</p></td>
+<tr class="row-even"><td><p>Rope Sprite</p></td>
 <td><p>The system will create a gameobject for a tether with the corresponding sprite.
 This will be used as a template to instantiate the remaining tethers. The second field corresponds to the size of the tether.</p></td>
 </tr>
-<tr class="row-even"><td><p>Rope End (Optional)</p></td>
+<tr class="row-odd"><td><p>Rope End (Optional)</p></td>
 <td><p>Every time the rope is created, it destroys and recreates all the tethers. Sometimes the end tether contains components like Health. To prevent having to
 add these components every time the rope is recreated, specify the end tether gameobject to prevent it from being destroyed.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Create</p></td>
+<tr class="row-even"><td><p>Create</p></td>
 <td><p>Once all the settings are chosen, press this button to create the rope. Anytime you change the rope’s position or a setting, recreate the rope to enact the changes.</p></td>
 </tr>
-<tr class="row-even"><td><p>View</p></td>
+<tr class="row-odd"><td><p>View</p></td>
 <td><p>If enabled, the rope gizmos will be visible.</p></td>
 </tr>
 </tbody>
