@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.19)  26 APR 2022 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.19)  30 JUL 2022 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -954,8 +954,8 @@ Package rerunfilecheck Info: File `worlddoc.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  15146 strings out of 478552
- 250632 string characters out of 2841938
- 558762 words of memory out of 3000000
+ 250828 string characters out of 2841938
+ 558766 words of memory out of 3000000
  32931 multiletter control sequences out of 15000+600000
  686832 words of font info for 83 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -968,7 +968,7 @@ to-BoldItalic.pfb><C:/Users/algut/AppData/Local/Programs/MiKTeX/fonts/type1/typ
 oland/lato/Lato-Regular.pfb><C:/Users/algut/AppData/Local/Programs/MiKTeX/fonts
 /type1/bitstrea/charter/bchb8a.pfb><C:/Users/algut/AppData/Local/Programs/MiKTe
 X/fonts/type1/bitstrea/charter/bchr8a.pfb>
-Output written on worlddoc.pdf (18 pages, 144253 bytes).
+Output written on worlddoc.pdf (18 pages, 144586 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  32 named destinations out of 1000 (max. 500000)

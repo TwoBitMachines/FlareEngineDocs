@@ -24,23 +24,23 @@ Flare Engine Documentation
 .. toctree::
    :maxdepth: 5
    :titlesonly:
-   :caption: Player Abilities
+   :caption: Player
 
    player/player
    player/signals
    playerAbilities/walk
+   playerAbilities/jump
+   playerAbilities/wall
    playerAbilities/ceiling
    playerAbilities/crouch
-   playerAbilities/jump
    playerAbilities/dash
    playerAbilities/hover
    playerAbilities/swim
    playerAbilities/ground
-   playerAbilities/ladderClimb
    playerAbilities/firearms
    playerAbilities/meleeAbility
+   playerAbilities/ladderClimb
    playerAbilities/ropeSwing
-   playerAbilities/wall
    playerAbilities/pushBack
    playerAbilities/ziplining
    playerAbilities/jumpOnEnemy
@@ -61,14 +61,14 @@ Flare Engine Documentation
    :caption: Interactables
    
    interactables/bridge
-   interactables/rope
-   interactables/water
-   interactables/ladder
-   interactables/zipLine
-   interactables/friction
-   interactables/teleport
-   interactables/highJump
    interactables/foliage
+   interactables/friction
+   interactables/highJump
+   interactables/ladder
+   interactables/rope
+   interactables/teleport
+   interactables/water
+   interactables/zipLine
 
 .. toctree::
    :maxdepth: 5

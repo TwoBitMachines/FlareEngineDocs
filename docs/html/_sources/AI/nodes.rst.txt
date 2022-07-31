@@ -1,5 +1,5 @@
-Node List
-+++++++++
+Nodes
++++++
 .. complete!
 The AI system comes with many built in nodes ready for creating AI. The following gives you a general understanding
 of the node's purpose. For more information on the node, hit the show information icon in the  inspector.

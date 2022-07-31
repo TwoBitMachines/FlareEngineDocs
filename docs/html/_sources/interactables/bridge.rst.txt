@@ -4,7 +4,7 @@ Bridge
 A bridge creates dynamic movement. Characters can walk and jump on them. Place this component on an empty gameobject 
 and scene gizmos will appear. The gameobject's position is the start position of the bridge, and the red gizmo will modify the end position.
 
-.. image:: ../images/interactables/BridgeGif.*
+.. image:: ../images/interactables/BridgeGif.gif
    :align: center
    :width: 100%
    
