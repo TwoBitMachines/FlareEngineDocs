@@ -43,7 +43,7 @@ Float And Health
      - If this is Health, the amount of time after being damaged where the character can't take any damage.
 
    * - Save
-     - If enabled, the system will save and restore the current value.
+     - If enabled, the system will save and restore the current value. During development, press the delete icon to erase saved data.
 
    * - Is Scriptable Object
      - If enabled, a button will appear to create a scriptable object (**WorldFloatSO**). If created, it will be found in the AssetsFolder/Variables folder. If the scriptable

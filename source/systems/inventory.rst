@@ -54,6 +54,7 @@ To create an InventorySO, right click in the project window and go to Create/Fla
 
    * - Method
      - 
+     
    * - Save( )
      - This will save the inventory in memory. It's called by OnDisable when the Scene terminates. But you can call this method
        anytime you wish. You can also use the static method **InventorySO.SaveData ( )**, which will save *all* the inventories. 
@@ -148,8 +149,8 @@ add it into the inventory. If this item is not a consumable, and it already exis
      - If enabled, the user can add items into the inventory by clicking on them. Specify the layer where the items exist.
 
 It's important to realize the values in ItemEventData are set internally. The only value to 
-be concerned with, if implementing your own methods, is to set itemEventData.success to true or false so the inventory system can properly 
-handle the item once it's used. Let's look at some examples of Item Event.
+be concerned with, if implementing your own methods, is to set itemEventData.success to True or False so the inventory system can properly 
+handle the item once it's used. If the success value is *not* set, the system will assume a value of True. Let's look at some examples of Item Event.
 
 .. image:: ../images/ItemEvent.png
    :align: center
@@ -173,10 +174,9 @@ new projectile. The system will then set ItemEventData.success to true if it suc
 It's important to note this method will change the projectile of the first active firearm the system finds. 
 If you want a more specific approach, instead of using Player, use the Firearm component.
 
-To increase a projectile's ammo using an item, connect the Item Event to a 
-ProjectileInventory and choose the Dynamic method ChangeProjectileAmmo. 
+To increase a projectile's ammo using an item, connect the Item Event to a ProjectileInventory and choose the Dynamic method ChangeProjectileAmmo. 
 In this case, the itemEventData will use both generic values. It will use the generic string to specify the name of the projectile 
-it wants to modify, and it will use the generic float value to change the ammo amount. As always, itemEventData.success will bet set.
+it wants to modify, and it will use the generic float value to change the ammo amount.
 
 ------------
 
@@ -193,6 +193,10 @@ and set the isTrigger to true. Each item must correspond to an **ItemSO**.
 
    * - Property
      - 
+
+   * - Type
+     - If Item, the item will be used by the Inventory system. If Tool, the item is a tool and will be made a child of the character.
+       If Tool Swap, the character will swap tools with the current and new tool. The old tool will no longer be a child of the character. This is useful for picking up firearms.
 
    * - ItemSO
      - The reference to ItemSO. 
@@ -300,6 +304,7 @@ UI references are all optional and can be placed wherever necessary. If used, th
 
    * - Events
      - 
+
    * - OnOpen
      - The Unity Event invoked when the inventory is opened.
 
@@ -321,12 +326,13 @@ UI references are all optional and can be placed wherever necessary. If used, th
 
    * - Method
      - 
+
    * - MoveLeftUp ( )
      - Move the items left or up.
 
    * - MoveRightDown ( )
      - Move the items right or down
-     .
+
    * - UseSelectedGridItem ( )
      - Use the currently selected grid item.
 

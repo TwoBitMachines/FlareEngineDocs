@@ -144,7 +144,7 @@ The bullet types share some of the following properties below. In the case of th
      - If this value is greater than zero, the bullet will deal damage to any target within
        this radius when the bullet collides or time expires.
 
-   * - Impact Effect
+   * - World Effect
      - The name of the world effect that will be used on impact. If not needed, leave empty.
 
    * - Bullet Rays
@@ -155,6 +155,9 @@ The bullet types share some of the following properties below. In the case of th
 
    * - Add Momentum
      - If enabled, the character's velocity will be combined with the bullet's velocity.
+
+   * - Invert Y
+     - Since bullets can be rotated, this will invert they y scale to keep the sprite looking correct. If bullet is symmetrical, ignore.
 
 .. list-table::
    :widths: 25 100

@@ -11,7 +11,7 @@ should be visible (and set Sprite Pivot to Left). Make this gameobject a child o
 The player must have the Firearms ability enabled (for recoil to work and for applying ability exceptions).
 
 .. note::
-   More than one firearm can be active at a time.
+   More than one firearm can be active at a time, and the Item class offers a convenient way for picking up tools.
 
 .. list-table::
    :widths: 25 100

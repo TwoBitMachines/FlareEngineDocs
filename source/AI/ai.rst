@@ -256,6 +256,9 @@ Inspector
      - For a FSM, if this is enabled the system will move to the first state on a global reset. This only occurs if the Reset State is empty.
        Otherwise the system moves to the first state automatically after the Reset State completes.
 
+   * - Turn Off Signals
+     - If the AI doesn't require any animation signals, enable this to stop the basic animation signals from being set.
+
 ------------
 
 FSM

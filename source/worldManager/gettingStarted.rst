@@ -35,3 +35,14 @@ gameobject. Once this component is in the scene, it will automatically install t
 
 And that's basically it. That's all you need to get started. From here you can add a player, choose its abilities,
 design AI enemies, setup common systems such as Inventory or Dialogue, and implement world interactables to spice up your game.
+
+Demo
+====
+
+As of now, the engine comes with two demos showcasing the many possibilities of the tools. One should use the demos as a starting point 
+for learning. Go into the Hierarchy and check how the gameobjects are set up and how they connect with other systems via Unity Events. And 
+please feel free to create whatever prefabs you deem necessary from the demos. Also, the demos are using URP. This is not required or 
+necessary for the engine to work. Good luck!
+
+.. tip::
+ All the game assets in the project are free to use in whatever capacity you wish.
