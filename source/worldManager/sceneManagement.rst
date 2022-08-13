@@ -2,7 +2,7 @@ Scene Management
 ++++++++++++++++
 .. complete!
 Transition from the current scene to the next scene with ease. The scene manager loads the specified scene and
-controls the screen transitions, if any. The system comes equipped with plenty and ready to use screen transitions, 
+controls the screen transitions, if any. The system comes equipped with plenty and ready to use **Screen Transitions**, 
 which can be found in the AssetsFolder/Transitions/Prefabs folder. Simply drag the necessary prefabs into the Hierarchy and 
 set their reference in the **ManageScenes** component.
 
@@ -11,9 +11,10 @@ set their reference in the **ManageScenes** component.
 
 |
 
-Each transition gameobject consists of a canvas with an image that contains a Transition shader. The system implements the 
+Each transition gameobject consists of a canvas with an image that contains a transition shader. The system implements the 
 common technique of using a black and white gradient texture to specify the pattern of the transition. If desired, you can add
-your own gradients to a new material to create new transitions.
+your own gradients to a new material to create new transitions. By default the transitions are using a shader created 
+from Shader Graph. If not using URP, you can easily switch to TwoBitMachines/Transition shader for any transition.
 
 To get started, place a ManageScenes component on a gameobject, organize the scene transition gameobjects as children, set the
 references, and simply call the LoadNextScene() to load the next scene.
