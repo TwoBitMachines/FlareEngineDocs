@@ -107,8 +107,8 @@ Place the **ScreenTransition** component on a transition gameobject. This will p
 and for game reset transitions. If using it for an opening scene transition, make sure the gameobject is set active true so it
 executes automatically at the beginning of the scene. 
 
-If using it for a game reset, simply activate the gameobject for the transition
-to begin. When a transition completes, the gameobject will be automatically be set active false;
+If using it for a game reset, simply call the Begin method to activate the transition. When a transition completes, the gameobject 
+will be automatically be set active false;
 
 .. list-table::
    :widths: 25 100
@@ -131,3 +131,6 @@ to begin. When a transition completes, the gameobject will be automatically be s
    * - Random Text
      - If more than one texture exists, the transition pattern will be randomized. Place textures here from the AssetsFolder/Transitions/Textures
        folder. Use the TransitionAny prefab if implementing this.
+
+   * - Begin()
+     - When called it will activate the transition.
