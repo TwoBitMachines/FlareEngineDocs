@@ -47,23 +47,23 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Player Abilities</span></p>
+<p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/walk.html">Walk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
@@ -78,14 +78,14 @@
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../interactables/bridge.html">Bridge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interactables/foliage.html">Foliage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/friction.html">Friction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/highJump.html">High Jump</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/ladder.html">Ladder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/rope.html">Rope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/teleport.html">Teleport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/water.html">Water</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactables/zipLine.html">Zipline</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul class="current">
@@ -131,16 +131,17 @@
   <section id="scene-management">
 <h1>Scene Management<a class="headerlink" href="#scene-management" title="Permalink to this headline"></a></h1>
 <p>Transition from the current scene to the next scene with ease. The scene manager loads the specified scene and
-controls the screen transitions, if any. The system comes equipped with plenty and ready to use screen transitions,
+controls the screen transitions, if any. The system comes equipped with plenty and ready to use <strong>Screen Transitions</strong>,
 which can be found in the AssetsFolder/Transitions/Prefabs folder. Simply drag the necessary prefabs into the Hierarchy and
 set their reference in the <strong>ManageScenes</strong> component.</p>
 <img alt="../_images/ManageScenesImage.png" class="align-center" src="../_images/ManageScenesImage.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Each transition gameobject consists of a canvas with an image that contains a Transition shader. The system implements the
+<p>Each transition gameobject consists of a canvas with an image that contains a transition shader. The system implements the
 common technique of using a black and white gradient texture to specify the pattern of the transition. If desired, you can add
-your own gradients to a new material to create new transitions.</p>
+your own gradients to a new material to create new transitions. By default the transitions are using a shader created
+from Shader Graph. If not using URP, you can easily switch to TwoBitMachines/Transition shader for any transition.</p>
 <p>To get started, place a ManageScenes component on a gameobject, organize the scene transition gameobjects as children, set the
 references, and simply call the LoadNextScene() to load the next scene.</p>
 <p>The system also comes with the <strong>ScreenTransition</strong> component, which is useful for displaying opening scene transitions and
@@ -245,8 +246,8 @@ object can be a loading scene (which is not a transition). By changing the load 
 <p>Place the <strong>ScreenTransition</strong> component on a transition gameobject. This will primarily be used for the opening scene transition
 and for game reset transitions. If using it for an opening scene transition, make sure the gameobject is set active true so it
 executes automatically at the beginning of the scene.</p>
-<p>If using it for a game reset, simply activate the gameobject for the transition
-to begin. When a transition completes, the gameobject will be automatically be set active false;</p>
+<p>If using it for a game reset, simply call the Begin method to activate the transition. When a transition completes, the gameobject
+will be automatically be set active false;</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -272,6 +273,9 @@ be set to zero during the first half, effectively pausing the game.</p></td>
 <tr class="row-odd"><td><p>Random Text</p></td>
 <td><p>If more than one texture exists, the transition pattern will be randomized. Place textures here from the AssetsFolder/Transitions/Textures
 folder. Use the TransitionAny prefab if implementing this.</p></td>
+</tr>
+<tr class="row-even"><td><p>Begin()</p></td>
+<td><p>When called it will activate the transition.</p></td>
 </tr>
 </tbody>
 </table>
