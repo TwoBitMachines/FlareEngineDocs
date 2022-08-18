@@ -41,8 +41,4 @@ Demo
 
 As of now, the engine comes with two demos showcasing the many possibilities of the tools. One should use the demos as a starting point 
 for learning. Go into the Hierarchy and check how the gameobjects are set up and how they connect with other systems via Unity Events. And 
-please feel free to create whatever prefabs you deem necessary from the demos. Also, the demos are using URP. This is not required or 
-necessary for the engine to work. Good luck!
-
-.. tip::
- All the game assets in the project are free to use in whatever capacity you wish.
+please feel free to create whatever prefabs you deem necessary from the demos. Good luck!

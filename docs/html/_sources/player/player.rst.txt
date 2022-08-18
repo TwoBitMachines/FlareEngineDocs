@@ -145,6 +145,9 @@ Settings
    * - Use Moving Platforms
      - If enabled, the character will be able to interact with moving platforms.
 
+   * - Use Late Update
+     - If enabled, the AI will execute in Late Update. This is not meant for moving platforms or the player.
+
    * - Crushed By Platform
      - The Unity Event invoked when the character is crushed between two hard surfaces. This happens when the character is standing on or holding a moving platform and 
        is moved into a hard surface, or when the character is pushed into a hard surface. This event typically means a character death, and the character's position 
