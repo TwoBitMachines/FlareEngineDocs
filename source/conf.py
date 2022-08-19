@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 from sphinx.builders.html import StandaloneHTMLBuilder
-project = 'FlareEngine'
+project = 'Flare Engine'
 copyright = '2022, TwoBitMachines'
 author = 'TwoBitMachines'
 
@@ -85,4 +85,4 @@ StandaloneHTMLBuilder.supported_image_types = [
 ]
 
 pdf_documents = [('index', u'Flare Engine',
-                  u'Flare Engine Documentation', u'Two Bit Machines'), ]
+                  u'Flare Engine Documentation', u'TwoBitMachines'), ]

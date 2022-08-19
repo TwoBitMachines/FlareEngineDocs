@@ -241,8 +241,16 @@ Inspector
        Moving Platform: if the AI is a moving platform, make sure it has this setting for proper function because moving platforms are 
        executed before all other objects in the game world. Moving Platforms should not be rotated on their axis.
  
-   * - Collision
+   * - Collision And Gravity
      - Refer to player for these settings.
+
+   * - Damage
+     - If enabled and if the AI has a Collider2D, it will deal damage to any object with a Health component that exists on the specified layer.
+
+   * - Create Units
+     - If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (gameobjects) necessary. 
+       Every time you make a change to the FSM or BehaviorTree, recreate the units to ensure they all have the same code by pressing this button. 
+       The system will do its best to keep superficial transform settings the same.
 
    * - Reset To First
      - For a FSM, if this is enabled the system will move to the first state on a global reset. This only occurs if the Reset State is empty.
@@ -250,14 +258,6 @@ Inspector
 
    * - Turn Off Signals
      - If the AI doesn't require any animation signals, enable this to stop the basic animation signals from being set.
-
-   * - Create Units
-     - If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (gameobjects) necessary. 
-       Every time you make a change to the FSM or BehaviorTree, recreate the units to ensure they all have the same code by pressing this button. 
-       The system will do its best to keep superficial transform settings the same.
-
-   * - Damage
-     - If enabled and if the AI has a Collider2D, it will deal damage to any object with a Health component that exists on the specified layer.
 
 ------------
 
