@@ -33,6 +33,10 @@ add button on Create New Input. Once the input is created, an InputButtonSO is a
 and placed in the AssetsFolder/Inputs folder for reference. The input you see in the inspector is directly linked to its
 InputButtonSO.
 
+And finally, each input has the ability to **bind** to other inputs. For example, if the jump input is bound to some input,
+then each time this other input goes true, the jump input will also go true. To bind inputs simply click the bottom triangle
+toggle and start adding them. You will need to set the InputButtonSO reference.
+
 .. image:: ../images/Inputs.png
    :align: center
    
@@ -46,10 +50,13 @@ InputButtonSO.
      - 
 
    * - Name and Type
-     - Pick the type of input, Keyboard or Mouse. If Event is chosen, this means the input will be set manually.
+     - Pick the type of input, Keyboard or Mouse.
  
    * - Button
      - Pick which key will be used by the Keyboard or Mouse.
+
+   * - Bind Inputs
+     - The references to the bound inputs.
 
 .. list-table::
    :widths: 25 100
@@ -59,13 +66,22 @@ InputButtonSO.
      - Methods
 
    * - ButtonPressed()
-     - This will set button pressed as true.
+     - This will set input pressed as true.
  
    * - ButtonHold()
-     - This will set button hold as true.
+     - This will set input hold as true.
 
    * - ButtonReleased()
-     - This will set button released as true and will set button hold as false.
+     - This will set input released as true and will set input hold as false.
+
+   * - Holding()
+     - Returns true if the input is being held.
+ 
+   * - Pressed()
+     - Returns true if the input is pressed.
+
+   * - Released()
+     - Returns true if the input is released.
 
    * - OverrideKeyboardKey (KeyCode newKey)
      - Override the keyboard key.
@@ -126,9 +142,6 @@ Settings
    * - Rotate To Slope
      - If enabled, the character will rotate according to the rotate rate to be perpendicular with the ground.
 
-   * - Rotate To Wall
-     - If enabled, the character will be able to rotate from the ground to a wall below. For instance, the corner of a platform.
-
    * - Rectify In Air
      - If enabled, and if the character is rotated and jumps, it will rotate to a squared position.
 
@@ -144,6 +157,12 @@ Settings
 
    * - Use Moving Platforms
      - If enabled, the character will be able to interact with moving platforms.
+
+   * - Collide With World Only
+     - The system checks for both World and Platform collisions. Enabling this will only check for World collisions.
+
+   * - Use Late Update
+     - For AI only. If enabled, the character will execute during Late Update instead of Update.
 
    * - Crushed By Platform
      - The Unity Event invoked when the character is crushed between two hard surfaces. This happens when the character is standing on or holding a moving platform and 

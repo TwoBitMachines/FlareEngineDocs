@@ -20,6 +20,12 @@ It is perfectly possible to create bidirectional teleports that work together.
    * - Destination
      - The transform where the gameobject will be teleported to.
 
+   * - Execute
+     - If set to Automatic, the teleportation logic will execute immediately. If set to Button, you will need to 
+       set a reference to an InputButtonSO. Once the input goes active, the teleportation logic will execute.
+       Please note, Teleportation is using Unity Triggers, so make sure the player's RigidBody2D SleepingMode is 
+       set to Never Sleep, or the Teleportation on Button press will not work correctly.
+
    * - LayerMask
      - Only gameobjects on this layer mask will be teleported.
 

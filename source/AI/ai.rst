@@ -136,7 +136,6 @@ Node Editor Window
    
 |
 
-
 If using AITree, a node editor will be required to create the nodes and to configure the node hierarchy.
 In Unity, go to Window/BehaviorTreeEditor to open the node editor window. The window can be zoomed and dragged. Next, select a gameobject and add the AITree component.
 You will then see a single node appear in the editor. This is Root, which is the entry point into the Behavior Tree and all nodes and branches belong to it.
@@ -169,6 +168,9 @@ to name these templates is by creating a note. Whatever is typed in that note wi
 it's not necessary anymore.
 
 When the game enters play mode, the active nodes and connections will turn green for debugging.
+
+.. tip::
+  In the upper left corner, change the color of editor background.
 
 ------------
 

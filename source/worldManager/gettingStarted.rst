@@ -41,4 +41,5 @@ Demo
 
 As of now, the engine comes with two demos showcasing the many possibilities of the tools. One should use the demos as a starting point 
 for learning. Go into the Hierarchy and check how the gameobjects are set up and how they connect with other systems via Unity Events. And 
-please feel free to create whatever prefabs you deem necessary from the demos. Good luck!
+please feel free to create whatever prefabs you deem necessary from the demos. The first demo has pixel perfect disabled, so you 
+might notice some glitchy artifacts from time to time. Good luck!

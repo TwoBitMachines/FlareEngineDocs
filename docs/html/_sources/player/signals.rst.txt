@@ -57,6 +57,8 @@ each frame or they will remain true.
 * wallHang
 * wallSlideJump
 * wallCornerGrab
+* slopeSlide
+* slopeSlideAuto
 * recoil
 * recoilLeft
 * recoilRight
@@ -70,3 +72,4 @@ each frame or they will remain true.
 * zipline
 * alwaysTrue
 * alwaysFalse
+

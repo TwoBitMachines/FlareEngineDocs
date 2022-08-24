@@ -72,7 +72,7 @@ Once a pathfinding class is created, leave it alone on its own gameobject and do
 is to generate paths. This will be useful in case there are multiple AI agents referencing the same pathfinding class. To create an AI agent 
 that will follow a generated path, create another gameobject and add an AI system. Create two targets. One target 
 will be the end point of the path, usually the player. The other target is **Target Pathfinding**. This target will hold a reference to 
-the pathfinding class, specify follow speeds, and will requests for paths to be generated. 
+the pathfinding class, specify follow speeds, and will request for paths to be generated. 
 
 .. list-table::
    :widths: 25 100

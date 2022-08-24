@@ -61,6 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -162,6 +163,9 @@ save these changes using PlayerPrefs.</p>
 add button on Create New Input. Once the input is created, an InputButtonSO is automatically created
 and placed in the AssetsFolder/Inputs folder for reference. The input you see in the inspector is directly linked to its
 InputButtonSO.</p>
+<p>And finally, each input has the ability to <strong>bind</strong> to other inputs. For example, if the jump input is bound to some input,
+then each time this other input goes true, the jump input will also go true. To bind inputs simply click the bottom triangle
+toggle and start adding them. You will need to set the InputButtonSO reference.</p>
 <img alt="../_images/Inputs.png" class="align-center" src="../_images/Inputs.png" />
 <div class="line-block">
 <div class="line"><br /></div>
@@ -178,10 +182,13 @@ InputButtonSO.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Name and Type</p></td>
-<td><p>Pick the type of input, Keyboard or Mouse. If Event is chosen, this means the input will be set manually.</p></td>
+<td><p>Pick the type of input, Keyboard or Mouse.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Button</p></td>
 <td><p>Pick which key will be used by the Keyboard or Mouse.</p></td>
+</tr>
+<tr class="row-even"><td><p>Bind Inputs</p></td>
+<td><p>The references to the bound inputs.</p></td>
 </tr>
 </tbody>
 </table>
@@ -197,18 +204,27 @@ InputButtonSO.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>ButtonPressed()</p></td>
-<td><p>This will set button pressed as true.</p></td>
+<td><p>This will set input pressed as true.</p></td>
 </tr>
 <tr class="row-odd"><td><p>ButtonHold()</p></td>
-<td><p>This will set button hold as true.</p></td>
+<td><p>This will set input hold as true.</p></td>
 </tr>
 <tr class="row-even"><td><p>ButtonReleased()</p></td>
-<td><p>This will set button released as true and will set button hold as false.</p></td>
+<td><p>This will set input released as true and will set input hold as false.</p></td>
 </tr>
-<tr class="row-odd"><td><p>OverrideKeyboardKey (KeyCode newKey)</p></td>
+<tr class="row-odd"><td><p>Holding()</p></td>
+<td><p>Returns true if the input is being held.</p></td>
+</tr>
+<tr class="row-even"><td><p>Pressed()</p></td>
+<td><p>Returns true if the input is pressed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Released()</p></td>
+<td><p>Returns true if the input is released.</p></td>
+</tr>
+<tr class="row-even"><td><p>OverrideKeyboardKey (KeyCode newKey)</p></td>
 <td><p>Override the keyboard key.</p></td>
 </tr>
-<tr class="row-even"><td><p>OverrideMouseKey (int newKey)</p></td>
+<tr class="row-odd"><td><p>OverrideMouseKey (int newKey)</p></td>
 <td><p>Override the mouse key. 1 == Left. 2 == Right. 3 == Middle.</p></td>
 </tr>
 </tbody>
@@ -265,26 +281,29 @@ it will disengage from whatever ability it is currently using, like climbing a w
 <tr class="row-odd"><td><p>Rotate To Slope</p></td>
 <td><p>If enabled, the character will rotate according to the rotate rate to be perpendicular with the ground.</p></td>
 </tr>
-<tr class="row-even"><td><p>Rotate To Wall</p></td>
-<td><p>If enabled, the character will be able to rotate from the ground to a wall below. For instance, the corner of a platform.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Rectify In Air</p></td>
+<tr class="row-even"><td><p>Rectify In Air</p></td>
 <td><p>If enabled, and if the character is rotated and jumps, it will rotate to a squared position.</p></td>
 </tr>
-<tr class="row-even"><td><p>Check Corners</p></td>
+<tr class="row-odd"><td><p>Check Corners</p></td>
 <td><p>If enabled, the system will check if platform corners are going into the side of the character and prevent it. Note, if Climb Slopes is enabled,
 the system will automatically check for corners going through the bottom of the character.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Use High Jump</p></td>
+<tr class="row-even"><td><p>Use High Jump</p></td>
 <td><p>If enabled, the character will be able to use High Jump.</p></td>
 </tr>
-<tr class="row-even"><td><p>Use Bridges</p></td>
+<tr class="row-odd"><td><p>Use Bridges</p></td>
 <td><p>If enabled, the character will be able to walk on bridges.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Use Moving Platforms</p></td>
+<tr class="row-even"><td><p>Use Moving Platforms</p></td>
 <td><p>If enabled, the character will be able to interact with moving platforms.</p></td>
 </tr>
-<tr class="row-even"><td><p>Crushed By Platform</p></td>
+<tr class="row-odd"><td><p>Collide With World Only</p></td>
+<td><p>The system checks for both World and Platform collisions. Enabling this will only check for World collisions.</p></td>
+</tr>
+<tr class="row-even"><td><p>Use Late Update</p></td>
+<td><p>For AI only. If enabled, the character will execute during Late Update instead of Update.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Crushed By Platform</p></td>
 <td><p>The Unity Event invoked when the character is crushed between two hard surfaces. This happens when the character is standing on or holding a moving platform and
 is moved into a hard surface, or when the character is pushed into a hard surface. This event typically means a character death, and the character’s position
 needs to be reset, or else the character will move into a wall and create an ambiguous scenario. Call a World Effect with the dynamic Activate method.</p></td>

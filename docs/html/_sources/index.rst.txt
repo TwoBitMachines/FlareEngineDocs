@@ -38,6 +38,7 @@ Flare Engine Documentation
    playerAbilities/swim
    playerAbilities/ground
    playerAbilities/firearms
+   playerAbilities/slopeSlide
    playerAbilities/meleeAbility
    playerAbilities/ladderClimb
    playerAbilities/ropeSwing

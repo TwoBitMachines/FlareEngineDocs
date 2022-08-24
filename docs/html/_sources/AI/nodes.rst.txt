@@ -38,6 +38,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Monitor World Variable
      - Check if a world variable has changed value. This will also work with Health.
 
+   * - Apply Character Velocity
+     - Apply a character's velocity to this AI.
+
    * - Apply Gravity
      - This will simulate gravity. Mostly needed by moving platforms.
 
@@ -90,7 +93,10 @@ of the node's purpose. For more information on the node, hit the show informatio
      - Add the specified item to a list.
 
    * - Animation Signal
-     - Sets an animation signal true.
+     - Sets an animation signal true for the AI.
+
+   * - Character Animation Signal
+     - Set the following animation signal true for the specified character.
 
    * - Chain
      - A chain created from gameobjects.
@@ -241,6 +247,9 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Input Get
      - Get Input KeyDown or MouseDown.
+
+   * - InputButtonSO Get
+     - Returns success if InputButtonSO is true.
 
    * - Positional
      - Check the AI's position in relation to a target.
