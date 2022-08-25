@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ziplining &mdash; Flare Engine 0.1 documentation</title>
+  <title>Push Block &mdash; Flare Engine 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -18,9 +18,7 @@
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Jump On Enemy" href="jumpOnEnemy.html" />
-    <link rel="prev" title="Push Back" href="pushBack.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,7 +46,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="walk.html">Walk</a></li>
@@ -66,7 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBack.html">Push Back</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Ziplining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jumpOnEnemy.html">Jump On Enemy</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
@@ -119,9 +117,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Ziplining</li>
+      <li>Push Block</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/playerAbilities/ziplining.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/playerAbilities/pushBlock.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -129,9 +127,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ziplining">
-<h1>Ziplining<a class="headerlink" href="#ziplining" title="Permalink to this headline"></a></h1>
-<p>Enable this to allow the player to interact with Ziplines.</p>
+  <section id="push-block">
+<h1>Push Block<a class="headerlink" href="#push-block" title="Permalink to this headline"></a></h1>
+<p>The player can push and pull a block.</p>
+<p>Use the push block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject.
+Set AI type to Regular. Set Collide With World Only to True in the Collision settings. Create one empty state.
+Set the Tag to PushBlock. Set the Layer to Platform. And finally, add a Sprite Renderer.</p>
+<p>You can also enable Climb Slopes on the AI to push the block up and down slopes. Rotate To Slope is not
+a supported function for push block, however.</p>
+<p>The previous push block from version 1.1.0 is greyed out and still in Demo2 for reference. This previous push
+block iteration was constructed purely with AI and does not require this ability to work. Feel free
+to use it if need be. The major advantage of this Push Block ability is that it works with the
+ability priority system and can pull the block.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -143,27 +150,25 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Zip Speed</p></td>
-<td><p>The force applied to the x velocity of the player while ziplining. A value below 1 will feel like friction, and a value above 1 will be a speed boost.</p></td>
+<tr class="row-even"><td><p>Button</p></td>
+<td><p>If set to Automatic, the player will immediately push the block upon contact, but it will not be able to pull it.
+If set to Button, specify the push and pull button.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Jump Force</p></td>
-<td><p>The exit jump force.</p></td>
+<tr class="row-odd"><td><p>Push Speed</p></td>
+<td><p>This will scale the player’s velocity when pushing the block. Ideally, this value should be less than 1.</p></td>
 </tr>
-<tr class="row-even"><td><p>Y Offset</p></td>
-<td><p>The offset applied to the player’s y position. This can be useful to align the animation.</p></td>
+<tr class="row-even"><td><p>Pull Speed</p></td>
+<td><p>This will scale the player’s velocity when pulling the block. Ideally, this value should be less than 1.</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Signals: zipline</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Signals: pushBlock, pullBlock*</p>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pushBack.html" class="btn btn-neutral float-left" title="Push Back" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="jumpOnEnemy.html" class="btn btn-neutral float-right" title="Jump On Enemy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

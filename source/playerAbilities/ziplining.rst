@@ -9,6 +9,7 @@ Enable this to allow the player to interact with Ziplines.
 
    * - Property
      - 
+
    * - Zip Speed
      - The force applied to the x velocity of the player while ziplining. A value below 1 will feel like friction, and a value above 1 will be a speed boost.
 

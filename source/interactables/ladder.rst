@@ -21,3 +21,4 @@ The humble ladder is used for climbing. Add this component to an empty gameobjec
 
    * - Size   
      - The width and height of the ladder.
+     

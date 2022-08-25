@@ -133,12 +133,12 @@
 <h1>Signals<a class="headerlink" href="#signals" title="Permalink to this headline"></a></h1>
 <p>During the life cycle of a character, the system, through the use of abilities and nodes, will
 set the signals below to true or false. For example, if a character is moving to the right, the system
-will read the character’s velocity and set velXRight <em>true</em> if the velocity in the x direction is positive.</p>
+will read the character’s velocity and set velXRight signal <em>true</em> if the velocity in the x direction is positive.</p>
 <p>If using Sprite Engine, these signals are automatically read to control the animation state. There is no need
 to worry about anything else.</p>
 <p>If you are not using Sprite Engine, then you can access the signals below through Character, which is the base class
-for player and AI. Use <strong>Character.signals.signals</strong> using namespace TwoBitMachines.FlareEngine. The signals
-class is a dictionary with a key-value pair of string and bool. Don’t forget to reset these signals to false
+for the Player and AI. You will need to use <strong>Character.signals.signals</strong> and include the namespace TwoBitMachines.FlareEngine.
+The signals class is a dictionary with a key-value pair of string and bool. Don’t forget to reset these signals to false
 each frame or they will remain true.</p>
 <hr class="docutils" />
 <ul class="simple">
@@ -172,6 +172,8 @@ each frame or they will remain true.</p>
 <li><p>pushBack</p></li>
 <li><p>pushBackLeft</p></li>
 <li><p>pushBackRight</p></li>
+<li><p>pushBlock</p></li>
+<li><p>pullBlock</p></li>
 <li><p>inWater</p></li>
 <li><p>swimming</p></li>
 <li><p>floating</p></li>

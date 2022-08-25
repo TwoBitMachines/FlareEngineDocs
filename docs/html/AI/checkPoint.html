@@ -61,6 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -142,7 +143,7 @@ to create your own systems.</p>
 <p>The system uses a AIFSM, for keeping track of the player, and a World Float, for saving the state of the check-point system.</p>
 <p>Before explaining the states, first let’s see how the system is designed. Each level can have as many check-points as desired.
 For this particular scenario there are three check-points. Each check-point will be placed in the game world and each one will
-have a corresponding arbitrary index. So 1,2, and 3.</p>
+have a corresponding arbitrary index. So 1, 2, and 3.</p>
 <p>Once the player goes inside a check-point area, the FSM will save its index
 in the World Float (which will have Save enabled). If the current value of the World Float is less than the check-point index, the value will
 be updated. This means the check-point system works in terms of priority. If the player goes back inside check-point 1 but has already been

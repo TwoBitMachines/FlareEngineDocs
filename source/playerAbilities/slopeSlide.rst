@@ -11,7 +11,7 @@ The player will slide down slopes and deal damage.
      - 
 
    * - Button   
-     - The button that will initiate a slope slide. If set to automatic, the player will automatically slide down the slope.
+     - The button that will initiate a slope slide. If set to automatic, the player will automatically slide down a slope.
 
    * - Speed Boost 
      - Scale the horizontal speed while slope sliding.
@@ -21,7 +21,7 @@ The player will slide down slopes and deal damage.
        The signal slopeSlideAuto will go true during this time period.
 
    * - Deal Damage
-     - If enabled, the player will be able to deal damage to enemies while slope sliding. Set the layer to deal damage to and the amount of damage.
+     - If enabled, the player will be able to deal damage to enemies while slope sliding. During this time, the player will not be 
+       able to receive damage. Set the layer to deal damage to and the amount of damage.
 
 **Signals: slopeSlide, slopeSlideAuto**
-

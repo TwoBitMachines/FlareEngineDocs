@@ -18,7 +18,7 @@ The system uses a AIFSM, for keeping track of the player, and a World Float, for
 
 Before explaining the states, first let's see how the system is designed. Each level can have as many check-points as desired. 
 For this particular scenario there are three check-points. Each check-point will be placed in the game world and each one will 
-have a corresponding arbitrary index. So 1,2, and 3. 
+have a corresponding arbitrary index. So 1, 2, and 3. 
 
 Once the player goes inside a check-point area, the FSM will save its index 
 in the World Float (which will have Save enabled). If the current value of the World Float is less than the check-point index, the value will 
@@ -58,4 +58,3 @@ check World Float Logic until Find Target has returned success.
 .. important::
     The parts you must modify: in Set Transform, input the reset position. In each World Float Logic and On Event, place the index of the check-point.
     You will also need to move each territory (green rectangle) manually in the scene for each check-point.
-
