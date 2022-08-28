@@ -8,7 +8,6 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
-   :titlesonly:
    :caption: Introduction
 
    worldManager/gettingStarted
@@ -16,14 +15,12 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
-   :titlesonly:
    :caption: Sprite Engine
 
    spriteEngine/spriteEngine
 
 .. toctree::
    :maxdepth: 5
-   :titlesonly:
    :caption: Player
 
    player/player
@@ -49,7 +46,6 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
-   :titlesonly:
    :caption: AI
 
    AI/ai
@@ -59,7 +55,6 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
-   :titlesonly:
    :caption: Interactables
    
    interactables/bridge
@@ -74,11 +69,9 @@ Flare Engine Documentation
 
 .. toctree::
    :maxdepth: 5
-   :titlesonly:
    :caption: Systems
 
    systems/audioManager
-   systems/cameraEngine
    systems/dialogue
    systems/equipment
    systems/firearm

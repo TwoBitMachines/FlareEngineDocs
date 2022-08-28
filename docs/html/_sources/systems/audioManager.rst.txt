@@ -11,7 +11,7 @@ the other will be dedicated to playing sound effects.
 |
 
 The Audio Manager component and the audio sources can be added to the World Manager's gameobject.
-In the inspector, go to Audio Category, specify a category name, and click the add button. This will create an
+In the inspector, go to Audio Category, specify a category name and click the add button. This will create an
 audio category, which is meant to organize sounds into groups for convenience. Each category 
 has an add button to create a sound item. In each sound item you can specify the audio clip, volume, type, and
 can even play the audio clip in the inspector. 
@@ -41,14 +41,17 @@ Create/FlareEngine/AudioManagerSO.
    * - SFX Master Volume
      - This will scale the sound level of each sfx item. A value of zero means there's no sfx sounds.
 
+   * - Audio Manager SO
+     - A scriptable object reference for playing audio. This is optional.
+
    * - Fade In Time
      - The amount of time to fade in music.
 
    * - Fade Out Time
      - The amount of time to fade out music.
 
-   * - Audio Manager SO
-     - The scriptable object reference for playing audio.
+   * - Play On Start
+     - If enabled, the music that will start playing at the beginning of the scene. Specify the name.
 
    * - Audio Category
      - Create an audio category with the specified name.

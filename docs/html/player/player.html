@@ -49,7 +49,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Player</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Player</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#priority">Priority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edge-collider-2d">Edge Collider 2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ability">Ability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-ability">Creating An Ability</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="signals.html">Signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/walk.html">Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
@@ -62,6 +70,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -91,7 +100,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -153,19 +161,23 @@ world collision settings. You will also need to add a <strong>RigidBody2D</stron
 <hr class="docutils" />
 <section id="inputs">
 <h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline"></a></h2>
-<p>The engine implements a basic input system that can handle Keyboard and Mouse input directly. These inputs will be used
-to move the player and interact with the game world. And because each input is actually a scriptable object (<strong>InputButtonSO</strong>),
+<p>The engine implements a basic input system that can handle Keyboard and Mouse input directly (and in the most recent version, it will also interface with the new
+input system). These inputs will be used to move the player and interact with the game world. And because each input is actually a scriptable object (<strong>InputButtonSO</strong>),
 it becomes very easy to read and set input values. So, if you wish to control the player by other means, it’s entirely possible
 to control these inputs through method calls.</p>
 <p>It’s important to note you can change Keyboard and Mouse input keys during runtime, and the system will automatically
 save these changes using PlayerPrefs.</p>
-<p>By default, the system will create common inputs for movement, jumping, and firing. To create an input of your own, click the
-add button on Create New Input. Once the input is created, an InputButtonSO is automatically created
+<p>By default, the system will create common inputs for movement, jumping, and firing. To create an input of your own,
+press Create New Input. Once the input is created, an InputButtonSO is automatically created
 and placed in the AssetsFolder/Inputs folder for reference. The input you see in the inspector is directly linked to its
 InputButtonSO.</p>
-<p>And finally, each input has the ability to <strong>bind</strong> to other inputs. For example, if the jump input is bound to some input,
+<p>Each input has the ability to <strong>bind</strong> to other inputs. For example, if the jump input is bound to another input,
 then each time this other input goes true, the jump input will also go true. To bind inputs simply click the bottom triangle
 toggle and start adding them. You will need to set the InputButtonSO reference.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The system expects the Left, Right, and Jump inputs to always exist. They also need to have these exact same names. So don’t delete them!</p>
+</div>
 <img alt="../_images/Inputs.png" class="align-center" src="../_images/Inputs.png" />
 <div class="line-block">
 <div class="line"><br /></div>
@@ -229,6 +241,68 @@ toggle and start adding them. You will need to set the InputButtonSO reference.<
 </tr>
 </tbody>
 </table>
+<hr class="docutils" />
+<p>You will also notice that some player abilities have a setting called Button Trigger. This setting
+allows you to choose when an input becomes active.</p>
+<ul class="simple">
+<li><p>On Hold</p></li>
+<li><p>On Press</p></li>
+<li><p>On Release</p></li>
+<li><p>Always</p></li>
+<li><p>Never</p></li>
+<li><p>Active</p></li>
+</ul>
+<p>Always and Never are primarily used for AI weapons. Setting it to never will prevent the
+weapon from being fired accidentally by player input, and setting it to always will mean it’s
+always shooting! Active means the input is being held or pressed.</p>
+<hr class="docutils" />
+<p>It’s also now possible to interface with the <strong>new input system</strong>. First, install the package through
+the Packet Manager if it’s not installed already. By default, Flare Engine uses the old input system and
+if you disable it, you will get an error. So, in Project Settings/Player set Active
+Input Handling to Both.</p>
+<p>Next, add the Player Input component to the Player’s gameobject and set the reference
+to an InputActionAsset. Demo1 already has this setup and you can find this asset in the Demo/Assets folder.
+It contains some default values mapped to a generic controller. However, there’s still a good chance the
+default settings won’t work depending on your controller, in which case you need to open InputActions and
+bind your specific controller inputs. You will need to refer to Unity documentation to get familiar
+with this process.</p>
+<p>Next, on the Player Input set Behavior to Invoke Unity Events. Open the events foldout as well as the
+action maps. In this case, it’s called the Player. Then connect InputButtonSO to these events and call
+the following methods:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>New Input System</p></th>
+<th class="head"><p>Methods</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>InputPerformed()</p></td>
+<td><p>This will set input pressed as true.</p></td>
+</tr>
+<tr class="row-odd"><td><p>InputPerformedHold()</p></td>
+<td><p>This will set input hold as true.</p></td>
+</tr>
+<tr class="row-even"><td><p>InputCancelled()</p></td>
+<td><p>This will set input released as true and will set input hold as false.</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/NewInputSystem.png" class="align-center" src="../_images/NewInputSystem.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>For instance, to get an input to behave like a button press just call InputPerformed() as seen by the Jump Input.
+However, if you want the input to behave like a hold, call both InputPerformedHold() and InputCancelled() like
+the movement inputs. In some instances, you might even call all three methods to get the desired effect. After
+you complete this setup, the new input system will now be in charge of calling these methods.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If using the new input system, the system will no longer have the ability to change and save input bindings during runtime.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="priority">
