@@ -19,12 +19,12 @@ the inspector.
 
 .. image:: ../images/AITree.png
    :align: center
-   
+
 |
 
 .. image:: ../images/AIFSM.png
    :align: center
-   
+
 |
 
 ------------
@@ -46,8 +46,6 @@ This is a good thing, since we want the tree to be efficient and to only execute
 To allow the tree to check for inactive priority nodes, the system implements interrupt checks. 
 Interrupt checks must be enabled and are found in each Composite node. 
 
-------------
-
 Nodes
 =====
 
@@ -63,30 +61,32 @@ And there are four node types:
 
 Conditional Node
 ----------------
+
 Returns Success or Failure. Its main purpose is to test a condition in the game world, like checking if the player is nearby, 
 so the tree can execute an Action node in response.
 
 Action Node
 -----------
+
 Modifies the AI by changing its state in the game world. For example, apply a velocity to the AI so that it moves towards the player. 
 These nodes typically return Running.
 
 Composite Node
 --------------
+
 This node runs a list of child nodes. Composite nodes come in different types, and the type will determine how these child nodes are executed. 
 For example, a Sequence will run its child nodes in sequence until it finds one that returns Failure. A Parallel will run 
 all its children at the same time.
 
 Decorator Node
 --------------
+
 This node can only have one child node, and it will modify the output or behavior of this child node. For example, sometimes 
 it may be necessary to execute a child node after a time delay or perhaps to invert the output of the child node.
 
 Let's look at a very basic example for a patrolling AI. A Sequence has two child nodes. The first node, a Condition, will check if the 
 player is within distance. The second node, an Action, will move the AI towards the player. Only if the Condition returns Success will the Sequence 
 execute the second node. If the Condition returns Failure, the AI will not chase the player.
-
-------------
 
 Blackboard data
 ===============
@@ -121,11 +121,8 @@ this type, in the inspector, simply click on it and choose an option from the av
 
 If you are creating a node from scratch and need a blackboard data, simply add a **Blackboard** type as a public member and name it. 
 
-
 .. tip::
  If any blackboard data is renamed, make sure to click on any node using it to refresh the references.
-
-------------
 
 Node Editor Window
 ==================
@@ -133,7 +130,7 @@ Node Editor Window
 .. image:: ../images/NodeEditor.png
    :align: center
    :width: 100%
-   
+
 |
 
 If using AITree, a node editor will be required to create the nodes and to configure the node hierarchy.
@@ -147,7 +144,7 @@ inspector to create a Behavior Tree.
 
 .. image:: ../images/AITreeInspector.png
    :align: center
-   
+
 |
 
 Once you have created the necessary nodes, connect them. Each node that can establish a connection (Root, Composites, Decorators)
@@ -171,8 +168,6 @@ When the game enters play mode, the active nodes and connections will turn green
 
 .. tip::
   In the upper left corner, change the color of editor background.
-
-------------
 
 Interrupts
 ==========
@@ -202,13 +197,13 @@ will go into the Composite and check if its first child is a Conditional, and so
 
    * - None
      - The node will not check for any interrupts.
- 
+
    * - This Node
      - The node will be able to interrupt its own branch. A downward arrow will appear above the node.
 
    * - Lower Priority Nodes
      - The node will interrupt lower priority nodes. An upward arrow will appear above the node.
-  
+
    * - This And Lower Priority Nodes
      - The node will interrupt itself and lower priority nodes.
 
@@ -222,10 +217,8 @@ Below is a contrived example. The nodes don't actually do anything, but it shows
 
 .. image:: ../images/Interrupts.png
    :align: center
-   
-|
 
-------------
+|
 
 Inspector
 =========
@@ -242,7 +235,7 @@ Inspector
        No Collision Checks: this is the complete opposite of Regular. This is meant for AI that doesn't require complex interaction with the world.
        Moving Platform: if the AI is a moving platform, make sure it has this setting for proper function because moving platforms are 
        executed before all other objects in the game world. Moving Platforms should not be rotated on their axis.
- 
+
    * - Collision And Gravity
      - Refer to player for these settings.
 
@@ -252,7 +245,7 @@ Inspector
    * - Create Units
      - If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (gameobjects) necessary. 
        Every time you make a change to the FSM or BehaviorTree, recreate the units to ensure they all have the same code by pressing this button. 
-       The system will do its best to keep superficial transform settings the same.
+       The system will do its best to keep superficial transform settings unique.
 
    * - Reset To First
      - For a FSM, if this is enabled the system will move to the first state on a global reset. This only occurs if the Reset State is empty.
@@ -261,8 +254,6 @@ Inspector
    * - Turn Off Signals
      - If the AI doesn't require any animation signals, enable this to stop the basic animation signals from being set.
 
-------------
-
 FSM
 ===
 
@@ -270,45 +261,44 @@ A finite state machine provides an intuitive approach to creating AI. States mak
 number of states remains small. Thus, using a FSM should be your first option when designing most basic AI.
 
 All the nodes available to a Behavior Tree are also available to a FSM, except for Composite and Decorator nodes as those concepts 
-are irrelevant here. Once you create a state, click the add button to open the node context menu and create the necessary nodes (depicted in orange).
+are irrelevant here.
 
-There are three types of states to be aware of. First, you have the Normal States (depicted in blue).
+There are three types of states. First, you have the Normal States (depicted in blue).
 The first of these states will be the entry point into the state machine. When the state machine is running, only one of these states 
-will be active at a time. 
-
-The state bar will have two important fields. The first field is for naming the state. Name the state a unique name for 
-identification purposes. The second field lets you choose how to run the nodes. If **Parallel** is enabled, all the 
-nodes will run at the same time. If **Sequence** is enabled, the nodes will run in sequence. That is, the system will not move to the next node 
-until the current node either succeeds or fails. This sequence will always loop automatically. If **SequenceSucceed** is enabled, it works 
-the same as Sequence except the system only moves to the next node if the current node succeeded.  Create these states by clicking the blue 
-add button at the bottom of the inspector. 
+will be active at a time. Create these states by clicking the blue button at the bottom of the inspector. 
 
 Next you have the Always States (depicted in purple). These states will always run because sometimes it's necessary to have this type of functionality. 
-It is not possible to jump states from an Always State. These states should contain content that are applicable to each state. You create these by clicking
-the purple add button at the bottom of the inspector. 
+These states are technically not part of the state machine, and thus it is not possible to jump states from an Always State. 
+These states should contain content that are applicable to each state. You create these by clicking the purple button 
+at the bottom of the inspector. 
 
 And last is the Reset State (depicted in red). This state is called when the WorldManager 
 performs a game reset. The Reset State, if used, occurs in one frame and does not check for collision. Use this state to
 reset the AI's position, health, and other important variables.
 
-Since every node can potentially have one of three states (Success, Failure, Running), the system makes use of this to figure out 
-when to jump to the next state. Thus, each node will come equipped with two options. On Success and On Failure. If either of those
-are enabled, and the condition is met, the system will jump to the specified state. However, keep in mind that not every node will return
-Success or Failure. Many Action Nodes only return Running and Failure, so they will not work to jump to a new state on Success, but some 
-of them will return Success. When designing state jumps, don't lose sight of this fact.
+The state bar has some important options. The first field lets you choose how to run the nodes. If **Parallel** is enabled, all the 
+nodes will run at the same time. If **Sequence** is enabled, the nodes will run in sequence. That is, the system will not move to the next node 
+until the current node either succeeds or fails. This sequence will always loop automatically. If **SequenceSucceed** is enabled, it works 
+the same as Sequence except the system only moves to the next node if the current node succeeded. 
+
+The second field is a fold out button. Open it to name the state and to set a default animation signal. If this signal is enabled, the system 
+will set it true during the time the state executes. Press the delete button to delete the state. Click the add button to open the node context
+menu and create the necessary nodes (depicted in orange).
+
+Since every node can potentially have one of three states (Success, Failure, Running), the system uses this to figure out 
+when to jump to the next state. Thus, most nodes will come equipped with two options: on success and on failure. If you toggle the white arrow,
+these option swill become visible. If either one of them is enabled, the white arrow will turn blue. If the node does not have 
+the white arrow, it means it is not possible to jump state from this node. During runtime, if the condition is met for on success 
+or on failure, the system will jump to the specified state. 
 
 Below is a simple FSM. The AI is tasked with following the player. If the player deals damage to the AI, the AI will be pushed back,
 and then it will go into the Wait State. There it will wait for the specified time. Once the clock timer is complete,
-the On Success option will trigger a state jump to the Follow State.
-
-.. To make AI work with weapons, use the OnEvent node to call the Shoot method on a firearm.
+the on Success option will trigger a state jump to the Follow State.
 
 .. image:: ../images/FSMNode.png
    :align: center
-   
-|
 
-------------
+|
 
 AI Attacks, Damage
 ==================

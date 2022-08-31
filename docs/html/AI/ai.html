@@ -62,6 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -71,7 +72,23 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">AI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#behavior-tree">Behavior Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nodes">Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conditional-node">Conditional Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action-node">Action Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#composite-node">Composite Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decorator-node">Decorator Node</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#blackboard-data">Blackboard data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-editor-window">Node Editor Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interrupts">Interrupts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspector">Inspector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fsm">FSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ai-attacks-damage">AI Attacks, Damage</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pathfinding.html">Pathfinding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checkPoint.html">Check-Point</a></li>
@@ -91,7 +108,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -167,7 +183,6 @@ This is a good thing, since we want the tree to be efficient and to only execute
 To allow the tree to check for inactive priority nodes, the system implements interrupt checks.
 Interrupt checks must be enabled and are found in each Composite node.</p>
 </section>
-<hr class="docutils" />
 <section id="nodes">
 <h2>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline"></a></h2>
 <p>Each node can have one or more of three states:</p>
@@ -202,7 +217,6 @@ player is within distance. The second node, an Action, will move the AI towards 
 execute the second node. If the Condition returns Failure, the AI will not chase the player.</p>
 </section>
 </section>
-<hr class="docutils" />
 <section id="blackboard-data">
 <h2>Blackboard data<a class="headerlink" href="#blackboard-data" title="Permalink to this headline"></a></h2>
 <p>The Behavior Tree also implements blackboard data, which is data that can be shared between nodes. Blackboard data is separated into three
@@ -231,7 +245,6 @@ this type, in the inspector, simply click on it and choose an option from the av
 <p>If any blackboard data is renamed, make sure to click on any node using it to refresh the references.</p>
 </div>
 </section>
-<hr class="docutils" />
 <section id="node-editor-window">
 <h2>Node Editor Window<a class="headerlink" href="#node-editor-window" title="Permalink to this headline"></a></h2>
 <a class="reference internal image-reference" href="../_images/NodeEditor.png"><img alt="../_images/NodeEditor.png" class="align-center" src="../_images/NodeEditor.png" style="width: 100%;" /></a>
@@ -268,7 +281,6 @@ it’s not necessary anymore.</p>
 <p>In the upper left corner, change the color of editor background.</p>
 </div>
 </section>
-<hr class="docutils" />
 <section id="interrupts">
 <h2>Interrupts<a class="headerlink" href="#interrupts" title="Permalink to this headline"></a></h2>
 <p>A Behavior Tree will typically have lower and higher priority branches. Once a lower priority branch is executing, by default the system will no longer
@@ -320,7 +332,6 @@ will go into the Composite and check if its first child is a Conditional, and so
 <div class="line"><br /></div>
 </div>
 </section>
-<hr class="docutils" />
 <section id="inspector">
 <h2>Inspector<a class="headerlink" href="#inspector" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
@@ -349,7 +360,7 @@ executed before all other objects in the game world. Moving Platforms should not
 <tr class="row-odd"><td><p>Create Units</p></td>
 <td><p>If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (gameobjects) necessary.
 Every time you make a change to the FSM or BehaviorTree, recreate the units to ensure they all have the same code by pressing this button.
-The system will do its best to keep superficial transform settings the same.</p></td>
+The system will do its best to keep superficial transform settings unique.</p></td>
 </tr>
 <tr class="row-even"><td><p>Reset To First</p></td>
 <td><p>For a FSM, if this is enabled the system will move to the first state on a global reset. This only occurs if the Reset State is empty.
@@ -361,42 +372,42 @@ Otherwise the system moves to the first state automatically after the Reset Stat
 </tbody>
 </table>
 </section>
-<hr class="docutils" />
 <section id="fsm">
 <h2>FSM<a class="headerlink" href="#fsm" title="Permalink to this headline"></a></h2>
 <p>A finite state machine provides an intuitive approach to creating AI. States make it easy to reason about logic as long as the
 number of states remains small. Thus, using a FSM should be your first option when designing most basic AI.</p>
 <p>All the nodes available to a Behavior Tree are also available to a FSM, except for Composite and Decorator nodes as those concepts
-are irrelevant here. Once you create a state, click the add button to open the node context menu and create the necessary nodes (depicted in orange).</p>
-<p>There are three types of states to be aware of. First, you have the Normal States (depicted in blue).
+are irrelevant here.</p>
+<p>There are three types of states. First, you have the Normal States (depicted in blue).
 The first of these states will be the entry point into the state machine. When the state machine is running, only one of these states
-will be active at a time.</p>
-<p>The state bar will have two important fields. The first field is for naming the state. Name the state a unique name for
-identification purposes. The second field lets you choose how to run the nodes. If <strong>Parallel</strong> is enabled, all the
-nodes will run at the same time. If <strong>Sequence</strong> is enabled, the nodes will run in sequence. That is, the system will not move to the next node
-until the current node either succeeds or fails. This sequence will always loop automatically. If <strong>SequenceSucceed</strong> is enabled, it works
-the same as Sequence except the system only moves to the next node if the current node succeeded.  Create these states by clicking the blue
-add button at the bottom of the inspector.</p>
+will be active at a time. Create these states by clicking the blue button at the bottom of the inspector.</p>
 <p>Next you have the Always States (depicted in purple). These states will always run because sometimes it’s necessary to have this type of functionality.
-It is not possible to jump states from an Always State. These states should contain content that are applicable to each state. You create these by clicking
-the purple add button at the bottom of the inspector.</p>
+These states are technically not part of the state machine, and thus it is not possible to jump states from an Always State.
+These states should contain content that are applicable to each state. You create these by clicking the purple button
+at the bottom of the inspector.</p>
 <p>And last is the Reset State (depicted in red). This state is called when the WorldManager
 performs a game reset. The Reset State, if used, occurs in one frame and does not check for collision. Use this state to
 reset the AI’s position, health, and other important variables.</p>
-<p>Since every node can potentially have one of three states (Success, Failure, Running), the system makes use of this to figure out
-when to jump to the next state. Thus, each node will come equipped with two options. On Success and On Failure. If either of those
-are enabled, and the condition is met, the system will jump to the specified state. However, keep in mind that not every node will return
-Success or Failure. Many Action Nodes only return Running and Failure, so they will not work to jump to a new state on Success, but some
-of them will return Success. When designing state jumps, don’t lose sight of this fact.</p>
+<p>The state bar has some important options. The first field lets you choose how to run the nodes. If <strong>Parallel</strong> is enabled, all the
+nodes will run at the same time. If <strong>Sequence</strong> is enabled, the nodes will run in sequence. That is, the system will not move to the next node
+until the current node either succeeds or fails. This sequence will always loop automatically. If <strong>SequenceSucceed</strong> is enabled, it works
+the same as Sequence except the system only moves to the next node if the current node succeeded.</p>
+<p>The second field is a fold out button. Open it to name the state and to set a default animation signal. If this signal is enabled, the system
+will set it true during the time the state executes. Press the delete button to delete the state. Click the add button to open the node context
+menu and create the necessary nodes (depicted in orange).</p>
+<p>Since every node can potentially have one of three states (Success, Failure, Running), the system uses this to figure out
+when to jump to the next state. Thus, most nodes will come equipped with two options: on success and on failure. If you toggle the white arrow,
+these option swill become visible. If either one of them is enabled, the white arrow will turn blue. If the node does not have
+the white arrow, it means it is not possible to jump state from this node. During runtime, if the condition is met for on success
+or on failure, the system will jump to the specified state.</p>
 <p>Below is a simple FSM. The AI is tasked with following the player. If the player deals damage to the AI, the AI will be pushed back,
 and then it will go into the Wait State. There it will wait for the specified time. Once the clock timer is complete,
-the On Success option will trigger a state jump to the Follow State.</p>
+the on Success option will trigger a state jump to the Follow State.</p>
 <img alt="../_images/FSMNode.png" class="align-center" src="../_images/FSMNode.png" />
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 </section>
-<hr class="docutils" />
 <section id="ai-attacks-damage">
 <h2>AI Attacks, Damage<a class="headerlink" href="#ai-attacks-damage" title="Permalink to this headline"></a></h2>
 <p>There are four ways an AI can perform an attack on the player. Of course, if the following ways aren’t what you are looking for,

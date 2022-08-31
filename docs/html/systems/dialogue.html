@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Equipment" href="equipment.html" />
-    <link rel="prev" title="Camera Engine" href="cameraEngine.html" /> 
+    <link rel="prev" title="Audio Manager" href="audioManager.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,6 +61,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -90,8 +92,10 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cameraEngine.html">Camera Engine</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dialogue</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dialogue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dialogueui">DialogueUI</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
@@ -162,11 +166,14 @@ can move and scale UI elements, and the <strong>TextMeshProEffects</strong> can 
 <tr class="row-even"><td><p>Skip Button</p></td>
 <td><p>If this button exists, the user will be able to skip to the next message in the conversation.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Position Icon</p></td>
+<tr class="row-odd"><td><p>Block Inventories</p></td>
+<td><p>If enabled, any inventory trying to open will be blocked from opening.</p></td>
+</tr>
+<tr class="row-even"><td><p>Position Icon</p></td>
 <td><p>If enabled, the messenger icons will be positioned on the left or right of the message box,
 depending on the relative position of the messengers.</p></td>
 </tr>
-<tr class="row-even"><td><p>Is Random</p></td>
+<tr class="row-odd"><td><p>Is Random</p></td>
 <td><p>If enabled, this will display random conversations. If this is desired,
 enable the Is Random flag that also exists in each conversation for any conversation that should be treated as random.</p></td>
 </tr>
@@ -373,7 +380,7 @@ once the other class is complete, it must return a complete signal by calling <s
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="cameraEngine.html" class="btn btn-neutral float-left" title="Camera Engine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="audioManager.html" class="btn btn-neutral float-left" title="Audio Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="equipment.html" class="btn btn-neutral float-right" title="Equipment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

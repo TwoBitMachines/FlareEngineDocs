@@ -256,6 +256,10 @@ Slots are the most important elements of the Inventory. Everything else is optio
      - A button for using items. If Navigation is set to Unity Navigation, the selected item will be used if this button is pressed. If Navigation is set to 
        Manual, then the item in the first slot will be used. If no button is desired, set to None.
 
+   * - Blocked By
+     - If any referenced inventory in this list is already open, it will prevent this inventory from opening. This will only work if trying to open this inventory 
+       with the toggle inventory button.
+
 UI references are all optional and can be placed wherever necessary. If used, the system will be in charge of setting and enabling them when appropriate.
 
 .. list-table::

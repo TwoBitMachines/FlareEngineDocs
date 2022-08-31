@@ -30,7 +30,10 @@ can move and scale UI elements, and the **TextMeshProEffects** can add a typewri
 
    * - Skip Button
      - If this button exists, the user will be able to skip to the next message in the conversation.
-  
+
+   * - Block Inventories
+     - If enabled, any inventory trying to open will be blocked from opening.
+
    * - Position Icon
      - If enabled, the messenger icons will be positioned on the left or right of the message box,
        depending on the relative position of the messengers.

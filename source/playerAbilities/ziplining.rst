@@ -19,4 +19,10 @@ Enable this to allow the player to interact with Ziplines.
    * - Y Offset
      - The offset applied to the player's y position. This can be useful to align the animation.
 
+   * - Exit Button
+     - The player will exit the zipline if the exit button is pressed.
+
+   * - Relatch
+     - If enabled, the player will be able to land on the same zipline again after jumping.
+
 **Signals: zipline**

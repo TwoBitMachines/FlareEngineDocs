@@ -2,10 +2,53 @@ Check-Point
 +++++++++++
 
 On a game reset, the system will reset the player's position at the desired location, saving player progress.
+There are two versions of this system. The first one is a streamlined version, and the second was constructed using the AI system. 
+Both work, but the first one is recommended as it is a more intuitive approach.
 
-The check-point exists as a prefab and requires some setup. The check-point system was actually created using the AI system. 
-We will break-down how it works internally and hopefully this can serve as a good case study and give you an idea on how
-to create your own systems. 
+Streamlined version
+===================
+
+Add the **Check Point** component to an empty gameobject. You will then add check-point triggers to your level by clicking 
+the add button and dragging the triggers in the scene. The player will be reset at the bottom center of the trigger.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Name
+     - This must be a unique name for every scene.
+
+   * - Type
+     - Priority: if the check-point's index is greater than the current saved value, the system will save the new check-point.
+       Any: the system will accept any check-point as the new check-point regardless of index.
+
+   * - Save
+     - If automatic, the new check-point will be saved immediately. If on button press, the new check-point will wait until 
+       the specified button is pressed to begin the save process.
+
+   * - On Reset
+     - The Unity Event invoked when the player has been reset.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Check Point
+     - 
+
+   * - Index
+     - The priority index of the check-point. The larger the number, the higher the priority.
+
+   * - Position
+     - The position of the check-point in the game world. This is the position the player will reset to.
+
+AI FSM version
+==============
+
+The AI version can serve as a good case study and give you an idea on how to create your own systems. 
 
 .. image:: ../images/ResetPoint.png
    :align: center

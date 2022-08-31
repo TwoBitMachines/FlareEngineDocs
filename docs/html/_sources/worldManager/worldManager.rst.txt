@@ -25,7 +25,7 @@ add this component, and make sure it's always enabled. This gameobject should ne
    * - Encrypt Save
      - If enabled, this will encrypt the saved data.
 
-   * - Pause Key
+   * - Pause Input
      - A convenient button to toggle the pause state of the game.
 
    * - View Debug

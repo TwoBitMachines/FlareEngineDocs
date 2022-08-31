@@ -61,6 +61,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -90,11 +92,18 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Inventory</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Inventory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inventoryso">InventorySO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#itemso">ItemSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pickupitems">PickUpItems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#item">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Inventory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inventoryslot">InventorySlot</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
@@ -401,6 +410,10 @@ the item is only selected but not used.</p></td>
 <tr class="row-even"><td><p>Use Item</p></td>
 <td><p>A button for using items. If Navigation is set to Unity Navigation, the selected item will be used if this button is pressed. If Navigation is set to
 Manual, then the item in the first slot will be used. If no button is desired, set to None.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Blocked By</p></td>
+<td><p>If any referenced inventory in this list is already open, it will prevent this inventory from opening. This will only work if trying to open this inventory
+with the toggle inventory button.</p></td>
 </tr>
 </tbody>
 </table>

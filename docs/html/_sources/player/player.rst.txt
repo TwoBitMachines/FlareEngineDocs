@@ -20,25 +20,23 @@ world collision settings. You will also need to add a **RigidBody2D** to keep Un
 Inputs
 ======
 
-The engine implements a basic input system that can handle Keyboard and Mouse input directly (and in the most recent version, it will also interface with the new 
-input system). These inputs will be used to move the player and interact with the game world. And because each input is actually a scriptable object (**InputButtonSO**), 
-it becomes very easy to read and set input values. So, if you wish to control the player by other means, it's entirely possible 
-to control these inputs through method calls. 
+The system has two ways of dealing with inputs. By default, the system implements the old input system, 
+which works with keyboard, mouse, and UI buttons. In the second, the developer can interface with the new input 
+system. Both ways require the use of **InputButtonSO**, which is a scriptable object that acts as a wrapper 
+for both ways of dealing with input. These are created automatically and placed in the AssetsFolder/Inputs 
+each time you create an input with Create New Input. You will need to reference this folder from 
+time to time incase you want to setup UI buttons and other similar functionality.
 
-It's important to note you can change Keyboard and Mouse input keys during runtime, and the system will automatically 
-save these changes using PlayerPrefs.
+The system will create common inputs for movement, jumping, and firing, and it will expect the 
+Left, Right, and Jump inputs to always exist. The inputs you see in the inspector are directly 
+linked to an InputButtonSO.
 
-By default, the system will create common inputs for movement, jumping, and firing. To create an input of your own, 
-press Create New Input. Once the input is created, an InputButtonSO is automatically created
-and placed in the AssetsFolder/Inputs folder for reference. The input you see in the inspector is directly linked to its
-InputButtonSO.
-
-Each input has the ability to **bind** to other inputs. For example, if the jump input is bound to another input,
-then each time this other input goes true, the jump input will also go true. To bind inputs simply click the bottom triangle
-toggle and start adding them. You will need to set the InputButtonSO reference.
-
-.. important::
-   The system expects the Left, Right, and Jump inputs to always exist. They also need to have these exact same names. So don't delete them!
+Inputs in the default input system also have the ability to **bind** to other inputs. For example, if the jump 
+input is bound to another input,then each time this other input goes true, the jump input will also go true. 
+To bind inputs simply click the bottom triangle toggle and start adding them. You will need to set the
+InputButtonSO reference. These inputs can also change their Keyboard and Mouse values during runtime, 
+and the system will automatically save these changes using PlayerPrefs. This will not working 
+if you are using the new input system.
 
 .. image:: ../images/Inputs.png
    :align: center
@@ -53,13 +51,14 @@ toggle and start adding them. You will need to set the InputButtonSO reference.
      - 
 
    * - Name and Type
-     - Pick the type of input, Keyboard or Mouse.
- 
-   * - Button
-     - Pick which key will be used by the Keyboard or Mouse.
+     - Pick the type of input, Keyboard or Mouse and set its value.
 
    * - Bind Inputs
      - The references to the bound inputs.
+
+.. note::
+   Pressing the delete button will simply remove the Input from the player's input list. You must delete them manually to get rid of them. 
+   You can also drag and drop existing inputs into the drop area.
 
 .. list-table::
    :widths: 25 100
@@ -95,7 +94,7 @@ toggle and start adding them. You will need to set the InputButtonSO reference.
 ----------
 
 You will also notice that some player abilities have a setting called Button Trigger. This setting 
-allows you to choose when an input becomes active.
+allows you to choose when an input becomes true.
 
 * On Hold
 * On Press
@@ -105,12 +104,13 @@ allows you to choose when an input becomes active.
 * Active
 
 Always and Never are primarily used for AI weapons. Setting it to never will prevent the 
-weapon from being fired accidentally by player input, and setting it to always will mean it's
-always shooting! Active means the input is being held or pressed.
+weapon from being fired accidentally by player input, and setting it to always will mean the
+input is always true! Active means the input is being Held or Pressed via method call. 
+Otherwise use Hold, Press,and Release.
 
 ----------
 
-It's also now possible to interface with the **new input system**. First, install the package through 
+In order to interface with the new input system, install the package through 
 the Packet Manager if it's not installed already. By default, Flare Engine uses the old input system and 
 if you disable it, you will get an error. So, in Project Settings/Player set Active 
 Input Handling to Both. 
@@ -148,13 +148,9 @@ the following methods:
 |
 
 For instance, to get an input to behave like a button press just call InputPerformed() as seen by the Jump Input.
-However, if you want the input to behave like a hold, call both InputPerformedHold() and InputCancelled() like 
-the movement inputs. In some instances, you might even call all three methods to get the desired effect. After 
+However, if you want the input to behave like a button hold, call both InputPerformedHold() and InputCancelled() as 
+seen by the movement inputs. In some instances, you might even call all three methods to get the desired effect. After 
 you complete this setup, the new input system will now be in charge of calling these methods.
-
-.. important::
-   If using the new input system, the system will no longer have the ability to change and save input bindings during runtime.
-
 
 ------------
 

@@ -61,6 +61,8 @@
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
@@ -90,7 +92,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -131,9 +132,9 @@
   <section id="push-back">
 <h1>Push Back<a class="headerlink" href="#push-back" title="Permalink to this headline"></a></h1>
 <p>If the player is damaged, apply a push back velocity in the relevant direction. This ability works in tandem
-with the Health component. When the Health value changes, use its OnValueChanged Unity Event
-and connect it to the ActivatePushBack method (found on the Push Back component). That’s it. This event will send two values, damage and direction.
-If damage is negative, Push Back will commence.</p>
+with the Health component. When the Health value changes, use the OnValueChanged Unity Event
+and connect it to the ActivatePushBack method (found in the Push Back component). That’s it. This event will
+send two values, damage and direction. If damage is negative, Push Back will commence.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Typically, Push Back is set to the highest priority so it can override all other abilities. For example, if the player is climbing a wall, the player
@@ -162,7 +163,7 @@ To prevent this, add Crouch as an exception to Push Back so that both abilities 
 <tr class="row-odd"><td><p>Jump Force</p></td>
 <td><p>The force applied in the y direction. This force is applied only once.</p></td>
 </tr>
-<tr class="row-even"><td><p>Time</p></td>
+<tr class="row-even"><td><p>Push Time</p></td>
 <td><p>The total duration of the push back. The x velocity will be overridden during this time period.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Sprite Renderer And Material</p></td>
@@ -171,10 +172,13 @@ of the player. If the material is set, it will be applied to the Sprite Renderer
 the color of the sprite will be tinted. You can use the Material Hurt that comes with the system.</p></td>
 </tr>
 <tr class="row-even"><td><p>Color</p></td>
-<td><p>The color of the flash.</p></td>
+<td><p>The color of the damage flash.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Flash</p></td>
-<td><p>The number of times the flash occurs during push back.</p></td>
+<tr class="row-odd"><td><p>Flash Time</p></td>
+<td><p>The total duration of the damage flash.</p></td>
+</tr>
+<tr class="row-even"><td><p>Flash</p></td>
+<td><p>The number of flashes in damage flash.</p></td>
 </tr>
 </tbody>
 </table>
@@ -184,8 +188,8 @@ the color of the sprite will be tinted. You can use the Material Hurt that comes
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If the damage flash is applied, the inspector will create a lag spike when the material is being swapped. To prevent this,
-simply select another gameobject that is not the player.</p>
+<p>If the damage flash is applied, the inspector will create a lag spike when the material is being swapped.
+To prevent this, simply select another gameobject that is not the player.</p>
 </div>
 <p><strong>Signals: pushBack, pushBackLeft, pushBackRight</strong></p>
 </section>

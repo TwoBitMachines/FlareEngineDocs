@@ -61,6 +61,8 @@
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
@@ -90,7 +92,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -163,8 +164,12 @@ Loop Start Index.</p></td>
 <td><p>If holding the glide button, the player will gently glide down instead of falling when jumping. Air Glide can only occur after all the air jumps (if any)
 have occurred. The glide value must be between 0 and 1f.</p></td>
 </tr>
-<tr class="row-even"><td><p>Jump From Fall</p></td>
-<td><p>If the player walks off a platform (without jumping), the player can still execute Air Jumps or an Air Glide if enabled.</p></td>
+<tr class="row-even"><td><p>Buffers</p></td>
+<td><p>Jump Buffer: the time window the jump button can be pressed before the player hits the ground to execute a jump.
+Coyote Time: the time window the jump button can still be pressed after the player walks off a platform to execute a jump.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Glide From Fall</p></td>
+<td><p>If the player walks off a platform (without jumping), the player can still execute Air Glide or Air Jumps if enabled.</p></td>
 </tr>
 </tbody>
 </table>

@@ -31,7 +31,7 @@ the newly created melee attack. Since more than one melee attack can be register
      - The reference to the collider2D.
 
    * - Button
-     - The button and its trigger type that will start a melee attack.
+     - The input button that will start a melee attack.
 
 .. list-table::
    :widths: 25 100

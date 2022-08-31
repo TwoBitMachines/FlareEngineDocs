@@ -29,9 +29,13 @@ The most fundamental ability of any platformer.
    * - Air Glide
      - If holding the glide button, the player will gently glide down instead of falling when jumping. Air Glide can only occur after all the air jumps (if any) 
        have occurred. The glide value must be between 0 and 1f.
-       
-   * - Jump From Fall
-     - If the player walks off a platform (without jumping), the player can still execute Air Jumps or an Air Glide if enabled.
+
+   * - Buffers
+     - Jump Buffer: the time window the jump button can be pressed before the player hits the ground to execute a jump. 
+       Coyote Time: the time window the jump button can still be pressed after the player walks off a platform to execute a jump.
+
+   * - Glide From Fall
+     - If the player walks off a platform (without jumping), the player can still execute Air Glide or Air Jumps if enabled.
 
 .. list-table::
    :widths: 75 200
