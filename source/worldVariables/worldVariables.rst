@@ -2,8 +2,8 @@ World Variables
 +++++++++++++++
 .. complete
 These components allow you to create data that can be easily referenced. This data is also
-automatically saved and restored during runtime to preserve important information. The three types of variables
-used are **Float**, **String**, and **Vector3**. The **Health** component is also part of this group, 
+automatically saved and restored during runtime to preserve important information. The four types of variables
+used are **Float**, **Bool**, **String**, and **Vector3**. The **Health** component is also part of this group, 
 but it works as a Float underneath the hood.
 
 Each of these variables can be linked to a corresponding scriptable object. For example, if using the
