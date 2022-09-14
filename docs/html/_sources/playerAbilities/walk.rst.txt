@@ -22,11 +22,13 @@ Allow the player to move in the x direction. This ability is enabled by default.
        A value of zero means the player can instantly change direction in the air.
 
    * - Run
-     - If enabled, this will boost the Speed value.
+     - If enabled, this will boost the Speed value, and the running signal will be set true.
 
    * - Type
      - If Button is enabled, the user has to hold a button to run. If Time Threshold is enabled, the player has
-       to walk on the ground for a specified time uninterrupted before starting to run.
+       to walk on the ground for a specified time uninterrupted before starting to run. If Double Tap is enabled, 
+       the user must double tap the run button within the tap threshold time to start running, and the player will stop running 
+       once the button is released.
 
    * - Boost
      - Speed will be multiplied by Boost while the player is running.
@@ -45,3 +47,5 @@ Allow the player to move in the x direction. This ability is enabled by default.
 
    * - On Direction Changed
      - The Unity Event invoked when the player changes direction on the x-axis. Call a World Effect with the dynamic Activate method.
+
+**Signals: running**

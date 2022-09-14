@@ -18,6 +18,7 @@ Flare Engine Documentation
    :caption: Sprite Engine
 
    spriteEngine/spriteEngine
+   spriteEngine/spriteEngineUA
 
 .. toctree::
    :maxdepth: 5
@@ -30,6 +31,7 @@ Flare Engine Documentation
    playerAbilities/wall
    playerAbilities/ceiling
    playerAbilities/crouch
+   playerAbilities/crouchSlide
    playerAbilities/dash
    playerAbilities/hover
    playerAbilities/swim
@@ -37,6 +39,7 @@ Flare Engine Documentation
    playerAbilities/firearms
    playerAbilities/slopeSlide
    playerAbilities/pushBlock
+   playerAbilities/pickAndThrow
    playerAbilities/meleeAbility
    playerAbilities/ladderClimb
    playerAbilities/ropeSwing
@@ -73,6 +76,7 @@ Flare Engine Documentation
 
    systems/audioManager
    systems/dialogue
+   systems/quest
    systems/equipment
    systems/firearm
    systems/inventory

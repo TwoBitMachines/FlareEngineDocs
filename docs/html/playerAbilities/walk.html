@@ -56,11 +56,15 @@
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
@@ -90,7 +94,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -154,11 +157,13 @@ A value of one means there is no smoothing.</p></td>
 A value of zero means the player can instantly change direction in the air.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Run</p></td>
-<td><p>If enabled, this will boost the Speed value.</p></td>
+<td><p>If enabled, this will boost the Speed value, and the running signal will be set true.</p></td>
 </tr>
 <tr class="row-even"><td><p>Type</p></td>
 <td><p>If Button is enabled, the user has to hold a button to run. If Time Threshold is enabled, the player has
-to walk on the ground for a specified time uninterrupted before starting to run.</p></td>
+to walk on the ground for a specified time uninterrupted before starting to run. If Double Tap is enabled,
+the user must double tap the run button within the tap threshold time to start running, and the player will stop running
+once the button is released.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Boost</p></td>
 <td><p>Speed will be multiplied by Boost while the player is running.</p></td>
@@ -180,6 +185,7 @@ to walk on the ground for a specified time uninterrupted before starting to run.
 </tr>
 </tbody>
 </table>
+<p><strong>Signals: running</strong></p>
 </section>
 
 

@@ -42,10 +42,10 @@ will swim inside the body of water.
        must reach the top of the water.
 
    * - On Enter Water
-     - On water entry, a Unity Event containing the entry position is invoked. This could be useful for adding particle effects.
+     - The Unity Event invoked when the player enters the water. Call a World Effect with the dynamic Activate method.
 
    * - On Exit Water
-     - On water exit, a Unity Event containing the exit position is invoked.
+     - The Unity Event invoked when the player exits the water. Call a World Effect with the dynamic Activate method.
 
 .. note::
  A prefab called Bubbles emits bubble particles as the player swims. Make it a child of the Player. Feel free to change 

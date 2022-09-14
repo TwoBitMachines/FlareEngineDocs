@@ -12,8 +12,6 @@ to display the character's health. Any other system, like an enemy AI, can also 
 This will help decouple your systems because information is exchanged between gameobjects without 
 creating hard references.
 
-------------
-
 Float And Health
 ================
 
@@ -66,10 +64,10 @@ Float And Health
      - The Unity Event invoked when the current value has been changed. This is invoked with the change in value and the direction of damage, if using Health.
 
    * - On Load Condition True
-     - If Save is enabled, the Unity Event invoked if the restored value is greater than zero (True) on Start. 
+     - The Unity Event invoked if the value is greater than zero (True) on Start. 
 
    * - On Load Condition False
-     - If Save is enabled, the Unity Event invoked if the restored value is zero (False) on Start.
+     - The Unity Event invoked if the value is zero (False) on Start.
 
 .. list-table::
    :widths: 25 100
@@ -105,8 +103,6 @@ Float And Health
    * - CanTakeDamage(bool value)
      - If this is Health, the layer on this gameobject will be switched to the ignore raycast layer if False. Will revert on True.
 
-------------
-
 World Float HUD
 ===============
 
@@ -131,12 +127,10 @@ simply enable images and set values.
        To set Firearms simply drag the player gameobject into this field. This will display the ammunition amount for the current firearm the player has
        active. To set tool, drop any Firearm into this field.
 
-------------
+String, Bool, And Vector3
+=========================
 
-String And Vector3
-==================
-
-These work in a similar fashion as Float. The respective scriptable objects are **WorldStringSO** and **WorldVector3SO**.
+These work in a similar fashion as Float. The respective scriptable objects are **WorldStringSO**, **WorldBoolSO**, and **WorldVector3SO**.
 
 .. list-table::
    :widths: 25 100
@@ -146,7 +140,13 @@ These work in a similar fashion as Float. The respective scriptable objects are 
      - 
 
    * - AfterLoad
-     - If Save is enabled, the event invoked after the value has been restored. This occurs during Start. 
+     - The event invoked after the value has been initialized. 
+
+   * - On Load Condition True
+     - For Bool, the Unity Event invoked if the value is True on Start. 
+
+   * - On Load Condition False
+     - For Bool, the Unity Event invoked if the value is False on Start.
 
 .. list-table::
    :widths: 25 100
@@ -166,3 +166,22 @@ These work in a similar fashion as Float. The respective scriptable objects are 
  
    * - SetValue(type value)
      - Set the current value.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Method
+     - For Bool
+
+   * - SetTrue()
+     - Set value true.
+
+   * - SetFalse()
+     - Set value false.
+
+   * - IsTrue()
+     - Returns true if value is true.
+
+   * - IsFalse()
+     - Returns true if value is false;

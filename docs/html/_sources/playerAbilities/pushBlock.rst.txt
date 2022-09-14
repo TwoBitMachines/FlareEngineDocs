@@ -3,9 +3,9 @@ Push Block
 .. complete!
 The player can push and pull a block.
 
-Use the push block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject. 
-Set AI type to Regular. Set Collide With World Only to True in the Collision settings. Create one empty state. 
-Set the Tag to PushBlock. Set the Layer to Platform. And finally, add a Sprite Renderer.
+Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject. 
+Set the Tag to Block. Set Layer to Platform. Set AI type to MovingPlatform. Enable has Gravity. Enable Collide With World 
+Only in the Collision settings. Create one empty state Called Wait. Make sure this has a BoxCollider2D and a sprite renderer.
 
 You can also enable Climb Slopes on the AI to push the block up and down slopes. Rotate To Slope is not
 a supported function for push block, however.

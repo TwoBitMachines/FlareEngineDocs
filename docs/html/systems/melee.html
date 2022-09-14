@@ -46,6 +46,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngineUA.html">Sprite Engine UA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul>
@@ -56,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
@@ -63,6 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -93,6 +96,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
@@ -139,8 +143,14 @@ to loop once, and add a collider2D property to control the size and position of 
 The Melee system will be in charge of enabling the collider, and setting the animation signal active. Once the attack
 animation is complete, the <strong>CompleteAttack</strong> method must be called on the <strong>Melee</strong> class.</p>
 <p>To create a melee, create a gameobject and set it as a child of the player transform. Add the collider that will
-be used to deal damage. Then add the Melee component. The player must have the Melee ability enabled. Once enabled, register
+be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled. Once enabled, register
 the newly created melee attack. Since more than one melee attack can be registered, it is thus possible to change between melee attacks.</p>
+<p>The melee component also has the ability to execute a block to defend against enemy attacks. If blocking is enabled,
+add a RigidBody2D to this gameobject and set Body Type to kinematic. You will also need to change the
+layer to  World or Player. If set to World, this melee block will have the ability to block walking enemies.
+The block animation should be set up in similar fashion to an attack animation. Configure the collider, but setting
+the animation to loop will not be necessary. During runtime, this component will add the Health component to be able
+to sense enemy attacks.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -155,13 +165,54 @@ the newly created melee attack. Since more than one melee attack can be register
 <tr class="row-even"><td><p>Melee Name</p></td>
 <td><p>Name the melee for identification purposes.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Hit Layer</p></td>
-<td><p>The layer the collider2D will check for collisions.</p></td>
-</tr>
-<tr class="row-even"><td><p>Melee Collider</p></td>
+<tr class="row-odd"><td><p>Melee Collider</p></td>
 <td><p>The reference to the collider2D.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Button</p></td>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Blocking</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Block signal</p></td>
+<td><p>The animation signal that will be set True during blocking.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Block Button</p></td>
+<td><p>The input that must be held in order to block.</p></td>
+</tr>
+<tr class="row-even"><td><p>Must Hold</p></td>
+<td><p>You can choose two buttons that must be active in order to block. In the demo, button down is used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cancel Combo</p></td>
+<td><p>If enabled, the block input can stop an active melee combo from progressing in order to block.</p></td>
+</tr>
+<tr class="row-even"><td><p>Stop Vel X</p></td>
+<td><p>If enabled, the player will not be able to move in the x direction while blocking.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Combos</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hit Layer</p></td>
+<td><p>The layer the collider2D will check for collisions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Attack Button</p></td>
 <td><p>The input button that will start a melee attack.</p></td>
 </tr>
 </tbody>
@@ -172,7 +223,7 @@ the newly created melee attack. Since more than one melee attack can be register
 <col style="width: 80%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Properties</p></th>
+<tr class="row-odd"><th class="head"><p>Combos</p></th>
 <th class="head"><p>Some fields are only enabled if Combos has more than one attack.</p></th>
 </tr>
 </thead>
@@ -205,19 +256,25 @@ the newly created melee attack. Since more than one melee attack can be register
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Sprite Name</p></td>
+<tr class="row-even"><td><p>Signal Name</p></td>
 <td><p>The animation signal the system will set true when performing a combo.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Damage</p></td>
 <td><p>The amount of damage dealt to the target hit.</p></td>
 </tr>
 <tr class="row-even"><td><p>Velocity x</p></td>
-<td><p>The velocity applied to the combo in the x-direction.</p></td>
+<td><p>The velocity applied to the combo in the x-direction. Additive Velocity will be added to player movement. Absolute Velocity will override player movement. Event Velocity
+works like Absolute Velocity, but the BeginVelX (bool value) method must be called on the Melee component to active Event Velocity.
+This is usually called from the animation controller in a specific frame of the animation.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Velocity y</p></td>
-<td><p>The velocity applied to the combo in the y-direction. If Jump Velocity is enabled,the velocity will be treated as a jump force.</p></td>
+<td><p>The velocity applied to the combo in the y-direction. This has the same options as Velocity x and an extra one. If Jump Velocity is enabled, the velocity will be treated as a jump force.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Combo Begin</p></td>
+<tr class="row-even"><td><p>Go To Next</p></td>
+<td><p>This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
+to the next combo before the current one finishes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Combo Begin</p></td>
 <td><p>The event invoked when the Combo begins.</p></td>
 </tr>
 </tbody>

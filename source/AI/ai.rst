@@ -234,7 +234,8 @@ Inspector
      - Regular: the AI is affected by gravity and will be able to interact with the game world via raycasts. A BoxCollider2D will be required. 
        No Collision Checks: this is the complete opposite of Regular. This is meant for AI that doesn't require complex interaction with the world.
        Moving Platform: if the AI is a moving platform, make sure it has this setting for proper function because moving platforms are 
-       executed before all other objects in the game world. Moving Platforms should not be rotated on their axis.
+       executed before all other objects in the game world. Moving Platforms should not be rotated on their axis. In the latest version, enable 
+       has gravity on them to get them to behave like Regular AI.
 
    * - Collision And Gravity
      - Refer to player for these settings.

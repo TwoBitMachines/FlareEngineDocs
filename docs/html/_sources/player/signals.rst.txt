@@ -34,6 +34,7 @@ each frame or they will remain true.
 * ladderClimb
 * ceilingClimb
 * crouch
+* crouchSlide
 * crouchWalk
 * friction
 * sliding
@@ -47,6 +48,8 @@ each frame or they will remain true.
 * pushBackRight
 * pushBlock
 * pullBlock
+* pickedBlock
+* throwingBlock
 * inWater
 * swimming
 * floating

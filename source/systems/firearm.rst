@@ -152,7 +152,7 @@ Rotate the firearm.
      - 
 
    * - Rotate With
-     - How to rotate the firearm: Mouse, Keyboard, Auto Seek, Fixed Angle, No Rotation.
+     - How to rotate the firearm: Mouse, EightDirection, Auto Seek, Fixed Angle, Fixed Direction, No Rotation.
  
    * - Point Towards
      - The direction the firearm will point towards. If Character Direction is enabled, the firearm will point in the

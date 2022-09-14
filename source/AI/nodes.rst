@@ -11,6 +11,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Action
      - 
 
+   * - Follow Graph Points
+     - Navigate to points with the specified speed. Target must be TargetPoints.
+
    * - Follow Target
      - The AI will follow the specified target.
 
@@ -109,7 +112,13 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Enable Tree
      - Pause or remove the BehaviorTree from executing. Also specify the active state of the gameobject that belongs to the BehaviorTree.
-   
+  
+   * - Go To Next State
+     - Jump to another state. Useful if a node you are working with can't jump to a state.
+
+   * - IncDec Float
+     - Increase or decrease a float variable by the specified amount.
+
    * - On Event
      - Invoke and event.
 
@@ -130,6 +139,9 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Sprite Color
      - This will modify a sprite's color by lerping to a new one.
+
+   * - Wait For Player Input
+     - Wait for the player to enter the territory and then for the button to be pressed.
 
    * - World Effect
      - Call a world effect at the AI's position.
@@ -245,11 +257,17 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Return Failure
      - This will always return Failure.
 
+   * - InputButtonSO Get
+     - Returns success if InputButtonSO is true.
+
    * - Input Get
      - Get Input KeyDown or MouseDown.
 
-   * - InputButtonSO Get
-     - Returns success if InputButtonSO is true.
+   * - Is Quest Active
+     - Is this quest active?
+
+   * - Is Quest Complete
+     - Is this quest complete?
 
    * - Positional
      - Check the AI's position in relation to a target.

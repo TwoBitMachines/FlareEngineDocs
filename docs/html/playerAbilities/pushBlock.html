@@ -18,7 +18,9 @@
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pick And Throw" href="pickAndThrow.html" />
+    <link rel="prev" title="Slope Slide" href="slopeSlide.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,7 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../player/player.html">Player</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../player/signals.html">Signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="walk.html">Walk</a></li>
@@ -54,12 +56,15 @@
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
@@ -89,7 +94,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -130,9 +134,9 @@
   <section id="push-block">
 <h1>Push Block<a class="headerlink" href="#push-block" title="Permalink to this headline"></a></h1>
 <p>The player can push and pull a block.</p>
-<p>Use the push block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject.
-Set AI type to Regular. Set Collide With World Only to True in the Collision settings. Create one empty state.
-Set the Tag to PushBlock. Set the Layer to Platform. And finally, add a Sprite Renderer.</p>
+<p>Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject.
+Set the Tag to Block. Set Layer to Platform. Set AI type to MovingPlatform. Enable has Gravity. Enable Collide With World
+Only in the Collision settings. Create one empty state Called Wait. Make sure this has a BoxCollider2D and a sprite renderer.</p>
 <p>You can also enable Climb Slopes on the AI to push the block up and down slopes. Rotate To Slope is not
 a supported function for push block, however.</p>
 <p>The previous push block from version 1.1.0 is greyed out and still in Demo2 for reference. This previous push
@@ -168,7 +172,10 @@ If set to Button, specify the push and pull button.</p></td>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="slopeSlide.html" class="btn btn-neutral float-left" title="Slope Slide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pickAndThrow.html" class="btn btn-neutral float-right" title="Pick And Throw" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

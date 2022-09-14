@@ -56,11 +56,15 @@
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
@@ -90,7 +94,6 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../systems/cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -175,10 +178,10 @@ This force dictates how quickly the oscillations occur.</p></td>
 must reach the top of the water.</p></td>
 </tr>
 <tr class="row-even"><td><p>On Enter Water</p></td>
-<td><p>On water entry, a Unity Event containing the entry position is invoked. This could be useful for adding particle effects.</p></td>
+<td><p>The Unity Event invoked when the player enters the water. Call a World Effect with the dynamic Activate method.</p></td>
 </tr>
 <tr class="row-odd"><td><p>On Exit Water</p></td>
-<td><p>On water exit, a Unity Event containing the exit position is invoked.</p></td>
+<td><p>The Unity Event invoked when the player exits the water. Call a World Effect with the dynamic Activate method.</p></td>
 </tr>
 </tbody>
 </table>

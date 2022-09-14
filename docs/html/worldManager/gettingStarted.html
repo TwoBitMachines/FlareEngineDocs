@@ -40,7 +40,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-basics-getting-started">The Basics, Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#demo">Demo</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="worldManager.html">World Manager</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
@@ -56,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
@@ -63,6 +68,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -155,7 +161,7 @@ gameobject. Once this component is in the scene, it will automatically install t
 <p><strong>Tags</strong></p>
 <ul class="simple">
 <li><p><strong>Friction</strong> - Use this tag on any ground gameobject that is using the Friction component.</p></li>
-<li><p><strong>PushBlock</strong> - Use this tag on any push block if using the Push Block player ability.</p></li>
+<li><p><strong>Block</strong> - Use this tag on any block if using the Push Block of Pick And Throw player ability.</p></li>
 <li><p><strong>NoClimb</strong> - If the player can climb walls, use this tag on any wall gameobject that is <em>not</em> meant to be climbable.</p></li>
 </ul>
 <p>And that’s basically it. That’s all you need to get started. From here you can add a player, choose its abilities,

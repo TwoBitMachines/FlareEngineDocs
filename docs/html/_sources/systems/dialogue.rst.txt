@@ -88,6 +88,27 @@ Create any messenger that is relevant to the dialogue.
 
 ------------
 
+It's also possible to save the state of the conversation. Once an important event occurs, the conversation can be progressed 
+to a difference state so the player and npc can continue with a new conversation.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+     
+   * - Property
+     - 
+
+   * - Save Key
+     - This key will save the state of the conversation. This key must be unique across the entire game. If you press the Delete 
+       button, it will reset the save state to zero.
+
+   * - Conversation List
+     - Click the add button to add a conversation. Each conversation in the list represents a conversation state where the player and
+       npc will begin the conversation. Once an important event occurs, call SaveConversationState ( ) on this component. This can 
+       be called from anywhere. And the next time the Dialogue window opens, it will continue with the next conversation in the list.
+
+------------
+
 A dialogue is a series of conversations. Create as many as required. Each conversation will have a series of messages. Each message
 can either be of type Message or Choice. If type Choice is enabled, it should be the last message in the conversation because the player will
 be asked to make a choice, and each option in the choice will branch into another conversation. The dialogue will end once the current conversation 

@@ -25,4 +25,7 @@ Enable this to allow the player to interact with Ziplines.
    * - Relatch
      - If enabled, the player will be able to land on the same zipline again after jumping.
 
+   * - Apply Gravity
+     - If enabled, the player will slide automatically towards the lowest point of the zipline if it's facing towards it.
+
 **Signals: zipline**

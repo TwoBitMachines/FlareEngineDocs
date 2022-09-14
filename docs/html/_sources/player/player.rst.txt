@@ -21,7 +21,7 @@ Inputs
 ======
 
 The system has two ways of dealing with inputs. By default, the system implements the old input system, 
-which works with keyboard, mouse, and UI buttons. In the second, the developer can interface with the new input 
+which works with keyboard, mouse, and UI buttons. In the second, the system can interface with the new input 
 system. Both ways require the use of **InputButtonSO**, which is a scriptable object that acts as a wrapper 
 for both ways of dealing with input. These are created automatically and placed in the AssetsFolder/Inputs 
 each time you create an input with Create New Input. You will need to reference this folder from 
