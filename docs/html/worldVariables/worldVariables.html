@@ -143,8 +143,8 @@
 automatically saved and restored during runtime to preserve important information. The four types of variables
 used are <strong>Float</strong>, <strong>Bool</strong>, <strong>String</strong>, and <strong>Vector3</strong>. The <strong>Health</strong> component is also part of this group,
 but it works as a Float underneath the hood.</p>
-<p>Each of these variables can be linked to a corresponding scriptable object. For example, if using the
-Health component, the <strong>WorldFloatSO</strong> (scriptable object) that belongs to it can be used as a reference for UI elements
+<p>Each of these variables can be linked to a corresponding Scriptable Object. For example, if using the
+Health component, the <strong>WorldFloatSO</strong> (Scriptable Object) that belongs to it can be used as a reference for UI elements
 to display the character’s health. Any other system, like an enemy AI, can also read this value to change its behavior.
 This will help decouple your systems because information is exchanged between gameobjects without
 creating hard references.</p>
@@ -184,8 +184,8 @@ creating hard references.</p>
 <td><p>If enabled, the system will save and restore the current value. During development, press the delete icon to erase saved data.</p></td>
 </tr>
 <tr class="row-even"><td><p>Is Scriptable Object</p></td>
-<td><p>If enabled, a button will appear to create a scriptable object (<strong>WorldFloatSO</strong>). If created, it will be found in the AssetsFolder/Variables folder. If the scriptable
-object is no longer required, delete it manually.</p></td>
+<td><p>If enabled, create a Scriptable Object (<strong>WorldFloatSO</strong>) that will be placed in the AssetsFolder/Variables folder. If the Scriptable
+Object is no longer required, delete it manually.</p></td>
 </tr>
 </tbody>
 </table>
@@ -289,7 +289,7 @@ active. To set tool, drop any Firearm into this field.</p></td>
 </section>
 <section id="string-bool-and-vector3">
 <h2>String, Bool, And Vector3<a class="headerlink" href="#string-bool-and-vector3" title="Permalink to this headline"></a></h2>
-<p>These work in a similar fashion as Float. The respective scriptable objects are <strong>WorldStringSO</strong>, <strong>WorldBoolSO</strong>, and <strong>WorldVector3SO</strong>.</p>
+<p>These work in a similar fashion as Float. The respective Scriptable Objects are <strong>WorldStringSO</strong>, <strong>WorldBoolSO</strong>, and <strong>WorldVector3SO</strong>.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />

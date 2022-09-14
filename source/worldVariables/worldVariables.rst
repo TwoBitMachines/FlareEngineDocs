@@ -6,8 +6,8 @@ automatically saved and restored during runtime to preserve important informatio
 used are **Float**, **Bool**, **String**, and **Vector3**. The **Health** component is also part of this group, 
 but it works as a Float underneath the hood.
 
-Each of these variables can be linked to a corresponding scriptable object. For example, if using the
-Health component, the **WorldFloatSO** (scriptable object) that belongs to it can be used as a reference for UI elements 
+Each of these variables can be linked to a corresponding Scriptable Object. For example, if using the
+Health component, the **WorldFloatSO** (Scriptable Object) that belongs to it can be used as a reference for UI elements 
 to display the character's health. Any other system, like an enemy AI, can also read this value to change its behavior.
 This will help decouple your systems because information is exchanged between gameobjects without 
 creating hard references.
@@ -44,8 +44,8 @@ Float And Health
      - If enabled, the system will save and restore the current value. During development, press the delete icon to erase saved data.
 
    * - Is Scriptable Object
-     - If enabled, a button will appear to create a scriptable object (**WorldFloatSO**). If created, it will be found in the AssetsFolder/Variables folder. If the scriptable
-       object is no longer required, delete it manually.
+     - If enabled, create a Scriptable Object (**WorldFloatSO**) that will be placed in the AssetsFolder/Variables folder. If the Scriptable
+       Object is no longer required, delete it manually.
 
 .. list-table::
    :widths: 25 100
@@ -130,7 +130,7 @@ simply enable images and set values.
 String, Bool, And Vector3
 =========================
 
-These work in a similar fashion as Float. The respective scriptable objects are **WorldStringSO**, **WorldBoolSO**, and **WorldVector3SO**.
+These work in a similar fashion as Float. The respective Scriptable Objects are **WorldStringSO**, **WorldBoolSO**, and **WorldVector3SO**.
 
 .. list-table::
    :widths: 25 100
