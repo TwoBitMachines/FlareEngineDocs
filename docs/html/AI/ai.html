@@ -46,6 +46,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngineUA.html">Sprite Engine UA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul>
@@ -56,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
@@ -63,6 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
@@ -109,6 +112,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
@@ -349,7 +353,8 @@ will go into the Composite and check if its first child is a Conditional, and so
 <td><p>Regular: the AI is affected by gravity and will be able to interact with the game world via raycasts. A BoxCollider2D will be required.
 No Collision Checks: this is the complete opposite of Regular. This is meant for AI that doesn’t require complex interaction with the world.
 Moving Platform: if the AI is a moving platform, make sure it has this setting for proper function because moving platforms are
-executed before all other objects in the game world. Moving Platforms should not be rotated on their axis.</p></td>
+executed before all other objects in the game world. Moving Platforms should not be rotated on their axis. In the latest version, enable
+has gravity on them to get them to behave like Regular AI.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Collision And Gravity</p></td>
 <td><p>Refer to player for these settings.</p></td>

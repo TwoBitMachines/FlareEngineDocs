@@ -9,7 +9,7 @@ SpriteEngineUA only requires a reference to the animator and the names of the an
 to start appending animation names. 
 
 The animator component should not exist on the same gameobject as the Player or AI components. 
-The animator and all its contents must exist as a child objects of the character. This is important since the localScale will 
+The animator and all its contents must exist as child objects of the character. This is important since the localScale will 
 be flipped to change the direction of the animation. Also, any weapons attached to the character should not be 
 children of the animation objects.
 
