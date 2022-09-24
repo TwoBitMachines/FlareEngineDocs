@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Nodes" href="nodes.html" />
-    <link rel="prev" title="Jump On Enemy" href="../playerAbilities/jumpOnEnemy.html" /> 
+    <link rel="prev" title="Vehicle" href="../playerAbilities/vehicle.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -72,6 +72,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul class="current">
@@ -415,19 +419,43 @@ the on Success option will trigger a state jump to the Follow State.</p>
 </section>
 <section id="ai-attacks-damage">
 <h2>AI Attacks, Damage<a class="headerlink" href="#ai-attacks-damage" title="Permalink to this headline"></a></h2>
-<p>There are four ways an AI can perform an attack on the player. Of course, if the following ways aren’t what you are looking for,
-it is always possible to implement a custom solution.</p>
-<p>First, in the Settings options enable Damage. The system will use the existing collider on the AI. Once the player
-comes into contact with the AI, it will be dealt damage.</p>
-<p>Second, the AI can use a Firearm to shoot projectiles at the player. Somewhere in your logic, you will use an OnEvent node.
+<p>There are four ways an AI can attack another character. First, in the AI options enable Damage.
+The system will use the existing collider on the AI. Once a character comes into contact with the AI, it will be dealt damage.
+Second, and very similar, use the <strong>Damage</strong> class. Simply add this component to any gameobject. Add a Collider2D and enable isTrigger.
+This is particular useful for static objects like spikes.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Layer</p></td>
+<td><p>The layer where damage is dealt, usually the Player.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Direction</p></td>
+<td><p>The direction of damage. AI_X_Direction will move the injured party to the left or right,
+depending on the relative position of the AI.</p></td>
+</tr>
+<tr class="row-even"><td><p>Amount</p></td>
+<td><p>The amount of damage dealt.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Force</p></td>
+<td><p>The forced applied in the direction of damage.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Third, the AI can use a Firearm to shoot projectiles. Somewhere in your logic, you will use an OnEvent node.
 This event should trigger the Shoot() method that belongs to the Firearm class.</p>
-<p>Third, use the MeleeAttack node. Once this node is active, it will enable a separate collider
-to damage the player. The attack animation for the melee attack is setup and executed elsewhere. The MeleeAttack
+<p>Fourth, use the MeleeAttack node. Once this node is active, it will enable a separate collider
+to damage a character. The attack animation for the melee attack is setup and executed elsewhere. The MeleeAttack
 node is only in charge of dealing damage, enabling the collider, and setting the animation signals. You can use SpriteEngine to play the animation
 and control the size and position of the collider. Once the animation is done playing, the CompleteAttack() method of the MeleeAttack class <strong>must</strong>
 be called, or else the finite state machine will get stuck in its current state.</p>
-<p>Fourth, use the <strong>Damage</strong> class. Simply add this component to any gameobject. Add a collider2D and set isTrigger to true. This will deal damage
-to any character that exists in the Damage Layer when contact is made. This is particular useful for static objects like spikes.</p>
 </section>
 </section>
 
@@ -435,7 +463,7 @@ to any character that exists in the Damage Layer when contact is made. This is p
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../playerAbilities/jumpOnEnemy.html" class="btn btn-neutral float-left" title="Jump On Enemy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../playerAbilities/vehicle.html" class="btn btn-neutral float-left" title="Vehicle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="nodes.html" class="btn btn-neutral float-right" title="Nodes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

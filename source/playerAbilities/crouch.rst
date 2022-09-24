@@ -1,6 +1,6 @@
 Crouch
 ++++++
-.. complete!
+
 Let the player crouch and crawl. This will modify the size of the BoxCollider2D.
 
 .. list-table::

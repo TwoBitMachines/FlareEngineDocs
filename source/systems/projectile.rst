@@ -1,6 +1,6 @@
 Projectiles
 +++++++++++
-.. complete!
+
 
 Projectiles are for shooting. There are three basic types: Bullet, Instant, and Short Range, and each once can be customized 
 to create plenty of variety. Each type will deal damage to any gameobject that has a Health component
@@ -37,6 +37,9 @@ Projectile
    * - Ammo Damage
      - The amount of damage dealt to any target with a Health component.
 
+   * - Ammo Force
+     - The forced applied in the direction of damage.
+
    * - Fire Rate
      - How often a firearm can shoot this projectile. A value of zero will mean the firearm can shoot this projectile
        every frame.
@@ -46,7 +49,6 @@ Projectile
 
    * - On Ammo Empty
      - The Unity Event invoked when the ammo count is zero.
-
 
 .. list-table::
    :widths: 25 100
@@ -192,7 +194,7 @@ This is the most basic bullet. It has no extra properties.
 Bounce 
 ======
 
-This bullet will bounce off walls.
+This bullet will bounce off walls. By default, this will check for World and Platform collisions if the y velocity is negative.
 
 .. list-table::
    :widths: 25 100
@@ -200,9 +202,9 @@ This bullet will bounce off walls.
 
    * - Property
      - Common
-     
+
    * - Bounce Friction
-     - If this value is greater than zero, every time the bullet bounces off a wall, it will lose velocity.
+     - If this value is greater than zero, every time the bullet bounces off a wall, it will lose velocity in the specified axis.
 
    * - Bounce Radius
      - The radius of the bullet. Required for collision checks.
@@ -211,6 +213,12 @@ This bullet will bounce off walls.
      - How much the bullet spins on its axis. If the bullet is a bouncing ball (that means gravity is enabled), then set 
        this to a nonzero value, or else the bullet will constantly rotate according to its direction, which might look
        inappropriate for a bouncing ball.
+
+   * - No Spin
+     - If enabled, the bullet will not rotate.
+
+   * - Active After Hit
+     - If enabled, the bullet will keep moving event after hitting damageable objects.
 
 .. important:: 
    Bounce and Bounce4R work exactly the same. However, Bounce4R uses four raycasts to detect walls. Use Bounce4R

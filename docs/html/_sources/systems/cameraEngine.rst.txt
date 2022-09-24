@@ -1,6 +1,6 @@
 Camera Engine
 +++++++++++++
-.. complete
+
 The camera will follow the player with a smoothing speed.
 
 .. list-table::

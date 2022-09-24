@@ -1,6 +1,6 @@
 Melee
 +++++
-.. complete!
+
 Register the melee attacks so they can be properly executed. Unlike firearms, only one melee attack 
 can be active at at a time. The melee attack that will be executed will always be the first one in the list.
 

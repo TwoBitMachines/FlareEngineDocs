@@ -1,6 +1,6 @@
 Rope 
 ++++
-.. complete!
+
 The player can use ropes to swing or for simple idle interactions. Add this component to an empty gameobject.
 
 .. image:: ../images/interactables/RopeGif.gif

@@ -1,6 +1,6 @@
 Push Back
 +++++++++
-.. complete!
+
 If the player is damaged, apply a push back velocity in the relevant direction. This ability works in tandem
 with the Health component. When the Health value changes, use the OnValueChanged Unity Event
 and connect it to the ActivatePushBack method (found in the Push Back component). That's it. This event will 

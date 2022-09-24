@@ -1,6 +1,6 @@
 Rope
 ++++
-.. complete!
+
 The player can interact with ropes.
 
 .. list-table::

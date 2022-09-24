@@ -46,6 +46,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngineUA.html">Sprite Engine UA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul>
@@ -56,17 +57,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ropeSwing.html">Rope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -90,14 +99,26 @@
 <p class="caption" role="heading"><span class="caption-text">Systems</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cameraEngine.html">Camera Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Projectiles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Projectiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#projectile">Projectile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bullet">Bullet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic">Basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bounce">Bounce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#colliding">Colliding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#seeker">Seeker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stick-to-wall">Stick To Wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instant">Instant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#short-range">Short Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#projectile-inventory">Projectile Inventory</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
@@ -167,14 +188,17 @@ can provide the firearm with 10 seconds of shooting, for example. The max value 
 <tr class="row-even"><td><p>Ammo Damage</p></td>
 <td><p>The amount of damage dealt to any target with a Health component.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Fire Rate</p></td>
+<tr class="row-odd"><td><p>Ammo Force</p></td>
+<td><p>The forced applied in the direction of damage.</p></td>
+</tr>
+<tr class="row-even"><td><p>Fire Rate</p></td>
 <td><p>How often a firearm can shoot this projectile. A value of zero will mean the firearm can shoot this projectile
 every frame.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Ammo Reload</p></td>
+<tr class="row-odd"><td><p>On Ammo Reload</p></td>
 <td><p>The Unity Event invoked when the ammo count is increased.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Ammo Empty</p></td>
+<tr class="row-even"><td><p>On Ammo Empty</p></td>
 <td><p>The Unity Event invoked when the ammo count is zero.</p></td>
 </tr>
 </tbody>
@@ -342,7 +366,7 @@ also invoke world effects. If the impact effect is specified, the hit point and 
 <hr class="docutils" />
 <section id="bounce">
 <h2>Bounce<a class="headerlink" href="#bounce" title="Permalink to this headline"></a></h2>
-<p>This bullet will bounce off walls.</p>
+<p>This bullet will bounce off walls. By default, this will check for World and Platform collisions if the y velocity is negative.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -355,7 +379,7 @@ also invoke world effects. If the impact effect is specified, the hit point and 
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Bounce Friction</p></td>
-<td><p>If this value is greater than zero, every time the bullet bounces off a wall, it will lose velocity.</p></td>
+<td><p>If this value is greater than zero, every time the bullet bounces off a wall, it will lose velocity in the specified axis.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Bounce Radius</p></td>
 <td><p>The radius of the bullet. Required for collision checks.</p></td>
@@ -364,6 +388,12 @@ also invoke world effects. If the impact effect is specified, the hit point and 
 <td><p>How much the bullet spins on its axis. If the bullet is a bouncing ball (that means gravity is enabled), then set
 this to a nonzero value, or else the bullet will constantly rotate according to its direction, which might look
 inappropriate for a bouncing ball.</p></td>
+</tr>
+<tr class="row-odd"><td><p>No Spin</p></td>
+<td><p>If enabled, the bullet will not rotate.</p></td>
+</tr>
+<tr class="row-even"><td><p>Active After Hit</p></td>
+<td><p>If enabled, the bullet will keep moving event after hitting damageable objects.</p></td>
 </tr>
 </tbody>
 </table>

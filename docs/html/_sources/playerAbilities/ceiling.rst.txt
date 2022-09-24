@@ -1,6 +1,6 @@
 Ceiling
 +++++++
-.. complete!
+
 The player will latch onto a ceiling and move in the x direction. This is not meant to work on sloped ceilings.
 
 .. list-table::

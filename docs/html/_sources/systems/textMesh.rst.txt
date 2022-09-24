@@ -1,6 +1,6 @@
 Text Mesh Pro Effects
 +++++++++++++++++++++
-.. complete!
+
 Create special effects for any TextMeshPro. This includes the classic typewriting effect and a variety of other effects that can
 be applied to individual words or sentences. Since the system is working with TextMeshPro, feel free to apply Rich Text Tags to your text. 
 This system makes specif use of **<link>** for many of the effects below.

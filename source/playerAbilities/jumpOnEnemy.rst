@@ -1,6 +1,6 @@
 Jump On Enemy
 +++++++++++++
-.. complete!
+
 Jump on an enemy to deal damage.
 
 .. list-table::
@@ -11,10 +11,13 @@ Jump on an enemy to deal damage.
      - 
 
    * - Layer
-     - The layer the enemy belongs to.
+     - The layer where damage is dealt, usually the Enemy.
  
    * - Damage 
-     - The damage amount dealt to the enemy.
+     - The amount of damage dealt.
+
+   * - Damage Force
+     - The forced applied in the direction of damage.
 
    * - Bounce Force
-     - The jump force applied to the player after contact with the enemy.
+     - The jump force applied to the player after contact.

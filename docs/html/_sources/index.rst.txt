@@ -46,6 +46,10 @@ Flare Engine Documentation
    playerAbilities/pushBack
    playerAbilities/ziplining
    playerAbilities/jumpOnEnemy
+   playerAbilities/slamOnEnemy
+   playerAbilities/yoshiTongue
+   playerAbilities/passenger
+   playerAbilities/vehicle
 
 .. toctree::
    :maxdepth: 5

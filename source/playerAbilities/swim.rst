@@ -1,6 +1,6 @@
 Swim
 +++++
-.. complete!
+
 Allow the player to swim or float on any body of water. The body of water will determine 
 if the player either floats or swims. If floating, the player will remain above the water line. If swimming, the player 
 will swim inside the body of water.

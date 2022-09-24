@@ -1,6 +1,6 @@
 Ladder
 ++++++
-.. complete!
+
 The humble ladder is used for climbing. Add this component to an empty gameobject.
 
 .. image:: ../images/interactables/LadderGif.gif
@@ -21,4 +21,7 @@ The humble ladder is used for climbing. Add this component to an empty gameobjec
 
    * - Size   
      - The width and height of the ladder.
-     
+
+   * - Position On Awake
+     - If enabled, the ladder will reposition itself on Awake in case it was moved.
+   

@@ -1,6 +1,6 @@
 Sprite Engine
 +++++++++++++
-.. complete!
+
 The **SpriteEngine** component provides an extremely easy way for creating and storing sprites. 
 The Sprite Engine removes the hassle of working with different systems and centralizes 
 the power of creating sprites all in one place. Hence, there is no more need for creating 

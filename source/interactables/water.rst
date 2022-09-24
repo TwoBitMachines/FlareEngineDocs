@@ -1,6 +1,6 @@
 Water
 +++++
-.. complete!
+
 Water is a dynamic area where the player can float and swim. Add this component to an empty gameobject.
 
 .. image:: ../images/interactables/WaterGif.gif
@@ -30,7 +30,10 @@ Water is a dynamic area where the player can float and swim. Add this component 
 
    * - Segments
      - The number of elements that create the water. The higher the number, the less blocky the water will look.
-  
+
+   * - Create On Awake
+     - If enabled, the water will recreate itself on Awake in case it was moved. Typically, you want to initialize this during editor time to reduce initializing time.
+
    * - Texture2D
      - If Shape mode is Round, provide the Texture2D that will be used to render the water.
 

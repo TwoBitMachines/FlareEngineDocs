@@ -46,6 +46,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngineUA.html">Sprite Engine UA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul class="current">
@@ -71,6 +72,10 @@
 <li class="toctree-l1"><a class="reference internal" href="pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -95,6 +100,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
@@ -133,12 +139,12 @@
              
   <section id="pick-and-throw">
 <h1>Pick And Throw<a class="headerlink" href="#pick-and-throw" title="Permalink to this headline"></a></h1>
-<p>The player can pickup and throw a block.</p>
+<p>The player can pickup and throw a block. Use Moving Platforms must be enabled in the collision settings to use this ability properly.</p>
 <p>Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject.
 Set the Tag to Block. Set Layer to Platform. Set AI type to MovingPlatform. Enable has Gravity. Enable Collide With World
-Only in the Collision settings. Create one empty state Called Wait. Another called Throw, and the Throw node. Set the throw velocity.
+Only in the Collision settings. Create one empty state Called Wait. Another called Throw, and add the Throw node. Set the throw velocity.
 Enable OnSuccess and OnFailure to jump to the Slide State. Add the Slide state and the Slide node. Set the slide speed.
-Enable OnSuccess and OnFailure to jump to the Wait sate. This player ability will be in charge of using these states.
+Enable OnSuccess and OnFailure to jump to the Wait sate. This ability will be in charge of using these states.
 Make sure this has a BoxCollider2D and a sprite renderer.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>

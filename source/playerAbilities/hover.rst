@@ -1,6 +1,6 @@
 Hover
 +++++
-.. complete!
+
 Escape gravity by letting the player hover in the air.
 
 .. list-table::

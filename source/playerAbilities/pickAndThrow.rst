@@ -1,13 +1,13 @@
 Pick And Throw
 ++++++++++++++
-.. complete!
-The player can pickup and throw a block.
+
+The player can pickup and throw a block. Use Moving Platforms must be enabled in the collision settings to use this ability properly.
 
 Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject. 
 Set the Tag to Block. Set Layer to Platform. Set AI type to MovingPlatform. Enable has Gravity. Enable Collide With World 
-Only in the Collision settings. Create one empty state Called Wait. Another called Throw, and the Throw node. Set the throw velocity.
+Only in the Collision settings. Create one empty state Called Wait. Another called Throw, and add the Throw node. Set the throw velocity.
 Enable OnSuccess and OnFailure to jump to the Slide State. Add the Slide state and the Slide node. Set the slide speed. 
-Enable OnSuccess and OnFailure to jump to the Wait sate. This player ability will be in charge of using these states.
+Enable OnSuccess and OnFailure to jump to the Wait sate. This ability will be in charge of using these states.
 Make sure this has a BoxCollider2D and a sprite renderer.
 
 .. list-table::

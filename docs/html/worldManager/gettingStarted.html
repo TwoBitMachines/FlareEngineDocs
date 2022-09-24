@@ -50,6 +50,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngineUA.html">Sprite Engine UA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul>
@@ -75,6 +76,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -99,6 +104,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
@@ -163,6 +169,7 @@ gameobject. Once this component is in the scene, it will automatically install t
 <li><p><strong>Friction</strong> - Use this tag on any ground gameobject that is using the Friction component.</p></li>
 <li><p><strong>Block</strong> - Use this tag on any block if using the Push Block of Pick And Throw player ability.</p></li>
 <li><p><strong>NoClimb</strong> - If the player can climb walls, use this tag on any wall gameobject that is <em>not</em> meant to be climbable.</p></li>
+<li><p><strong>UIControl</strong> - Place this on any UI that needs to ignore IsPointerOverGameObject. This is useful for UI buttons that need to fire weapons.</p></li>
 </ul>
 <p>And that’s basically it. That’s all you need to get started. From here you can add a player, choose its abilities,
 design AI enemies, setup common systems such as Inventory or Dialogue, and implement world interactables to spice up your game.</p>

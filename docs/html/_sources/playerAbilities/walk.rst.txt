@@ -1,6 +1,6 @@
 Walk
 ++++
-.. complete!
+
 Allow the player to move in the x direction. This ability is enabled by default.
 
 .. list-table::
@@ -9,7 +9,7 @@ Allow the player to move in the x direction. This ability is enabled by default.
 
    * - Property
      - 
-
+     
    * - Speed
      - The speed of the player in the x direction.
 
@@ -17,7 +17,7 @@ Allow the player to move in the x direction. This ability is enabled by default.
      - A smoothing effect is applied to the speed every time the player starts or stops moving in the x direction. 
        A value of one means there is no smoothing.
 
-   * - Impede Change
+   * - Damp Air Change
      - The resistance towards changing direction while the player is in the air.
        A value of zero means the player can instantly change direction in the air.
 
@@ -28,7 +28,8 @@ Allow the player to move in the x direction. This ability is enabled by default.
      - If Button is enabled, the user has to hold a button to run. If Time Threshold is enabled, the player has
        to walk on the ground for a specified time uninterrupted before starting to run. If Double Tap is enabled, 
        the user must double tap the run button within the tap threshold time to start running, and the player will stop running 
-       once the button is released.
+       once the button is released. If Button Is LeftRight is enabled, it means the button is mapped to the left and right input,
+       and this will prevent entering the run state if the player direction is simply being changed.
 
    * - Boost
      - Speed will be multiplied by Boost while the player is running.
@@ -49,3 +50,4 @@ Allow the player to move in the x direction. This ability is enabled by default.
      - The Unity Event invoked when the player changes direction on the x-axis. Call a World Effect with the dynamic Activate method.
 
 **Signals: running**
+

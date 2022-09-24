@@ -71,6 +71,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -234,25 +238,28 @@ Object is no longer required, delete it manually.</p></td>
 <tr class="row-odd"><td><p>Save()</p></td>
 <td><p>Save the current value.</p></td>
 </tr>
-<tr class="row-even"><td><p>SetValueAndSave(float value)</p></td>
+<tr class="row-even"><td><p>DeleteSavedData()</p></td>
+<td><p>Delete the current saved data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SetValueAndSave(float value)</p></td>
 <td><p>Set the current value and save it.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Increment(float value)</p></td>
+<tr class="row-even"><td><p>Increment(float value)</p></td>
 <td><p>Increment the current value.</p></td>
 </tr>
-<tr class="row-even"><td><p>SetValue(float value)</p></td>
+<tr class="row-odd"><td><p>SetValue(float value)</p></td>
 <td><p>Set the current value.</p></td>
 </tr>
-<tr class="row-odd"><td><p>CanIncrement(bool value)</p></td>
+<tr class="row-even"><td><p>CanIncrement(bool value)</p></td>
 <td><p>If false, the current value can’t be incremented.</p></td>
 </tr>
-<tr class="row-even"><td><p>SetTrue()</p></td>
+<tr class="row-odd"><td><p>SetTrue()</p></td>
 <td><p>Give the current value a value of 1f.</p></td>
 </tr>
-<tr class="row-odd"><td><p>SetFalse()</p></td>
+<tr class="row-even"><td><p>SetFalse()</p></td>
 <td><p>Give the current value a value of 0f.</p></td>
 </tr>
-<tr class="row-even"><td><p>CanTakeDamage(bool value)</p></td>
+<tr class="row-odd"><td><p>CanTakeDamage(bool value)</p></td>
 <td><p>If this is Health, the layer on this gameobject will be switched to the ignore raycast layer if False. Will revert on True.</p></td>
 </tr>
 </tbody>
@@ -329,10 +336,13 @@ active. To set tool, drop any Firearm into this field.</p></td>
 <tr class="row-odd"><td><p>Save()</p></td>
 <td><p>Save the current value.</p></td>
 </tr>
-<tr class="row-even"><td><p>SetValueAndSave(type value)</p></td>
+<tr class="row-even"><td><p>DeleteSavedData()</p></td>
+<td><p>Delete the current saved data.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SetValueAndSave(type value)</p></td>
 <td><p>Set the current value and save it.</p></td>
 </tr>
-<tr class="row-odd"><td><p>SetValue(type value)</p></td>
+<tr class="row-even"><td><p>SetValue(type value)</p></td>
 <td><p>Set the current value.</p></td>
 </tr>
 </tbody>

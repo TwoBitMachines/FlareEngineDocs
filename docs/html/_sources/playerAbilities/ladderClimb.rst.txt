@@ -1,6 +1,6 @@
 Ladder
 ++++++
-.. complete!
+
 The player can climb ladders.
 
 .. list-table::

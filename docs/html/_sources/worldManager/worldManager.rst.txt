@@ -1,6 +1,6 @@
 World Manager
 +++++++++++++
-.. complete!
+
 The **World Manager** is in charge of running the game scripts in order. It's also in charge of  
 saving, pausing, resetting the game, and world events.
 
@@ -55,6 +55,12 @@ add this component, and make sure it's always enabled. This gameobject should ne
 
    * - Unpause()
      - This will unpause the game.
+
+   * - PauseNoInvoke()
+     - This will pause the game and block player inputs without invoking onPause.
+
+   * - UnpauseNoInvoke()
+     - This will unpause the game without invoking onUnpause.
 
    * - ResetAll()
      - This will reset all the relevant scripts in the game like the Player, AI, Interactables, etc.

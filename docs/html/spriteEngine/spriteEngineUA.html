@@ -72,6 +72,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -138,8 +142,8 @@
 <p><strong>SpriteEngineUA</strong> allows you to use the functionality of Sprite Engine with Unity Animations.
 Since the animations are no longer being created and configured by Sprite Engine, it’s assumed the frame rate, events, and looping
 are all handled by the animation.</p>
-<p>SpriteEngineUA only requires a reference to the animator and the names of the animations. You will need to click the add button
-to start appending animation names.</p>
+<p>SpriteEngineUA only requires a reference to the gameobject containing the animator and the names of the animations.
+You will need to click the add button to start appending animation names.</p>
 <p>The animator component should not exist on the same gameobject as the Player or AI components.
 The animator and all its contents must exist as child objects of the character. This is important since the localScale will
 be flipped to change the direction of the animation. Also, any weapons attached to the character should not be

@@ -1,6 +1,6 @@
 World Variables
 +++++++++++++++
-.. complete
+
 These components allow you to create data that can be easily referenced. This data is also
 automatically saved and restored during runtime to preserve important information. The four types of variables
 used are **Float**, **Bool**, **String**, and **Vector3**. The **Health** component is also part of this group, 
@@ -82,6 +82,9 @@ Float And Health
    * - Save()
      - Save the current value.
 
+   * - DeleteSavedData()
+     - Delete the current saved data.
+
    * - SetValueAndSave(float value)
      - Set the current value and save it.
 
@@ -161,6 +164,9 @@ These work in a similar fashion as Float. The respective Scriptable Objects are 
    * - Save()
      - Save the current value.
 
+   * - DeleteSavedData()
+     - Delete the current saved data.
+     
    * - SetValueAndSave(type value)
      - Set the current value and save it.
  

@@ -1,6 +1,6 @@
 Crouch Slide
 ++++++++++++
-.. complete!
+
 Let the player slide while crouching. The slide will come to a halt after the specified time. 
 
 .. list-table::

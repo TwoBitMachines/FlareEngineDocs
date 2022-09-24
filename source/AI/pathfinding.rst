@@ -1,6 +1,5 @@
 Pathfinding
 +++++++++++
-.. complete
 
 **Pathfinding** and **PathfindingBasic** are a-star algorithms that come included with the AI system.
 They allow AI agents to follow generated paths towards a target. The main difference between both classes 
@@ -121,10 +120,3 @@ The last step is to create the **Pathfinder** node. This will be created inside 
 
 .. note:: 
      The steps to setup **PathfindingBasic** will be similar but with less settings due to its simplistic nature.
-
-
-
-..  // * - Enable Fall
-..  //    - This works the same as the extra features. When an AI agent jumps below to a platform, it calculates it's landing point to ensure it always lands on a platform.
-..  //      If this is enabled, click on the landing point (typically a green diamond) and the AI agent, instead of calculating it's landing point, it will simply fall down 
-..  //      naturally, allowing for a smoother transition. Only use this if you know the AI agent will have sufficient ground to land on according to its speed. Press Create Paths to refresh.

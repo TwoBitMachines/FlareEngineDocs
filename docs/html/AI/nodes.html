@@ -72,6 +72,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul class="current">
@@ -238,32 +242,44 @@ of the node’s purpose. For more information on the node, hit the show informat
 <tr class="row-even"><td><p>Animation Signal</p></td>
 <td><p>Sets an animation signal true for the AI.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Character Animation Signal</p></td>
+<tr class="row-odd"><td><p>Captured By Yoshi</p></td>
+<td><p>This AI can be captured by Yoshi.</p></td>
+</tr>
+<tr class="row-even"><td><p>Character Animation Signal</p></td>
 <td><p>Set the following animation signal true for the specified character.</p></td>
 </tr>
-<tr class="row-even"><td><p>Chain</p></td>
+<tr class="row-odd"><td><p>Chain</p></td>
 <td><p>A chain created from gameobjects.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Clock</p></td>
+<tr class="row-even"><td><p>Clock</p></td>
 <td><p>Wait the specified time.</p></td>
 </tr>
-<tr class="row-even"><td><p>Enable Behaviour</p></td>
+<tr class="row-odd"><td><p>Enable Behaviour</p></td>
 <td><p>This will enable or disable the specified behaviour or renderer.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Enable Tree</p></td>
+<tr class="row-even"><td><p>Enable Tree</p></td>
 <td><p>Pause or remove the BehaviorTree from executing. Also specify the active state of the gameobject that belongs to the BehaviorTree.</p></td>
 </tr>
-<tr class="row-even"><td><p>Go To Next State</p></td>
+<tr class="row-odd"><td><p>Go To Next State</p></td>
 <td><p>Jump to another state. Useful if a node you are working with can’t jump to a state.</p></td>
 </tr>
-<tr class="row-odd"><td><p>IncDec Float</p></td>
+<tr class="row-even"><td><p>IncDec Float</p></td>
 <td><p>Increase or decrease a float variable by the specified amount.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kill AI</p></td>
+<td><p>Disable the AI’s Collider and Sprite Renderer.</p></td>
 </tr>
 <tr class="row-even"><td><p>On Event</p></td>
 <td><p>Invoke and event.</p></td>
 </tr>
 <tr class="row-odd"><td><p>PauseCollisions</p></td>
 <td><p>Pause world collisions. If enabled, choose to move transform with Translate or not.</p></td>
+</tr>
+<tr class="row-even"><td><p>Player Death</p></td>
+<td><p>Play a death animation for the specified time. This will block player input and disable its collider.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Random Loot</p></td>
+<td><p>Add a random item from the list to an inventory.</p></td>
 </tr>
 <tr class="row-even"><td><p>Remove From List</p></td>
 <td><p>Remove the specified item from a list.</p></td>
@@ -277,14 +293,20 @@ of the node’s purpose. For more information on the node, hit the show informat
 <tr class="row-odd"><td><p>Set Value From blackboard</p></td>
 <td><p>Set the value of the blackboard data variable with that of the blackboard from variable.</p></td>
 </tr>
-<tr class="row-even"><td><p>Sprite Color</p></td>
+<tr class="row-even"><td><p>Spawn Point</p></td>
+<td><p>Reset the AI to the position it had at the beginning of the scene.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sprite Color</p></td>
 <td><p>This will modify a sprite’s color by lerping to a new one.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Wait For Player Input</p></td>
+<tr class="row-even"><td><p>Wait For Player Input</p></td>
 <td><p>Wait for the player to enter the territory and then for the button to be pressed.</p></td>
 </tr>
-<tr class="row-even"><td><p>World Effect</p></td>
+<tr class="row-odd"><td><p>World Effect</p></td>
 <td><p>Call a world effect at the AI’s position.</p></td>
+</tr>
+<tr class="row-even"><td><p>Damage Effect</p></td>
+<td><p>Slow down the enemy, apply damage, and play the specified animation signal for the duration amount.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Damage Flash</p></td>
 <td><p>Show damage flash.</p></td>

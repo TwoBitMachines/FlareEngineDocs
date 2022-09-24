@@ -1,6 +1,6 @@
 Nodes
 +++++
-.. complete!
+
 The AI system comes with many built in nodes ready for creating AI. The following gives you a general understanding
 of the node's purpose. For more information on the node, hit the show information icon in the  inspector.
 
@@ -98,6 +98,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Animation Signal
      - Sets an animation signal true for the AI.
 
+   * - Captured By Yoshi
+     - This AI can be captured by Yoshi.
+
    * - Character Animation Signal
      - Set the following animation signal true for the specified character.
 
@@ -119,11 +122,20 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - IncDec Float
      - Increase or decrease a float variable by the specified amount.
 
+   * - Kill AI
+     - Disable the AI's Collider and Sprite Renderer.
+
    * - On Event
      - Invoke and event.
 
    * - PauseCollisions
      - Pause world collisions. If enabled, choose to move transform with Translate or not.
+
+   * - Player Death
+     - Play a death animation for the specified time. This will block player input and disable its collider.
+
+   * - Random Loot
+     - Add a random item from the list to an inventory.
 
    * - Remove From List
      - Remove the specified item from a list.
@@ -137,6 +149,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Set Value From blackboard
      - Set the value of the blackboard data variable with that of the blackboard from variable.
 
+   * - Spawn Point
+     - Reset the AI to the position it had at the beginning of the scene.
+
    * - Sprite Color
      - This will modify a sprite's color by lerping to a new one.
 
@@ -145,6 +160,9 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - World Effect
      - Call a world effect at the AI's position.
+
+   * - Damage Effect
+     - Slow down the enemy, apply damage, and play the specified animation signal for the duration amount.
 
    * - Damage Flash
      - Show damage flash.

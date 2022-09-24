@@ -1,6 +1,6 @@
 Push Block
 ++++++++++
-.. complete!
+
 The player can push and pull a block.
 
 Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject. 

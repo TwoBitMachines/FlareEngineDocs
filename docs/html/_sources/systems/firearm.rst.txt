@@ -1,6 +1,6 @@
 Firearm
 +++++++
-.. complete!
+
 The Firearm shoots projectiles. The purpose of this component is to control the behavior of the weapon as 
 it relates to the character. It is not concerned about how projectiles operate. You will
 specify its fire point, the projectile it uses, shooting direction, how it rotates, recoil,

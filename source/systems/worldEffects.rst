@@ -1,6 +1,6 @@
 World Effects
 +++++++++++++
-.. complete
+
 The **WorldEffects** class is used for pooling effects. This is primarily used for displaying 
 effects for bullet collisions. Since bullet collisions can occur frequently, the system 
 will pool these effects and try to use them as efficiently as possible. Projectiles are equipped to call this 

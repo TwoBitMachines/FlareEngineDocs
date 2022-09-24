@@ -1,6 +1,6 @@
 Scene Management
 ++++++++++++++++
-.. complete!
+
 Transition from the current scene to the next scene with ease. The scene manager loads the specified scene and
 controls the screen transitions, if any. The system comes equipped with plenty and ready to use **Screen Transitions**, 
 which can be found in the AssetsFolder/Transitions/Prefabs folder. Simply drag the necessary prefabs into the Hierarchy and 

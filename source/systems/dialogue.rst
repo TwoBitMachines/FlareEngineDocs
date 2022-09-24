@@ -1,6 +1,6 @@
 Dialogue
 ++++++++
-.. complete!
+
 This is an interactive dialogue system for the player and NPCs. Create conversations, add message effects, call Unity Events, and
 even include simple animations for complex interactions. All this is accomplished within the inspector window.
 

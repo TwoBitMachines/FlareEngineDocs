@@ -1,6 +1,6 @@
 Foliage
 +++++++
-.. complete!
+
 Decorate an environment with foliage to make it come alive. The foliage can sway with the wind and respond
 to all characters. Add this component to an empty gameobject.
 
@@ -83,4 +83,4 @@ to all characters. Add this component to an empty gameobject.
    
 .. note:: 
    The foliage system was designed with performance in mind. All foliage instances exist in code only (they're not gameobjects), and the character interactions
-   are handled by Unity's Job System. 
+   are handled by Unity's Job System.

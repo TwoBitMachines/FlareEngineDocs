@@ -72,6 +72,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -262,19 +266,22 @@ to sense enemy attacks.</p>
 <tr class="row-odd"><td><p>Damage</p></td>
 <td><p>The amount of damage dealt to the target hit.</p></td>
 </tr>
-<tr class="row-even"><td><p>Velocity x</p></td>
+<tr class="row-even"><td><p>Force</p></td>
+<td><p>The forced applied in the direction of damage.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Velocity x</p></td>
 <td><p>The velocity applied to the combo in the x-direction. Additive Velocity will be added to player movement. Absolute Velocity will override player movement. Event Velocity
 works like Absolute Velocity, but the BeginVelX (bool value) method must be called on the Melee component to active Event Velocity.
 This is usually called from the animation controller in a specific frame of the animation.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Velocity y</p></td>
+<tr class="row-even"><td><p>Velocity y</p></td>
 <td><p>The velocity applied to the combo in the y-direction. This has the same options as Velocity x and an extra one. If Jump Velocity is enabled, the velocity will be treated as a jump force.</p></td>
 </tr>
-<tr class="row-even"><td><p>Go To Next</p></td>
+<tr class="row-odd"><td><p>Go To Next</p></td>
 <td><p>This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
 to the next combo before the current one finishes.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Combo Begin</p></td>
+<tr class="row-even"><td><p>On Combo Begin</p></td>
 <td><p>The event invoked when the Combo begins.</p></td>
 </tr>
 </tbody>

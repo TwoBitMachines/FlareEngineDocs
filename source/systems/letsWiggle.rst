@@ -1,6 +1,6 @@
 Lets Wiggle
 +++++++++++
-.. complete!
+
 This is a tweening library that is configured in the inspector or in code.
 The **Wiggle** component, which is different from the **LetsWiggle** component,
 must be included in the scene for proper function. The **World Manager** component will

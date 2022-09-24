@@ -1,6 +1,6 @@
 AI
 +++
-.. complete!
+
 Create truly complex AI using Behavior Trees or Finite State Machines, all without 
 using a single line of code. The AI system is universal so that behavior can be 
 applied to all aspects of the game. Besides creating enemy AI, you can program doors, moving platforms, 
@@ -304,20 +304,36 @@ the on Success option will trigger a state jump to the Follow State.
 AI Attacks, Damage
 ==================
 
-There are four ways an AI can perform an attack on the player. Of course, if the following ways aren't what you are looking for,
-it is always possible to implement a custom solution.
+There are four ways an AI can attack another character. First, in the AI options enable Damage. 
+The system will use the existing collider on the AI. Once a character comes into contact with the AI, it will be dealt damage.
+Second, and very similar, use the **Damage** class. Simply add this component to any gameobject. Add a Collider2D and enable isTrigger.  
+This is particular useful for static objects like spikes.
 
-First, in the Settings options enable Damage. The system will use the existing collider on the AI. Once the player
-comes into contact with the AI, it will be dealt damage.
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
 
-Second, the AI can use a Firearm to shoot projectiles at the player. Somewhere in your logic, you will use an OnEvent node. 
+   * - Property
+     - 
+
+   * - Layer
+     - The layer where damage is dealt, usually the Player.
+
+   * - Direction
+     - The direction of damage. AI_X_Direction will move the injured party to the left or right, 
+       depending on the relative position of the AI.
+
+   * - Amount
+     - The amount of damage dealt.
+
+   * - Force
+     - The forced applied in the direction of damage.
+
+Third, the AI can use a Firearm to shoot projectiles. Somewhere in your logic, you will use an OnEvent node. 
 This event should trigger the Shoot() method that belongs to the Firearm class.
 
-Third, use the MeleeAttack node. Once this node is active, it will enable a separate collider
-to damage the player. The attack animation for the melee attack is setup and executed elsewhere. The MeleeAttack 
+Fourth, use the MeleeAttack node. Once this node is active, it will enable a separate collider
+to damage a character. The attack animation for the melee attack is setup and executed elsewhere. The MeleeAttack 
 node is only in charge of dealing damage, enabling the collider, and setting the animation signals. You can use SpriteEngine to play the animation 
 and control the size and position of the collider. Once the animation is done playing, the CompleteAttack() method of the MeleeAttack class **must**
 be called, or else the finite state machine will get stuck in its current state.
-
-Fourth, use the **Damage** class. Simply add this component to any gameobject. Add a collider2D and set isTrigger to true. This will deal damage 
-to any character that exists in the Damage Layer when contact is made. This is particular useful for static objects like spikes.

@@ -1,10 +1,21 @@
 Wall
 +++++
-.. complete!
+
 The player can slide, climb, corner hang, corner grab, and jump on walls. If a particular wall is not meant to be climbable, add a Unity tag "NoClimb"
 to this gameobject.
 
-------------
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+ 
+   * - Type
+     - The type of wall interaction.
+
+   * - Start On Ground
+     - If enabled, the player will be able to start climbing a wall even if it's still touching the ground.
 
 Slide
 =====
@@ -36,7 +47,8 @@ Slide
      - Limits the amount of wall jumps before the player falls down.
 
    * - On Slide
-     - The Unity Event invoked when the player is sliding down a wall. This event will pass the player's position.
+     - The Unity Event invoked when the player is sliding down a wall. This event will pass the player's position. Typically any gameobjects
+       enabled for particle effects should have a way to disable themselves. You can use the class Basic Timer for this.
 
 **Signals: wall,  wallLeft, wallRight, wallSlide, wallSlideJump**
 
@@ -80,7 +92,8 @@ Climb
      - Limits the amount of wall jumps before the player falls down.
 
    * - On Climb
-     - The Unity Event invoked when the player is climbing a wall. This event will pass the player's position.
+     - The Unity Event invoked when the player is climbing a wall. This event will pass the player's position. Typically any gameobjects
+       enabled for particle effects should have a way to disable themselves. You can use the class Basic Timer for this.
 
 **Signals:  wall, wallLeft, wallRight, wallHold, wallClimb, wallSlide**
 

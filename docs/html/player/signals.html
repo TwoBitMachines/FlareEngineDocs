@@ -46,6 +46,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngine.html">Sprite Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spriteEngine/spriteEngineUA.html">Sprite Engine UA</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Player</span></p>
 <ul class="current">
@@ -71,6 +72,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBack.html">Push Back</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ziplining.html">Ziplining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jumpOnEnemy.html">Jump On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slamOnEnemy.html">Slam On Enemy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/yoshiTongue.html">Yoshi’s Tongue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/passenger.html">Passenger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/vehicle.html">Vehicle</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">AI</span></p>
 <ul>
@@ -95,6 +100,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
@@ -138,10 +144,50 @@ set the signals below to true or false. For example, if a character is moving to
 will read the character’s velocity and set velXRight signal <em>true</em> if the velocity in the x direction is positive.</p>
 <p>If using Sprite Engine, these signals are automatically read to control the animation state. There is no need
 to worry about anything else.</p>
-<p>If you are not using Sprite Engine, then you can access the signals below through Character, which is the base class
+<p>If you are not using Sprite Engine, you can use Sprite Engine UA as an alternative to use the functionality of
+Sprite Engine with unity animations. Or you can access the signals below through Character, which is the base class
 for the Player and AI. You will need to use <strong>Character.signals.signals</strong> and include the namespace TwoBitMachines.FlareEngine.
 The signals class is a dictionary with a key-value pair of string and bool. Don’t forget to reset these signals to false
-each frame or they will remain true.</p>
+each frame or they will remain true. It can look something like this:</p>
+<div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="nn">TwoBitMachines.FlareEngine</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">YourClass</span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="c1">// set the player reference</span>
+<span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="n">Character</span><span class="w"> </span><span class="n">character</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="k">private</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">&gt;</span><span class="w"> </span><span class="n">signals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="p">&gt;</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+
+<span class="w">     </span><span class="c1">// list of your variables</span>
+<span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">variable1</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">variable2</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">     </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="n">signals</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">character</span><span class="p">.</span><span class="n">signals</span><span class="p">.</span><span class="n">signals</span><span class="p">;</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">     </span><span class="c1">// flare will set all the character signals during Update, so you can use LateUpdate</span>
+<span class="w">     </span><span class="c1">// or rename this method and call it manually</span>
+<span class="w">     </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">LateUpdate</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">     </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="c1">// map the signals</span>
+<span class="w">             </span><span class="c1">// you have to make sure these signals exist or you will get an error</span>
+<span class="w">             </span><span class="c1">// variable1 = signals[&quot;velXRight&quot;]; -- this can give you an error</span>
+<span class="w">             </span><span class="c1">// variable2 = signals[&quot;climb&quot;];</span>
+
+<span class="w">             </span><span class="c1">// so do it like this instead</span>
+<span class="w">             </span><span class="c1">// the out bool can be named whatever you want</span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">signals</span><span class="p">.</span><span class="n">TryGetValue</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;velXRight&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">velXRight</span><span class="p">))</span><span class="w"> </span><span class="n">variable1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">velXRight</span><span class="p">;</span><span class="w"></span>
+<span class="w">             </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">signals</span><span class="p">.</span><span class="n">TryGetValue</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;climb&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">climbWall</span><span class="p">))</span><span class="w"> </span><span class="n">variable2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">climbWall</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">             </span><span class="c1">// clear list;</span>
+<span class="w">             </span><span class="n">signals</span><span class="p">.</span><span class="n">Clear</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>velX</p></li>
@@ -204,6 +250,8 @@ each frame or they will remain true.</p>
 <li><p>mouseDirectionRight</p></li>
 <li><p>meleeCombo</p></li>
 <li><p>zipline</p></li>
+<li><p>vehicleMounted</p></li>
+<li><p>onVehicle</p></li>
 <li><p>alwaysTrue</p></li>
 <li><p>alwaysFalse</p></li>
 </ul>

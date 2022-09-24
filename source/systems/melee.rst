@@ -1,6 +1,6 @@
 Melee
 +++++++
-.. complete!
+
 Create a melee attack for the player to use against enemies. Each melee attack consists of a collider that will be used 
 to detect targets and an attack animation. It is possible to chain attacks based on user timing and hit success. 
 It is also possible to add velocity to each attack.
@@ -103,7 +103,10 @@ to sense enemy attacks.
 
    * - Damage
      - The amount of damage dealt to the target hit. 
-   
+  
+   * - Force
+     - The forced applied in the direction of damage.
+
    * - Velocity x
      - The velocity applied to the combo in the x-direction. Additive Velocity will be added to player movement. Absolute Velocity will override player movement. Event Velocity 
        works like Absolute Velocity, but the BeginVelX (bool value) method must be called on the Melee component to active Event Velocity. 

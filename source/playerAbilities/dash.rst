@@ -1,6 +1,6 @@
 Dash
 +++++
-.. complete!
+
 Increase the speed of the player to quickly cover distance.
 
 .. list-table::

@@ -1,6 +1,6 @@
 Player
 ++++++
-.. complete!
+
 The player is the centerpiece of your game, and as such, the engine provides plenty out of the box customizable abilities. 
 To get started, add a **BoxCollider2D** and a **Player** component. The Player class will handle the input, abilities, and
 world collision settings. You will also need to add a **RigidBody2D** to keep Unity happy, and set Body Type to Kinematic.

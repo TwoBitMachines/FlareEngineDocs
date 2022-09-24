@@ -1,6 +1,6 @@
 Audio Manager
 +++++++++++++
-.. complete! Done
+ Done
 The **AudioManager** conveniently stores all the music and sound effects for the current scene.
 It requires two audio sources that must be added manually. One will be dedicated to playing music, and 
 the other will be dedicated to playing sound effects.

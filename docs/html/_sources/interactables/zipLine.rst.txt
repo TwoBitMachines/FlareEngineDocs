@@ -1,6 +1,6 @@
 Zipline
 ++++++++
-.. complete!
+
 Allow the player to zipline. This component works directly with Unity's Line Renderer. Modify the necessary settings there, mainly
 the width and color of the line. The player ability, **Ziplining** must be enabled. Place this component on an empty gameobject 
 and scene gizmos will appear. The gameobject's position will be the start position, and a red gizmo will modify the end position. 
@@ -42,6 +42,9 @@ and scene gizmos will appear. The gameobject's position will be the start positi
    * - Area
      - The system will check for ziplines once the player is inside this area. 
        The area width is set automatically, but the height must be specified. The offset will offset the area in the y direction.
+
+   * - Create On Awake
+     - If enabled, the zipline will recreate itself on Awake in case it was moved. Typically, you want to initialize this during editor time to reduce initializing time.
 
    * - Create
      - Once all the settings are chosen, press this button to create the zipline. Anytime you change the position or a setting, recreate the zipline to enact the changes.

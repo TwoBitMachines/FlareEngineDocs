@@ -1,6 +1,6 @@
 Basic Camera Follow
 +++++++++++++++++++
-.. complete
+
 The camera will follow the player with a smoothing speed.
 
 

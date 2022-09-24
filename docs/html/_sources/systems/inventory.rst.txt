@@ -1,6 +1,6 @@
 Inventory
 +++++++++
-.. complete!
+
 The inventory system allows the player to find and store items, provides a customizable user interface 
 for interacting with the items, and automatically restores and saves the items when a scene begins and ends. The 
 system itself relies heavily on Scriptable Objects, which allow for a flexible foundation.

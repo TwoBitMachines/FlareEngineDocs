@@ -1,6 +1,6 @@
 Slope Slide
 +++++++++++
-.. complete!
+
 The player will slide down slopes and deal damage.
 
 .. list-table::
@@ -22,6 +22,6 @@ The player will slide down slopes and deal damage.
 
    * - Deal Damage
      - If enabled, the player will be able to deal damage to enemies while slope sliding. During this time, the player will not be 
-       able to receive damage. Set the layer to deal damage to and the amount of damage.
+       able to receive damage. Set the layer to deal damage, the amount of damage, and the forced applied in the direction of damage.
 
 **Signals: slopeSlide, slopeSlideAuto**

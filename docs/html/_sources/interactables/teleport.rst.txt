@@ -1,6 +1,6 @@
 Teleport
 ++++++++
-.. complete!
+
 Any gameobject that enters the collider2D on any gameobject with the Teleport component will be teleported to the specified destination. 
 It is perfectly possible to create bidirectional teleports that work together.
 

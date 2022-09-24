@@ -1,6 +1,6 @@
 Ziplining
 +++++++++
-.. complete!
+
 Enable this to allow the player to interact with Ziplines.
 
 .. list-table::

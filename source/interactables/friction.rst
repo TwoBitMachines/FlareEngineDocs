@@ -1,6 +1,6 @@
 Friction
 ++++++++
-.. complete!
+
 Change the friction properties of the ground. Add this component to any gameobject requiring this feature
 and set its Tag to Friction.
 

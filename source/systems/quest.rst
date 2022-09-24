@@ -1,6 +1,6 @@
 Quest
 +++++
-.. complete!not
+not
 Send the player on a quest. Complete any number of quests and get rewards! This relies 
 heavily on Scriptable Objects to create a flexible quest system. Each quest will retain its state, 
 and each quest does not have to be completed in the level where it was accepted. Thus, you can easily 

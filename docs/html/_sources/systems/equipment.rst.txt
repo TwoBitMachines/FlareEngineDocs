@@ -1,6 +1,6 @@
 Equipment
 +++++++++
-.. complete
+
 The Equipment class keeps track of all the tools the character has. A tool is simply a child gameobject of a 
 character that contains a component that inherits from Tool. This class belongs to the Character class.
 

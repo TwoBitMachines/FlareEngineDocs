@@ -1,6 +1,6 @@
 Jump
 +++++
-.. complete!
+
 The most fundamental ability of any platformer. 
 
 .. note::

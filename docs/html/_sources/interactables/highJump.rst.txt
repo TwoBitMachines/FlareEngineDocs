@@ -1,6 +1,6 @@
 High Jump
 ++++++++++
-.. complete!
+
 Launch a character into the air. This has two modes, Trampoline and Wind. Place this component 
 on an empty gameobject. A blue rectangle gizmo will appear in the scene to modify its bounds for character detection. 
 Typically, a trampoline will have a smaller collider area, and Wind will have a much taller collider area.
