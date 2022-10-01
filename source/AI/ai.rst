@@ -78,6 +78,8 @@ This node runs a list of child nodes. Composite nodes come in different types, a
 For example, a Sequence will run its child nodes in sequence until it finds one that returns Failure. A Parallel will run 
 all its children at the same time.
 
+Each composite node also has the option to enable a default animation signal.
+
 Decorator Node
 --------------
 

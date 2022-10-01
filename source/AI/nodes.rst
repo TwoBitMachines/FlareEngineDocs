@@ -14,6 +14,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Follow Graph Points
      - Navigate to points with the specified speed. Target must be TargetPoints.
 
+   * - Follow Platform Walls
+     - The AI will walk around platforms or walls, cutting corners. A probability of 1 will ensure it always moves to the next corner or it might change direction.
+
    * - Follow Target
      - The AI will follow the specified target.
 
@@ -52,6 +55,9 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Idle
      - Sometimes it's useful to have an action where the AI just waits idly.
+
+   * - Indefinite Walk
+     - If the AI hits a wall or air gap, it will change walking direction..
 
    * - Melee Attack
      - Perform a melee attack.
