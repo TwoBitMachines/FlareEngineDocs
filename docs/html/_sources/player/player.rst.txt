@@ -208,6 +208,9 @@ Settings
    * - Rectify In Air
      - If enabled, and if the character is rotated and jumps, it will rotate to a squared position.
 
+   * - Jump Through 2D Edge
+     - If enabled, the character will automatically jump through an Edge Collider 2D without having to hold the jump button.
+
    * - Check Corners
      - If enabled, the system will check if platform corners are going into the side of the character and prevent it. Note, if Climb Slopes is enabled, 
        the system will automatically check for corners going through the bottom of the character.
