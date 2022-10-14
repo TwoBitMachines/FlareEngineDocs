@@ -104,6 +104,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Animation Signal
      - Sets an animation signal true for the AI.
 
+   * - BoxCollider2D Size
+     - Change the size and offset of a BoxCollider2D.
+
    * - Captured By Yoshi
      - This AI can be captured by Yoshi.
 
