@@ -50,7 +50,7 @@ Slide
      - The Unity Event invoked when the player is sliding down a wall. This event will pass the player's position. Typically any gameobjects
        enabled for particle effects should have a way to disable themselves. You can use the class Basic Timer for this.
 
-**Signals: wall,  wallLeft, wallRight, wallSlide, wallSlideJump**
+**Signals: wall,  wallLeft, wallRight, wallSlide, wallSlideJump, autoCornerJump**
 
 ------------
 
@@ -82,6 +82,9 @@ Climb
    * - Slide Down
      - If enabled, the player will slide down the wall instead of climbing down.
 
+   * - Climb Up Only
+     - If enabled, the player will only be able to climb up the wall.
+
    * - Jump Up
      - The force that pushes the player up the wall.
 
@@ -91,9 +94,12 @@ Climb
    * - Jump Limit
      - Limits the amount of wall jumps before the player falls down.
 
+   * - Jump On X Input
+     - If climbing a wall, the user can jump automatically by pressing the left or right movement inputs.
+
    * - On Climb
-     - The Unity Event invoked when the player is climbing a wall. This event will pass the player's position. Typically any gameobjects
-       enabled for particle effects should have a way to disable themselves. You can use the class Basic Timer for this.
+     - The Unity Event invoked when the player is climbing a wall. You can call a world effect from this event. The name of the effect 
+       and the rate at which the event executes are required.
 
 **Signals:  wall, wallLeft, wallRight, wallHold, wallClimb, wallSlide**
 

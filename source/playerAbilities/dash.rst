@@ -25,6 +25,10 @@ Increase the speed of the player to quickly cover distance.
    * - Tap Threshold
      - If Double Tap is enabled, the threshold is the time interval in which the double tap must occur for the dash to trigger successfully.
 
+   * - On Dash
+     - The Unity Event invoked when the player is dashing. You can call a world effect from this event. The name of the effect 
+       and the rate at which the event executes are required.
+
    * - Duration
      - If Instant is enabled, the player will traverse the dash distance in one frame. If Incremental is enabled, the player will traverse the dash distance
        according to the dash time. 

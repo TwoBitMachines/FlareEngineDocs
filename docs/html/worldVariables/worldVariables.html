@@ -178,16 +178,20 @@ creating hard references.</p>
 <tr class="row-even"><td><p>Clamp</p></td>
 <td><p>Clamp the current value.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Broadcast Value</p></td>
+<tr class="row-odd"><td><p>Damage Effect</p></td>
+<td><p>If enabled, use the OnDamageEffect Unity Event to call a world damage effect on this transform’s position. Offset Y will offset the position.
+The data value is used for any miscellaneous information. It can be ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>Broadcast Value</p></td>
 <td><p>If enabled, and if the current value changes, this will also set the current value for all variables with the same Name ID.</p></td>
 </tr>
-<tr class="row-even"><td><p>Recovery Time</p></td>
+<tr class="row-odd"><td><p>Recovery Time</p></td>
 <td><p>If this is Health, the amount of time after being damaged where the character can’t take any damage.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Save</p></td>
+<tr class="row-even"><td><p>Save</p></td>
 <td><p>If enabled, the system will save and restore the current value. During development, press the delete icon to erase saved data.</p></td>
 </tr>
-<tr class="row-even"><td><p>Is Scriptable Object</p></td>
+<tr class="row-odd"><td><p>Is Scriptable Object</p></td>
 <td><p>If enabled, create a Scriptable Object (<strong>WorldFloatSO</strong>) that will be placed in the AssetsFolder/Variables folder. If the Scriptable
 Object is no longer required, delete it manually.</p></td>
 </tr>
@@ -213,11 +217,17 @@ Object is no longer required, delete it manually.</p></td>
 <tr class="row-even"><td><p>On Value Changed</p></td>
 <td><p>The Unity Event invoked when the current value has been changed. This is invoked with the change in value and the direction of damage, if using Health.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Load Condition True</p></td>
+<tr class="row-odd"><td><p>On Value Changed GO</p></td>
+<td><p>The Unity Event invoked when the current value has been changed. This is invoked with the gameobect that is doing the damage, if using Health.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Load Condition True</p></td>
 <td><p>The Unity Event invoked if the value is greater than zero (True) on Start.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Load Condition False</p></td>
+<tr class="row-odd"><td><p>On Load Condition False</p></td>
 <td><p>The Unity Event invoked if the value is zero (False) on Start.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Damage Effect</p></td>
+<td><p>The Unity Event invoked if the value is negative. Call a World Damage Effect with the dynamic Activate method.</p></td>
 </tr>
 </tbody>
 </table>

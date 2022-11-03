@@ -34,6 +34,10 @@ Float And Health
    * - Clamp
      - Clamp the current value.
 
+   * - Damage Effect
+     - If enabled, use the OnDamageEffect Unity Event to call a world damage effect on this transform's position. Offset Y will offset the position.
+       The data value is used for any miscellaneous information. It can be ignored.
+
    * - Broadcast Value
      - If enabled, and if the current value changes, this will also set the current value for all variables with the same Name ID.
 
@@ -63,11 +67,17 @@ Float And Health
    * - On Value Changed
      - The Unity Event invoked when the current value has been changed. This is invoked with the change in value and the direction of damage, if using Health.
 
+   * - On Value Changed GO
+     - The Unity Event invoked when the current value has been changed. This is invoked with the gameobect that is doing the damage, if using Health.
+
    * - On Load Condition True
      - The Unity Event invoked if the value is greater than zero (True) on Start. 
 
    * - On Load Condition False
      - The Unity Event invoked if the value is zero (False) on Start.
+
+   * - On Damage Effect
+     - The Unity Event invoked if the value is negative. Call a World Damage Effect with the dynamic Activate method.
 
 .. list-table::
    :widths: 25 100

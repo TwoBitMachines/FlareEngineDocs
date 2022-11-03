@@ -1,6 +1,6 @@
 Audio Manager
 +++++++++++++
- Done
+
 The **AudioManager** conveniently stores all the music and sound effects for the current scene.
 It requires two audio sources that must be added manually. One will be dedicated to playing music, and 
 the other will be dedicated to playing sound effects.
@@ -101,3 +101,30 @@ Create/FlareEngine/AudioManagerSO.
 
    * - StopAllAudio()
      - Stops all audio sounds.
+
+Audio SFX Group
+===============
+
+This a convenient class for grouping specific sound effects for a particular object. This requires at least one AudioManager to 
+exist in the scene. Simply add this component to any object of interest and add audio clips. Now, when you want to play a sound, 
+simply reference this component.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - SFX List
+     - The list of sfx to play.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - PlaySFX(string name)
+     - Play this audio sfx.

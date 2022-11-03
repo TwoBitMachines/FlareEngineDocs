@@ -277,11 +277,15 @@ This is usually called from the animation controller in a specific frame of the 
 <tr class="row-even"><td><p>Velocity y</p></td>
 <td><p>The velocity applied to the combo in the y-direction. This has the same options as Velocity x and an extra one. If Jump Velocity is enabled, the velocity will be treated as a jump force.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Go To Next</p></td>
+<tr class="row-odd"><td><p>Attack</p></td>
+<td><p>If Anytime is set, the combo sequence will proceed. If MustBeOnGround is set, the player must be on the ground to proceed, or else the combo will exit the combo or skip
+to the next combo in the sequence. The same rules apply if MustBeOnAir is set.</p></td>
+</tr>
+<tr class="row-even"><td><p>Go To Next</p></td>
 <td><p>This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
 to the next combo before the current one finishes.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Combo Begin</p></td>
+<tr class="row-odd"><td><p>On Combo Begin</p></td>
 <td><p>The event invoked when the Combo begins.</p></td>
 </tr>
 </tbody>

@@ -196,6 +196,12 @@ Settings
    * - Jump
      - The jump height and jump time dictate the value of gravity.
 
+   * - Terminal Velocity
+     - The maximum falling velocity of the player.
+
+   * - Gravity Multiplier
+     - This will scale the force of gravity when the player has a negative y velocity.
+
    * - Rays
      - The number of raycasts that will extend horizontally and vertically from the character to detect the world. Keep this number low for efficiency.
 

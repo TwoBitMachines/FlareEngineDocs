@@ -13,6 +13,9 @@ The player will slide down slopes and deal damage.
    * - Button   
      - The button that will initiate a slope slide. If set to automatic, the player will automatically slide down a slope.
 
+   * - Range
+     - The range of valid angles that can trigger a slope slide.
+
    * - Speed Boost 
      - Scale the horizontal speed while slope sliding.
 

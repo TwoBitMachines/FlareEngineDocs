@@ -115,6 +115,10 @@ to sense enemy attacks.
    * - Velocity y
      - The velocity applied to the combo in the y-direction. This has the same options as Velocity x and an extra one. If Jump Velocity is enabled, the velocity will be treated as a jump force.
 
+   * - Attack
+     - If Anytime is set, the combo sequence will proceed. If MustBeOnGround is set, the player must be on the ground to proceed, or else the combo will exit the combo or skip
+       to the next combo in the sequence. The same rules apply if MustBeOnAir is set.
+
    * - Go To Next
      - This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
        to the next combo before the current one finishes.

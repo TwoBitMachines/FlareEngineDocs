@@ -166,29 +166,33 @@ to trigger a dash.</p></td>
 <tr class="row-odd"><td><p>Tap Threshold</p></td>
 <td><p>If Double Tap is enabled, the threshold is the time interval in which the double tap must occur for the dash to trigger successfully.</p></td>
 </tr>
-<tr class="row-even"><td><p>Duration</p></td>
+<tr class="row-even"><td><p>On Dash</p></td>
+<td><p>The Unity Event invoked when the player is dashing. You can call a world effect from this event. The name of the effect
+and the rate at which the event executes are required.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Duration</p></td>
 <td><p>If Instant is enabled, the player will traverse the dash distance in one frame. If Incremental is enabled, the player will traverse the dash distance
 according to the dash time.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Dash Time</p></td>
+<tr class="row-even"><td><p>Dash Time</p></td>
 <td><p>The time it will take to traverse the dash distance;</p></td>
 </tr>
-<tr class="row-even"><td><p>Dash Distance</p></td>
+<tr class="row-odd"><td><p>Dash Distance</p></td>
 <td><p>The total distance traversed while dashing.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Cool Down</p></td>
+<tr class="row-even"><td><p>Cool Down</p></td>
 <td><p>The time interval before the next dash can be triggered.</p></td>
 </tr>
-<tr class="row-even"><td><p>Crouch</p></td>
+<tr class="row-odd"><td><p>Crouch</p></td>
 <td><p>If enabled, the player will change to a lower height while dashing. If the player is below a platform when the dash completes, the crouch signal will be set.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Can Take Damage</p></td>
+<tr class="row-even"><td><p>Can Take Damage</p></td>
 <td><p>If disabled, the player will not take damage while dashing. This assumes the player has a Health component.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Ground Only</p></td>
+<tr class="row-odd"><td><p>On Ground Only</p></td>
 <td><p>If enabled, the player must be on the ground in order to begin a dash.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Nullify Gravity</p></td>
+<tr class="row-even"><td><p>Nullify Gravity</p></td>
 <td><p>If enabled, the force of gravity will not affect a dash.</p></td>
 </tr>
 </tbody>
