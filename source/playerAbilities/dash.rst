@@ -29,6 +29,12 @@ Increase the speed of the player to quickly cover distance.
      - The Unity Event invoked when the player is dashing. You can call a world effect from this event. The name of the effect 
        and the rate at which the event executes are required.
 
+   * - On Start
+     - The Unity Event invoked when the player starts dashing. You can call a world effect from this event. 
+  
+   * - On End
+     - The Unity Event invoked when the player ends dashing. You can call a world effect from this event.
+
    * - Duration
      - If Instant is enabled, the player will traverse the dash distance in one frame. If Incremental is enabled, the player will traverse the dash distance
        according to the dash time. 

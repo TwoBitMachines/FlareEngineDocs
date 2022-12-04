@@ -89,7 +89,9 @@ each frame or they will remain true. It can look something like this:
 * pushBackRight
 * pushBlock
 * pullBlock
-* pickedBlock
+* pickAndThrowBlock
+* pickingUpBlock
+* holdingBlock
 * throwingBlock
 * inWater
 * swimming

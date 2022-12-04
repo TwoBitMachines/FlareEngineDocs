@@ -1,0 +1,49 @@
+Reaction Profile
+++++++++++++++++
+
+This allows you to group related game effects and reactions into one place, so they can serve as a reaction profile 
+for any AI or object that calls it. This will reduce the amount of work and connections you have to make.
+
+Simply create an empty gameobject and add this component. You will then have the option to add reactions from 
+a list. During runtime, call the Activate (ImpactPacket impact) on this component from
+a capable Unity Event, and it will execute all the reactions.
+
+Each reaction type inherits from ReactionBehaviour and implements the method Activate (ImpactPacket impact), so they 
+can be easy to create if necessary. If you do create one, simply put it in Scripts/Reactions/Reactions folder, and it 
+will become available to add in a ReactionProfile.
+
+These are current reactions that can be implemented:
+
+AudioSFX
+========
+
+This plays a sound. An Audio Manager is expected to exist somewhere in the scene.
+
+Camera Shake
+============
+
+This calls Safire 2D camera to implement a shake. In Safire, the Shakes module will have to be enabled 
+and have the specified shake already created.
+
+Reaction Event
+==============
+
+This is a general purpose Unity Event that can be invoked with the ImpactPacket class.
+
+Remember Transform
+=====================
+
+This will remember any transform. This is useful for remembering killed enemies so that they remain dead on Scene start. To use this properly, 
+the AI must be using the Reset node to read this value. If the Tracker reference is empty, the system will call TransformTracker through a static
+method (if one exists).
+
+Slow Motion
+===========
+
+Implement slow motion. The intensity is a value greater than zero, but smaller than one. The lower the value, the stronger the effect.
+If lerp is enabled, the intensity will gradually increment to 1. Otherwise, it retains its intensity for the specified duration.
+
+World Effect Request
+====================
+
+This calls the specified effect. Learn more about this class at World Effects.

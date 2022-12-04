@@ -79,6 +79,9 @@ to sense enemy attacks.
    * - Hit To Continue
      - If enabled, in order to move on to the next attack in the combo, the current attack must have made contact with a target.
 
+   * - Loop If Complete
+     - If the melee combo completes, it will immediately start again if the user is pressing input.
+     
    * - Early timer
      - How soon after the attack started can the user press the button in order to successfully begin the next attack in the combo.   
    

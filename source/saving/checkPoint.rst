@@ -32,6 +32,9 @@ the add button and dragging the triggers in the scene. The player will be reset 
    * - On Reset
      - The Unity Event invoked when the player has been reset.
 
+   * - On Save
+     - The Unity Event invoked when a check-point has been saved.
+
 .. list-table::
    :widths: 25 100
    :header-rows: 1
@@ -45,6 +48,12 @@ the add button and dragging the triggers in the scene. The player will be reset 
    * - Position
      - The position of the check-point in the game world. This is the position the player will reset to.
 
+   * - On Reset
+     - The Unity Event invoked when the player has been reset.
+
+   * - On Save
+     - The Unity Event invoked when a check-point has been saved.
+
 AI FSM version
 ==============
 
@@ -57,7 +66,7 @@ The AI version can serve as a good case study and give you an idea on how to cre
 
 ------------
 
-The system uses a AIFSM, for keeping track of the player, and a World Float, for saving the state of the check-point system. 
+This system uses a AIFSM, for keeping track of the player, and a World Float, for saving the state of the check-point system. 
 
 Before explaining the states, first let's see how the system is designed. Each level can have as many check-points as desired. 
 For this particular scenario there are three check-points. Each check-point will be placed in the game world and each one will 

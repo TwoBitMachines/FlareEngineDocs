@@ -17,14 +17,26 @@ Make sure this has a BoxCollider2D and a sprite renderer.
    * - Property
      - 
 
-   * - Button 
+   * - Grab Button 
      - If pressed, the player will pickup a block if it's touching it.
  
+   * - Drop Button 
+     - If pressed, the player will drop the block.
+
+   * - Throw Time
+     - The time the throwingBlock signal will be set true in order to play a throwing animation. Set to zero if not needed.
+
    * - Hold Position
      - This hold position of the block relative to the player once it's being held by the player.
 
-   * - Throw Time
-     - This is the extra time the player will remain in the throw state in which the throwingBlock signal 
-       will go true in order to play a throwing animation. Set to zero if not needed.
+   * - Pick Up time
+     - The time it will take to move the block along the pick up path for player animation purposes. Set to zero if not needed.
 
-**Signals: pickedBlock, throwingBlock*
+   * - Lerp Pick Up
+     - If enabled, the block will lerp through the pick up path.
+
+   * - Pick Up Path
+     - The points the block will traverse to reach the Hold Position. The x position on each point will be 
+       flipped according to player direction.
+
+**Signals: pickAndThrowBlock, pickingUpBlock, holdingBlock, throwingBlock*

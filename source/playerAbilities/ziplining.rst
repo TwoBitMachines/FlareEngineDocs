@@ -28,4 +28,10 @@ Enable this to allow the player to interact with Ziplines.
    * - Apply Gravity
      - If enabled, the player will slide automatically towards the lowest point of the zipline if it's facing towards it.
 
+   * - On Start
+     - The Unity Event invoked when the player starts ziplining. You can call a world effect from this event. 
+  
+   * - On End
+     - The Unity Event invoked when the player ends ziplining. You can call a world effect from this event.
+
 **Signals: zipline**

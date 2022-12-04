@@ -71,17 +71,6 @@ add this component, and make sure it's always enabled. This gameobject should ne
 
 ------------
 
-Save
-====
-
-The engine implements JSON Serialization and basic encryption to save game data. Inventory and World Variables rely 
-heavily on this. During development, disable Encrypt Save (so you can actually read the data) and check if your data 
-persisted by going to Application.persistedDataPath. Typically, the path will look something like this:
-
-**%userprofile%\\AppData\\LocalLow\\companyname\\productname\\TwoBitMachines\\gameName**
-
-------------
-
 World Events
 ============
 
@@ -122,3 +111,16 @@ any gameobject that needs to react to the event, like a UI element or an enemy A
 
    * - On World Event
      - The event that wil be invoked when the world event is triggered.
+
+------------
+
+Save
+====
+
+The engine implements JSON Serialization and basic encryption to save game data. Inventory and World Variables rely 
+heavily on this. During development, disable Encrypt Save (so you can actually read the data) and check if your data 
+persisted by going to Application.persistedDataPath. Typically, the path will look something like this:
+
+**%userprofile%\\AppData\\LocalLow\\companyname\\productname\\TwoBitMachines\\gameName**
+
+The option to delete all saved data is also available during development to quickly reset and test game state.

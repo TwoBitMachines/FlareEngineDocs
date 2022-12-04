@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="World Variables" href="../worldVariables/worldVariables.html" />
+    <link rel="next" title="Reaction Profile" href="reactionProfile.html" />
     <link rel="prev" title="Text Mesh Pro Effects" href="textMesh.html" /> 
 </head>
 
@@ -82,7 +82,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -109,8 +108,17 @@
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">World Effects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#world-effect-request">World Effect Request</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -139,19 +147,31 @@
              
   <section id="world-effects">
 <h1>World Effects<a class="headerlink" href="#world-effects" title="Permalink to this headline"></a></h1>
-<p>The <strong>WorldEffects</strong> class is used for pooling effects. This is primarily used for displaying
-effects for bullet collisions. Since bullet collisions can occur frequently, the system
-will pool these effects and try to use them as efficiently as possible. Projectiles and other classes are equipped to call this
-class with a Unity Event that automatically passes the ImpactPacket class, which will contain the name of the effect, position,
-and direction.</p>
-<p>There are two types of effects. Regular effects (depicted in blue) are meant for general purpose effects.
-Damage Effects (depicted in red) display the damage inflicted on an enemy and thus require a TextMeshPro-Text component on the
-gameobect. Once the damage effect is activated, the system will updates its text value to reflect the damage value.</p>
-<p>You can place the World Effect component on the World Manager’s gameobject. In the inspector,
-create a new element by clicking the add button. Name and set the gameobject reference of the effect. The effect
-can be anything, a particle system, a sprite, but whatever it is, it must have the ability to turn its gameobject
-to active false upon completion.</p>
-<p>You can also use this class with WorldManger.get.effects (using TwoBitMachines.FlareEngine).</p>
+<p>The <strong>WorldEffects</strong> class will instantiate gameobjects and pool them. These gameobjects
+typically represent some type of game effect like a particle system, but they can be anything. The most
+common use case is to call an effect when an enemy is damaged.</p>
+<p>The Health and Projectile components, as well as many other components, have a Unity Event
+for calling the Activate method in WorldEffects to instantiate the correct game effect. The information passed will contain
+the name of the effect, the position, and direction that will be applied to the effect. This information
+is packed automatically using the ImpactPacket class. Usually, somewhere in the inspector there is a field asking you to type in the
+name of the effect.</p>
+<p>When you create an effect, it must usually have the ability to deactivate itself when it’s complete. For example,
+if you’re using Sprite Engine to play a sprite effect, use the On Loop Once Unity Event to deactivate the
+gameobject by choosing GameObect.SetActive to false. If you are using a particle system, you can use the
+Basic Timer component that will deactivate the gameobect after a certain amount of time. When the object is
+deactivated, the system will pool it and activate it again when it’s needed.</p>
+<p>As alluded, the game effects don’t necessarily have to be particle types. You can use a LetsWiggle component, too.
+For example, every time an enemy is hit, you can set a LetsWiggle to briefly change the x and y scale of the
+transform to create a stretch effect (though do remember to set the scale values back to 1).</p>
+<p>If the gameobjet contains a TextMeshPro, the system will write the damage value to the text to display
+the damage applied to the enemy. This also usually contains a LetsWiggle to move the text.</p>
+<p>There is also a Splatter effect you can apply to any surface. Any surface that will receive splatter must contain the
+material SplatterSurface. The sprite that is the splatter must contain the material Splatter. This is great for
+creating blood effects.</p>
+<p>To set this system up, create an empty gameobject and add the WorldEffects component to it. Place
+each gameobject effect as a child of this object and press the Grab Effects button to register them. The name of the
+gameobject is the name of the effect the system will look for. During runtime, all the instantiated effects will
+be placed here.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -166,26 +186,67 @@ to active false upon completion.</p>
 <tr class="row-even"><td><p>Activate (ImpactPacket impact)</p></td>
 <td><p>Activates an effect.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ActivatePlusDirection (ImpactPacket impact)</p></td>
+<tr class="row-odd"><td><p>ActivateWithDirection (ImpactPacket impact)</p></td>
 <td><p>Activates an effect. This will rotate the prefab according to a direction.</p></td>
 </tr>
-<tr class="row-even"><td><p>ActivatePlusRawAngle (ImpactPacket impact)</p></td>
-<td><p>Activates an effect. This will rotate the prefab according to an angle.</p></td>
+<tr class="row-even"><td><p>ActivateWithInvertedDirection (ImpactPacket impact)</p></td>
+<td><p>Activates an effect. This will rotate the prefab according to an inverted direction.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Activate (string name, Vector3 position)</p></td>
-<td><p>Activate the effect with this name at the provided position.</p></td>
-</tr>
-<tr class="row-even"><td><p>ActivatePlusDirection (string name, Vector3 position, Vector2 direction)</p></td>
-<td><p>Activate the effect with this name at the provided position and direction.</p></td>
-</tr>
-<tr class="row-odd"><td><p>ActivateDamageEffect (ImpactPacket impact)</p></td>
-<td><p>Activates the damage effect specified.</p></td>
-</tr>
-<tr class="row-even"><td><p>ActivateDamageEffect (string name, string value, Vector3 position)</p></td>
-<td><p>Activate the damage effect with this name at the provided position. The value represent the damage value.</p></td>
+<tr class="row-odd"><td><p>ActivateWithMirrorDirection (ImpactPacket impact)</p></td>
+<td><p>Activates an effect. This will flip the effect on its y axis if the impact’s x direction is negative.</p></td>
 </tr>
 </tbody>
 </table>
+<section id="world-effect-request">
+<h2>World Effect Request<a class="headerlink" href="#world-effect-request" title="Permalink to this headline"></a></h2>
+<p>This component allows you to specify the effect you want to call and to modify its position, among other related properties.
+This is optional but convenient. Its main purpose is to work with <strong>ReactionProfile</strong>, which
+allows you to group related game effects and reactions into one place, so they can serve as a reaction profile for any AI or object that calls it. This will
+reduce the amount of work and connections you have to make.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Activate</p></td>
+<td><p>Choose the Activate method.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>Set the correct type for LetsWiggle and TextMeshPro effects.</p></td>
+</tr>
+<tr class="row-even"><td><p>Position</p></td>
+<td><p>This position is where the effect will be instantiated. The position is usually determined by the collider of a character, but not always.
+For example, the center position is the exact center of the character’s collider. For blood splatter, you might want to pick the bottom position
+to instantiate the gameobject effect near the feet of the enemy.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quantity</p></td>
+<td><p>The number of effects that you want to instantiate. You can also randomize this value between a min and max value.</p></td>
+</tr>
+<tr class="row-even"><td><p>Controller</p></td>
+<td><p>A reference to WorldEffects. If this reference is empty, the system will call WorldEffects through a static method (if one exists).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Random Rotation</p></td>
+<td><p>Apply a random rotation to the effect. The min and max values represent the range of possible random values.</p></td>
+</tr>
+<tr class="row-even"><td><p>Random Offset</p></td>
+<td><p>Apply a random offset to the position of the effect. The min and max values represent the range of possible offset values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Check For Walls</p></td>
+<td><p>If enabled, this will check if the effect is being instantiated inside a wall. If it is, the gameobject’s position will
+be set to the center position of the character or object that is calling it.</p></td>
+</tr>
+<tr class="row-even"><td><p>Effect Name</p></td>
+<td><p>The name of the effect you want to instantiate. If more than one effect is specified, the system will randomly pick between them.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 
@@ -193,7 +254,7 @@ to active false upon completion.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="textMesh.html" class="btn btn-neutral float-left" title="Text Mesh Pro Effects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../worldVariables/worldVariables.html" class="btn btn-neutral float-right" title="World Variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reactionProfile.html" class="btn btn-neutral float-right" title="Reaction Profile" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

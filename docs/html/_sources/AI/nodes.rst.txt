@@ -20,6 +20,10 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Follow Target
      - The AI will follow the specified target.
 
+   * - Guard Territory
+     - The AI will follow the target if the target is inside the territory.Else, the AI will move to the guard point.
+       This returns Success when the target is within the stop distance;
+
    * - Ignore Block Units
      - The AI will ignore or block other AI units along the pathfinding path.
 
@@ -57,7 +61,10 @@ of the node's purpose. For more information on the node, hit the show informatio
      - Sometimes it's useful to have an action where the AI just waits idly.
 
    * - Indefinite Walk
-     - If the AI hits a wall or air gap, it will change walking direction..
+     - If the AI hits a wall or air gap, it will change walking direction.
+
+   * - Lets Wiggle
+     - Execute a Lets Wiggle tween. If this AI is a moving platform, then only its position should be modified.
 
    * - Melee Attack
      - Perform a melee attack.
@@ -148,6 +155,10 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Remove From List
      - Remove the specified item from a list.
+
+   * - Reset
+     - This will reset the AI's position and health. If WorldBool or TransformTracker exists and is true, the AI will be considered 
+       dead and deactivated. If so, this will return Success
 
    * - Set As Child
      - Set the specified transform as child of the AI or remove it as a child of the AI.
