@@ -9,7 +9,6 @@ the other will be dedicated to playing sound effects.
    :align: center
    
 |
-
 The Audio Manager component and the audio sources can be added to the World Manager's gameobject.
 In the inspector, go to Audio Category, specify a category name and click the add button. This will create an
 audio category, which is meant to organize sounds into groups for convenience. Each category 

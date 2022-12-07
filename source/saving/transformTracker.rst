@@ -19,7 +19,7 @@ To set this up, place this component on an empty gameobject.
    * - Key 
      - The key name used for saving purposes. This name must be unique.
  
-   * - AddToList (ImpactPacket packet)
+   * - AddToList (Transform transform)
      - Add a transform to this list
 
    * - AddToList (ImpactPacket impact)
