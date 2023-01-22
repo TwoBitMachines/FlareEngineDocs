@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -122,7 +122,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -138,8 +144,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Projectiles</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Projectiles</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/projectile.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,7 +156,7 @@
            <div itemprop="articleBody">
              
   <section id="projectiles">
-<h1>Projectiles<a class="headerlink" href="#projectiles" title="Permalink to this headline"></a></h1>
+<h1>Projectiles<a class="headerlink" href="#projectiles" title="Permalink to this heading"></a></h1>
 <p>Projectiles are for shooting. There are three basic types: Bullet, Instant, and Short Range, and each once can be customized
 to create plenty of variety. Each type will deal damage to any gameobject that has a Health component
 and exists in the target layer of the projectile.</p>
@@ -158,7 +164,7 @@ and exists in the target layer of the projectile.</p>
 positions of the projectiles. The Projectile component will create an object pool and manage the life cycle of all its projectiles.</p>
 <hr class="docutils" />
 <section id="projectile">
-<h2>Projectile<a class="headerlink" href="#projectile" title="Permalink to this headline"></a></h2>
+<h2>Projectile<a class="headerlink" href="#projectile" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -237,7 +243,7 @@ every frame.</p></td>
 </section>
 <hr class="docutils" />
 <section id="bullet">
-<h2>Bullet<a class="headerlink" href="#bullet" title="Permalink to this headline"></a></h2>
+<h2>Bullet<a class="headerlink" href="#bullet" title="Permalink to this heading"></a></h2>
 <p>There are six bullet types, each with a different behavior. There’s also no limit on how many firearms can reference a
 projectile type, making it great for saving resources.</p>
 <div class="admonition important">
@@ -360,12 +366,12 @@ also invoke world effects. If the impact effect is specified, the hit point and 
 </section>
 <hr class="docutils" />
 <section id="basic">
-<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline"></a></h2>
+<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this heading"></a></h2>
 <p>This is the most basic bullet. It has no extra properties.</p>
 </section>
 <hr class="docutils" />
 <section id="bounce">
-<h2>Bounce<a class="headerlink" href="#bounce" title="Permalink to this headline"></a></h2>
+<h2>Bounce<a class="headerlink" href="#bounce" title="Permalink to this heading"></a></h2>
 <p>This bullet will bounce off walls. By default, this will check for World and Platform collisions if the y velocity is negative.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -405,7 +411,7 @@ if more perfect collisions are necessary.</p>
 </section>
 <hr class="docutils" />
 <section id="colliding">
-<h2>Colliding<a class="headerlink" href="#colliding" title="Permalink to this headline"></a></h2>
+<h2>Colliding<a class="headerlink" href="#colliding" title="Permalink to this heading"></a></h2>
 <p>This bullet uses a Collider2D instead of raycasts to detect targets.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -432,7 +438,7 @@ and not wall collisions.</p>
 </section>
 <hr class="docutils" />
 <section id="seeker">
-<h2>Seeker<a class="headerlink" href="#seeker" title="Permalink to this headline"></a></h2>
+<h2>Seeker<a class="headerlink" href="#seeker" title="Permalink to this heading"></a></h2>
 <p>This bullet will curve, change directions, to follow  a target.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -468,7 +474,7 @@ the bullet will deactivate on a wall collision.</p>
 </section>
 <hr class="docutils" />
 <section id="stick-to-wall">
-<h2>Stick To Wall<a class="headerlink" href="#stick-to-wall" title="Permalink to this headline"></a></h2>
+<h2>Stick To Wall<a class="headerlink" href="#stick-to-wall" title="Permalink to this heading"></a></h2>
 <p>This bullet can stick to walls. Perfect for arrows!</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -492,7 +498,7 @@ the bullet will deactivate on a wall collision.</p>
 </section>
 <hr class="docutils" />
 <section id="instant">
-<h2>Instant<a class="headerlink" href="#instant" title="Permalink to this headline"></a></h2>
+<h2>Instant<a class="headerlink" href="#instant" title="Permalink to this heading"></a></h2>
 <p>A raycast is used to instantly hit a target.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -547,7 +553,7 @@ scale the sprite image from firearm to hit point.</p>
 </section>
 <hr class="docutils" />
 <section id="short-range">
-<h2>Short Range<a class="headerlink" href="#short-range" title="Permalink to this headline"></a></h2>
+<h2>Short Range<a class="headerlink" href="#short-range" title="Permalink to this heading"></a></h2>
 <p>A BoxCollider2D will search for targets to hit.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -587,7 +593,7 @@ Place it on this gameobject and configure the particle properties to shoot some 
 </section>
 <hr class="docutils" />
 <section id="projectile-inventory">
-<h2>Projectile Inventory<a class="headerlink" href="#projectile-inventory" title="Permalink to this headline"></a></h2>
+<h2>Projectile Inventory<a class="headerlink" href="#projectile-inventory" title="Permalink to this heading"></a></h2>
 <p>This holds a list of projectiles. The inventory system uses this list to swap projectiles on a firearm. Create as
 many as necessary since firearms can reference different projectile inventories.</p>
 <table class="colwidths-given docutils align-default">

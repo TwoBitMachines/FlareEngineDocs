@@ -26,6 +26,10 @@ The most fundamental ability of any platformer.
      - Jump Buffer: the time window the jump button can be pressed before the player hits the ground to execute a jump. 
        Coyote Time: the time window the jump button can still be pressed after the player walks off a platform to execute a jump.
 
+   * - Air Momentum
+     - This will maintain momentum in the direction the player is jumping, even if the user is not pressing input. This value must be greater than 
+       zero to be active, and any value above zero will scale the x velocity.
+
    * - Air Jumps
      - The number of extra jumps the player can perform in the air. The second field will scale the jump force. If using a specific air jump sprite, take advantage of Sprite Engine's
        Loop Start Index.
@@ -55,6 +59,19 @@ The most fundamental ability of any platformer.
  
    * - Air Jump
      - The Unity Event invoked when the player air jumps. Call a World Effect with the dynamic Activate method.
+
+.. list-table::
+   :widths: 75 200
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - Set Air Jumps
+     - Set the number of air jumps.
+ 
+   * - Set Air Glide
+     - Set the value for air glide.
 
 .. important::
    If an ability already contains a jump force, do not add the Jump ability as an exception to it. For instance, the Wall ability

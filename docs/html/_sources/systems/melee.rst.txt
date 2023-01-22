@@ -35,6 +35,19 @@ to sense enemy attacks.
      - The reference to the collider2D.
 
 .. list-table::
+   :widths: 50 200
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - Pause(bool value)
+     - Pausing will prevent the player from using this melee attack.
+ 
+   * - CompleteAttack()
+     - Call this method once the attack animation is complete.
+
+.. list-table::
    :widths: 25 100
    :header-rows: 1
 

@@ -132,6 +132,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Enable Tree
      - Pause or remove the BehaviorTree from executing. Also specify the active state of the gameobject that belongs to the BehaviorTree.
   
+   * - Flip Children Objects
+     - Flip the children objects of this AI in the x direction of the AI. This will flip the x scale. Run this inside an Always state.
+  
    * - Go To Next State
      - Jump to another state. Useful if a node you are working with can't jump to a state.
 

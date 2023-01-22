@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -135,8 +136,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>World Manager</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">World Manager</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/worldManager/worldManager.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,7 +148,7 @@
            <div itemprop="articleBody">
              
   <section id="world-manager">
-<h1>World Manager<a class="headerlink" href="#world-manager" title="Permalink to this headline"></a></h1>
+<h1>World Manager<a class="headerlink" href="#world-manager" title="Permalink to this heading"></a></h1>
 <p>The <strong>World Manager</strong> is in charge of running the game scripts in order. It’s also in charge of
 saving, pausing, resetting the game, and world events.</p>
 <p>Each scene must contain exactly <strong>one</strong> World Manager for proper game function. Simply create a gameobject,
@@ -227,7 +228,7 @@ automatically called during OnDisable();</p></td>
 </table>
 <hr class="docutils" />
 <section id="world-events">
-<h2>World Events<a class="headerlink" href="#world-events" title="Permalink to this headline"></a></h2>
+<h2>World Events<a class="headerlink" href="#world-events" title="Permalink to this heading"></a></h2>
 <p>Send messages so world objects can react to important world events. These events are usually created by special events
 in the game, like the player dying. In response, any gameobject that is registered as a listener will be alerted and
 react accordingly.</p>
@@ -278,7 +279,7 @@ any gameobject that needs to react to the event, like a UI element or an enemy A
 </section>
 <hr class="docutils" />
 <section id="save">
-<h2>Save<a class="headerlink" href="#save" title="Permalink to this headline"></a></h2>
+<h2>Save<a class="headerlink" href="#save" title="Permalink to this heading"></a></h2>
 <p>The engine implements JSON Serialization and basic encryption to save game data. Inventory and World Variables rely
 heavily on this. During development, disable Encrypt Save (so you can actually read the data) and check if your data
 persisted by going to Application.persistedDataPath. Typically, the path will look something like this:</p>

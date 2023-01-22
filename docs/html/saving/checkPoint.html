@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -137,8 +138,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Check-Point</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Check-Point</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/saving/checkPoint.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -149,12 +150,12 @@
            <div itemprop="articleBody">
              
   <section id="check-point">
-<h1>Check-Point<a class="headerlink" href="#check-point" title="Permalink to this headline"></a></h1>
+<h1>Check-Point<a class="headerlink" href="#check-point" title="Permalink to this heading"></a></h1>
 <p>On a game reset, the system will reset the player’s position at the desired location, saving player progress.
 There are two versions of this system. The first one is a streamlined version, and the second was constructed using the AI system.
 Both work, but the first one is recommended as it is a more intuitive approach.</p>
 <section id="streamlined-version">
-<h2>Streamlined version<a class="headerlink" href="#streamlined-version" title="Permalink to this headline"></a></h2>
+<h2>Streamlined version<a class="headerlink" href="#streamlined-version" title="Permalink to this heading"></a></h2>
 <p>Add the <strong>Check Point</strong> component to an empty gameobject. You will then add check-point triggers to your level by clicking
 the add button and dragging the triggers in the scene. The player will be reset at the bottom center of the trigger.</p>
 <table class="colwidths-given docutils align-default">
@@ -214,7 +215,7 @@ the specified button is pressed to begin the save process.</p></td>
 </table>
 </section>
 <section id="ai-fsm-version">
-<h2>AI FSM version<a class="headerlink" href="#ai-fsm-version" title="Permalink to this headline"></a></h2>
+<h2>AI FSM version<a class="headerlink" href="#ai-fsm-version" title="Permalink to this heading"></a></h2>
 <p>The AI version can serve as a good case study and give you an idea on how to create your own systems.</p>
 <img alt="../_images/ResetPoint.png" class="align-center" src="../_images/ResetPoint.png" />
 <div class="line-block">
@@ -233,7 +234,7 @@ desired location of the check-point that matches the saved value with its index.
 </section>
 <hr class="docutils" />
 <section id="how-are-the-check-points-aware-of-each-other">
-<h2>How are the check-points aware of each other?<a class="headerlink" href="#how-are-the-check-points-aware-of-each-other" title="Permalink to this headline"></a></h2>
+<h2>How are the check-points aware of each other?<a class="headerlink" href="#how-are-the-check-points-aware-of-each-other" title="Permalink to this heading"></a></h2>
 <p>World Float is the glue that holds everything together. Each check-point comes with a World Float, and each World Float
 must have exactly the same name as all the others. If each World Float has the same name, it means they are saving
 to the same variable in memory, so they all reference the same data. And equally important, each time a World Float is modified it will send
@@ -242,7 +243,7 @@ the Broadcast Value must be enabled for each World Float. This will ensure all t
 </section>
 <hr class="docutils" />
 <section id="how-does-the-check-point-fsm-work">
-<h2>How does the Check-Point FSM work?<a class="headerlink" href="#how-does-the-check-point-fsm-work" title="Permalink to this headline"></a></h2>
+<h2>How does the Check-Point FSM work?<a class="headerlink" href="#how-does-the-check-point-fsm-work" title="Permalink to this heading"></a></h2>
 <p>The FSM has three states. The first state, ResetPoint, will check if the World Float matches its index. If it does, the state will
 reset the player’s position using Set Transform. Since this is the first state, the AI system will always check this state first
 on scene start. On a game reset, enable Reset To First in settings, which means the AI system will move back to the first state

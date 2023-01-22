@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -131,8 +132,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>High Jump</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">High Jump</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/interactables/highJump.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -143,7 +144,7 @@
            <div itemprop="articleBody">
              
   <section id="high-jump">
-<h1>High Jump<a class="headerlink" href="#high-jump" title="Permalink to this headline"></a></h1>
+<h1>High Jump<a class="headerlink" href="#high-jump" title="Permalink to this heading"></a></h1>
 <p>Launch a character into the air. This has two modes, Trampoline and Wind. Place this component
 on an empty gameobject. A blue rectangle gizmo will appear in the scene for character detection. The area of this
 rectangle can be modified. Typically, a trampoline will have a smaller collider area, and Wind will have a much
@@ -175,7 +176,11 @@ taller collider area.</p>
 should have larger forces above 10. The force of the High Jump can also be applied in any direction according
 to the gameobject’s rotation.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Trampoline</p></td>
+<tr class="row-even"><td><p>Move With Parent</p></td>
+<td><p>Enable this if the High Jump is a child object of a moving gameobject. This will allow the High Jump, for example,
+to move along with a moving platform.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Trampoline</p></td>
 <td><p>The Unity Event invoked when trampoline is triggered. Call a World Effect with the dynamic Activate method.</p></td>
 </tr>
 </tbody>

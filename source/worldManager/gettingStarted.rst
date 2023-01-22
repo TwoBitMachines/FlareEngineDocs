@@ -32,7 +32,7 @@ gameobject. Once this component is in the scene, it will automatically install t
 
 * **Friction** - Use this tag on any ground gameobject that is using the Friction component.
 * **Block** - Use this tag on any block if using the Push Block of Pick And Throw player ability.
-* **NoClimb** - If the player can climb walls, use this tag on any wall gameobject that is *not* meant to be climbable.
+* **NoClimb** - If the player can climb walls or ceilings, use this tag on any gameobject that is *not* meant to be climbable.
 * **UIControl** - Place this on any UI that needs to ignore IsPointerOverGameObject. This is useful for UI buttons that need to fire weapons.
 
 And that's basically it. That's all you need to get started. From here you can add a player, choose its abilities,

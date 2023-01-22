@@ -2,6 +2,7 @@ Ladder
 ++++++
 
 The player can climb ladders.
+       
 
 .. list-table::
    :widths: 25 100
@@ -9,10 +10,6 @@ The player can climb ladders.
 
    * - Property
      - 
-
-   * - Latch    
-     - If Automatic is enabled, the player will automatically latch to the ladder on contact, provided the player has a negative y velocity and a zero x velocity. 
-       If Enter Button is enabled, specify the button that must be pressed in order for the player to latch onto the ladder.
  
    * - Climb  
      - If Manual is enabled, specify the buttons (Up, Down) for climbing the ladder. If Automatic is enabled, the player will climb
@@ -26,5 +23,9 @@ The player can climb ladders.
 
    * - Align To Center
      - If enabled, the player's x position will align with the center of the ladder.
+
+   * - Can Jump Up
+     - If enabled, the player will be able to jump straight up in the direction of the ladder. To initiate this correctly, the user input in the x 
+       direction must be zero.
 
 **Signals: ladderClimb**

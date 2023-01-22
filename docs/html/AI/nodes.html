@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -134,8 +135,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Nodes</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Nodes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/AI/nodes.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -146,7 +147,7 @@
            <div itemprop="articleBody">
              
   <section id="nodes">
-<h1>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline"></a></h1>
+<h1>Nodes<a class="headerlink" href="#nodes" title="Permalink to this heading"></a></h1>
 <p>The AI system comes with many built in nodes ready for creating AI. The following gives you a general understanding
 of the node’s purpose. For more information on the node, hit the show information icon in the  inspector.</p>
 <table class="colwidths-given docutils align-default">
@@ -281,59 +282,62 @@ This returns Success when the target is within the stop distance;</p></td>
 <tr class="row-odd"><td><p>Enable Tree</p></td>
 <td><p>Pause or remove the BehaviorTree from executing. Also specify the active state of the gameobject that belongs to the BehaviorTree.</p></td>
 </tr>
-<tr class="row-even"><td><p>Go To Next State</p></td>
+<tr class="row-even"><td><p>Flip Children Objects</p></td>
+<td><p>Flip the children objects of this AI in the x direction of the AI. This will flip the x scale. Run this inside an Always state.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Go To Next State</p></td>
 <td><p>Jump to another state. Useful if a node you are working with can’t jump to a state.</p></td>
 </tr>
-<tr class="row-odd"><td><p>IncDec Float</p></td>
+<tr class="row-even"><td><p>IncDec Float</p></td>
 <td><p>Increase or decrease a float variable by the specified amount.</p></td>
 </tr>
-<tr class="row-even"><td><p>Kill AI</p></td>
+<tr class="row-odd"><td><p>Kill AI</p></td>
 <td><p>Disable the AI’s Collider and Sprite Renderer.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Event</p></td>
+<tr class="row-even"><td><p>On Event</p></td>
 <td><p>Invoke and event.</p></td>
 </tr>
-<tr class="row-even"><td><p>PauseCollisions</p></td>
+<tr class="row-odd"><td><p>PauseCollisions</p></td>
 <td><p>Pause world collisions. If enabled, choose to move transform with Translate or not.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Player Death</p></td>
+<tr class="row-even"><td><p>Player Death</p></td>
 <td><p>Play a death animation for the specified time. This will block player input and disable its collider.</p></td>
 </tr>
-<tr class="row-even"><td><p>Random Loot</p></td>
+<tr class="row-odd"><td><p>Random Loot</p></td>
 <td><p>Add a random item from the list to an inventory.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Remove From List</p></td>
+<tr class="row-even"><td><p>Remove From List</p></td>
 <td><p>Remove the specified item from a list.</p></td>
 </tr>
-<tr class="row-even"><td><p>Reset</p></td>
+<tr class="row-odd"><td><p>Reset</p></td>
 <td><p>This will reset the AI’s position and health. If WorldBool or TransformTracker exists and is true, the AI will be considered
 dead and deactivated. If so, this will return Success</p></td>
 </tr>
-<tr class="row-odd"><td><p>Set As Child</p></td>
+<tr class="row-even"><td><p>Set As Child</p></td>
 <td><p>Set the specified transform as child of the AI or remove it as a child of the AI.</p></td>
 </tr>
-<tr class="row-even"><td><p>Set Value</p></td>
+<tr class="row-odd"><td><p>Set Value</p></td>
 <td><p>Set the value of the blackboard data variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Set Value From blackboard</p></td>
+<tr class="row-even"><td><p>Set Value From blackboard</p></td>
 <td><p>Set the value of the blackboard data variable with that of the blackboard from variable.</p></td>
 </tr>
-<tr class="row-even"><td><p>Spawn Point</p></td>
+<tr class="row-odd"><td><p>Spawn Point</p></td>
 <td><p>Reset the AI to the position it had at the beginning of the scene.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Sprite Color</p></td>
+<tr class="row-even"><td><p>Sprite Color</p></td>
 <td><p>This will modify a sprite’s color by lerping to a new one.</p></td>
 </tr>
-<tr class="row-even"><td><p>Wait For Player Input</p></td>
+<tr class="row-odd"><td><p>Wait For Player Input</p></td>
 <td><p>Wait for the player to enter the territory and then for the button to be pressed.</p></td>
 </tr>
-<tr class="row-odd"><td><p>World Effect</p></td>
+<tr class="row-even"><td><p>World Effect</p></td>
 <td><p>Call a world effect at the AI’s position.</p></td>
 </tr>
-<tr class="row-even"><td><p>Damage Effect</p></td>
+<tr class="row-odd"><td><p>Damage Effect</p></td>
 <td><p>Slow down the enemy, apply damage, and play the specified animation signal for the duration amount.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Damage Flash</p></td>
+<tr class="row-even"><td><p>Damage Flash</p></td>
 <td><p>Show damage flash.</p></td>
 </tr>
 </tbody>
@@ -487,7 +491,7 @@ dead and deactivated. If so, this will return Success</p></td>
 </table>
 <hr class="docutils" />
 <section id="create-nodes">
-<h2>Create Nodes<a class="headerlink" href="#create-nodes" title="Permalink to this headline"></a></h2>
+<h2>Create Nodes<a class="headerlink" href="#create-nodes" title="Permalink to this heading"></a></h2>
 <p>The most common nodes to create will be Conditional and Action nodes. Once the
 script is created, place it inside the AI/BehaviorTree/Nodes folder and it will become available
 for use in the AI system. Follow the template below to code your own

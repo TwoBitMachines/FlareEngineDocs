@@ -13,6 +13,9 @@ Increase the speed of the player to quickly cover distance.
    * - Buttons  
      - The buttons that need to be tapped in order to trigger a dash.
 
+   * - Extra Button 
+     - If pressed, this will immediately initiate a dash, bypassing the button tap settings.
+
    * - Dash Direction
      - If Horizontal Axis is enabled, the dash will occur along the x axis. In this state, only the left and right buttons are used. It is also possible
        to use only one button and leave the other empty. If Multi Directional is enabled, all the buttons that are set will be utilized to move the player in one of

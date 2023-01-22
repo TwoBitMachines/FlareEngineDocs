@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -110,7 +110,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -126,8 +132,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Ladder</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Ladder</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/ladderClimb.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -138,7 +144,7 @@
            <div itemprop="articleBody">
              
   <section id="ladder">
-<h1>Ladder<a class="headerlink" href="#ladder" title="Permalink to this headline"></a></h1>
+<h1>Ladder<a class="headerlink" href="#ladder" title="Permalink to this heading"></a></h1>
 <p>The player can climb ladders.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -151,22 +157,22 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Latch</p></td>
-<td><p>If Automatic is enabled, the player will automatically latch to the ladder on contact, provided the player has a negative y velocity and a zero x velocity.
-If Enter Button is enabled, specify the button that must be pressed in order for the player to latch onto the ladder.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Climb</p></td>
+<tr class="row-even"><td><p>Climb</p></td>
 <td><p>If Manual is enabled, specify the buttons (Up, Down) for climbing the ladder. If Automatic is enabled, the player will climb
 the ladder automatically.</p></td>
 </tr>
-<tr class="row-even"><td><p>Climb Speed</p></td>
+<tr class="row-odd"><td><p>Climb Speed</p></td>
 <td><p>How quickly the player climbs the ladder.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Stand On Top</p></td>
+<tr class="row-even"><td><p>Stand On Top</p></td>
 <td><p>If enabled, the player can stand on top of the ladder.</p></td>
 </tr>
-<tr class="row-even"><td><p>Align To Center</p></td>
+<tr class="row-odd"><td><p>Align To Center</p></td>
 <td><p>If enabled, the player’s x position will align with the center of the ladder.</p></td>
+</tr>
+<tr class="row-even"><td><p>Can Jump Up</p></td>
+<td><p>If enabled, the player will be able to jump straight up in the direction of the ladder. To initiate this correctly, the user input in the x
+direction must be zero.</p></td>
 </tr>
 </tbody>
 </table>

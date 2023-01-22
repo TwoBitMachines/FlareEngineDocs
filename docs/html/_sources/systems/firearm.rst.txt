@@ -49,9 +49,12 @@ The player must have the Firearms ability enabled (for recoil to work and for ap
    * - Method
      - 
 
+   * - Pause(bool value)
+     - Pausing will prevent the player from using this firearm.
+ 
    * - Shoot()
      - If necessary, trigger a shooting event with this method.
- 
+
    * - AnimationComplete()
      - Call this method when the shooting animation completes. This will not trigger a shooting event, but it will 
        terminated the animation state of the firearm. It is assumed that ShootAndWaitForAnimation() was called 
@@ -103,6 +106,11 @@ Projectile
        animation signal true. If using Sprite Engine, make sure the signal name exists, configure the Sprite State accordingly, and set to Loop Once. 
        If this is enabled, **a return signal is required or the system will stay stuck.** Typically you will call ShootAndAnimationComplete (),
        or ShootAndWaitForAnimation () followed by AnimationComplete ();
+
+   * - Extra Animation.
+     - The rules are the same as those for the Shoot Animation. However, there is a difference in that you 
+       can specify which Sprite Engine you want to use. Thus, you will need to provide a reference to a Sprite
+       Engine and the name of the animation signal.
 
 .. list-table::
    :widths: 25 100
@@ -327,6 +335,11 @@ Charge the firearm to unleash a super charged bullet attack.
        animation signal true. If using Sprite Engine, make sure the signal name exists, configure the Sprite State accordingly, and set to Loop Once. 
        If this is enabled, **a return signal is required or the system will stay stuck.** For a charging setup, only call ShootAndAnimationComplete ()
        once the animation is complete.
+
+   * - Extra Animation.
+     - The rules are the same as those for the Shoot Animation. However, there is a difference in that you 
+       can specify which Sprite Engine you want to use. Thus, you will need to provide a reference to a Sprite
+       Engine and the name of the animation signal.
 
 .. list-table::
    :widths: 25 100

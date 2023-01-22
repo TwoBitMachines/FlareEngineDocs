@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -113,7 +113,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -129,8 +135,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Dialogue</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Dialogue</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/dialogue.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -141,7 +147,7 @@
            <div itemprop="articleBody">
              
   <section id="dialogue">
-<h1>Dialogue<a class="headerlink" href="#dialogue" title="Permalink to this headline"></a></h1>
+<h1>Dialogue<a class="headerlink" href="#dialogue" title="Permalink to this heading"></a></h1>
 <p>This is an interactive dialogue system for the player and NPCs. Create conversations, add message effects, call Unity Events, and
 even include simple animations for complex interactions. All this is accomplished within the inspector window.</p>
 <p>The setup requires at least two components: <strong>Dialogue</strong>, where the dialogue between the characters is created and stored,
@@ -325,7 +331,7 @@ the options will be mapped to UI button elements.</p></td>
 </div>
 <hr class="docutils" />
 <section id="dialogueui">
-<h2>DialogueUI<a class="headerlink" href="#dialogueui" title="Permalink to this headline"></a></h2>
+<h2>DialogueUI<a class="headerlink" href="#dialogueui" title="Permalink to this heading"></a></h2>
 <p>The system implements Unity’s UI system to display the dialogue box. The UI elements in the dialogue box can be configured to your personal taste.
 The important part is to set the UI references so that the system knows when to enable them and set their content.</p>
 <p>The demo contains a basic UI dialogue structure, which can be used as a starting point for other designs, but in general, the system

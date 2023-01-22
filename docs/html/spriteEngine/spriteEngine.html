@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -87,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -115,7 +115,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -131,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Sprite Engine</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Sprite Engine</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/spriteEngine/spriteEngine.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -143,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="sprite-engine">
-<h1>Sprite Engine<a class="headerlink" href="#sprite-engine" title="Permalink to this headline"></a></h1>
+<h1>Sprite Engine<a class="headerlink" href="#sprite-engine" title="Permalink to this heading"></a></h1>
 <p>The <strong>SpriteEngine</strong> component provides an extremely easy way for creating and storing sprites.
 The Sprite Engine removes the hassle of working with different systems and centralizes
 the power of creating sprites all in one place. Hence, there is no more need for creating
@@ -206,7 +212,7 @@ sprites instantly. For customization, each sprite can also be applied an individ
 </div>
 <hr class="docutils" />
 <section id="signals">
-<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline"></a></h2>
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this heading"></a></h2>
 <p>Signals are just simple booleans but they’re an integral part of the animation state machine. When a signal
 is set true, the state machine reads it and plays the corresponding sprite. That’s it. For example, when a
 character is touching the ground, the system will set the onGround signal true. The Sprite Engine can then read
@@ -224,7 +230,7 @@ for creating attack animation signals.</p>
 </section>
 <hr class="docutils" />
 <section id="sprite-state">
-<h2>Sprite State<a class="headerlink" href="#sprite-state" title="Permalink to this headline"></a></h2>
+<h2>Sprite State<a class="headerlink" href="#sprite-state" title="Permalink to this heading"></a></h2>
 <p>The state machine that will be configured to set the animation state of a character. At its core,
 this system is only reading signals and setting the appropriate sprites accordingly.</p>
 <p>Once all the signals and sprites have been created, click the add button on the bar to create a state.
@@ -255,7 +261,7 @@ sprite in that direction.</p>
 </section>
 <hr class="docutils" />
 <section id="properties">
-<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline"></a></h2>
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
 <p>This allows every sprite to have extra properties to modify and a per frame basis. Sometimes it’s necessary to
 control a Transform or a Collider2D to work seamlessly with the animation. A very common scenario is to
 modify a Collider2D and change the size of its collision area to work with an attack animation.</p>

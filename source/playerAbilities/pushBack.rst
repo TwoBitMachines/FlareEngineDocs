@@ -26,7 +26,8 @@ send two values, damage and direction. If damage is negative, Push Back will com
      - The total displacement in the x direction.
 
    * - Jump Force
-     - The force applied in the y direction. This force is applied only once.
+     - The force applied in the y direction. This force is applied only once. If the force in this direction is zero, 
+       you can set a default value to ensure the player always jumps.
 
    * - Push Time
      - The total duration of the push back. The x velocity will be overridden during this time period.

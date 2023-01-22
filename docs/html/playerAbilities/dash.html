@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -110,7 +110,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -126,8 +132,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Dash</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Dash</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/dash.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -138,7 +144,7 @@
            <div itemprop="articleBody">
              
   <section id="dash">
-<h1>Dash<a class="headerlink" href="#dash" title="Permalink to this headline"></a></h1>
+<h1>Dash<a class="headerlink" href="#dash" title="Permalink to this heading"></a></h1>
 <p>Increase the speed of the player to quickly cover distance.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -154,51 +160,54 @@
 <tr class="row-even"><td><p>Buttons</p></td>
 <td><p>The buttons that need to be tapped in order to trigger a dash.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Dash Direction</p></td>
+<tr class="row-odd"><td><p>Extra Button</p></td>
+<td><p>If pressed, this will immediately initiate a dash, bypassing the button tap settings.</p></td>
+</tr>
+<tr class="row-even"><td><p>Dash Direction</p></td>
 <td><p>If Horizontal Axis is enabled, the dash will occur along the x axis. In this state, only the left and right buttons are used. It is also possible
 to use only one button and leave the other empty. If Multi Directional is enabled, all the buttons that are set will be utilized to move the player in one of
 eight directions along the x and y axis.</p></td>
 </tr>
-<tr class="row-even"><td><p>Button Taps</p></td>
+<tr class="row-odd"><td><p>Button Taps</p></td>
 <td><p>If Single Tap is enabled, pressing the button only once will trigger a dash. If Double Tap is enabled, pressing the button twice is required
 to trigger a dash.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Tap Threshold</p></td>
+<tr class="row-even"><td><p>Tap Threshold</p></td>
 <td><p>If Double Tap is enabled, the threshold is the time interval in which the double tap must occur for the dash to trigger successfully.</p></td>
 </tr>
-<tr class="row-even"><td><p>On Dash</p></td>
+<tr class="row-odd"><td><p>On Dash</p></td>
 <td><p>The Unity Event invoked when the player is dashing. You can call a world effect from this event. The name of the effect
 and the rate at which the event executes are required.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Start</p></td>
+<tr class="row-even"><td><p>On Start</p></td>
 <td><p>The Unity Event invoked when the player starts dashing. You can call a world effect from this event.</p></td>
 </tr>
-<tr class="row-even"><td><p>On End</p></td>
+<tr class="row-odd"><td><p>On End</p></td>
 <td><p>The Unity Event invoked when the player ends dashing. You can call a world effect from this event.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Duration</p></td>
+<tr class="row-even"><td><p>Duration</p></td>
 <td><p>If Instant is enabled, the player will traverse the dash distance in one frame. If Incremental is enabled, the player will traverse the dash distance
 according to the dash time.</p></td>
 </tr>
-<tr class="row-even"><td><p>Dash Time</p></td>
+<tr class="row-odd"><td><p>Dash Time</p></td>
 <td><p>The time it will take to traverse the dash distance;</p></td>
 </tr>
-<tr class="row-odd"><td><p>Dash Distance</p></td>
+<tr class="row-even"><td><p>Dash Distance</p></td>
 <td><p>The total distance traversed while dashing.</p></td>
 </tr>
-<tr class="row-even"><td><p>Cool Down</p></td>
+<tr class="row-odd"><td><p>Cool Down</p></td>
 <td><p>The time interval before the next dash can be triggered.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Crouch</p></td>
+<tr class="row-even"><td><p>Crouch</p></td>
 <td><p>If enabled, the player will change to a lower height while dashing. If the player is below a platform when the dash completes, the crouch signal will be set.</p></td>
 </tr>
-<tr class="row-even"><td><p>Can Take Damage</p></td>
+<tr class="row-odd"><td><p>Can Take Damage</p></td>
 <td><p>If disabled, the player will not take damage while dashing. This assumes the player has a Health component.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Ground Only</p></td>
+<tr class="row-even"><td><p>On Ground Only</p></td>
 <td><p>If enabled, the player must be on the ground in order to begin a dash.</p></td>
 </tr>
-<tr class="row-even"><td><p>Nullify Gravity</p></td>
+<tr class="row-odd"><td><p>Nullify Gravity</p></td>
 <td><p>If enabled, the force of gravity will not affect a dash.</p></td>
 </tr>
 </tbody>

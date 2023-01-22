@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -118,7 +118,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -134,8 +140,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Inventory</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Inventory</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/inventory.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -146,7 +152,7 @@
            <div itemprop="articleBody">
              
   <section id="inventory">
-<h1>Inventory<a class="headerlink" href="#inventory" title="Permalink to this headline"></a></h1>
+<h1>Inventory<a class="headerlink" href="#inventory" title="Permalink to this heading"></a></h1>
 <p>The inventory system allows the player to find and store items, provides a customizable user interface
 for interacting with the items, and automatically restores and saves the items when a scene begins and ends. The
 system itself relies heavily on Scriptable Objects, which allow for a flexible foundation.</p>
@@ -159,7 +165,7 @@ It’s for this reason that multiple inventories can be created to work together
 an inventory only for firearm items and another for all the items in the system.</p>
 <hr class="docutils" />
 <section id="inventoryso">
-<h2>InventorySO<a class="headerlink" href="#inventoryso" title="Permalink to this headline"></a></h2>
+<h2>InventorySO<a class="headerlink" href="#inventoryso" title="Permalink to this heading"></a></h2>
 <p>This Scriptable Object is the glue that holds the entire inventory system together. Its primary job is
 to contain a list of all the items, to add and remove items, and to save these items in memory.
 Each InventorySO must have a unique name for saving purposes. Also, for it to function properly, it
@@ -214,7 +220,7 @@ The <strong>using TwoBitMachines</strong> namespace will be required.</p></td>
 </section>
 <hr class="docutils" />
 <section id="itemso">
-<h2>ItemSO<a class="headerlink" href="#itemso" title="Permalink to this headline"></a></h2>
+<h2>ItemSO<a class="headerlink" href="#itemso" title="Permalink to this heading"></a></h2>
 <p>This Scriptable Object is a template for an item the player can pick up.
 It contains the necessary information and settings for handling the life cycle of the item.</p>
 <p>To create an ItemSO, right click in the project window and go to Create/FlareEngine/ItemSO.</p>
@@ -271,7 +277,7 @@ in the inventory upon selling it.</p></td>
 </section>
 <hr class="docutils" />
 <section id="pickupitems">
-<h2>PickUpItems<a class="headerlink" href="#pickupitems" title="Permalink to this headline"></a></h2>
+<h2>PickUpItems<a class="headerlink" href="#pickupitems" title="Permalink to this heading"></a></h2>
 <p>Attach this component to a character. Upon contact with an item, this will deactivate the item and
 add it into the inventory. If this item is not a consumable, and it already exists in the inventory, the system will ignore it.</p>
 <table class="colwidths-given docutils align-default">
@@ -333,7 +339,7 @@ it wants to modify, and it will use the generic float value to change the ammo a
 </section>
 <hr class="docutils" />
 <section id="item">
-<h2>Item<a class="headerlink" href="#item" title="Permalink to this headline"></a></h2>
+<h2>Item<a class="headerlink" href="#item" title="Permalink to this heading"></a></h2>
 <p>Attach this component to any gameobject that is an item. This item will become
 part of the inventory (and its gameobject will be deactivated) when a character makes contact with it. Attach a Circle Collider2D
 and set the isTrigger to true. Each item must correspond to an <strong>ItemSO</strong>.</p>
@@ -360,7 +366,7 @@ If Tool Swap, the character will swap tools with the current and new tool. The o
 </section>
 <hr class="docutils" />
 <section id="id1">
-<h2>Inventory<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>Inventory<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>The Inventory contains the UI structure. Place this component on a Canvas gameobject. The slots (item containers) and accompanying
 features can be arranged however you deem necessary. You can arrange the slots in a grid, in a vertical or horizontal bar,
 or you can have just one slot. It’s completely up to you.</p>
@@ -528,7 +534,7 @@ to a new slot. If set to zero, the image will be instantly moved.</p></td>
 </section>
 <hr class="docutils" />
 <section id="inventoryslot">
-<h2>InventorySlot<a class="headerlink" href="#inventoryslot" title="Permalink to this headline"></a></h2>
+<h2>InventorySlot<a class="headerlink" href="#inventoryslot" title="Permalink to this heading"></a></h2>
 <p>Inventory Slot is used by Inventory for displaying items. Each slot requires this component. The demo includes the proper setup, including
 connections for dragging and swapping items.</p>
 <table class="colwidths-given docutils align-default">

@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -116,7 +116,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -132,8 +138,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Firearm</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Firearm</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/firearm.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,7 +150,7 @@
            <div itemprop="articleBody">
              
   <section id="firearm">
-<h1>Firearm<a class="headerlink" href="#firearm" title="Permalink to this headline"></a></h1>
+<h1>Firearm<a class="headerlink" href="#firearm" title="Permalink to this heading"></a></h1>
 <p>The Firearm shoots projectiles. The purpose of this component is to control the behavior of the weapon as
 it relates to the character. It is not concerned about how projectiles operate. You will
 specify its fire point, the projectile it uses, shooting direction, how it rotates, recoil,
@@ -202,26 +208,29 @@ room.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Shoot()</p></td>
+<tr class="row-even"><td><p>Pause(bool value)</p></td>
+<td><p>Pausing will prevent the player from using this firearm.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shoot()</p></td>
 <td><p>If necessary, trigger a shooting event with this method.</p></td>
 </tr>
-<tr class="row-odd"><td><p>AnimationComplete()</p></td>
+<tr class="row-even"><td><p>AnimationComplete()</p></td>
 <td><p>Call this method when the shooting animation completes. This will not trigger a shooting event, but it will
 terminated the animation state of the firearm. It is assumed that ShootAndWaitForAnimation() was called
 before. If using Sprite Engine, call this in the Loop Once Event.</p></td>
 </tr>
-<tr class="row-even"><td><p>ShootAndAnimationComplete()</p></td>
+<tr class="row-odd"><td><p>ShootAndAnimationComplete()</p></td>
 <td><p>Call this method when the sprite is complete. This will trigger a shooting event and terminate
 the animation state of the firearm. If using Sprite Engine, call this in the Loop Once Event.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ShootAndWaitForAnimation()</p></td>
+<tr class="row-even"><td><p>ShootAndWaitForAnimation()</p></td>
 <td><p>Call this method at the exact sprite frame where shooting is required. This will not end the animation state
 of the firearm. Therefore, the last frame in the shooting animation should call AnimationComplete();</p></td>
 </tr>
-<tr class="row-even"><td><p>ChangeDefaultProjectile (ProjectileBase newProjectile)</p></td>
+<tr class="row-odd"><td><p>ChangeDefaultProjectile (ProjectileBase newProjectile)</p></td>
 <td><p>Change the projectile type.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ChangeChargeProjectile (ProjectileBase newProjectile)</p></td>
+<tr class="row-even"><td><p>ChangeChargeProjectile (ProjectileBase newProjectile)</p></td>
 <td><p>Change the charge projectile type.</p></td>
 </tr>
 </tbody>
@@ -233,7 +242,7 @@ will enter an animation wait state upon shooting, where the system will wait for
 </div>
 <hr class="docutils" />
 <section id="projectile">
-<h2>Projectile<a class="headerlink" href="#projectile" title="Permalink to this headline"></a></h2>
+<h2>Projectile<a class="headerlink" href="#projectile" title="Permalink to this heading"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -261,6 +270,11 @@ If the value is zero, this feature will be disabled.</p></td>
 animation signal true. If using Sprite Engine, make sure the signal name exists, configure the Sprite State accordingly, and set to Loop Once.
 If this is enabled, <strong>a return signal is required or the system will stay stuck.</strong> Typically you will call ShootAndAnimationComplete (),
 or ShootAndWaitForAnimation () followed by AnimationComplete ();</p></td>
+</tr>
+<tr class="row-even"><td><p>Extra Animation.</p></td>
+<td><p>The rules are the same as those for the Shoot Animation. However, there is a difference in that you
+can specify which Sprite Engine you want to use. Thus, you will need to provide a reference to a Sprite
+Engine and the name of the animation signal.</p></td>
 </tr>
 </tbody>
 </table>
@@ -307,7 +321,7 @@ of the sprite direction. Typically, if recoilLeft is true, set flipLeft, and if 
 </section>
 <hr class="docutils" />
 <section id="rotation">
-<h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline"></a></h2>
+<h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this heading"></a></h2>
 <p>Rotate the firearm.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -415,7 +429,7 @@ Otherwise, the firearm is considered clamped, and it will be restricted by the s
 </section>
 <hr class="docutils" />
 <section id="aim">
-<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline"></a></h2>
+<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this heading"></a></h2>
 <p>Add visual elements, such as a beam or reticle, to help the player aim.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -498,7 +512,7 @@ will follow the exact position of the mouse.</p></td>
 </section>
 <hr class="docutils" />
 <section id="charge">
-<h2>Charge<a class="headerlink" href="#charge" title="Permalink to this headline"></a></h2>
+<h2>Charge<a class="headerlink" href="#charge" title="Permalink to this heading"></a></h2>
 <p>Charge the firearm to unleash a super charged bullet attack.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -529,6 +543,11 @@ to set a minimum threshold time in which the player can still discharge the fire
 animation signal true. If using Sprite Engine, make sure the signal name exists, configure the Sprite State accordingly, and set to Loop Once.
 If this is enabled, <strong>a return signal is required or the system will stay stuck.</strong> For a charging setup, only call ShootAndAnimationComplete ()
 once the animation is complete.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Extra Animation.</p></td>
+<td><p>The rules are the same as those for the Shoot Animation. However, there is a difference in that you
+can specify which Sprite Engine you want to use. Thus, you will need to provide a reference to a Sprite
+Engine and the name of the animation signal.</p></td>
 </tr>
 </tbody>
 </table>

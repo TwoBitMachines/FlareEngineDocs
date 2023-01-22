@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -139,8 +140,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Reaction Profile</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Reaction Profile</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/reactionProfile.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -151,7 +152,7 @@
            <div itemprop="articleBody">
              
   <section id="reaction-profile">
-<h1>Reaction Profile<a class="headerlink" href="#reaction-profile" title="Permalink to this headline"></a></h1>
+<h1>Reaction Profile<a class="headerlink" href="#reaction-profile" title="Permalink to this heading"></a></h1>
 <p>This allows you to group related game effects and reactions into one place, so they can serve as a reaction profile
 for any AI or object that calls it. This will reduce the amount of work and connections you have to make.</p>
 <p>Simply create an empty gameobject and add this component. You will then have the option to add reactions from
@@ -162,31 +163,31 @@ can be easy to create if necessary. If you do create one, simply put it in Scrip
 will become available to add in a ReactionProfile.</p>
 <p>These are current reactions that can be implemented:</p>
 <section id="audiosfx">
-<h2>AudioSFX<a class="headerlink" href="#audiosfx" title="Permalink to this headline"></a></h2>
+<h2>AudioSFX<a class="headerlink" href="#audiosfx" title="Permalink to this heading"></a></h2>
 <p>This plays a sound. An Audio Manager is expected to exist somewhere in the scene.</p>
 </section>
 <section id="camera-shake">
-<h2>Camera Shake<a class="headerlink" href="#camera-shake" title="Permalink to this headline"></a></h2>
+<h2>Camera Shake<a class="headerlink" href="#camera-shake" title="Permalink to this heading"></a></h2>
 <p>This calls Safire 2D camera to implement a shake. In Safire, the Shakes module will have to be enabled
 and have the specified shake already created.</p>
 </section>
 <section id="reaction-event">
-<h2>Reaction Event<a class="headerlink" href="#reaction-event" title="Permalink to this headline"></a></h2>
+<h2>Reaction Event<a class="headerlink" href="#reaction-event" title="Permalink to this heading"></a></h2>
 <p>This is a general purpose Unity Event that can be invoked with the ImpactPacket class.</p>
 </section>
 <section id="remember-transform">
-<h2>Remember Transform<a class="headerlink" href="#remember-transform" title="Permalink to this headline"></a></h2>
+<h2>Remember Transform<a class="headerlink" href="#remember-transform" title="Permalink to this heading"></a></h2>
 <p>This will remember any transform. This is useful for remembering killed enemies so that they remain dead on Scene start. To use this properly,
 the AI must be using the Reset node to read this value. If the Tracker reference is empty, the system will call TransformTracker through a static
 method (if one exists).</p>
 </section>
 <section id="slow-motion">
-<h2>Slow Motion<a class="headerlink" href="#slow-motion" title="Permalink to this headline"></a></h2>
+<h2>Slow Motion<a class="headerlink" href="#slow-motion" title="Permalink to this heading"></a></h2>
 <p>Implement slow motion. The intensity is a value greater than zero, but smaller than one. The lower the value, the stronger the effect.
 If lerp is enabled, the intensity will gradually increment to 1. Otherwise, it retains its intensity for the specified duration.</p>
 </section>
 <section id="world-effect-request">
-<h2>World Effect Request<a class="headerlink" href="#world-effect-request" title="Permalink to this headline"></a></h2>
+<h2>World Effect Request<a class="headerlink" href="#world-effect-request" title="Permalink to this heading"></a></h2>
 <p>This calls the specified effect. Learn more about this class at World Effects.</p>
 </section>
 </section>

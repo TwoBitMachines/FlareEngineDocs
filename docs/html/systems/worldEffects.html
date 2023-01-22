@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -134,8 +135,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>World Effects</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">World Effects</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/worldEffects.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -146,7 +147,7 @@
            <div itemprop="articleBody">
              
   <section id="world-effects">
-<h1>World Effects<a class="headerlink" href="#world-effects" title="Permalink to this headline"></a></h1>
+<h1>World Effects<a class="headerlink" href="#world-effects" title="Permalink to this heading"></a></h1>
 <p>The <strong>WorldEffects</strong> class will instantiate gameobjects and pool them. These gameobjects
 typically represent some type of game effect like a particle system, but they can be anything. The most
 common use case is to call an effect when an enemy is damaged.</p>
@@ -198,7 +199,7 @@ be placed here.</p>
 </tbody>
 </table>
 <section id="world-effect-request">
-<h2>World Effect Request<a class="headerlink" href="#world-effect-request" title="Permalink to this headline"></a></h2>
+<h2>World Effect Request<a class="headerlink" href="#world-effect-request" title="Permalink to this heading"></a></h2>
 <p>This component allows you to specify the effect you want to call and to modify its position, among other related properties.
 This is optional but convenient. Its main purpose is to work with <strong>ReactionProfile</strong>, which
 allows you to group related game effects and reactions into one place, so they can serve as a reaction profile for any AI or object that calls it. This will

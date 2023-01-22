@@ -21,6 +21,7 @@ taller collider area.
 
    * - Property
      - 
+
    * - Type 
      - Launch the character with Trampoline, or gradually push the character upward with Wind.
 
@@ -28,6 +29,10 @@ taller collider area.
      - The amount of force acting on the character. Wind should typically have forces below 1, while Trampoline 
        should have larger forces above 10. The force of the High Jump can also be applied in any direction according 
        to the gameobject's rotation.
+
+   * - Move With Parent
+     - Enable this if the High Jump is a child object of a moving gameobject. This will allow the High Jump, for example,
+       to move along with a moving platform.
 
    * - On Trampoline
      - The Unity Event invoked when trampoline is triggered. Call a World Effect with the dynamic Activate method.

@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -82,7 +83,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../AI/ai.html">AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/nodes.html">Nodes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../AI/pathfinding.html">Pathfinding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../AI/checkPoint.html">Check-Point</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
@@ -117,7 +117,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../worldVariables/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Saving</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 </ul>
 
         </div>
@@ -133,8 +139,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Quest</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Quest</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/quest.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -145,14 +151,14 @@
            <div itemprop="articleBody">
              
   <section id="quest">
-<h1>Quest<a class="headerlink" href="#quest" title="Permalink to this headline"></a></h1>
+<h1>Quest<a class="headerlink" href="#quest" title="Permalink to this heading"></a></h1>
 <p>not
 Send the player on a quest. Complete any number of quests and get rewards! This relies
 heavily on Scriptable Objects to create a flexible quest system. Each quest will retain its state,
 and each quest does not have to be completed in the level where it was accepted. Thus, you can easily
 design quests that can span across multiple game levels.</p>
 <section id="questinventoryso">
-<h2>QuestInventorySO<a class="headerlink" href="#questinventoryso" title="Permalink to this headline"></a></h2>
+<h2>QuestInventorySO<a class="headerlink" href="#questinventoryso" title="Permalink to this heading"></a></h2>
 <p>This Scriptable Object will create quest objects - QuestSO - and will store them in a list where you
 can modify them in the inspector. To create a new QuestSO, simply name it and press the Create New Quest
 button. The new QuestSO will be placed in the AssetsFolder/Quests/QuestSO folder. If you want to delete them,
@@ -160,7 +166,7 @@ you must do so manually.</p>
 <p>To create a QuestInventorySO, right click in the project window and go to Create/FlareEngine/QuestInventorySO.</p>
 </section>
 <section id="questso">
-<h2>QuestSO<a class="headerlink" href="#questso" title="Permalink to this headline"></a></h2>
+<h2>QuestSO<a class="headerlink" href="#questso" title="Permalink to this heading"></a></h2>
 <p>This object is in charge of storing all the quest information. Press the add button to add as many rewards
 as necessary. Press the delete button to delete the saved data.</p>
 <table class="colwidths-given docutils align-default">
@@ -219,7 +225,7 @@ This can be left empty if not required.</p></td>
 </table>
 </section>
 <section id="id1">
-<h2>Quest<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<h2>Quest<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>This component exists in the scene. It has two jobs. It will activate a quest if the user accepts the quest. In this case,
 place it on an npc or an object that can trigger the accept method. And, it will check for progression of the quest, in which case place it
 on an item that needs to be collected or an enemy that needs to be destroyed. These objects will need to trigger the progression method.</p>
@@ -274,7 +280,7 @@ and once it’s of equal value to the goal, the quest will complete. This will i
 </table>
 </section>
 <section id="questuiaccepted">
-<h2>QuestUIAccepted<a class="headerlink" href="#questuiaccepted" title="Permalink to this headline"></a></h2>
+<h2>QuestUIAccepted<a class="headerlink" href="#questuiaccepted" title="Permalink to this heading"></a></h2>
 <p>This UI class will display the quest title, description, and the rewards. All the UI are optional, just drag and drop the necessary
 UI references. The style and design of the UI is completely up to you.</p>
 <table class="colwidths-given docutils align-default">
@@ -301,7 +307,7 @@ UI references. The style and design of the UI is completely up to you.</p>
 </table>
 </section>
 <section id="id2">
-<h2>QuestUIAccepted<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>QuestUIAccepted<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>This works in similar fashion to QuestUIAccepted. This UI class will display the quest title and a message once the quest is completed.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>

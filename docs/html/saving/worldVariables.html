@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -135,8 +136,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>World Variables</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">World Variables</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/saving/worldVariables.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,7 +148,7 @@
            <div itemprop="articleBody">
              
   <section id="world-variables">
-<h1>World Variables<a class="headerlink" href="#world-variables" title="Permalink to this headline"></a></h1>
+<h1>World Variables<a class="headerlink" href="#world-variables" title="Permalink to this heading"></a></h1>
 <p>These components allow you to create data that can be easily referenced. This data is also
 automatically saved and restored during runtime to preserve important information. The four types of variables
 used are <strong>Float</strong>, <strong>Bool</strong>, <strong>String</strong>, and <strong>Vector3</strong>. The <strong>Health</strong> component is also part of this group; it inherits from Float</p>
@@ -156,7 +157,7 @@ Health component, the <strong>WorldFloatSO</strong> (Scriptable Object) that bel
 to display the character’s health. Any other system, like an enemy AI, can also read this value to change its behavior.
 This will help decouple your systems.</p>
 <section id="float-and-health">
-<h2>Float And Health<a class="headerlink" href="#float-and-health" title="Permalink to this headline"></a></h2>
+<h2>Float And Health<a class="headerlink" href="#float-and-health" title="Permalink to this heading"></a></h2>
 <p>Both the Float and Health components work very similarly. The Health component just implements a few extra properties.</p>
 <p>This class makes use of something called a <strong>tempValue</strong>. The temporary value simply makes it easier to save
 or delete the current value in case it needs to revert. One scenario is where the Float variable is being used
@@ -305,7 +306,7 @@ Object is no longer required, delete it manually.</p></td>
 </table>
 </section>
 <section id="world-float-hud">
-<h2>World Float HUD<a class="headerlink" href="#world-float-hud" title="Permalink to this headline"></a></h2>
+<h2>World Float HUD<a class="headerlink" href="#world-float-hud" title="Permalink to this heading"></a></h2>
 <p><strong>WorldFloatHUD</strong> is a convenient class for displaying world float values using UI elements. This class can also work with other classes
 like Projectile and Firearms to display ammunition values. The UI element style is left to your personal taste. This class will
 simply enable images and set values.</p>
@@ -334,7 +335,7 @@ active. To set tool, drop any Firearm into this field.</p></td>
 </table>
 </section>
 <section id="string-bool-and-vector3">
-<h2>String, Bool, And Vector3<a class="headerlink" href="#string-bool-and-vector3" title="Permalink to this headline"></a></h2>
+<h2>String, Bool, And Vector3<a class="headerlink" href="#string-bool-and-vector3" title="Permalink to this heading"></a></h2>
 <p>These work in a similar fashion as Float. The respective Scriptable Objects are <strong>WorldStringSO</strong>, <strong>WorldBoolSO</strong>, and <strong>WorldVector3SO</strong>.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
