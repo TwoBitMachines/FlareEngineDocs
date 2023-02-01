@@ -66,7 +66,8 @@ so you can control this value completely.
      - The amount of time after being damaged where the character can't take any damage.
 
    * - Hash Shield
-     - If enabled, the character won't take damage in the direction it is facing. This is still experimental.
+     - If enabled, the character can only take damage according to the direction of the shield, which is either 1 or -1. 
+       For example, if the shield direction is 1, the character can only take damage from behind.
 
 .. list-table::
    :widths: 25 100
@@ -89,6 +90,9 @@ so you can control this value completely.
 
    * - On Load Condition False
      - The Unity Event invoked if the value is zero (False) on Start.
+
+   * - On Shield Hit
+     - The Unity Event invoked when the shield mechanic blocks an enemy attack.
 
 .. list-table::
    :widths: 25 100

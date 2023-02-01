@@ -220,7 +220,8 @@ Object is no longer required, delete it manually.</p></td>
 <td><p>The amount of time after being damaged where the character can’t take any damage.</p></td>
 </tr>
 <tr class="row-even"><td><p>Hash Shield</p></td>
-<td><p>If enabled, the character won’t take damage in the direction it is facing. This is still experimental.</p></td>
+<td><p>If enabled, the character can only take damage according to the direction of the shield, which is either 1 or -1.
+For example, if the shield direction is 1, the character can only take damage from behind.</p></td>
 </tr>
 </tbody>
 </table>
@@ -249,6 +250,9 @@ Object is no longer required, delete it manually.</p></td>
 </tr>
 <tr class="row-even"><td><p>On Load Condition False</p></td>
 <td><p>The Unity Event invoked if the value is zero (False) on Start.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Shield Hit</p></td>
+<td><p>The Unity Event invoked when the shield mechanic blocks an enemy attack.</p></td>
 </tr>
 </tbody>
 </table>

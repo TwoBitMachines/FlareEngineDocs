@@ -153,8 +153,7 @@ to loop once, and add a collider2D property to control the size and position of 
 The Melee system will be in charge of enabling the collider, and setting the animation signal active. Once the attack
 animation is complete, the <strong>CompleteAttack</strong> method must be called on the <strong>Melee</strong> class.</p>
 <p>To create a melee, create a gameobject and set it as a child of the player transform. Add the collider that will
-be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled. Once enabled, register
-the newly created melee attack. Since more than one melee attack can be registered, it is thus possible to change between melee attacks.</p>
+be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled.</p>
 <p>The melee component also has the ability to execute a block to defend against enemy attacks. If blocking is enabled,
 add a RigidBody2D to this gameobject and set Body Type to kinematic. You will also need to change the
 layer to  World or Player. If set to World, this melee block will have the ability to block walking enemies.
@@ -178,6 +177,9 @@ to sense enemy attacks.</p>
 <tr class="row-odd"><td><p>Melee Collider</p></td>
 <td><p>The reference to the collider2D.</p></td>
 </tr>
+<tr class="row-even"><td><p>Hit Layer</p></td>
+<td><p>The layer the collider2D will check for collisions to deal damage to.</p></td>
+</tr>
 </tbody>
 </table>
 <table class="colwidths-given docutils align-default">
@@ -186,16 +188,19 @@ to sense enemy attacks.</p>
 <col style="width: 80%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Method</p></th>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
 <th class="head"></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Pause(bool value)</p></td>
-<td><p>Pausing will prevent the player from using this melee attack.</p></td>
+<tr class="row-even"><td><p>Buttons</p></td>
+<td><p>The button combination that will trigger the melee attack. If only one button is desired, then make sure the second button is empty.</p></td>
 </tr>
-<tr class="row-odd"><td><p>CompleteAttack()</p></td>
-<td><p>Call this method once the attack animation is complete.</p></td>
+<tr class="row-odd"><td><p>Attack From Sleep</p></td>
+<td><p>If enabled, the system will check if the button inputs are triggered even if the melee is deactivated. If so, the system will activate the melee attack.</p></td>
+</tr>
+<tr class="row-even"><td><p>Cancel Others</p></td>
+<td><p>If enabled, this melee attack will be able to cancel any active melee attack. This will only occur if Attack From Sleep is enabled.</p></td>
 </tr>
 </tbody>
 </table>
@@ -234,35 +239,10 @@ to sense enemy attacks.</p>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Combos</p></th>
-<th class="head"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Hit Layer</p></td>
-<td><p>The layer the collider2D will check for collisions.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Attack Button</p></td>
-<td><p>The input button that will start a melee attack.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Combos</p></th>
 <th class="head"><p>Some fields are only enabled if Combos has more than one attack.</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Hit To Continue</p></td>
-<td><p>If enabled, in order to move on to the next attack in the combo, the current attack must have made contact with a target.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Loop If Complete</p></td>
-<td><p>If the melee combo completes, it will immediately start again if the user is pressing input.</p></td>
-</tr>
 <tr class="row-even"><td><p>Early timer</p></td>
 <td><p>How soon after the attack started can the user press the button in order to successfully begin the next attack in the combo.</p></td>
 </tr>
@@ -272,7 +252,10 @@ to sense enemy attacks.</p>
 <tr class="row-even"><td><p>Cool Down</p></td>
 <td><p>The wait period before the next combo can begin.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Cool Down</p></td>
+<tr class="row-odd"><td><p>Hit To Continue</p></td>
+<td><p>If enabled, in order to move on to the next attack in the combo, the current attack must have made contact with a target.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Cool Down</p></td>
 <td><p>This event will be invoked with a percentage of the cool down time.</p></td>
 </tr>
 </tbody>
@@ -303,11 +286,11 @@ works like Absolute Velocity, but the BeginVelX (bool value) method must be call
 This is usually called from the animation controller in a specific frame of the animation.</p></td>
 </tr>
 <tr class="row-even"><td><p>Velocity y</p></td>
-<td><p>The velocity applied to the combo in the y-direction. This has the same options as Velocity x and an extra one. If Jump Velocity is enabled, the velocity will be treated as a jump force.</p></td>
+<td><p>The velocity applied to the combo in the y-direction. This almost has the same options as Velocity x. If Jump Velocity is enabled, the velocity will be treated as a jump force.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Attack</p></td>
-<td><p>If Anytime is set, the combo sequence will proceed. If MustBeOnGround is set, the player must be on the ground to proceed, or else the combo will exit the combo or skip
-to the next combo in the sequence. The same rules apply if MustBeOnAir is set.</p></td>
+<td><p>If Anytime is set, the combo sequence will proceed. If MustBeOnGround is set, the player must be on the ground for the combo to proceed. If not, the player has the option to exit
+the combo or skip to the next combo in the sequence. The same rules apply if MustBeOnAir is set.</p></td>
 </tr>
 <tr class="row-even"><td><p>Go To Next</p></td>
 <td><p>This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
@@ -315,6 +298,25 @@ to the next combo before the current one finishes.</p></td>
 </tr>
 <tr class="row-odd"><td><p>On Combo Begin</p></td>
 <td><p>The event invoked when the Combo begins.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pause(bool value)</p></td>
+<td><p>Pausing will prevent the player from using this melee attack.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CompleteAttack()</p></td>
+<td><p>Call this method once the attack animation is complete.</p></td>
 </tr>
 </tbody>
 </table>

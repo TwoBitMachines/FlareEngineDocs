@@ -11,8 +11,7 @@ The Melee system will be in charge of enabling the collider, and setting the ani
 animation is complete, the **CompleteAttack** method must be called on the **Melee** class.
 
 To create a melee, create a gameobject and set it as a child of the player transform. Add the collider that will 
-be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled. Once enabled, register 
-the newly created melee attack. Since more than one melee attack can be registered, it is thus possible to change between melee attacks.
+be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled. 
 
 The melee component also has the ability to execute a block to defend against enemy attacks. If blocking is enabled, 
 add a RigidBody2D to this gameobject and set Body Type to kinematic. You will also need to change the 
@@ -34,18 +33,24 @@ to sense enemy attacks.
    * - Melee Collider
      - The reference to the collider2D.
 
+   * - Hit Layer
+     - The layer the collider2D will check for collisions to deal damage to.
+
 .. list-table::
-   :widths: 50 200
+   :widths: 25 100
    :header-rows: 1
 
-   * - Method
+   * - Input
      - 
 
-   * - Pause(bool value)
-     - Pausing will prevent the player from using this melee attack.
- 
-   * - CompleteAttack()
-     - Call this method once the attack animation is complete.
+   * - Buttons
+     - The button combination that will trigger the melee attack. If only one button is desired, then make sure the second button is empty.
+
+   * - Attack From Sleep
+     - If enabled, the system will check if the button inputs are triggered even if the melee is deactivated. If so, the system will activate the melee attack.
+
+   * - Cancel Others
+     - If enabled, this melee attack will be able to cancel any active melee attack. This will only occur if Attack From Sleep is enabled.
 
 .. list-table::
    :widths: 25 100
@@ -74,26 +79,7 @@ to sense enemy attacks.
    :header-rows: 1
 
    * - Combos
-     - 
- 
-   * - Hit Layer
-     - The layer the collider2D will check for collisions.
-
-   * - Attack Button
-     - The input button that will start a melee attack.
-
-.. list-table::
-   :widths: 25 100
-   :header-rows: 1
-
-   * - Combos
      - Some fields are only enabled if Combos has more than one attack.
-
-   * - Hit To Continue
-     - If enabled, in order to move on to the next attack in the combo, the current attack must have made contact with a target.
-
-   * - Loop If Complete
-     - If the melee combo completes, it will immediately start again if the user is pressing input.
      
    * - Early timer
      - How soon after the attack started can the user press the button in order to successfully begin the next attack in the combo.   
@@ -103,6 +89,9 @@ to sense enemy attacks.
 
    * - Cool Down
      - The wait period before the next combo can begin.
+
+   * - Hit To Continue
+     - If enabled, in order to move on to the next attack in the combo, the current attack must have made contact with a target.
 
    * - On Cool Down
      - This event will be invoked with a percentage of the cool down time.
@@ -129,11 +118,11 @@ to sense enemy attacks.
        This is usually called from the animation controller in a specific frame of the animation.
 
    * - Velocity y
-     - The velocity applied to the combo in the y-direction. This has the same options as Velocity x and an extra one. If Jump Velocity is enabled, the velocity will be treated as a jump force.
+     - The velocity applied to the combo in the y-direction. This almost has the same options as Velocity x. If Jump Velocity is enabled, the velocity will be treated as a jump force.
 
    * - Attack
-     - If Anytime is set, the combo sequence will proceed. If MustBeOnGround is set, the player must be on the ground to proceed, or else the combo will exit the combo or skip
-       to the next combo in the sequence. The same rules apply if MustBeOnAir is set.
+     - If Anytime is set, the combo sequence will proceed. If MustBeOnGround is set, the player must be on the ground for the combo to proceed. If not, the player has the option to exit 
+       the combo or skip to the next combo in the sequence. The same rules apply if MustBeOnAir is set.
 
    * - Go To Next
      - This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
@@ -141,5 +130,18 @@ to sense enemy attacks.
 
    * - On Combo Begin
      - The event invoked when the Combo begins.
+     
+.. list-table::
+   :widths: 50 200
+   :header-rows: 1
+
+   * - Method
+     - 
+
+   * - Pause(bool value)
+     - Pausing will prevent the player from using this melee attack.
+ 
+   * - CompleteAttack()
+     - Call this method once the attack animation is complete.
 
 **Signals:  meleeCombo**

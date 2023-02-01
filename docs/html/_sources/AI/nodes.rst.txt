@@ -114,6 +114,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - BoxCollider2D Size
      - Change the size and offset of a BoxCollider2D.
 
+   * - Branch On Object Tag
+     - This will read an object's tag and jump to the specified state. Create as many options as necessary. 
+
    * - Captured By Yoshi
      - This AI can be captured by Yoshi.
 

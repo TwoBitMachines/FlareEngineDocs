@@ -145,8 +145,9 @@
              
   <section id="melee">
 <h1>Melee<a class="headerlink" href="#melee" title="Permalink to this heading"></a></h1>
-<p>Register the melee attacks so they can be properly executed. Unlike firearms, only one melee attack
-can be active at at a time. The melee attack that will be executed will always be the first one in the list.</p>
+<p>All melee attacks that are children of the player object will be registered automatically on scene start.
+Unlike firearms, only one melee attack can be active at at a time. The melee attack that will be executed will
+always be the first one in the list.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -158,13 +159,13 @@ can be active at at a time. The melee attack that will be executed will always b
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CompleteAttack</p></td>
+<tr class="row-even"><td><p>CompleteAttack()</p></td>
 <td><p>Call this when the attack animation is complete to stop the melee attack.</p></td>
 </tr>
 <tr class="row-odd"><td><p>ChangeMeleeAttack (string meleeName)</p></td>
 <td><p>If more than one melee attack is registered, call this method to change to a different one by moving it to the top of the list.</p></td>
 </tr>
-<tr class="row-even"><td><p>MeleeAttackIsActive</p></td>
+<tr class="row-even"><td><p>MeleeAttackIsActive()</p></td>
 <td><p>Returns true if the first melee attack is active.</p></td>
 </tr>
 </tbody>
