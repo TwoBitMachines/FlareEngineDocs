@@ -207,140 +207,143 @@ This returns Success when the target is within the stop distance;</p></td>
 <tr class="row-even"><td><p>Control Player</p></td>
 <td><p>Control the player in the x-direction by moving it to a point. This will also block player input.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Idle</p></td>
+<tr class="row-odd"><td><p>Control Player Transform</p></td>
+<td><p>Move the player’s transform along a set of points. These points are local to the AI.</p></td>
+</tr>
+<tr class="row-even"><td><p>Idle</p></td>
 <td><p>Sometimes it’s useful to have an action where the AI just waits idly.</p></td>
 </tr>
-<tr class="row-even"><td><p>Indefinite Walk</p></td>
+<tr class="row-odd"><td><p>Indefinite Walk</p></td>
 <td><p>If the AI hits a wall or air gap, it will change walking direction.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Lets Wiggle</p></td>
+<tr class="row-even"><td><p>Lets Wiggle</p></td>
 <td><p>Execute a Lets Wiggle tween. If this AI is a moving platform, then only its position should be modified.</p></td>
 </tr>
-<tr class="row-even"><td><p>Melee Attack</p></td>
+<tr class="row-odd"><td><p>Melee Attack</p></td>
 <td><p>Perform a melee attack.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Move</p></td>
+<tr class="row-even"><td><p>Move</p></td>
 <td><p>This will move the AI with the specified velocity.</p></td>
 </tr>
-<tr class="row-even"><td><p>Nullify Gravity</p></td>
+<tr class="row-odd"><td><p>Nullify Gravity</p></td>
 <td><p>Stop the effect of gravity on the AI.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Rotate Around</p></td>
+<tr class="row-even"><td><p>Rotate Around</p></td>
 <td><p>Rotate the transform around the specified target.</p></td>
 </tr>
-<tr class="row-even"><td><p>Rotate Position</p></td>
+<tr class="row-odd"><td><p>Rotate Position</p></td>
 <td><p>Rotate the transform’s position around the center point at the specified radius.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Set Transform</p></td>
+<tr class="row-even"><td><p>Set Transform</p></td>
 <td><p>Set the position, rotation, or scale of a transform instantly or by lerping.</p></td>
 </tr>
-<tr class="row-even"><td><p>Shake</p></td>
+<tr class="row-odd"><td><p>Shake</p></td>
 <td><p>This will shake the AI. Only shake an object if it’s standing still.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Water Float</p></td>
+<tr class="row-even"><td><p>Water Float</p></td>
 <td><p>The AI will float on the waterline.</p></td>
 </tr>
-<tr class="row-even"><td><p>Face Target</p></td>
+<tr class="row-odd"><td><p>Face Target</p></td>
 <td><p>The AI will point towards the specified target in the x-axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Get Nearest Target</p></td>
+<tr class="row-even"><td><p>Get Nearest Target</p></td>
 <td><p>Get the nearest target to the AI from a list and set the reference to this target.</p></td>
 </tr>
-<tr class="row-even"><td><p>Get Random Target</p></td>
+<tr class="row-odd"><td><p>Get Random Target</p></td>
 <td><p>Get a random target from a list and set the reference to this target.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Nearest 2D Results</p></td>
+<tr class="row-even"><td><p>Nearest 2D Results</p></td>
 <td><p>Get the nearest target to the AI from a list of physics results and set the reference to this target.</p></td>
 </tr>
-<tr class="row-even"><td><p>Target Changed</p></td>
+<tr class="row-odd"><td><p>Target Changed</p></td>
 <td><p>This will return success when the target’s position has changed by the specified distance.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Add To List</p></td>
+<tr class="row-even"><td><p>Add To List</p></td>
 <td><p>Add the specified item to a list.</p></td>
 </tr>
-<tr class="row-even"><td><p>Animation Signal</p></td>
+<tr class="row-odd"><td><p>Animation Signal</p></td>
 <td><p>Sets an animation signal true for the AI.</p></td>
 </tr>
-<tr class="row-odd"><td><p>BoxCollider2D Size</p></td>
+<tr class="row-even"><td><p>BoxCollider2D Size</p></td>
 <td><p>Change the size and offset of a BoxCollider2D.</p></td>
 </tr>
-<tr class="row-even"><td><p>Branch On Object Tag</p></td>
+<tr class="row-odd"><td><p>Branch On Object Tag</p></td>
 <td><p>This will read an object’s tag and jump to the specified state. Create as many options as necessary.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Captured By Yoshi</p></td>
+<tr class="row-even"><td><p>Captured By Yoshi</p></td>
 <td><p>This AI can be captured by Yoshi.</p></td>
 </tr>
-<tr class="row-even"><td><p>Character Animation Signal</p></td>
+<tr class="row-odd"><td><p>Character Animation Signal</p></td>
 <td><p>Set the following animation signal true for the specified character.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Chain</p></td>
+<tr class="row-even"><td><p>Chain</p></td>
 <td><p>A chain created from gameobjects.</p></td>
 </tr>
-<tr class="row-even"><td><p>Clock</p></td>
+<tr class="row-odd"><td><p>Clock</p></td>
 <td><p>Wait the specified time.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Enable Behaviour</p></td>
+<tr class="row-even"><td><p>Enable Behaviour</p></td>
 <td><p>This will enable or disable the specified behaviour or renderer.</p></td>
 </tr>
-<tr class="row-even"><td><p>Enable Tree</p></td>
+<tr class="row-odd"><td><p>Enable Tree</p></td>
 <td><p>Pause or remove the BehaviorTree from executing. Also specify the active state of the gameobject that belongs to the BehaviorTree.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Flip Children Objects</p></td>
+<tr class="row-even"><td><p>Flip Children Objects</p></td>
 <td><p>Flip the children objects of this AI in the x direction of the AI. This will flip the x scale. Run this inside an Always state.</p></td>
 </tr>
-<tr class="row-even"><td><p>Go To Next State</p></td>
+<tr class="row-odd"><td><p>Go To Next State</p></td>
 <td><p>Jump to another state. Useful if a node you are working with can’t jump to a state.</p></td>
 </tr>
-<tr class="row-odd"><td><p>IncDec Float</p></td>
+<tr class="row-even"><td><p>IncDec Float</p></td>
 <td><p>Increase or decrease a float variable by the specified amount.</p></td>
 </tr>
-<tr class="row-even"><td><p>Kill AI</p></td>
+<tr class="row-odd"><td><p>Kill AI</p></td>
 <td><p>Disable the AI’s Collider and Sprite Renderer.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Event</p></td>
+<tr class="row-even"><td><p>On Event</p></td>
 <td><p>Invoke and event.</p></td>
 </tr>
-<tr class="row-even"><td><p>PauseCollisions</p></td>
+<tr class="row-odd"><td><p>PauseCollisions</p></td>
 <td><p>Pause world collisions. If enabled, choose to move transform with Translate or not.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Player Death</p></td>
+<tr class="row-even"><td><p>Player Death</p></td>
 <td><p>Play a death animation for the specified time. This will block player input and disable its collider.</p></td>
 </tr>
-<tr class="row-even"><td><p>Random Loot</p></td>
+<tr class="row-odd"><td><p>Random Loot</p></td>
 <td><p>Add a random item from the list to an inventory.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Remove From List</p></td>
+<tr class="row-even"><td><p>Remove From List</p></td>
 <td><p>Remove the specified item from a list.</p></td>
 </tr>
-<tr class="row-even"><td><p>Reset</p></td>
+<tr class="row-odd"><td><p>Reset</p></td>
 <td><p>This will reset the AI’s position and health. If WorldBool or TransformTracker exists and is true, the AI will be considered
 dead and deactivated. If so, this will return Success</p></td>
 </tr>
-<tr class="row-odd"><td><p>Set As Child</p></td>
+<tr class="row-even"><td><p>Set As Child</p></td>
 <td><p>Set the specified transform as child of the AI or remove it as a child of the AI.</p></td>
 </tr>
-<tr class="row-even"><td><p>Set Value</p></td>
+<tr class="row-odd"><td><p>Set Value</p></td>
 <td><p>Set the value of the blackboard data variable.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Set Value From blackboard</p></td>
+<tr class="row-even"><td><p>Set Value From blackboard</p></td>
 <td><p>Set the value of the blackboard data variable with that of the blackboard from variable.</p></td>
 </tr>
-<tr class="row-even"><td><p>Spawn Point</p></td>
+<tr class="row-odd"><td><p>Spawn Point</p></td>
 <td><p>Reset the AI to the position it had at the beginning of the scene.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Sprite Color</p></td>
+<tr class="row-even"><td><p>Sprite Color</p></td>
 <td><p>This will modify a sprite’s color by lerping to a new one.</p></td>
 </tr>
-<tr class="row-even"><td><p>Wait For Player Input</p></td>
+<tr class="row-odd"><td><p>Wait For Player Input</p></td>
 <td><p>Wait for the player to enter the territory and then for the button to be pressed.</p></td>
 </tr>
-<tr class="row-odd"><td><p>World Effect</p></td>
+<tr class="row-even"><td><p>World Effect</p></td>
 <td><p>Call a world effect at the AI’s position.</p></td>
 </tr>
-<tr class="row-even"><td><p>Damage Effect</p></td>
+<tr class="row-odd"><td><p>Damage Effect</p></td>
 <td><p>Slow down the enemy, apply damage, and play the specified animation signal for the duration amount.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Damage Flash</p></td>
+<tr class="row-even"><td><p>Damage Flash</p></td>
 <td><p>Show damage flash.</p></td>
 </tr>
 </tbody>

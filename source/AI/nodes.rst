@@ -57,6 +57,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Control Player
      - Control the player in the x-direction by moving it to a point. This will also block player input.
 
+   * - Control Player Transform
+     - Move the player's transform along a set of points. These points are local to the AI.
+
    * - Idle
      - Sometimes it's useful to have an action where the AI just waits idly.
 
