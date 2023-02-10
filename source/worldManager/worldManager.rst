@@ -69,6 +69,9 @@ add this component, and make sure it's always enabled. This gameobject should ne
      - This will save every Inventory in the scene as well as World Variables, including Health. This is 
        automatically called during OnDisable();
 
+   * - DeleteAllSavedData()
+     - This will delete all saved data in the game.
+
 ------------
 
 World Events

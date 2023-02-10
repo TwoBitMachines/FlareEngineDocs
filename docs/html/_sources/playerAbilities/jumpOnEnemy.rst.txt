@@ -20,4 +20,8 @@ Jump on an enemy to deal damage.
      - The forced applied in the direction of damage.
 
    * - Bounce Force
-     - The jump force applied to the player after contact.
+     - The jump force applied to the player after contact. If the jump button is being held, the jump force will be multiplied by the boost.
+
+   * - On Bounce
+     - The Unity Event invoked when the player jumps on an enemy. Call a World Effect with the dynamic Activate method.
+ 

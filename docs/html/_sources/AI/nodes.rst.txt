@@ -165,6 +165,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Remove From List
      - Remove the specified item from a list.
 
+   * - Repeat
+     - This will run the amount of times specified in the repeat value and then return Success.
+
    * - Reset
      - This will reset the AI's position and health. If WorldBool or TransformTracker exists and is true, the AI will be considered 
        dead and deactivated. If so, this will return Success
@@ -172,11 +175,20 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Set As Child
      - Set the specified transform as child of the AI or remove it as a child of the AI.
 
+   * - Set Direction
+     - Set the direction of a character.
+
    * - Set Value
      - Set the value of the blackboard data variable.
 
    * - Set Value From blackboard
      - Set the value of the blackboard data variable with that of the blackboard from variable.
+
+   * - Skip A Frame
+     - This will wait one frame and then return Success.
+
+   * - Spawn GameObject
+     - Spawn a gameObject at the specified position.
 
    * - Spawn Point
      - Reset the AI to the position it had at the beginning of the scene.
