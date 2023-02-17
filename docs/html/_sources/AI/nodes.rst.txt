@@ -184,6 +184,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Set Value From blackboard
      - Set the value of the blackboard data variable with that of the blackboard from variable.
 
+   * - Set World Float At Rate
+     - Increase or decrease a World Float value at the specified rate.
+
    * - Skip A Frame
      - This will wait one frame and then return Success.
 

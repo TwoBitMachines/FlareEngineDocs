@@ -173,32 +173,55 @@ A value of zero means the player can instantly change direction in the air.</p><
 specify the button or call InfiniteWalkActivate (bool value). You can also disable this ability by calling InfiniteWalkAbility (bool value).
 These methods are found on the Player component.</p></td>
 </tr>
-<tr class="row-even"><td><p>Run</p></td>
-<td><p>If enabled, this will boost the Speed value, and the running signal will be set true.</p></td>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Run</p></th>
+<th class="head"><p>If enabled, this will boost the Speed value, and the running signal will be set true.</p></th>
 </tr>
-<tr class="row-odd"><td><p>Type</p></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Type</p></td>
 <td><p>If Button is enabled, the user has to hold a button to run. If Time Threshold is enabled, the player has
 to walk on the ground for a specified time uninterrupted before starting to run. If Double Tap is enabled,
 the user must double tap the run button within the tap threshold time to start running, and the player will stop running
 once the button is released. If Button Is LeftRight is enabled, it means the button is mapped to the left and right input,
 and this will prevent entering the run state if the player direction is simply being changed.</p></td>
 </tr>
-<tr class="row-even"><td><p>Boost</p></td>
+<tr class="row-odd"><td><p>Speed Boost</p></td>
 <td><p>Speed will be multiplied by Boost while the player is running.</p></td>
+</tr>
+<tr class="row-even"><td><p>Jump Boost</p></td>
+<td><p>This will boost the jump force if the player is running.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Ease Into Run</p></td>
 <td><p>If enabled, the player will ease into the running speed instead of accelerating instantly. Specify the duration of the ease time.</p></td>
 </tr>
-<tr class="row-even"><td><p>Ground Hit</p></td>
-<td><p>The Unity Event invoked when the player initially hits the ground. Call a World Effect with the dynamic Activate method.</p></td>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Ground Hit</p></th>
+<th class="head"><p>The Unity Event invoked when the player initially hits the ground. Call a World Effect with the dynamic Activate method.</p></th>
 </tr>
-<tr class="row-odd"><td><p>Not On Ground</p></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Not On Ground</p></td>
 <td><p>The Unity Event invoked when the player initially leaves the ground. Call a World Effect with the dynamic Activate method.</p></td>
 </tr>
-<tr class="row-even"><td><p>Walking On Ground</p></td>
+<tr class="row-odd"><td><p>Walking On Ground</p></td>
 <td><p>The Unity Event invoked when the player is walking/running on ground. Call a World Effect with the dynamic Activate method.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Direction Changed</p></td>
+<tr class="row-even"><td><p>On Direction Changed</p></td>
 <td><p>The Unity Event invoked when the player changes direction on the x-axis. Call a World Effect with the dynamic Activate method.</p></td>
 </tr>
 </tbody>

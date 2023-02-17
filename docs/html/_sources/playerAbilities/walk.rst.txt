@@ -26,6 +26,10 @@ Allow the player to move in the x direction. This ability is enabled by default.
        specify the button or call InfiniteWalkActivate (bool value). You can also disable this ability by calling InfiniteWalkAbility (bool value).
        These methods are found on the Player component.
 
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
    * - Run
      - If enabled, this will boost the Speed value, and the running signal will be set true.
 
@@ -36,12 +40,19 @@ Allow the player to move in the x direction. This ability is enabled by default.
        once the button is released. If Button Is LeftRight is enabled, it means the button is mapped to the left and right input,
        and this will prevent entering the run state if the player direction is simply being changed.
 
-   * - Boost
+   * - Speed Boost
      - Speed will be multiplied by Boost while the player is running.
+
+   * - Jump Boost
+     - This will boost the jump force if the player is running.
 
    * - Ease Into Run
      - If enabled, the player will ease into the running speed instead of accelerating instantly. Specify the duration of the ease time.
 
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+   
    * - Ground Hit
      - The Unity Event invoked when the player initially hits the ground. Call a World Effect with the dynamic Activate method.
 

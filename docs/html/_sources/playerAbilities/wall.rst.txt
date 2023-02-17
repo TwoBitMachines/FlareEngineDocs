@@ -31,12 +31,15 @@ Slide
      - If Pressing Input is enabled, the player will slide on a wall only if it's pushing against it.
        If Automatic is enabled, the player will latch onto the wall and slide automatically.
  
-   * - Slide Friction  
-     - How quickly the player slides down. The slide friction can be applied as a velocity or an acceleration.
+   * - Slide Speed 
+     - How quickly the player slides down. This can be applied as a velocity or an acceleration.
 
    * - Slide Timer
      - If enabled, limit how long the player can slide before falling.
   
+   * - Climb Up
+     - If Slide is automatic, this option will appear. The player has the option to climb up the wall if moving up.
+
    * - Jump Up
      - The force that pushes the player up the wall. The X force will push the player away and then towards the wall.
 
@@ -46,11 +49,14 @@ Slide
    * - Jump Limit
      - Limits the amount of wall jumps before the player falls down.
 
+   * - Block Jump Climb
+     - This will prevent the player from jumping up the wall.
+
    * - On Slide
      - The Unity Event invoked when the player is sliding down a wall. This event will pass the player's position. Typically any gameobjects
        enabled for particle effects should have a way to disable themselves. You can use the class Basic Timer for this.
 
-**Signals: wall,  wallLeft, wallRight, wallSlide, wallSlideJump, autoCornerJump**
+**Signals: wall,  wallLeft, wallRight, wallSlide, wallClimb, wallSlideJump, autoCornerJump**
 
 ------------
 

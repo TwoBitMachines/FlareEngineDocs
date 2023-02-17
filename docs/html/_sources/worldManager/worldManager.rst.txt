@@ -34,6 +34,9 @@ add this component, and make sure it's always enabled. This gameobject should ne
    * - On Awake
      - A general purpose Unity Event called during Awake. This can be useful for initializing objects.
 
+   * - On Start
+     - A general purpose Unity Event called during Start.
+
    * - On Pause
      - The Unity Event invoked when Pause() is called.
 

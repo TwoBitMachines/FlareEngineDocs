@@ -189,20 +189,26 @@ to this gameobject.</p>
 <td><p>If Pressing Input is enabled, the player will slide on a wall only if it’s pushing against it.
 If Automatic is enabled, the player will latch onto the wall and slide automatically.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Slide Friction</p></td>
-<td><p>How quickly the player slides down. The slide friction can be applied as a velocity or an acceleration.</p></td>
+<tr class="row-odd"><td><p>Slide Speed</p></td>
+<td><p>How quickly the player slides down. This can be applied as a velocity or an acceleration.</p></td>
 </tr>
 <tr class="row-even"><td><p>Slide Timer</p></td>
 <td><p>If enabled, limit how long the player can slide before falling.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Jump Up</p></td>
+<tr class="row-odd"><td><p>Climb Up</p></td>
+<td><p>If Slide is automatic, this option will appear. The player has the option to climb up the wall if moving up.</p></td>
+</tr>
+<tr class="row-even"><td><p>Jump Up</p></td>
 <td><p>The force that pushes the player up the wall. The X force will push the player away and then towards the wall.</p></td>
 </tr>
-<tr class="row-even"><td><p>Jump Away</p></td>
+<tr class="row-odd"><td><p>Jump Away</p></td>
 <td><p>The force that pushes the player away from the wall.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Jump Limit</p></td>
+<tr class="row-even"><td><p>Jump Limit</p></td>
 <td><p>Limits the amount of wall jumps before the player falls down.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Block Jump Climb</p></td>
+<td><p>This will prevent the player from jumping up the wall.</p></td>
 </tr>
 <tr class="row-even"><td><p>On Slide</p></td>
 <td><p>The Unity Event invoked when the player is sliding down a wall. This event will pass the player’s position. Typically any gameobjects
@@ -210,7 +216,7 @@ enabled for particle effects should have a way to disable themselves. You can us
 </tr>
 </tbody>
 </table>
-<p><strong>Signals: wall,  wallLeft, wallRight, wallSlide, wallSlideJump, autoCornerJump</strong></p>
+<p><strong>Signals: wall,  wallLeft, wallRight, wallSlide, wallClimb, wallSlideJump, autoCornerJump</strong></p>
 </section>
 <hr class="docutils" />
 <section id="climb">
