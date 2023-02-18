@@ -90,7 +90,7 @@ as a child of ManageScenes, and deactivate this object. This transition will cau
    :align: center
 |
 
-Next, create a Transition In and set it as LeaveAsIS, so when the transition completes the fade in effect 
+Next, create a Transition In and set it as LeaveAsIs, so when the transition completes the fade in effect 
 remains. Drag and drop the prefab into the gameobject field to set its reference.
 
 .. image:: ../images/SceneManagementExample.png
