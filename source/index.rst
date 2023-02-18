@@ -87,6 +87,7 @@ Flare Engine Documentation
    systems/melee
    systems/projectile
    worldManager/sceneManagement
+   worldManager/screenTransition
    systems/textMesh
    systems/worldEffects
    systems/reactionProfile
