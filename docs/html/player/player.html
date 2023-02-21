@@ -116,6 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -354,14 +355,14 @@ it will disengage from whatever ability it is currently using, like climbing a w
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Jump</p></td>
-<td><p>The jump height and jump time dictate the value of gravity.</p></td>
+<tr class="row-even"><td><p>Gravity, Jump</p></td>
+<td><p>The jump height and jump time dictate the value of gravity. These values are also found in the jump ability.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Terminal Velocity</p></td>
-<td><p>The maximum falling velocity of the player.</p></td>
-</tr>
-<tr class="row-even"><td><p>Gravity Multiplier</p></td>
+<tr class="row-odd"><td><p>Gravity Multiplier</p></td>
 <td><p>This will scale the force of gravity when the player has a negative y velocity.</p></td>
+</tr>
+<tr class="row-even"><td><p>Terminal Velocity</p></td>
+<td><p>The maximum falling velocity of the player.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Rays</p></td>
 <td><p>The number of raycasts that will extend horizontally and vertically from the character to detect the world. Keep this number low for efficiency.</p></td>
@@ -490,11 +491,11 @@ can be paused in the inspector during development.</p>
 <span class="c1">// player.signals    -- set relevant signals: player.signals.Set (&quot;signalName&quot;)</span>
 <span class="c1">// player.world      -- read if player is onGround, onSlope, onMovingPlatform, etc</span>
 <span class="c1">// player.inputs     -- read button inputs: player.inputs.Pressed(&quot;buttonName&quot;), etc</span>
-<span class="c1">// player.gravity    -- the value of gravity</span>
 <span class="c1">// player.maxJumpVel -- the maximum jump force</span>
 <span class="c1">// player.onSurface  -- set true if the player should be standing on a surface. Bridge uses this</span>
 <span class="c1">// player.jumpButton -- read if the jump buttons have been pressed</span>
 <span class="c1">// player.hasJumped  -- set true if the ability made the player jump</span>
+<span class="c1">// player.gravity.gravity -- the value of gravity</span>
 <span class="c1">// player.checkForAirJumps -- set true if the ability made the player jump</span>
 <span class="c1">// player.playerDirection -- the direction of the player in the x-direction</span>
 </pre></div>

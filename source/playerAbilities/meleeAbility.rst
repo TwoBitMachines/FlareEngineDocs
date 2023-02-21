@@ -10,6 +10,17 @@ always be the first one in the list.
    :header-rows: 1
 
    * - Property
+     - 
+
+   * - Cool Down 
+     - The wait period before the next melee attack can begin. Note, this is the cool down between different melee attacks. Combo 
+       attacks within a melee attack have a separate cool down field.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
      - Method
 
    * - CompleteAttack()

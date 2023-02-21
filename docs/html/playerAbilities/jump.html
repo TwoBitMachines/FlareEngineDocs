@@ -108,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -166,33 +167,35 @@ if the player is required to jump.</p>
 <tr class="row-even"><td><p>Button Trigger</p></td>
 <td><p>Choose the button trigger for jumping.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Min Jump Height</p></td>
-<td><p>If this value is greater than zero, the player will have a variable jump height, and min jump will be the lowest
-jump height possible.</p></td>
+<tr class="row-odd"><td><p>Jump Height</p></td>
+<td><p>The maximum and minimum jump heights. For min height, if this value is greater than zero, the player will
+have a variable jump height, and min jump will be the lowest jump height possible.</p></td>
 </tr>
-<tr class="row-even"><td><p>Buffers</p></td>
+<tr class="row-even"><td><p>Jump Time</p></td>
+<td><p>The total time required to jump.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jump Buffers</p></td>
 <td><p>Jump Buffer: the time window the jump button can be pressed before the player hits the ground to execute a jump.
 Coyote Time: the time window the jump button can still be pressed after the player walks off a platform to execute a jump.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Air Momentum</p></td>
+<tr class="row-even"><td><p>Momentum</p></td>
 <td><p>This will maintain momentum in the direction the player is jumping, even if the user is not pressing input. This value must be greater than
 zero to be active, and any value above zero will scale the x velocity.</p></td>
 </tr>
-<tr class="row-even"><td><p>Air Jumps</p></td>
-<td><p>The number of extra jumps the player can perform in the air. The second field will scale the jump force. If using a specific air jump sprite, take advantage of Sprite Engine’s
-Loop Start Index.</p></td>
+<tr class="row-odd"><td><p>Air Jumps</p></td>
+<td><p>The number of extra jumps the player can perform in the air. The second field will scale the jump force.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Air Glide</p></td>
+<tr class="row-even"><td><p>Air Glide</p></td>
 <td><p>If holding the glide button, the player will gently glide down instead of falling when jumping. Air Glide can only occur after all the air jumps (if any)
 have occurred. The glide value must be between 0 and 1f.</p></td>
 </tr>
-<tr class="row-even"><td><p>Glide Boost</p></td>
+<tr class="row-odd"><td><p>Glide Boost</p></td>
 <td><p>The jump boost added to the air glide.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Glide Immediately</p></td>
+<tr class="row-even"><td><p>Glide Immediately</p></td>
 <td><p>If enabled, the player will bypass the air jump check and glide once the glide button is pressed.</p></td>
 </tr>
-<tr class="row-even"><td><p>Glide From Fall</p></td>
+<tr class="row-odd"><td><p>Glide From Fall</p></td>
 <td><p>If the player walks off a platform (without jumping), the player can still execute Air Glide or Air Jumps if enabled.</p></td>
 </tr>
 </tbody>

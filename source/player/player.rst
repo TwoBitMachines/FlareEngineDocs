@@ -193,15 +193,15 @@ Settings
    * - Property
      - 
 
-   * - Jump
-     - The jump height and jump time dictate the value of gravity.
-
-   * - Terminal Velocity
-     - The maximum falling velocity of the player.
+   * - Gravity, Jump
+     - The jump height and jump time dictate the value of gravity. These values are also found in the jump ability.
 
    * - Gravity Multiplier
      - This will scale the force of gravity when the player has a negative y velocity.
 
+   * - Terminal Velocity
+     - The maximum falling velocity of the player.
+     
    * - Rays
      - The number of raycasts that will extend horizontally and vertically from the character to detect the world. Keep this number low for efficiency.
 
@@ -335,10 +335,10 @@ Create a unique ability if the engine doesn't already provide it. Follow the tem
    // player.signals    -- set relevant signals: player.signals.Set ("signalName")
    // player.world      -- read if player is onGround, onSlope, onMovingPlatform, etc
    // player.inputs     -- read button inputs: player.inputs.Pressed("buttonName"), etc
-   // player.gravity    -- the value of gravity
    // player.maxJumpVel -- the maximum jump force
    // player.onSurface  -- set true if the player should be standing on a surface. Bridge uses this
    // player.jumpButton -- read if the jump buttons have been pressed
    // player.hasJumped  -- set true if the ability made the player jump
+   // player.gravity.gravity -- the value of gravity
    // player.checkForAirJumps -- set true if the ability made the player jump
    // player.playerDirection -- the direction of the player in the x-direction

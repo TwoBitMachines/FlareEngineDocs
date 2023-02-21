@@ -108,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -148,6 +149,23 @@
 <p>All melee attacks that are children of the player object will be registered automatically on scene start.
 Unlike firearms, only one melee attack can be active at at a time. The melee attack that will be executed will
 always be the first one in the list.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cool Down</p></td>
+<td><p>The wait period before the next melee attack can begin. Note, this is the cool down between different melee attacks. Combo
+attacks within a melee attack have a separate cool down field.</p></td>
+</tr>
+</tbody>
+</table>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />

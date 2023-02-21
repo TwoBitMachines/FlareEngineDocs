@@ -93,6 +93,7 @@ each frame or they will remain true. It can look something like this:
 * pickingUpBlock
 * holdingBlock
 * throwingBlock
+* rope
 * inWater
 * swimming
 * floating
