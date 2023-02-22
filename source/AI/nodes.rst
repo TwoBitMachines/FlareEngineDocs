@@ -93,6 +93,9 @@ of the node's purpose. For more information on the node, hit the show informatio
    * - Water Float
      - The AI will float on the waterline.
 
+   * - Find Collider
+     - Find a target collider on the specified layer.
+
    * - Face Target
      - The AI will point towards the specified target in the x-axis.
 
@@ -179,10 +182,10 @@ of the node's purpose. For more information on the node, hit the show informatio
      - Set the direction of a character.
 
    * - Set Value
-     - Set the value of the blackboard data variable.
+     - Set the value of the blackboard data.
 
    * - Set Value From blackboard
-     - Set the value of the blackboard data variable with that of the blackboard from variable.
+     - Set the value of the blackboard data with that of another blackboard variable.
 
    * - Set World Float At Rate
      - Increase or decrease a World Float value at the specified rate.

@@ -31,7 +31,9 @@ gameobject. Once this component is in the scene, it will automatically install t
 **Tags**
 
 * **Friction** - Use this tag on any ground gameobject that is using the Friction component.
-* **Block** - Use this tag on any block if using the Push Block of Pick And Throw player ability.
+* **Block** - Use this tag on any block if using the Push Block for the player ability Pick And Throw.
+* **Edge2DUpOnly** - Use this tag on any gameobject with an EdgeCollider2D that only allows jumping up through it.
+* **Edge2DDownOnly** - Use this tag on any gameobject with an EdgeCollider2D that only allows jumping down through it.
 * **NoClimb** - If the player can climb walls or ceilings, use this tag on any gameobject that is *not* meant to be climbable.
 * **UIControl** - Place this on any UI that needs to ignore IsPointerOverGameObject. This is useful for UI buttons that need to fire weapons.
 

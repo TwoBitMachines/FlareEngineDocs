@@ -144,4 +144,4 @@ to sense enemy attacks.
    * - CompleteAttack()
      - Call this method once the attack animation is complete.
 
-**Signals:  meleeCombo**
+**Signals:  meleeCombo, meleeLeft, meleeRight**

@@ -33,12 +33,19 @@ Allow the player to move in the x direction. This ability is enabled by default.
    * - Run
      - If enabled, this will boost the Speed value, and the running signal will be set true.
 
-   * - Type
-     - If Button is enabled, the user has to hold a button to run. If Time Threshold is enabled, the player has
-       to walk on the ground for a specified time uninterrupted before starting to run. If Double Tap is enabled, 
-       the user must double tap the run button within the tap threshold time to start running, and the player will stop running 
+   * - Hold Type
+     - If Hold is enabled, continuously hold the button to run.
+
+   * - Toggle Type
+     - If Toggle is enabled, enter and exit the run state by pressing the button.
+
+   * - Double Tap Type
+     - If Double Tap is enabled, the user must double tap the button within the tap threshold time to start running, and the player will stop running 
        once the button is released. If Button Is LeftRight is enabled, it means the button is mapped to the left and right input,
-       and this will prevent entering the run state if the player direction is simply being changed.
+       and this will prevent entering the run state if the player's direction is simply being changed.
+
+   * - Time Threshold Type
+     - If Time Threshold is enabled, the player has to walk on the ground for the specified time uninterrupted before starting to run. 
 
    * - Speed Boost
      - Speed will be multiplied by Boost while the player is running.

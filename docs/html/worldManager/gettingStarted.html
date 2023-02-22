@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -173,7 +174,9 @@ gameobject. Once this component is in the scene, it will automatically install t
 <p><strong>Tags</strong></p>
 <ul class="simple">
 <li><p><strong>Friction</strong> - Use this tag on any ground gameobject that is using the Friction component.</p></li>
-<li><p><strong>Block</strong> - Use this tag on any block if using the Push Block of Pick And Throw player ability.</p></li>
+<li><p><strong>Block</strong> - Use this tag on any block if using the Push Block for the player ability Pick And Throw.</p></li>
+<li><p><strong>Edge2DUpOnly</strong> - Use this tag on any gameobject with an EdgeCollider2D that only allows jumping up through it.</p></li>
+<li><p><strong>Edge2DDownOnly</strong> - Use this tag on any gameobject with an EdgeCollider2D that only allows jumping down through it.</p></li>
 <li><p><strong>NoClimb</strong> - If the player can climb walls or ceilings, use this tag on any gameobject that is <em>not</em> meant to be climbable.</p></li>
 <li><p><strong>UIControl</strong> - Place this on any UI that needs to ignore IsPointerOverGameObject. This is useful for UI buttons that need to fire weapons.</p></li>
 </ul>

@@ -108,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -186,20 +187,27 @@ These methods are found on the Player component.</p></td>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Type</p></td>
-<td><p>If Button is enabled, the user has to hold a button to run. If Time Threshold is enabled, the player has
-to walk on the ground for a specified time uninterrupted before starting to run. If Double Tap is enabled,
-the user must double tap the run button within the tap threshold time to start running, and the player will stop running
-once the button is released. If Button Is LeftRight is enabled, it means the button is mapped to the left and right input,
-and this will prevent entering the run state if the player direction is simply being changed.</p></td>
+<tr class="row-even"><td><p>Hold Type</p></td>
+<td><p>If Hold is enabled, continuously hold the button to run.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Speed Boost</p></td>
+<tr class="row-odd"><td><p>Toggle Type</p></td>
+<td><p>If Toggle is enabled, enter and exit the run state by pressing the button.</p></td>
+</tr>
+<tr class="row-even"><td><p>Double Tap Type</p></td>
+<td><p>If Double Tap is enabled, the user must double tap the button within the tap threshold time to start running, and the player will stop running
+once the button is released. If Button Is LeftRight is enabled, it means the button is mapped to the left and right input,
+and this will prevent entering the run state if the player’s direction is simply being changed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Time Threshold Type</p></td>
+<td><p>If Time Threshold is enabled, the player has to walk on the ground for the specified time uninterrupted before starting to run.</p></td>
+</tr>
+<tr class="row-even"><td><p>Speed Boost</p></td>
 <td><p>Speed will be multiplied by Boost while the player is running.</p></td>
 </tr>
-<tr class="row-even"><td><p>Jump Boost</p></td>
+<tr class="row-odd"><td><p>Jump Boost</p></td>
 <td><p>This will boost the jump force if the player is running.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ease Into Run</p></td>
+<tr class="row-even"><td><p>Ease Into Run</p></td>
 <td><p>If enabled, the player will ease into the running speed instead of accelerating instantly. Specify the duration of the ease time.</p></td>
 </tr>
 </tbody>
