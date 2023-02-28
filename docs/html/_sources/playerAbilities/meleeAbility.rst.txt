@@ -2,8 +2,7 @@ Melee
 +++++
 
 All melee attacks that are children of the player object will be registered automatically on scene start. 
-Unlike firearms, only one melee attack can be active at at a time. The melee attack that will be executed will 
-always be the first one in the list.
+Unlike firearms, only one melee attack can be active at at a time. 
 
 .. list-table::
    :widths: 25 100
@@ -14,7 +13,7 @@ always be the first one in the list.
 
    * - Cool Down 
      - The wait period before the next melee attack can begin. Note, this is the cool down between different melee attacks. Combo 
-       attacks within a melee attack have a separate cool down field.
+       attacks within a melee attack have a separate cool down option.
 
 .. list-table::
    :widths: 25 100

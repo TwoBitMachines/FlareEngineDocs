@@ -30,9 +30,11 @@ Flare Engine Documentation
    playerAbilities/jump
    playerAbilities/wall
    playerAbilities/ceiling
+   playerAbilities/cannon
    playerAbilities/crouch
    playerAbilities/crouchSlide
    playerAbilities/dash
+   playerAbilities/hide
    playerAbilities/hover
    playerAbilities/swim
    playerAbilities/ground

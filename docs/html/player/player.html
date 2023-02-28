@@ -383,22 +383,19 @@ it will disengage from whatever ability it is currently using, like climbing a w
 <td><p>If enabled, the system will check if platform corners are going into the side of the character and prevent it. Note, if Climb Slopes is enabled,
 the system will automatically check for corners going through the bottom of the character.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Use High Jump</p></td>
-<td><p>If enabled, the character will be able to use High Jump.</p></td>
-</tr>
-<tr class="row-even"><td><p>Use Bridges</p></td>
+<tr class="row-odd"><td><p>Use Bridges</p></td>
 <td><p>If enabled, the character will be able to walk on bridges.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Use Moving Platforms</p></td>
+<tr class="row-even"><td><p>Use Moving Platforms</p></td>
 <td><p>If enabled, the character will be able to interact with moving platforms.</p></td>
 </tr>
-<tr class="row-even"><td><p>Collide With World Only</p></td>
+<tr class="row-odd"><td><p>Collide With World Only</p></td>
 <td><p>The system checks for both World and Platform collisions. Enabling this will only check for World collisions.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Use Late Update</p></td>
+<tr class="row-even"><td><p>Use Late Update</p></td>
 <td><p>For AI only. If enabled, the character will execute during Late Update instead of Update.</p></td>
 </tr>
-<tr class="row-even"><td><p>Crushed By Platform</p></td>
+<tr class="row-odd"><td><p>Crushed By Platform</p></td>
 <td><p>The Unity Event invoked when the character is crushed between two hard surfaces. This happens when the character is standing on or holding a moving platform and
 is moved into a hard surface, or when the character is pushed into a hard surface. This event typically means a character death, and the character’s position
 needs to be reset, or else the character will move into a wall and create an ambiguous scenario. Call a World Effect with the dynamic Activate method.</p></td>

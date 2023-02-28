@@ -10,6 +10,11 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Action
      - 
+   * - Cannon Enter
+     - Enter a cannon.
+
+   * - Cannon Exit
+     - Exit a cannon.
 
    * - Follow Graph Points
      - Navigate to points with the specified speed. Target must be TargetPoints.
@@ -38,6 +43,12 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Jump To
      - The AI will jump towards the specified target.
+
+   * - Jump In Object
+     - The player can jump into this object to hide from AI.
+
+   * - Jump Out Object
+     - The player will jump out this object on button press.
 
    * - Push Back
      - If damaged, the AI will be pushed back (and flash).
@@ -83,6 +94,12 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Rotate Position
      - Rotate the transform's position around the center point at the specified radius.
+
+   * - Scene Door Enter
+     - After entering a scene, the player will be placed at the door's position.
+
+   * - Scene Door Exit
+     - If the player enters the door area, the specified scene will load by calling the manage scenes component.
 
    * - Set Transform
      - Set the position, rotation, or scale of a transform instantly or by lerping.
@@ -373,7 +390,7 @@ functionality. The first example is of the Move Action node, which simply adds v
                         }
 
                         root.velocity += velocity;// Root is basically the AI
-                        return NodeState.Running; // Since this is an Action node, return Running.
+                        return NodeState.Running; // Return Running
                                                   // If the behavior completes, return Success or Failure.
                 }
                 

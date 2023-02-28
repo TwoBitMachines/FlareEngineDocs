@@ -221,9 +221,6 @@ Settings
      - If enabled, the system will check if platform corners are going into the side of the character and prevent it. Note, if Climb Slopes is enabled, 
        the system will automatically check for corners going through the bottom of the character.
 
-   * - Use High Jump
-     - If enabled, the character will be able to use High Jump.
-
    * - Use Bridges
      - If enabled, the character will be able to walk on bridges.
 

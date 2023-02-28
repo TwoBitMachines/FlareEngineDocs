@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Melee &mdash; Flare Engine 0.1 documentation</title>
+  <title>Cannon &mdash; Flare Engine 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ladder" href="ladderClimb.html" />
-    <link rel="prev" title="Pick And Throw" href="pickAndThrow.html" /> 
+    <link rel="next" title="Crouch" href="crouch.html" />
+    <link rel="prev" title="Ceiling" href="ceiling.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,9 +57,11 @@
 <li class="toctree-l1"><a class="reference internal" href="jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
@@ -67,7 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBack.html">Push Back</a></li>
@@ -134,9 +136,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Melee</li>
+      <li class="breadcrumb-item active">Cannon</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/playerAbilities/meleeAbility.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/playerAbilities/cannon.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -144,24 +146,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="melee">
-<h1>Melee<a class="headerlink" href="#melee" title="Permalink to this heading"></a></h1>
-<p>All melee attacks that are children of the player object will be registered automatically on scene start.
-Unlike firearms, only one melee attack can be active at at a time.</p>
+  <section id="cannon">
+<h1>Cannon<a class="headerlink" href="#cannon" title="Permalink to this heading"></a></h1>
+<p>The player can jump into certain objects, such as barrels, and blast off in
+the direction of the object. This ability can only work with the use of the
+Cannon Enter and Cannon Exit AI Nodes.</p>
+<p>By using AIFSM, you gain a high degree of flexibility and customization. AIFSM
+allows for additional states to control the cannon’s behavior. This includes
+rotating and moving the cannon in different paths to create obstacles.
+For more interesting examples, please refer to the demo.</p>
+<p>In their most basic setup, the cannon nodes consist of a couple of
+states to execute. The cannon AI will require a Collider2D
+component that is set to IsTrigger mode to detect the player.</p>
+<img alt="../_images/Cannon.png" class="align-center" src="../_images/Cannon.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The player can’t take damage inside a cannon.</p>
+</div>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 80%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Property</p></th>
+<tr class="row-odd"><th class="head"><p>Cannon Enter</p></th>
 <th class="head"></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Cool Down</p></td>
-<td><p>The wait period before the next melee attack can begin. Note, this is the cool down between different melee attacks. Combo
-attacks within a melee attack have a separate cool down option.</p></td>
+<tr class="row-even"><td><p>Player</p></td>
+<td><p>Set a reference to the player for detection.</p></td>
 </tr>
 </tbody>
 </table>
@@ -171,30 +188,38 @@ attacks within a melee attack have a separate cool down option.</p></td>
 <col style="width: 80%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Property</p></th>
-<th class="head"><p>Method</p></th>
+<tr class="row-odd"><th class="head"><p>Cannon Exit</p></th>
+<th class="head"></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CompleteAttack()</p></td>
-<td><p>Call this when the attack animation is complete to stop the melee attack.</p></td>
+<tr class="row-even"><td><p>Player</p></td>
+<td><p>Set a reference to the player.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ChangeMeleeAttack (string meleeName)</p></td>
-<td><p>If more than one melee attack is registered, call this method to change to a different one by moving it to the top of the list.</p></td>
+<tr class="row-odd"><td><p>Exit</p></td>
+<td><p>If Automatic is set, the player will exit the cannon immediately. If Button is set,
+the player will exit the cannon once the specified button is pressed.</p></td>
 </tr>
-<tr class="row-even"><td><p>MeleeAttackIsActive()</p></td>
-<td><p>Returns true if the first melee attack is active.</p></td>
+<tr class="row-even"><td><p>Force</p></td>
+<td><p>The force of the cannon blast.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Air Friction</p></td>
+<td><p>The friction applied to the force over time.</p></td>
+</tr>
+<tr class="row-even"><td><p>Blast Offset</p></td>
+<td><p>This offset is applied to the player’s position when they initially exits the cannon.</p></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Signals: cannonBlast</strong></p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pickAndThrow.html" class="btn btn-neutral float-left" title="Pick And Throw" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ladderClimb.html" class="btn btn-neutral float-right" title="Ladder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ceiling.html" class="btn btn-neutral float-left" title="Ceiling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="crouch.html" class="btn btn-neutral float-right" title="Crouch" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

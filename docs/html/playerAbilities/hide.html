@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Melee &mdash; Flare Engine 0.1 documentation</title>
+  <title>Hide &mdash; Flare Engine 0.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ladder" href="ladderClimb.html" />
-    <link rel="prev" title="Pick And Throw" href="pickAndThrow.html" /> 
+    <link rel="next" title="Hover" href="hover.html" />
+    <link rel="prev" title="Dash" href="dash.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -60,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
@@ -67,7 +68,7 @@
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Melee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladderClimb.html">Ladder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ropeSwing.html">Rope</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBack.html">Push Back</a></li>
@@ -134,9 +135,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Melee</li>
+      <li class="breadcrumb-item active">Hide</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/playerAbilities/meleeAbility.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/playerAbilities/hide.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -144,10 +145,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="melee">
-<h1>Melee<a class="headerlink" href="#melee" title="Permalink to this heading"></a></h1>
-<p>All melee attacks that are children of the player object will be registered automatically on scene start.
-Unlike firearms, only one melee attack can be active at at a time.</p>
+  <section id="hide">
+<h1>Hide<a class="headerlink" href="#hide" title="Permalink to this heading"></a></h1>
+<p>When implementing a stealth mechanic, it’s often useful to allow
+the player to hide behind objects like foliage. To achieve this, give
+each object that is meant to hide the player a Collider2D component that is set
+to IsTrigger mode. For convenience, the Hide layer will be available, so
+make sure to set the layer of the hide object to Hide.</p>
+<p>When the player enters the trigger/hide zone, the hide state and hide flag
+will be set to true. If any AI exist, they can read the hide flag and adjust
+their behavior accordingly. While in the hide state, the player can move
+to other hide zones without having to repress the enter button if the exit
+method is set to ButtonToggle.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The player can’t take damage in a hide zone.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/HideCollider.png"><img alt="../_images/HideCollider.png" class="align-center" src="../_images/HideCollider.png" style="width: 100%;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When the player moves outside a hide zone, the hide flag will be set false, even if
+the player has not properly exited the hide state. The player will be able to take damage again.</p>
+</div>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -159,42 +181,63 @@ Unlike firearms, only one melee attack can be active at at a time.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Cool Down</p></td>
-<td><p>The wait period before the next melee attack can begin. Note, this is the cool down between different melee attacks. Combo
-attacks within a melee attack have a separate cool down option.</p></td>
+<tr class="row-even"><td><p>Hide Button</p></td>
+<td><p>Press this button to hide the player in a hide zone.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Target Layer</p></td>
+<td><p>The layer, typically Hide, that each hide object must have if it’s a hide zone.</p></td>
+</tr>
+<tr class="row-even"><td><p>Exit</p></td>
+<td><p>If Automatic is set, the player will automatically exit the hide state once they are no longer in a hide zone.
+If Button Toggle is set, the player will exit the hide state by toggling the hide button.
+If Both is set, both exit methods will work concurrently.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Player Hide Sorting</p></td>
+<td><p>The sorting layer the player will be set to when hiding.</p></td>
+</tr>
+<tr class="row-even"><td><p>Player Hide Order</p></td>
+<td><p>The order in layer the player will be set to when hiding.</p></td>
 </tr>
 </tbody>
 </table>
 <table class="colwidths-given docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 80%" />
+<col style="width: 27%" />
+<col style="width: 73%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Property</p></th>
-<th class="head"><p>Method</p></th>
+<tr class="row-odd"><th class="head"><p>Event</p></th>
+<th class="head"></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>CompleteAttack()</p></td>
-<td><p>Call this when the attack animation is complete to stop the melee attack.</p></td>
+<tr class="row-even"><td><p>On Hide</p></td>
+<td><p>The Unity Event invoked when the player first enters the hide state.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ChangeMeleeAttack (string meleeName)</p></td>
-<td><p>If more than one melee attack is registered, call this method to change to a different one by moving it to the top of the list.</p></td>
-</tr>
-<tr class="row-even"><td><p>MeleeAttackIsActive()</p></td>
-<td><p>Returns true if the first melee attack is active.</p></td>
+<tr class="row-odd"><td><p>On Unhide</p></td>
+<td><p>The Unity Event invoked when the player exits the hide state.</p></td>
 </tr>
 </tbody>
 </table>
+<p>The example below shows how the AI can read the player’s hide flag. To achieve this,
+you need to use the Collision Status node and set its type to IsHiding. In this example
+if the player is hiding, the AI will move to the Idle state. If the player is not hiding,
+the AI will follow the player.</p>
+<p>It’s important to note that the Idle state also contains a Collision Status node that reads
+the player’s hide flag. This allows the AI to return to the patrol state when the
+player is no longer hiding.</p>
+<img alt="../_images/AIHideFlag.png" class="align-center" src="../_images/AIHideFlag.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pickAndThrow.html" class="btn btn-neutral float-left" title="Pick And Throw" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ladderClimb.html" class="btn btn-neutral float-right" title="Ladder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dash.html" class="btn btn-neutral float-left" title="Dash" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hover.html" class="btn btn-neutral float-right" title="Hover" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

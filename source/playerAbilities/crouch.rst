@@ -16,11 +16,11 @@ Let the player crouch and crawl. This will modify the size of the BoxCollider2D.
    * - Crouch Height
      - The new height of the player. This will modify the vertical size of the BoxCollider2D.
 
-   * - Crawl Speed
-     - If enabled, the player will be able to crawl. Specify the friction applied to the player's x direction
-       while crawling.
+   * - Crawl
+     - If enabled, the player will be able to crawl. Set the scale applied to the player's x speed
+       and the maximum speed the player can have while crawling.
 
-   * - Crouch Jump
+   * - Jump
      - If enabled, the player will be able to jump while crouching and crawling. Specify how much to scale the jump force. 
 
    * - High Jump

@@ -162,6 +162,12 @@ of the node’s purpose. For more information on the node, hit the show informat
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>Cannon Enter</p></td>
+<td><p>Enter a cannon.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cannon Exit</p></td>
+<td><p>Exit a cannon.</p></td>
+</tr>
 <tr class="row-even"><td><p>Follow Graph Points</p></td>
 <td><p>Navigate to points with the specified speed. Target must be TargetPoints.</p></td>
 </tr>
@@ -189,6 +195,12 @@ This returns Success when the target is within the stop distance;</p></td>
 </tr>
 <tr class="row-even"><td><p>Jump To</p></td>
 <td><p>The AI will jump towards the specified target.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jump In Object</p></td>
+<td><p>The player can jump into this object to hide from AI.</p></td>
+</tr>
+<tr class="row-even"><td><p>Jump Out Object</p></td>
+<td><p>The player will jump out this object on button press.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Push Back</p></td>
 <td><p>If damaged, the AI will be pushed back (and flash).</p></td>
@@ -234,6 +246,12 @@ This returns Success when the target is within the stop distance;</p></td>
 </tr>
 <tr class="row-odd"><td><p>Rotate Position</p></td>
 <td><p>Rotate the transform’s position around the center point at the specified radius.</p></td>
+</tr>
+<tr class="row-even"><td><p>Scene Door Enter</p></td>
+<td><p>After entering a scene, the player will be placed at the door’s position.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scene Door Exit</p></td>
+<td><p>If the player enters the door area, the specified scene will load by calling the manage scenes component.</p></td>
 </tr>
 <tr class="row-even"><td><p>Set Transform</p></td>
 <td><p>Set the position, rotation, or scale of a transform instantly or by lerping.</p></td>
@@ -538,7 +556,7 @@ functionality. The first example is of the Move Action node, which simply adds v
 <span class="w">                    </span><span class="p">}</span><span class="w"></span>
 
 <span class="w">                    </span><span class="n">root</span><span class="p">.</span><span class="n">velocity</span><span class="w"> </span><span class="p">+=</span><span class="w"> </span><span class="n">velocity</span><span class="p">;</span><span class="c1">// Root is basically the AI</span>
-<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Running</span><span class="p">;</span><span class="w"> </span><span class="c1">// Since this is an Action node, return Running.</span>
+<span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="n">NodeState</span><span class="p">.</span><span class="n">Running</span><span class="p">;</span><span class="w"> </span><span class="c1">// Return Running</span>
 <span class="w">                                              </span><span class="c1">// If the behavior completes, return Success or Failure.</span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 
