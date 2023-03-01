@@ -14,13 +14,16 @@ In their most basic setup, the cannon nodes consist of a couple of
 states to execute. The cannon AI will require a Collider2D 
 component that is set to IsTrigger mode to detect the player.
 
+.. important::
+   The player can't take damage inside a cannon.
+
 .. image:: ../images/Cannon.png
    :align: center
    
 |
 
-.. important::
-   The player can't take damage inside a cannon.
+.. important:: 
+   Once the player has entered a cannon, at some point the Cannon Exit node must be used.
 
 .. list-table::
    :widths: 25 100
