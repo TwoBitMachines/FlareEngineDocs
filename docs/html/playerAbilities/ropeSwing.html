@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,19 @@
 <li class="toctree-l1"><a class="reference internal" href="jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
@@ -100,14 +104,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -132,8 +139,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Rope</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Rope</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/ropeSwing.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,7 +151,7 @@
            <div itemprop="articleBody">
              
   <section id="rope">
-<h1>Rope<a class="headerlink" href="#rope" title="Permalink to this heading"></a></h1>
+<h1>Rope<a class="headerlink" href="#rope" title="Permalink to this headline"></a></h1>
 <p>The player can interact with ropes.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -162,6 +169,25 @@
 </tr>
 <tr class="row-odd"><td><p>Jump</p></td>
 <td><p>If latched, the force used to jump away from the rope.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Events</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>On Enter</p></td>
+<td><p>The Unity Event invoked when the player latches unto the rope.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Exit</p></td>
+<td><p>The Unity Event invoked when the player jumps off the rope.</p></td>
 </tr>
 </tbody>
 </table>

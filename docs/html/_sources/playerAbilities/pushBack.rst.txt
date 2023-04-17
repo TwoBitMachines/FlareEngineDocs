@@ -51,6 +51,6 @@ send two values, damage and direction. If damage is negative, Push Back will com
 
 .. Important:: 
    If the damage flash is applied, the inspector will create a lag spike when the material is being swapped. 
-   To prevent this, simply select another gameobject that is not the player.
+   To prevent this, simply select another game object that is not the player.
 
 **Signals: pushBack, pushBackLeft, pushBackRight**

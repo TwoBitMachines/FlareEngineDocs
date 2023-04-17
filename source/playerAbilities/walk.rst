@@ -21,11 +21,6 @@ Allow the player to move in the x direction. This ability is enabled by default.
      - The resistance towards changing direction while the player is in the air.
        A value of zero means the player can instantly change direction in the air.
 
-   * - Infinite Walk
-     - If enabled, the character will walk infinitely and change direction upon wall contact. To enter this state, 
-       specify the button or call InfiniteWalkActivate (bool value). You can also disable this ability by calling InfiniteWalkAbility (bool value).
-       These methods are found on the Player component.
-
 .. list-table::
    :widths: 25 100
    :header-rows: 1

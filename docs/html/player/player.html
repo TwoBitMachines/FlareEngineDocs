@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -65,14 +64,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -108,10 +111,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
@@ -141,8 +146,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Player</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Player</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/player/player.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -153,7 +158,7 @@
            <div itemprop="articleBody">
              
   <section id="player">
-<h1>Player<a class="headerlink" href="#player" title="Permalink to this heading"></a></h1>
+<h1>Player<a class="headerlink" href="#player" title="Permalink to this headline"></a></h1>
 <p>The player is the centerpiece of your game, and as such, the engine provides plenty out of the box customizable abilities.
 To get started, add a <strong>BoxCollider2D</strong> and a <strong>Player</strong> component. The Player class will handle the input, abilities, and
 world collision settings. You will also need to add a <strong>RigidBody2D</strong> to keep Unity happy, and set Body Type to Kinematic.</p>
@@ -175,7 +180,7 @@ world collision settings. You will also need to add a <strong>RigidBody2D</stron
 </table>
 <hr class="docutils" />
 <section id="inputs">
-<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this heading"></a></h2>
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline"></a></h2>
 <p>The system has two ways of dealing with inputs. By default, the system implements the old input system,
 which works with keyboard, mouse, and UI buttons. In the second, the system can interface with the new input
 system. Both ways require the use of <strong>InputButtonSO</strong>, which is a scriptable object that acts as a wrapper
@@ -318,7 +323,7 @@ you complete this setup, the new input system will now be in charge of calling t
 </section>
 <hr class="docutils" />
 <section id="priority">
-<h2>Priority<a class="headerlink" href="#priority" title="Permalink to this heading"></a></h2>
+<h2>Priority<a class="headerlink" href="#priority" title="Permalink to this headline"></a></h2>
 <p>If the player has more than one ability enabled, you will have to assign their priority. This means that
 if two or more abilities become active at the same time, the ability with the highest priority will execute while the
 other abilities are cancelled. This is to prevent awkward situations. For example, let’s say that when the player is
@@ -343,7 +348,7 @@ it will disengage from whatever ability it is currently using, like climbing a w
 </section>
 <hr class="docutils" />
 <section id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading"></a></h2>
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -405,20 +410,20 @@ needs to be reset, or else the character will move into a wall and create an amb
 </section>
 <hr class="docutils" />
 <section id="edge-collider-2d">
-<h2>Edge Collider 2D<a class="headerlink" href="#edge-collider-2d" title="Permalink to this heading"></a></h2>
+<h2>Edge Collider 2D<a class="headerlink" href="#edge-collider-2d" title="Permalink to this headline"></a></h2>
 <p>When dealing with platforms that contain <strong>EdgeCollider2D</strong>, the character can jump through a platform if the jump button is being held. Otherwise, the system will interpret
 the platform as a ceiling. The character can jump down through a platform if the down button is being held. Of course, this can only work if the Jump
 and Down inputs exist.</p>
 </section>
 <hr class="docutils" />
 <section id="ability">
-<h2>Ability<a class="headerlink" href="#ability" title="Permalink to this heading"></a></h2>
+<h2>Ability<a class="headerlink" href="#ability" title="Permalink to this headline"></a></h2>
 <p>Click the red button to add abilities into the system. Any ability can be paused by calling the Pause method from its component. For convenience, each ability
 can be paused in the inspector during development.</p>
 </section>
 <hr class="docutils" />
 <section id="creating-an-ability">
-<h2>Creating An Ability<a class="headerlink" href="#creating-an-ability" title="Permalink to this heading"></a></h2>
+<h2>Creating An Ability<a class="headerlink" href="#creating-an-ability" title="Permalink to this headline"></a></h2>
 <p>Create a unique ability if the engine doesn’t already provide it. Follow the template below.</p>
 <div class="highlight-c# notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span><span class="w"></span>
 

@@ -50,7 +50,7 @@ to all characters. Add this component to an empty gameobject.
      - The current Texture2D image of the foliage. The delete button will remove this Texture2D and all of its instances from the scene.
 
    * - Orientation     
-     - This determines what vertices to sway. If Bottom is enabled, place foliage on ground. If Top is enabled, place foliage on a ceiling. If Left or Right are enabled, place foliage on walls.
+     - This setting determines which vertices will sway. For instance, selecting "Bottom" will sway foliage located at ground level.
 
    * - Depth
      - Specify the rendering order of the Texture2D images relative to each other. As of now, there is no way specify a sorting layer. 
@@ -84,3 +84,33 @@ to all characters. Add this component to an empty gameobject.
 .. note:: 
    The foliage system was designed with performance in mind. All foliage instances exist in code only (they're not gameobjects), and the character interactions
    are handled by Unity's Job System.
+
+Foliage Sway
+============
+
+This component can be applied to background props, such as trees, to create a swaying effect. 
+This effect is achieved through a shader that moves the vertex position, rather than the game object's 
+position. Please note that this only works with objects that have SpriteRenderers containing 
+the material FoliageSway.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Orientation
+     - This setting determines which vertices will sway. For instance, selecting "Bottom" will sway foliage located at ground level.
+
+   * - Is Random
+     - Enabling this feature will set minimum and maximum values for the swaying properties, from which a random value will be selected.
+
+   * - Amplitude
+     - The swaying displacement.
+
+   * - Frequency  
+     - The number of waves in the swaying motion.
+     
+   * - Speed
+     - The rate at which the swaying motion occurs.

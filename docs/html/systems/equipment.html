@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
@@ -108,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
@@ -132,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Equipment</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Equipment</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/equipment.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="equipment">
-<h1>Equipment<a class="headerlink" href="#equipment" title="Permalink to this heading"></a></h1>
+<h1>Equipment<a class="headerlink" href="#equipment" title="Permalink to this headline"></a></h1>
 <p>The Equipment class keeps track of all the tools the character has. A tool is simply a child gameobject of a
 character that contains a component that inherits from Tool. This class belongs to the Character class.</p>
 <p>As of right now, the only tool the system implements is the Firearm class, but it’s possible

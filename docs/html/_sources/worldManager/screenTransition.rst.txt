@@ -5,7 +5,7 @@ Screen Transitions occur at the beginning and end of a scene, or when the curren
 You can use these transitions by utilizing the **ManageScenes** and **ScreenTransition** components,
 using pre-made prefabs found in AssetsFolder/Transitions/Prefabs. 
 
-At its core, a transition gameobject includes a canvas and an image with a black and white gradient 
+At its core, a transition game object includes a canvas and an image with a black and white gradient 
 texture. A shader then applies the pattern of the transition. On completion, it deactivates.
 
 .. image:: ../images/ScreenTransitionGif.gif
@@ -25,8 +25,11 @@ texture. A shader then applies the pattern of the transition. On completion, it 
      - If Transition In, the transition will reach maximum coverage. If Transition Out, the transition will reach complete transparency.
        If Both, the system will execute TransitionIn and TransitionOut in that order.
 
-   * - Time
+   * - Transition Time
      - The duration of the transition.
+
+   * - Hold Time
+     - If type is Both, the time duration before Transition Out begins. This effectively holds the screen black for a brief moment.
 
    * - Reset Game
      - If enabled and type is Both, the game will be reset after Transition In completes and before Transition Out begins. Time scale will 
@@ -39,9 +42,9 @@ texture. A shader then applies the pattern of the transition. On completion, it 
    * - Begin()
      - When called it will activate the transition.
 
-To create a transition for the opening scene, add the ScreenTransition component to a transition gameobject and set it to a Transition Out type.
+To create a transition for the opening scene, add the ScreenTransition component to a transition game object and set it to a Transition Out type.
 Ensure the game object is active so it runs automatically on scene start. If using it for a game reset, set it to Both type. Call the Begin 
-method or activate the gameobject to commence the transition. 
+method or activate the game object to commence the transition. 
 
 .. image:: ../images/ScreenTransition.png
    :align: center

@@ -6,8 +6,8 @@ it relates to the character. It is not concerned about how projectiles operate. 
 specify its fire point, the projectile it uses, shooting direction, how it rotates, recoil,
 and other features. It's possible to create many variations of a firearm with these properties.
 
-To set up, create an empty gameobject and add the Firearm component. Add a Sprite to this gameobject if the weapon 
-should be visible (and set Sprite Pivot to Left). Make this gameobject a child of the character that will be using the firearm.
+To set up, create an empty game object and add the Firearm component. Add a Sprite to this game object if the weapon 
+should be visible (and set Sprite Pivot to Left). Make this game object a child of the character that will be using the firearm.
 The player must have the Firearms ability enabled (for recoil to work and for applying ability exceptions).
 
 .. note::
@@ -34,13 +34,16 @@ The player must have the Firearms ability enabled (for recoil to work and for ap
    * - Local Position
      - The local position of the firearm.
 
+   * - Stop Velocity
+     - If enabled, the character will stop moving for the specified time while shooting a projectile.
+
    * - Off Near Wall
      - If the character is next to a wall and the weapon is inside the wall, setting this true
        will prevent the weapon from shooting. This will ensure the weapon cannot shoot into another
        room.
 
    * - On Activated
-     - The Unity Event invoked when the firearm's gameobject is set active true.
+     - The Unity Event invoked when the firearm's game object is set active true.
 
 .. list-table::
    :widths: 50 200
@@ -245,20 +248,20 @@ Add visual elements, such as a beam or reticle, to help the player aim.
      - Beam
 
    * - Line Of Sight Beam
-     - A beam will extend from the firearm. Create a gameobject and place a
-       sprite that represents the beam. Set the Sprite Pivot to Left. This gameobject should be a child of the firearm,
+     - A beam will extend from the firearm. Create a game object and place a
+       sprite that represents the beam. Set the Sprite Pivot to Left. This game object should be a child of the firearm,
        and it should be enabled.
  
    * - Layer
      - The layers the beam can interact with. Typically these are walls and enemy targets. 
 
    * - Beam
-     - Place a reference of the beam gameobject here. 
+     - Place a reference of the beam game object here. 
 
    * - Beam End
-     - This is optional. If the beam hits the target layer, this gameobject will be enabled
-       at the end of the beam. It can play a sprite for special effect purposes. Create this gameobject 
-       and make it a child of the firearm. This gameobject should not be enabled. 
+     - This is optional. If the beam hits the target layer, this game object will be enabled
+       at the end of the beam. It can play a sprite for special effect purposes. Create this game object 
+       and make it a child of the firearm. This game object should not be enabled. 
        The system will control its active state. 
 
    * - Max Length
@@ -289,11 +292,11 @@ Add visual elements, such as a beam or reticle, to help the player aim.
 
    * - Line Of Sight Reticle
      - A reticle will be displayed at a specific distance from the firearm. 
-       Create a gameobject and place a sprite that will act as the reticle. 
-       Make this gameobject a child of the firearm.
+       Create a game object and place a sprite that will act as the reticle. 
+       Make this game object a child of the firearm.
  
    * - Aim Reticle
-     - Place a reference of the reticle gameobject here.  
+     - Place a reference of the reticle game object here.  
 
    * - Follow Type
      - If Fixed Position is enabled, the reticle will point in the direction of

@@ -10,6 +10,15 @@ of the node's purpose. For more information on the node, hit the show informatio
 
    * - Action
      - 
+   * - Add Item
+     - Add the specified item to this inventory.
+
+   * - Contains Item
+     - Does the following inventory contain this item?
+
+   * - Use Item
+     - Use and remove the item from the inventory.
+
    * - Cannon Enter
      - Enter a cannon.
 

@@ -15,12 +15,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quest" href="quest.html" />
+    <link rel="next" title="Dialogue Bubble" href="dialogueBubble.html" />
     <link rel="prev" title="Audio Manager" href="audioManager.html" /> 
 </head>
 
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -103,14 +106,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#dialogueui">DialogueUI</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
@@ -135,8 +141,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Dialogue</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Dialogue</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/dialogue.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,14 +153,16 @@
            <div itemprop="articleBody">
              
   <section id="dialogue">
-<h1>Dialogue<a class="headerlink" href="#dialogue" title="Permalink to this heading"></a></h1>
-<p>This is an interactive dialogue system for the player and NPCs. Create conversations, add message effects, call Unity Events, and
-even include simple animations for complex interactions. All this is accomplished within the inspector window.</p>
-<p>The setup requires at least two components: <strong>Dialogue</strong>, where the dialogue between the characters is created and stored,
-and <strong>DialogueUI</strong>, which controls the UI elements that will display the dialogue. The Dialogue component will typically
-exist on an NPC, an empty gameobject, or wherever it is needed, and the DialogueUI should exist on a canvas element, to properly
-reference all the necessary UI elements. If the UI and message need special effects, the <strong>LetsWiggle</strong> component, a tweening library,
-can move and scale UI elements, and the <strong>TextMeshProEffects</strong> can add a typewriting effect, among other effects, to the message.</p>
+<h1>Dialogue<a class="headerlink" href="#dialogue" title="Permalink to this headline"></a></h1>
+<p>This is a dialogue system that enables players and NPCs to interact dynamically. The
+system allows users to create engaging conversations, complete with message effects,
+simple animations, and Unity Events, within a single inspector window.</p>
+<p>To set up the system, a minimum of two components are required: <strong>Dialogue</strong>, which
+stores character conversations, and <strong>DialogueUI</strong>, which manages the UI elements that
+display the dialogue. Dialogue can be attached to an empty gameObject, while DialogueUI
+should be placed on a UI Canvas. You can also utilize additional effects, such as
+movement and scaling, with the <strong>LetsWiggle</strong> component, and typewriting effects with
+<strong>TextMeshProEffects</strong>, to enhance the overall experience.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When dialogue is started, player input will be automatically blocked.</p>
@@ -178,18 +186,21 @@ can move and scale UI elements, and the <strong>TextMeshProEffects</strong> can 
 <td><p>If this button exists, the user will be able to escape any dialogue.</p></td>
 </tr>
 <tr class="row-even"><td><p>Skip Button</p></td>
-<td><p>If this button exists, the user will be able to skip to the next message in the conversation.</p></td>
+<td><p>If this button exists, the user will be able to skip to the next message in the conversation at any time.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Block Inventories</p></td>
 <td><p>If enabled, any inventory trying to open will be blocked from opening.</p></td>
 </tr>
-<tr class="row-even"><td><p>Position Icon</p></td>
+<tr class="row-even"><td><p>Messenger Icon Relative</p></td>
 <td><p>If enabled, the messenger icons will be positioned on the left or right of the message box,
 depending on the relative position of the messengers.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Is Random</p></td>
 <td><p>If enabled, this will display random conversations. If this is desired,
 enable the Is Random flag that also exists in each conversation for any conversation that should be treated as random.</p></td>
+</tr>
+<tr class="row-even"><td><p>Events</p></td>
+<td><p>The Unity Events invoked when the player begins and exits a conversation.</p></td>
 </tr>
 </tbody>
 </table>
@@ -205,7 +216,7 @@ enable the Is Random flag that also exists in each conversation for any conversa
 </thead>
 <tbody>
 <tr class="row-even"><td><p>BeginConversation()</p></td>
-<td><p>Call this method to begin the conversation. This will also set the gameobject active true.</p></td>
+<td><p>Call this method to begin the conversation. This will also set this gameObject active true.</p></td>
 </tr>
 <tr class="row-odd"><td><p>EndConversation()</p></td>
 <td><p>Call this method to end the conversation.</p></td>
@@ -249,7 +260,7 @@ Once created, each animation will have an add button for adding each individual 
 </table>
 <hr class="docutils" />
 <p>It’s also possible to save the state of the conversation. Once an important event occurs, the conversation can be progressed
-to a difference state so the player and npc can continue with a new conversation.</p>
+to a difference state so the player and NPC can continue with a new conversation.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -267,7 +278,7 @@ button, it will reset the save state to zero.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Conversation List</p></td>
 <td><p>Click the add button to add a conversation. Each conversation in the list represents a conversation state where the player and
-npc will begin the conversation. Once an important event occurs, call SaveConversationState ( ) on this component. This can
+NPC will begin the conversation. Once an important event occurs, call SaveConversationState ( ) on this component. This can
 be called from anywhere. And the next time the Dialogue window opens, it will continue with the next conversation in the list.</p></td>
 </tr>
 </tbody>
@@ -331,7 +342,7 @@ the options will be mapped to UI button elements.</p></td>
 </div>
 <hr class="docutils" />
 <section id="dialogueui">
-<h2>DialogueUI<a class="headerlink" href="#dialogueui" title="Permalink to this heading"></a></h2>
+<h2>DialogueUI<a class="headerlink" href="#dialogueui" title="Permalink to this headline"></a></h2>
 <p>The system implements Unity’s UI system to display the dialogue box. The UI elements in the dialogue box can be configured to your personal taste.
 The important part is to set the UI references so that the system knows when to enable them and set their content.</p>
 <p>The demo contains a basic UI dialogue structure, which can be used as a starting point for other designs, but in general, the system
@@ -420,7 +431,7 @@ once the other class is complete, it must return a complete signal by calling <s
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="audioManager.html" class="btn btn-neutral float-left" title="Audio Manager" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="quest.html" class="btn btn-neutral float-right" title="Quest" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dialogueBubble.html" class="btn btn-neutral float-right" title="Dialogue Bubble" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -133,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Screen Transition</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Screen Transition</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/worldManager/screenTransition.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -145,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="screen-transition">
-<h1>Screen Transition<a class="headerlink" href="#screen-transition" title="Permalink to this heading"></a></h1>
+<h1>Screen Transition<a class="headerlink" href="#screen-transition" title="Permalink to this headline"></a></h1>
 <p>Screen Transitions occur at the beginning and end of a scene, or when the current scene is reset.
 You can use these transitions by utilizing the <strong>ManageScenes</strong> and <strong>ScreenTransition</strong> components,
 using pre-made prefabs found in AssetsFolder/Transitions/Prefabs.</p>
@@ -170,18 +174,21 @@ texture. A shader then applies the pattern of the transition. On completion, it 
 <td><p>If Transition In, the transition will reach maximum coverage. If Transition Out, the transition will reach complete transparency.
 If Both, the system will execute TransitionIn and TransitionOut in that order.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Time</p></td>
+<tr class="row-odd"><td><p>Transition Time</p></td>
 <td><p>The duration of the transition.</p></td>
 </tr>
-<tr class="row-even"><td><p>Reset Game</p></td>
+<tr class="row-even"><td><p>Hold Time</p></td>
+<td><p>If type is Both, the time duration before Transition Out begins. This effectively holds the screen black for a brief moment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reset Game</p></td>
 <td><p>If enabled and type is Both, the game will be reset after Transition In completes and before Transition Out begins. Time scale will
 be set to zero during the first half, effectively pausing the game.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Random Text</p></td>
+<tr class="row-even"><td><p>Random Text</p></td>
 <td><p>If more than one texture exists, the transition pattern will be randomized. Place textures here from AssetsFolder/Transitions/Textures.
 Use the TransitionAny prefab if implementing this.</p></td>
 </tr>
-<tr class="row-even"><td><p>Begin()</p></td>
+<tr class="row-odd"><td><p>Begin()</p></td>
 <td><p>When called it will activate the transition.</p></td>
 </tr>
 </tbody>

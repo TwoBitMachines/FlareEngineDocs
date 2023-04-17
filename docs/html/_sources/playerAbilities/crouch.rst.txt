@@ -34,3 +34,17 @@ Let the player crouch and crawl. This will modify the size of the BoxCollider2D.
 
    * - On High Jump
      - The Unity Event invoked when a High Jump executes.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Events
+     - 
+
+   * - On Crouch
+     - The Unity Event invoked when the player crouches.
+ 
+   * - On Exit
+     - The Unity Event invoked when the player stands up.
+ 

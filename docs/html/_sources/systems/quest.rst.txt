@@ -1,6 +1,6 @@
 Quest
 +++++
-not
+
 Send the player on a quest. Complete any number of quests and get rewards! This relies 
 heavily on Scriptable Objects to create a flexible quest system. Each quest will retain its state, 
 and each quest does not have to be completed in the level where it was accepted. Thus, you can easily 
@@ -67,9 +67,14 @@ as necessary. Press the delete button to delete the saved data.
 Quest
 =====
 
-This component exists in the scene. It has two jobs. It will activate a quest if the user accepts the quest. In this case, 
-place it on an npc or an object that can trigger the accept method. And, it will check for progression of the quest, in which case place it
-on an item that needs to be collected or an enemy that needs to be destroyed. These objects will need to trigger the progression method.
+This component exists in the scene. It has two jobs. It will activate a quest if the 
+user accepts the quest. In this case, place it on an npc or an object that can trigger
+the accept method. And, it will check for progression of the quest, in which case place it 
+on an item that needs to be collected or an enemy that needs to be destroyed. These objects
+will need to trigger the progression method.
+
+If the quest component has a 2D collider set to "Is Trigger" and the player 
+has the PickUpItems component, the quest item can be automatically accepted by the player.
 
 .. list-table::
    :widths: 25 100
@@ -84,6 +89,9 @@ on an item that needs to be collected or an enemy that needs to be destroyed. Th
    * - Quest UI
      - The reference to QuestUI, which will display quest information. This is optional.
 
+   * - Add To Journal
+     - If the item is found, it will be added to the specified journal if it exists in the scene.
+     
    * - OnQuestAccepted
      - The Unity Event invoked when the quest has been accepted.
 

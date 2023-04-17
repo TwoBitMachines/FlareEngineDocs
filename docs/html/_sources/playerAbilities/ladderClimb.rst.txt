@@ -28,4 +28,17 @@ The player can climb ladders.
      - If enabled, the player will be able to jump straight up in the direction of the ladder. To initiate this correctly, the user input in the x 
        direction must be zero.
 
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Events
+     - 
+
+   * - On Enter
+     - The Unity Event invoked when the player latches unto the ladder.
+ 
+   * - On Exit
+     - The Unity Event invoked when the player gets off the ladder.
+
 **Signals: ladderClimb**

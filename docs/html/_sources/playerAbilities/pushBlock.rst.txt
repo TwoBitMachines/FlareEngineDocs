@@ -3,7 +3,7 @@ Push Block
 
 The player can push and pull a block.
 
-Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty gameobject. 
+Use the block in Demo2 as a template. To create one from scratch, add a AIFSM to an empty game object. 
 Set the Tag to Block. Set Layer to Platform. Set AI type to MovingPlatform. Enable has Gravity. Enable Collide With World 
 Only in the Collision settings. Create one empty state Called Wait. Make sure this has a BoxCollider2D and a sprite renderer.
 

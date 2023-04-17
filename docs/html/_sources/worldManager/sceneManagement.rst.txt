@@ -8,7 +8,7 @@ any screen transitions if they exist.
    :align: center
 |
 
-To get started, place a ManageScenes component on a gameobject. Click the add button to add transitions. 
+To get started, place a ManageScenes component on a game object. Click the add button to add transitions. 
 The types are TransitionIn, TransitionOut, and LoadScene. At the very least, you will need a LoadScene or else no 
 scenes will load. Then, you can trigger a scene load from any unity event by calling this component.
 
@@ -56,12 +56,12 @@ scenes will load. Then, you can trigger a scene load from any unity event by cal
        folder. Use the TransitionAny prefab if implementing this.
 
    * - Transition In/Out.
-     - This gameobject will be set active true if it exists. If this object is a transition, it will reach complete coverage on 
-       Transition In. It will reach complete transparency on Transition Out. If Deactivate is enabled, this gameobject will be deactivated when 
+     - This game object will be set active true if it exists. If this object is a transition, it will reach complete coverage on 
+       Transition In. It will reach complete transparency on Transition Out. If Deactivate is enabled, this game object will be deactivated when 
        the Transition Time expires, or else it will be left as is.
 
    * - Load Scene
-     - After the transitions complete, if any, this step will finally begin to load the scene. The gameobject, if it exists, will be set active true. This
+     - After the transitions complete, if any, this step will finally begin to load the scene. The game object, if it exists, will be set active true. This
        object can be a loading scene (which is not a transition). By changing the load speed, this will slow down the loading. A value of 1 is maximum speed.
 
 .. list-table::
@@ -91,7 +91,7 @@ as a child of ManageScenes, and deactivate this object. This transition will cau
 |
 
 Next, create a Transition In and set it as LeaveAsIs, so when the transition completes the fade in effect 
-remains. Drag and drop the prefab into the gameobject field to set its reference.
+remains. Drag and drop the prefab into the game object field to set its reference.
 
 .. image:: ../images/SceneManagementExample.png
    :align: center

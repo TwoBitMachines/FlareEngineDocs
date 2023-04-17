@@ -10,27 +10,24 @@ Increase the speed of the player to quickly cover distance.
    * - Property
      - 
 
+   * - Dash Direction
+     - Enabling Horizontal Axis initiates a dash along the x-axis using left and right buttons, 
+       with the option of assigning only one button. With Multi Directional enabled, the player can dash
+       in any of eight directions using assigned buttons.
+
+   * - Button Taps 
+     - If Single Tap is enabled, pressing the button once will initiate a dash. If Double Tap is enabled, pressing the button twice 
+       within the specified time frame is required to initiate a dash.
+
    * - Buttons  
      - The buttons that need to be tapped in order to trigger a dash.
 
    * - Extra Button 
      - If pressed, this will immediately initiate a dash, bypassing the button tap settings.
 
-   * - Dash Direction
-     - If Horizontal Axis is enabled, the dash will occur along the x axis. In this state, only the left and right buttons are used. It is also possible
-       to use only one button and leave the other empty. If Multi Directional is enabled, all the buttons that are set will be utilized to move the player in one of
-       eight directions along the x and y axis.
-
-   * - Button Taps 
-     - If Single Tap is enabled, pressing the button only once will trigger a dash. If Double Tap is enabled, pressing the button twice is required 
-       to trigger a dash.
-
-   * - Tap Threshold
-     - If Double Tap is enabled, the threshold is the time interval in which the double tap must occur for the dash to trigger successfully.
-
-   * - On Dash
-     - The Unity Event invoked when the player is dashing. You can call a world effect from this event. The name of the effect 
-       and the rate at which the event executes are required.
+   * - On Dashing
+     - The Unity Event invoked when the player is dashing, and can be used to call a world effect. 
+       You will need to specify the name of the effect and the frequency at which the event should execute.
 
    * - On Start
      - The Unity Event invoked when the player starts dashing. You can call a world effect from this event. 
@@ -38,12 +35,16 @@ Increase the speed of the player to quickly cover distance.
    * - On End
      - The Unity Event invoked when the player ends dashing. You can call a world effect from this event.
 
-   * - Duration
-     - If Instant is enabled, the player will traverse the dash distance in one frame. If Incremental is enabled, the player will traverse the dash distance
-       according to the dash time. 
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
 
-   * - Dash Time
-     - The time it will take to traverse the dash distance;
+   * - Property
+     - 
+
+   * - Duration
+     - With Instant enabled, the dash distance is covered in one frame; with Incremental enabled, 
+       the dash distance is covered gradually according to the Dash Time.
 
    * - Dash Distance
      - The total distance traversed while dashing.
@@ -52,7 +53,12 @@ Increase the speed of the player to quickly cover distance.
      - The time interval before the next dash can be triggered.
 
    * - Crouch
-     - If enabled, the player will change to a lower height while dashing. If the player is below a platform when the dash completes, the crouch signal will be set.
+     - If enabled, the player will change to a lower height while dashing. If the player 
+       is below a platform when the dash completes, the crouch signal will be set.
+
+   * - Air Dash Limit
+     - This determines the number of times the player can dash while in mid-air.
+       Consecutive air dashes are only allowed if the player performs an air jump in between.
 
    * - Can Take Damage
      - If disabled, the player will not take damage while dashing. This assumes the player has a Health component.
@@ -63,5 +69,4 @@ Increase the speed of the player to quickly cover distance.
    * - Nullify Gravity
      - If enabled, the force of gravity will not affect a dash.
 
-  
 **Signals: dashing, dashX, dashY, dashDiagonal, crouch**

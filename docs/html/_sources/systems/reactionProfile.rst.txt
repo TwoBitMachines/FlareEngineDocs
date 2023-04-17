@@ -4,7 +4,7 @@ Reaction Profile
 This allows you to group related game effects and reactions into one place, so they can serve as a reaction profile 
 for any AI or object that calls it. This will reduce the amount of work and connections you have to make.
 
-Simply create an empty gameobject and add this component. You will then have the option to add reactions from 
+Simply create an empty game object and add this component. You will then have the option to add reactions from 
 a list. During runtime, call the Activate (ImpactPacket impact) on this component from
 a capable Unity Event, and it will execute all the reactions.
 

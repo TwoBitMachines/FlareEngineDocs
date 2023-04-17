@@ -25,9 +25,8 @@ the add button and dragging the triggers in the scene. The player will be reset 
      - Priority: if the check-point's index is greater than the current saved value, the system will save the new check-point.
        Any: the system will accept any check-point as the new check-point regardless of index.
 
-   * - Save
-     - If automatic, the new check-point will be saved immediately. If on button press, the new check-point will wait until 
-       the specified button is pressed to begin the save process.
+   * - Button
+     - If the check-point is set to On Button Press, the button that must be pressed to save to this current check-point.
 
    * - On Reset
      - The Unity Event invoked when the player has been reset.
@@ -47,6 +46,11 @@ the add button and dragging the triggers in the scene. The player will be reset 
 
    * - Position
      - The position of the check-point in the game world. This is the position the player will reset to.
+
+   * - Save
+     - If Automatic, the new check-point will be saved immediately. If On Button Press, the button that must be pressed 
+       to save. If Save Manually, the method SaveManually must be called to save. All these options require the player 
+       to be inside the check-point.
 
    * - On Reset
      - The Unity Event invoked when the player has been reset.

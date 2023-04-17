@@ -1,26 +1,27 @@
 World Variables
 +++++++++++++++
 
-These components allow you to create data that can be easily referenced. This data is also
-automatically saved and restored during runtime to preserve important information. The four types of variables
-used are **Float**, **Bool**, **String**, and **Vector3**. The **Health** component is also part of this group; it inherits from Float
+These components create easily referenced data that is automatically saved and restored 
+during runtime to preserve information. They consist of **Float**, **Bool**, **String**, 
+and **Vector3** variables, as well as the **Health** component, which inherits from Float. 
+They are extremely useful for remembering game state. A common use case it to use World Bool 
+to remember unlocked doors.
 
-Each of these variables can be linked to a corresponding Scriptable Object. For example, if using the
-Health component, the **WorldFloatSO** (Scriptable Object) that belongs to it can be used as a reference for UI elements 
-to display the character's health. Any other system, like an enemy AI, can also read this value to change its behavior.
-This will help decouple your systems.
+Each variable can also be linked to a corresponding Scriptable Object. For instance, the Health 
+component's associated **WorldFloatSO** can be used as a reference for UI elements to display 
+the character's health, or by an enemy AI to alter its behavior, helping to decouple systems.
 
 Float And Health
 ================
 
-Both the Float and Health components work very similarly. The Health component just implements a few extra properties.
+The Float and Health components have similar functionality, with Health having some 
+additional properties.
 
-This class makes use of something called a **tempValue**. The temporary value simply makes it easier to save 
-or delete the current value in case it needs to revert. One scenario is where the Float variable is being used 
-to collect coins. Perhaps you want the coin amount that hasn't been saved to be lost when the player dies or 
-the game resets. The tempValue will make it easy to remove the unsaved coin amount. You will need to call the 
-appropriate methods to work with this value, and typically, you will also want to use the Save Manually Only option,
-so you can control this value completely.
+For advance use, both components can make use of a temporary value to make it easier to save 
+or delete the current value. For example, if the Float variable is being used to collect coins,
+the tempValue can be automatically cleared to remove unsaved coins when the player dies or the 
+game resets. To work with the temporary value, you must call the appropriate methods, and use 
+the Save Manually Only option to have complete control over it.
 
 .. tip::
  Float can be treated as a boolean by setting its value to either 1 or 0 (True or False).
@@ -140,30 +141,6 @@ so you can control this value completely.
    * - ClearTempValue()
      - This will clear the temporary value. This is called on each game reset.
 
-World Float HUD
-===============
-
-**WorldFloatHUD** is a convenient class for displaying world float values using UI elements. This class can also work with other classes 
-like Projectile and Firearms to display ammunition values. The UI element style is left to your personal taste. This class will 
-simply enable images and set values.
-
-.. list-table::
-   :widths: 25 100
-   :header-rows: 1
-
-   * - Property
-     - 
-
-   * - Type
-     - Discrete items will display the value in terms of UI images. Think health hearts. Specify the sprites that represent an empty and full value. Must also
-       set number of UI images that will be used to display the value. Continuous will display the value by modifying the fillAmount of an image. 
-       Numbers will use a TextMesh to display the value.
-
-   * - Value Type
-     - Only set the reference for one of these to display the value. For Projectile, Firearms, and Tool the value represents ammunition amount.
-       To set Firearms simply drag the player gameobject into this field. This will display the ammunition amount for the current firearm the player has
-       active. To set tool, drop any Firearm into this field.
-
 String, Bool, And Vector3
 =========================
 
@@ -225,3 +202,48 @@ These work in a similar fashion as Float. The respective Scriptable Objects are 
 
    * - IsFalse()
      - Returns true if value is false;
+
+World Float HUD
+===============
+
+**WorldFloatHUD** is a convenient class for displaying world float values using UI elements. 
+This class can also work with other classes like Projectile and Firearms to display ammunition 
+values. The UI element style is left to your personal taste. This class will simply enable 
+images and set values.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Type
+     - Discrete items will be displayed as UI images, such as health hearts, with specified sprites 
+       for empty and full values. The number of UI images used to display the value must also be set.
+       For continuous items, the value will be displayed by modifying the fillAmount Property of a UI Image.
+       For numeric values, a TextMesh will be used to display the value.
+
+   * - Value Type
+     - Only set the reference for one of these to display the value.For Projectile, Firearms, and Tool, 
+       the value represents ammunition amount. To display the ammunition amount for the player's current 
+       firearm, drag the player gameobject into this field. To display the ammunition amount for a tool, 
+       drop any firearm into this field.
+
+   * - Can Increase
+     - This feature will allow Discrete Items to increase its item count as the game progresses, such as increasing
+       the number of hearts the player has. For proper use, you must create the maximum number of discrete items and set their
+       references. During runtime, call the IncreaseDiscreteValue method to increase the item count. If Saved Manually
+       is enabled, the current items available will be saved each time this method is called. Otherwise, call the SaveDiscrete 
+       method to control when this is saved.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Method
+     - For Bool
+
+   * - IncreaseWorldFloat()
+     - If the HUD type is for discrete items, call this method to increase the World Float or Health variable being
+       used. This ensures that it doesn't increase more than the visual discrete items available.

@@ -1,7 +1,7 @@
 Water
 +++++
 
-Water is a dynamic area where the player can float and swim. Add this component to an empty gameobject.
+Water is a dynamic area where the player can float and swim. Add this component to an empty game object.
 
 .. image:: ../images/interactables/WaterGif.gif
    :align: center

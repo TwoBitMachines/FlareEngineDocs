@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,14 +104,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -132,8 +139,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">High Jump</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>High Jump</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/interactables/highJump.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,18 +151,19 @@
            <div itemprop="articleBody">
              
   <section id="high-jump">
-<h1>High Jump<a class="headerlink" href="#high-jump" title="Permalink to this heading"></a></h1>
-<p>Launch a character into the air. This has two modes, Trampoline and Wind. Place this component
-on an empty gameobject. A blue rectangle gizmo will appear in the scene for character detection. The area of this
-rectangle can be modified. Typically, a trampoline will have a smaller collider area, and Wind will have a much
-taller collider area.</p>
+<h1>High Jump<a class="headerlink" href="#high-jump" title="Permalink to this headline"></a></h1>
+<p>This will launch a character into the air effortlessly. This component has
+two modes available, Trampoline and Wind, that can be added to an empty gameobject.
+Once added, a blue rectangle gizmo will appear for character detection, and
+you can modify the rectangle’s size to your preference. Trampoline mode has a
+smaller collider area, while Wind mode has a larger collider area.</p>
 <a class="reference internal image-reference" href="../_images/TrampolineGif.gif"><img alt="../_images/TrampolineGif.gif" class="align-center" src="../_images/TrampolineGif.gif" style="width: 100%;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>High Jump must also be enabled in the character settings.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>High Jump must be enabled as a player ability. There is also a High Jump node for AI.</p>
 </div>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -172,16 +180,13 @@ taller collider area.</p>
 <td><p>Launch the character with Trampoline, or gradually push the character upward with Wind.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Force</p></td>
-<td><p>The amount of force acting on the character. Wind should typically have forces below 1, while Trampoline
-should have larger forces above 10. The force of the High Jump can also be applied in any direction according
-to the gameobject’s rotation.</p></td>
+<td><p>The amount of force acting on the character.  Trampolines typically have forces above 20,
+while wind has forces above 5. The force of the High Jump can be applied in any direction
+based on the gameobject’s rotation, whereas the direction of the wind must be specified.</p></td>
 </tr>
-<tr class="row-even"><td><p>Move With Parent</p></td>
-<td><p>Enable this if the High Jump is a child object of a moving gameobject. This will allow the High Jump, for example,
-to move along with a moving platform.</p></td>
-</tr>
-<tr class="row-odd"><td><p>On Trampoline</p></td>
-<td><p>The Unity Event invoked when trampoline is triggered. Call a World Effect with the dynamic Activate method.</p></td>
+<tr class="row-even"><td><p>On Trampoline</p></td>
+<td><p>The Unity Event invoked when a trampoline jump is triggered. Call a World Effect with the dynamic
+Activate method.</p></td>
 </tr>
 </tbody>
 </table>

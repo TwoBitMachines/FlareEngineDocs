@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -61,14 +60,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -104,6 +107,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -112,6 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -136,8 +141,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">World Manager</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>World Manager</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/worldManager/worldManager.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -148,7 +153,7 @@
            <div itemprop="articleBody">
              
   <section id="world-manager">
-<h1>World Manager<a class="headerlink" href="#world-manager" title="Permalink to this heading"></a></h1>
+<h1>World Manager<a class="headerlink" href="#world-manager" title="Permalink to this headline"></a></h1>
 <p>The <strong>World Manager</strong> is in charge of running the game scripts in order. It’s also in charge of
 saving, pausing, resetting the game, and world events.</p>
 <p>Each scene must contain exactly <strong>one</strong> World Manager for proper game function. Simply create a gameobject,
@@ -234,7 +239,7 @@ automatically called during OnDisable();</p></td>
 </table>
 <hr class="docutils" />
 <section id="world-events">
-<h2>World Events<a class="headerlink" href="#world-events" title="Permalink to this heading"></a></h2>
+<h2>World Events<a class="headerlink" href="#world-events" title="Permalink to this headline"></a></h2>
 <p>Send messages so world objects can react to important world events. These events are usually created by special events
 in the game, like the player dying. In response, any gameobject that is registered as a listener will be alerted and
 react accordingly.</p>
@@ -285,7 +290,7 @@ any gameobject that needs to react to the event, like a UI element or an enemy A
 </section>
 <hr class="docutils" />
 <section id="save">
-<h2>Save<a class="headerlink" href="#save" title="Permalink to this heading"></a></h2>
+<h2>Save<a class="headerlink" href="#save" title="Permalink to this headline"></a></h2>
 <p>The engine implements JSON Serialization and basic encryption to save game data. Inventory and World Variables rely
 heavily on this. During development, disable Encrypt Save (so you can actually read the data) and check if your data
 persisted by going to Application.persistedDataPath. Typically, the path will look something like this:</p>

@@ -15,13 +15,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Equipment" href="equipment.html" />
-    <link rel="prev" title="Dialogue" href="dialogue.html" /> 
+    <link rel="prev" title="Dialogue Bubble" href="dialogueBubble.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Quest</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#questinventoryso">QuestInventorySO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#questso">QuestSO</a></li>
@@ -111,10 +115,12 @@
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
@@ -139,8 +145,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Quest</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Quest</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/quest.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -151,14 +157,13 @@
            <div itemprop="articleBody">
              
   <section id="quest">
-<h1>Quest<a class="headerlink" href="#quest" title="Permalink to this heading"></a></h1>
-<p>not
-Send the player on a quest. Complete any number of quests and get rewards! This relies
+<h1>Quest<a class="headerlink" href="#quest" title="Permalink to this headline"></a></h1>
+<p>Send the player on a quest. Complete any number of quests and get rewards! This relies
 heavily on Scriptable Objects to create a flexible quest system. Each quest will retain its state,
 and each quest does not have to be completed in the level where it was accepted. Thus, you can easily
 design quests that can span across multiple game levels.</p>
 <section id="questinventoryso">
-<h2>QuestInventorySO<a class="headerlink" href="#questinventoryso" title="Permalink to this heading"></a></h2>
+<h2>QuestInventorySO<a class="headerlink" href="#questinventoryso" title="Permalink to this headline"></a></h2>
 <p>This Scriptable Object will create quest objects - QuestSO - and will store them in a list where you
 can modify them in the inspector. To create a new QuestSO, simply name it and press the Create New Quest
 button. The new QuestSO will be placed in the AssetsFolder/Quests/QuestSO folder. If you want to delete them,
@@ -166,7 +171,7 @@ you must do so manually.</p>
 <p>To create a QuestInventorySO, right click in the project window and go to Create/FlareEngine/QuestInventorySO.</p>
 </section>
 <section id="questso">
-<h2>QuestSO<a class="headerlink" href="#questso" title="Permalink to this heading"></a></h2>
+<h2>QuestSO<a class="headerlink" href="#questso" title="Permalink to this headline"></a></h2>
 <p>This object is in charge of storing all the quest information. Press the add button to add as many rewards
 as necessary. Press the delete button to delete the saved data.</p>
 <table class="colwidths-given docutils align-default">
@@ -225,10 +230,14 @@ This can be left empty if not required.</p></td>
 </table>
 </section>
 <section id="id1">
-<h2>Quest<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
-<p>This component exists in the scene. It has two jobs. It will activate a quest if the user accepts the quest. In this case,
-place it on an npc or an object that can trigger the accept method. And, it will check for progression of the quest, in which case place it
-on an item that needs to be collected or an enemy that needs to be destroyed. These objects will need to trigger the progression method.</p>
+<h2>Quest<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>This component exists in the scene. It has two jobs. It will activate a quest if the
+user accepts the quest. In this case, place it on an npc or an object that can trigger
+the accept method. And, it will check for progression of the quest, in which case place it
+on an item that needs to be collected or an enemy that needs to be destroyed. These objects
+will need to trigger the progression method.</p>
+<p>If the quest component has a 2D collider set to “Is Trigger” and the player
+has the PickUpItems component, the quest item can be automatically accepted by the player.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -246,10 +255,13 @@ on an item that needs to be collected or an enemy that needs to be destroyed. Th
 <tr class="row-odd"><td><p>Quest UI</p></td>
 <td><p>The reference to QuestUI, which will display quest information. This is optional.</p></td>
 </tr>
-<tr class="row-even"><td><p>OnQuestAccepted</p></td>
+<tr class="row-even"><td><p>Add To Journal</p></td>
+<td><p>If the item is found, it will be added to the specified journal if it exists in the scene.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OnQuestAccepted</p></td>
 <td><p>The Unity Event invoked when the quest has been accepted.</p></td>
 </tr>
-<tr class="row-odd"><td><p>OnQuestCompleted</p></td>
+<tr class="row-even"><td><p>OnQuestCompleted</p></td>
 <td><p>The Unity Event invoked when the quest has been completed.</p></td>
 </tr>
 </tbody>
@@ -280,7 +292,7 @@ and once it’s of equal value to the goal, the quest will complete. This will i
 </table>
 </section>
 <section id="questuiaccepted">
-<h2>QuestUIAccepted<a class="headerlink" href="#questuiaccepted" title="Permalink to this heading"></a></h2>
+<h2>QuestUIAccepted<a class="headerlink" href="#questuiaccepted" title="Permalink to this headline"></a></h2>
 <p>This UI class will display the quest title, description, and the rewards. All the UI are optional, just drag and drop the necessary
 UI references. The style and design of the UI is completely up to you.</p>
 <table class="colwidths-given docutils align-default">
@@ -307,7 +319,7 @@ UI references. The style and design of the UI is completely up to you.</p>
 </table>
 </section>
 <section id="id2">
-<h2>QuestUIAccepted<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<h2>QuestUIAccepted<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
 <p>This works in similar fashion to QuestUIAccepted. This UI class will display the quest title and a message once the quest is completed.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -338,7 +350,7 @@ UI references. The style and design of the UI is completely up to you.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="dialogue.html" class="btn btn-neutral float-left" title="Dialogue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dialogueBubble.html" class="btn btn-neutral float-left" title="Dialogue Bubble" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="equipment.html" class="btn btn-neutral float-right" title="Equipment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

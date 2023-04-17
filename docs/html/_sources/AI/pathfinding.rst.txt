@@ -9,7 +9,7 @@ ceilings, and can walk on bridges. PathfindingBasic ignores gravity and is meant
 for general use in a 2D world. Both systems can be found in the Territory tab for both AITree and AIFSM.
 
 Once a pathfinding territory is created, a green rectangular gizmo will appear in the Scene. Drag and resize this 
-rectangle over gameobjects that contain Collider2Ds and the correct layer (usually World).
+rectangle over game objects that contain Collider2Ds and the correct layer (usually World).
 This will become the area where paths are generated.
 
 .. list-table::
@@ -67,9 +67,9 @@ Here we can see an AI agent (red square) follow a path to reach the player. The 
    
 |
 
-Once a pathfinding class is created, leave it alone on its own gameobject and don't add anymore nodes or states. Its only job 
+Once a pathfinding class is created, leave it alone on its own game object and don't add anymore nodes or states. Its only job 
 is to generate paths. This will be useful in case there are multiple AI agents referencing the same pathfinding class. To create an AI agent 
-that will follow a generated path, create another gameobject and add an AI system. Create two targets. One target 
+that will follow a generated path, create another game object and add an AI system. Create two targets. One target 
 will be the end point of the path, usually the player. The other target is **Target Pathfinding**. This target will hold a reference to 
 the pathfinding class, specify follow speeds, and will request for paths to be generated. 
 

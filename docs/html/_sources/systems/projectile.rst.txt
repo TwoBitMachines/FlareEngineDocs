@@ -3,10 +3,10 @@ Projectiles
 
 
 Projectiles are for shooting. There are three basic types: Bullet, Instant, and Short Range, and each once can be customized 
-to create plenty of variety. Each type will deal damage to any gameobject that has a Health component
+to create plenty of variety. Each type will deal damage to any game object that has a Health component
 and exists in the target layer of the projectile. 
 
-In general, the Projectile component should exist in a gameobject that has a static parent to preserve the local 
+In general, the Projectile component should exist in a game object that has a static parent to preserve the local 
 positions of the projectiles. The Projectile component will create an object pool and manage the life cycle of all its projectiles.
 
 ------------
@@ -23,7 +23,7 @@ Projectile
      - Name the projectile. This must be unique for identification purposes.
 
    * - Projectile Type. 
-     - A Bullet is a discrete gameobject. An Instant is a raycast. Short Range is a BoxCollider2D.
+     - A Bullet is a discrete game object. An Instant is a raycast. Short Range is a BoxCollider2D.
  
    * - Ammo Type 
      - If Discrete is enabled, the ammo count will be decreased by a unit of one. If Continuous is enabled,
@@ -84,7 +84,7 @@ There are six bullet types, each with a different behavior. There's also no limi
 projectile type, making it great for saving resources.
 
 .. important:: 
-   First create a gameobject that contains the bullet's sprite and make it a child of the Projectile gameobject;
+   First create a game object that contains the bullet's sprite and make it a child of the Projectile game object;
    only then will the properties bar appear. **For proper function, set the Sprite Pivot to Left. If using bounce, set Pivot to Center.**
 
 .. list-table::
@@ -317,9 +317,9 @@ A raycast is used to instantly hit a target.
        collision if the raycast has a positive y velocity.
 
    * - On Idle
-     - If Deactivate GameObject is enabled, the gameobject will bet set Active false when the firearm is no longer shooting. This is
-       useful in case this gameobject has a sprite that represents the raycast. If Leave As Is is enabled, it will
-       leave this gameobject in its current state.
+     - If Deactivate game object is enabled, the game object will bet set Active false when the firearm is no longer shooting. This is
+       useful in case this game object has a sprite that represents the raycast. If Leave As Is is enabled, it will
+       leave this game object in its current state.
 
    * - Max Length
      - The length of the raycast.
@@ -332,7 +332,7 @@ A raycast is used to instantly hit a target.
      - The Unity Event invoked when successfully fired.
 
    * - Impact Object
-     - The gameobject that will be set active true at the impact point. Useful for particle effects for a laser. If not needed, leave empty.
+     - The game object that will be set active true at the impact point. Useful for particle effects for a laser. If not needed, leave empty.
 
    * - Impact Effect
      - The name of the world effect that will be used on impact. If not needed, leave empty.
@@ -362,11 +362,11 @@ A BoxCollider2D will search for targets to hit.
      - The target layer the BoxCollider2D will interact with.
        
    * - Collider
-     - Place a BoxCollider2D component on this gameobject, configure the size, then set the reference here
+     - Place a BoxCollider2D component on this game object, configure the size, then set the reference here
 
    * - On Idle
-     - If Deactivate GameObject is enabled, the gameobject will bet set Active false when the firearm is no longer shooting.
-       If Leave As Is is enabled, it will leave this gameobject in its current state.
+     - If Deactivate game object is enabled, the game object will bet set Active false when the firearm is no longer shooting.
+       If Leave As Is is enabled, it will leave this game object in its current state.
 
    * - Hit Rate
      - If the firearm is fired continuously, set the rate at which a target can be hit. If left to zero, this means a target will
@@ -377,7 +377,7 @@ A BoxCollider2D will search for targets to hit.
       
 .. tip:: 
    Place a sprite to go along with the BoxCollider2D. There's also a Flame Thrower component made specifically for this projectile type.
-   Place it on this gameobject and configure the particle properties to shoot some flames!
+   Place it on this game objectt and configure the particle properties to shoot some flames!
 
 ------------
 

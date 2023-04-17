@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Firearm</a><ul>
@@ -114,6 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
@@ -138,8 +143,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Firearm</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Firearm</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/firearm.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,7 +155,7 @@
            <div itemprop="articleBody">
              
   <section id="firearm">
-<h1>Firearm<a class="headerlink" href="#firearm" title="Permalink to this heading"></a></h1>
+<h1>Firearm<a class="headerlink" href="#firearm" title="Permalink to this headline"></a></h1>
 <p>The Firearm shoots projectiles. The purpose of this component is to control the behavior of the weapon as
 it relates to the character. It is not concerned about how projectiles operate. You will
 specify its fire point, the projectile it uses, shooting direction, how it rotates, recoil,
@@ -187,12 +192,15 @@ placed at the end of the muzzle.</p></td>
 <tr class="row-odd"><td><p>Local Position</p></td>
 <td><p>The local position of the firearm.</p></td>
 </tr>
-<tr class="row-even"><td><p>Off Near Wall</p></td>
+<tr class="row-even"><td><p>Stop Velocity</p></td>
+<td><p>If enabled, the character will stop moving for the specified time while shooting a projectile.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Off Near Wall</p></td>
 <td><p>If the character is next to a wall and the weapon is inside the wall, setting this true
 will prevent the weapon from shooting. This will ensure the weapon cannot shoot into another
 room.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On Activated</p></td>
+<tr class="row-even"><td><p>On Activated</p></td>
 <td><p>The Unity Event invoked when the firearm’s gameobject is set active true.</p></td>
 </tr>
 </tbody>
@@ -242,7 +250,7 @@ will enter an animation wait state upon shooting, where the system will wait for
 </div>
 <hr class="docutils" />
 <section id="projectile">
-<h2>Projectile<a class="headerlink" href="#projectile" title="Permalink to this heading"></a></h2>
+<h2>Projectile<a class="headerlink" href="#projectile" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -321,7 +329,7 @@ of the sprite direction. Typically, if recoilLeft is true, set flipLeft, and if 
 </section>
 <hr class="docutils" />
 <section id="rotation">
-<h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this heading"></a></h2>
+<h2>Rotation<a class="headerlink" href="#rotation" title="Permalink to this headline"></a></h2>
 <p>Rotate the firearm.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -429,7 +437,7 @@ Otherwise, the firearm is considered clamped, and it will be restricted by the s
 </section>
 <hr class="docutils" />
 <section id="aim">
-<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this heading"></a></h2>
+<h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline"></a></h2>
 <p>Add visual elements, such as a beam or reticle, to help the player aim.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -512,7 +520,7 @@ will follow the exact position of the mouse.</p></td>
 </section>
 <hr class="docutils" />
 <section id="charge">
-<h2>Charge<a class="headerlink" href="#charge" title="Permalink to this heading"></a></h2>
+<h2>Charge<a class="headerlink" href="#charge" title="Permalink to this headline"></a></h2>
 <p>Charge the firearm to unleash a super charged bullet attack.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>

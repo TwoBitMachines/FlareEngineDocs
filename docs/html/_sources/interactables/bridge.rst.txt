@@ -1,8 +1,8 @@
 Bridge
 ++++++
 
-A bridge creates dynamic movement. Characters can walk and jump on them. Place this component on an empty gameobject 
-and scene gizmos will appear. The gameobject's position is the start position of the bridge, and the red gizmo will modify the end position.
+A bridge creates dynamic movement. Characters can walk and jump on them. Place this component on an empty game bject 
+and scene gizmos will appear. The game object's position is the start position of the bridge, and the red gizmo will modify the end position.
 
 .. image:: ../images/interactables/BridgeGif.gif
    :align: center
@@ -35,7 +35,7 @@ and scene gizmos will appear. The gameobject's position is the start position of
      - The larger the number, the less sag the bridge will have. For performance, keep this value below 30.
 
    * - Plank
-     - The system will create a gameobject for a plank with the corresponding sprite.
+     - The system will create a game object for a plank with the corresponding sprite.
        This will be used as a template to instantiate the remaining planks. You can change the transform's scale to achieve
        the desired plank width. The offset will shift each plank visually. 
 

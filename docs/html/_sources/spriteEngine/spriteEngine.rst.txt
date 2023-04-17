@@ -60,58 +60,50 @@ sprites instantly. For customization, each sprite can also be applied an individ
    
 |
 
-------------
-
 Signals
 =======
 
-Signals are just simple booleans but they're an integral part of the animation state machine. When a signal 
-is set true, the state machine reads it and plays the corresponding sprite. That's it. For example, when a 
-character is touching the ground, the system will set the onGround signal true. The Sprite Engine can then read 
-this signal and play the standing animation. 
+Signals are simple booleans that play an essential role in the animation state machine. 
+When a signal is set to true, the state machine reads it and plays the corresponding sprite. 
+For instance, when a character touches the ground, the onGround signal is set to true. 
+The Sprite Engine then reads this signal and plays the standing animation.
 
-The engine itself has the potential of setting many signals, and so for convenience, all the possible 
-signals the engine can set are automatically provided (check player signals for the full list). All that is 
-required is to click and enable the signal block you intend to use. 
+The Sprite Engine has the potential of setting multiple signals, and for convenience, 
+all possible signals that the engine can set are automatically provided. To use them, 
+you only need to enable the signal block by clicking on it. However, if you're not using 
+Flare Engine, you will need to provide these signals to the Sprite Engine by setting them 
+to true. To do this, you will require a reference to Sprite Engine (using TwoBitMachines.TwoBitSprite), 
+and set tree.signal, which is a Dictionary<string, bool>. The string represents the name of the signal, 
+and the boolean indicates its active state. If you're using Flare Engine, you don't need to worry 
+about this since the engine will read and reset the signals.
 
-However, if you're not using Flare Engine, you will need to provide these signals to the Sprite Engine. 
-This means you're in charge of setting the signals true. You will need a reference to Sprite Engine 
-(using TwoBitMachines.TwoBitSprite) and set **tree.signal** which is a Dictionary<string, bool>. The string being 
-the name of the signal and the boolean represents its active state. If you're using Flare Engine, there is 
-no need to worry about this. The engine will be in charge of reading and resetting the signals.
+Additionally, you can create your signals by using the Create Signal field. 
+These signals are mostly necessary for creating attack animation signals.
 
-And of course, it is possible to create your own signals by using the Create Signal field. These are mostly needed 
-for creating attack animation signals.
+State
+=====
 
-------------
+The state machine configures the animation state of a character by reading signals 
+and setting the appropriate animations.
 
-Sprite State
-============
-
-The state machine that will be configured to set the animation state of a character. At its core,
-this system is only reading signals and setting the appropriate sprites accordingly. 
-
-Once all the signals and sprites have been created, click the add button on the bar to create a state. 
+Once all the signals and sprites have been created, click the add button to create a state. 
 The animation state (depicted in orange) will have a list of all the available signals. Once the signal
-is chosen, click the drop down arrow to open the state and set the sprite (depicted in green) that 
-should play if the signal goes true.
+is chosen, choose the animation (depicted in green) that should play if the signal goes true.
 
-**Once all the states are created, you must arrange them for priority from top to bottom. The system will 
-check each state, starting from the top, and continue to the bottom until it finds a signal that is true. 
-The system will then stop executing and set the appropriate sprite.**
+**States must be arranged in priority order from top to bottom. The system will run until it finds 
+the first successful signal and then exit.**
 
-Each state can also have a sub-state in case there is a group of related signals that need to be organized. To 
-create a sub-state, click the add button. States can be nested up to four levels with sub-states.
+Each state can also have a sub-state in case there is a group of related signals that need 
+to be organized. Sub-states can be nested up to four levels.
 
 The example below shows a state machine with two states. The jumping state has two sub-states. If the jumping
 signal goes true, the system will check the signal velYUp, which means the velocity is positive. If it's true,
 the system will play the JumpingUp sprite. If VelYDown is true instead, the system will play the JumpingDown sprite.
 
-The second state works the same way. You will also notice the blue state, which is responsible for flipping the sprite 
-int the x or y direction. The main signal is set to alwaysTrue so that the system is always checking this state. 
-The system then checks the signals and flips the sprite accordingly. The most common signals to check will be 
-velXLeft and velXRight. If the x velocity is pointing in either of those directions, the system will flip the 
-sprite in that direction.
+You will also notice the blue state, which is responsible for flipping the sprite 
+int the x or y direction. The top signal is set to alwaysTrue so that the system is always checking this state. 
+The most common signals to check will be velXLeft and velXRight. If the x velocity is pointing in
+either of those directions, the system will flip the sprite in that direction.
 
 .. image:: ../images/SpriteState.png
    :align: center
@@ -121,7 +113,19 @@ sprite in that direction.
 .. important::
  All your sprites must be created facing to the right to work correctly with sprite flip.
 
-------------
+Transition
+==========
+
+Animations can transition from one to another, allowing for smooth movement between states. For instance,
+when transitioning from the idle animation to the crouching animation, a "crouching down" animation 
+can be used to create a seamless transition.
+
+To continue this example, we can create a transition for the crouch animation. Set the Condition 
+to the onGround signal, as we want to transition from idle to crouch. The From animation is the starting animation, 
+which is idle. The To animation is the transition animation, which should be the crouching down animation. 
+
+It's important to note that all transition animations should exist in Sprite Engine and only belong in the 
+transition section, not the state machine.
 
 Properties
 ==========

@@ -15,7 +15,6 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -61,11 +60,14 @@
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/meleeAbility.html">Melee</a></li>
@@ -101,10 +103,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/projectile.html">Projectiles</a></li>
@@ -134,8 +138,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Flare Engine Documentation</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Flare Engine Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -146,7 +150,7 @@
            <div itemprop="articleBody">
              
   <section id="flare-engine-documentation">
-<h1>Flare Engine Documentation<a class="headerlink" href="#flare-engine-documentation" title="Permalink to this heading"></a></h1>
+<h1>Flare Engine Documentation<a class="headerlink" href="#flare-engine-documentation" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
@@ -167,7 +171,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="spriteEngine/spriteEngine.html">Sprite Engine</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spriteEngine/spriteEngine.html#signals">Signals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spriteEngine/spriteEngine.html#sprite-state">Sprite State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spriteEngine/spriteEngine.html#state">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spriteEngine/spriteEngine.html#transition">Transition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spriteEngine/spriteEngine.html#properties">Properties</a></li>
 </ul>
 </li>
@@ -202,11 +207,14 @@
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="playerAbilities/meleeAbility.html">Melee</a></li>
@@ -252,7 +260,10 @@
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="interactables/bridge.html">Bridge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interactables/foliage.html">Foliage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactables/foliage.html">Foliage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="interactables/foliage.html#foliage-sway">Foliage Sway</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="interactables/friction.html">Friction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interactables/highJump.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="interactables/ladder.html">Ladder</a></li>
@@ -271,6 +282,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="systems/dialogue.html">Dialogue</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="systems/dialogue.html#dialogueui">DialogueUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="systems/dialogueBubble.html">Dialogue Bubble</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="systems/dialogueBubble.html#bubble">Bubble</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="systems/quest.html">Quest</a><ul>
@@ -298,6 +313,7 @@
 <li class="toctree-l2"><a class="reference internal" href="systems/inventory.html#inventoryslot">InventorySlot</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="systems/letsWiggle.html">Lets Wiggle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="systems/letsWiggle.html#settings">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systems/letsWiggle.html#wiggle-bar">Wiggle Bar</a></li>
@@ -349,8 +365,8 @@
 <li class="toctree-l1"><a class="reference internal" href="saving/transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="saving/worldVariables.html">World Variables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="saving/worldVariables.html#float-and-health">Float And Health</a></li>
-<li class="toctree-l2"><a class="reference internal" href="saving/worldVariables.html#world-float-hud">World Float HUD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="saving/worldVariables.html#string-bool-and-vector3">String, Bool, And Vector3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="saving/worldVariables.html#world-float-hud">World Float HUD</a></li>
 </ul>
 </li>
 </ul>

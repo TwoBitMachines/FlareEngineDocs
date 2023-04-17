@@ -1,10 +1,11 @@
 High Jump
 ++++++++++
 
-Launch a character into the air. This has two modes, Trampoline and Wind. Place this component 
-on an empty gameobject. A blue rectangle gizmo will appear in the scene for character detection. The area of this 
-rectangle can be modified. Typically, a trampoline will have a smaller collider area, and Wind will have a much 
-taller collider area.
+This will launch a character into the air effortlessly. This component has
+two modes available, Trampoline and Wind, that can be added to an empty gameobject.
+Once added, a blue rectangle gizmo will appear for character detection, and 
+you can modify the rectangle's size to your preference. Trampoline mode has a 
+smaller collider area, while Wind mode has a larger collider area.
 
 .. image:: ../images/interactables/TrampolineGif.gif
    :align: center
@@ -12,8 +13,8 @@ taller collider area.
    
 |
 
-.. note::
-   High Jump must also be enabled in the character settings.
+.. important::
+   High Jump must be enabled as a player ability. There is also a High Jump node for AI.
 
 .. list-table::
    :widths: 25 100
@@ -26,13 +27,10 @@ taller collider area.
      - Launch the character with Trampoline, or gradually push the character upward with Wind.
 
    * - Force  
-     - The amount of force acting on the character. Wind should typically have forces below 1, while Trampoline 
-       should have larger forces above 10. The force of the High Jump can also be applied in any direction according 
-       to the gameobject's rotation.
-
-   * - Move With Parent
-     - Enable this if the High Jump is a child object of a moving gameobject. This will allow the High Jump, for example,
-       to move along with a moving platform.
+     - The amount of force acting on the character.  Trampolines typically have forces above 20, 
+       while wind has forces above 5. The force of the High Jump can be applied in any direction 
+       based on the gameobject's rotation, whereas the direction of the wind must be specified.
 
    * - On Trampoline
-     - The Unity Event invoked when trampoline is triggered. Call a World Effect with the dynamic Activate method.
+     - The Unity Event invoked when a trampoline jump is triggered. Call a World Effect with the dynamic 
+       Activate method.

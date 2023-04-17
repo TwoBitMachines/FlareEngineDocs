@@ -35,11 +35,14 @@ Flare Engine Documentation
    playerAbilities/crouchSlide
    playerAbilities/dash
    playerAbilities/hide
+   playerAbilities/highJumpAbility
    playerAbilities/hover
+   playerAbilities/infiniteWalk
    playerAbilities/swim
    playerAbilities/ground
    playerAbilities/firearms
    playerAbilities/slopeSlide
+   playerAbilities/staticFlying
    playerAbilities/pushBlock
    playerAbilities/pickAndThrow
    playerAbilities/meleeAbility
@@ -81,10 +84,12 @@ Flare Engine Documentation
 
    systems/audioManager
    systems/dialogue
+   systems/dialogueBubble
    systems/quest
    systems/equipment
    systems/firearm
    systems/inventory
+   systems/journal
    systems/letsWiggle
    systems/melee
    systems/projectile

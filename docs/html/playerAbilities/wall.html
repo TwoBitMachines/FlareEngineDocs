@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -63,14 +62,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
@@ -106,14 +110,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -138,8 +145,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Wall</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Wall</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/wall.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -150,7 +157,7 @@
            <div itemprop="articleBody">
              
   <section id="wall">
-<h1>Wall<a class="headerlink" href="#wall" title="Permalink to this heading"></a></h1>
+<h1>Wall<a class="headerlink" href="#wall" title="Permalink to this headline"></a></h1>
 <p>The player can slide, climb, corner hang, corner grab, and jump on walls. If a particular wall is not meant to be climbable, add a Unity tag “NoClimb”
 to this gameobject.</p>
 <table class="colwidths-given docutils align-default">
@@ -170,10 +177,16 @@ to this gameobject.</p>
 <tr class="row-odd"><td><p>Start On Ground</p></td>
 <td><p>If enabled, the player will be able to start climbing a wall even if it’s still touching the ground.</p></td>
 </tr>
+<tr class="row-even"><td><p>On Enter</p></td>
+<td><p>The Unity Event invoked when the player latches unto a wall.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Exit</p></td>
+<td><p>The Unity Event invoked when the player gets off a wall.</p></td>
+</tr>
 </tbody>
 </table>
 <section id="slide">
-<h2>Slide<a class="headerlink" href="#slide" title="Permalink to this heading"></a></h2>
+<h2>Slide<a class="headerlink" href="#slide" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -218,9 +231,8 @@ enabled for particle effects should have a way to disable themselves. You can us
 </table>
 <p><strong>Signals: wall,  wallLeft, wallRight, wallSlide, wallClimb, wallSlideJump, autoCornerJump</strong></p>
 </section>
-<hr class="docutils" />
 <section id="climb">
-<h2>Climb<a class="headerlink" href="#climb" title="Permalink to this heading"></a></h2>
+<h2>Climb<a class="headerlink" href="#climb" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -277,9 +289,8 @@ and the rate at which the event executes are required.</p></td>
 <p>Once the player is near the top of a wall, it will automatically jump on top of the platform. If Corner Grab is enabled, this setting will be ignored.</p>
 </div>
 </section>
-<hr class="docutils" />
 <section id="corner-hang">
-<h2>Corner Hang<a class="headerlink" href="#corner-hang" title="Permalink to this heading"></a></h2>
+<h2>Corner Hang<a class="headerlink" href="#corner-hang" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -302,9 +313,8 @@ the player’s movement will unlatch it from the corner. If None is enabled, onl
 </table>
 <p><strong>Signals: wall, wallLeft, wallRight, wallHang</strong></p>
 </section>
-<hr class="docutils" />
 <section id="corner-grab">
-<h2>Corner Grab<a class="headerlink" href="#corner-grab" title="Permalink to this heading"></a></h2>
+<h2>Corner Grab<a class="headerlink" href="#corner-grab" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -317,12 +327,19 @@ the player’s movement will unlatch it from the corner. If None is enabled, onl
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Type</p></td>
-<td><p>How will the player grab the corner? If Jump is enabled, the player will simply hold the corner until the jump button is pressed. If Pull Up or Pull Up Auto is enabled, a corner climb
-animation will play. If Pull Up Auto is enabled, the player will start the corner climb animation immediately.
-Press the blue button to add each sprite in the animation.</p></td>
+<td><p>How will the player grab the corner? If Jump is enabled, the player will simply hold the corner until the jump button is pressed.
+If Pull Up or Pull Up Auto is enabled, a corner climb animation will play. If Pull Up Auto is enabled, the player
+will start the corner climb animation immediately. Press the blue button to add each sprite in the animation.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Exit Grab</p></td>
 <td><p>Once the Corner Grab state has been entered, the player can exit this state either by the specified button press or by player movement.</p></td>
+</tr>
+<tr class="row-even"><td><p>Final Position</p></td>
+<td><p>When the corner climb animation is over, this will set the player’s position on top of the platform. Sometimes its convenient to do this
+on the second to the last sprite or at the very last sprite. This will depend on how the sprites in the animation are set up.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Grab Offset</p></td>
+<td><p>This will offset the player’s position while initially grabbing the corner</p></td>
 </tr>
 <tr class="row-even"><td><p>Animation Time</p></td>
 <td><p>The total duration of the corner climb animation.</p></td>
@@ -330,9 +347,15 @@ Press the blue button to add each sprite in the animation.</p></td>
 <tr class="row-odd"><td><p>Sprite</p></td>
 <td><p>A sprite in the corner climb animation.</p></td>
 </tr>
-<tr class="row-even"><td><p>Displacement</p></td>
-<td><p>The system will control the position of the player while climbing the corner. The displacement will offset the player according to the sprite that
-is currently playing. This might take a little trial and error to get correct.</p></td>
+<tr class="row-even"><td><p>Offset</p></td>
+<td><p>The offset will displace the player’s position for the current sprite that is playing.
+This might take a little trial and error to get correct.</p></td>
+</tr>
+<tr class="row-odd"><td><p>On Animation Start</p></td>
+<td><p>The Unity Event invoked when the animation starts.</p></td>
+</tr>
+<tr class="row-even"><td><p>On Animation End</p></td>
+<td><p>The Unity Event invoked when the animation ends.</p></td>
 </tr>
 </tbody>
 </table>

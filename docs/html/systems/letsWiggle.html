@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
@@ -113,6 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reactionProfile.html">Reaction Profile</a></li>
@@ -137,8 +142,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Lets Wiggle</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Lets Wiggle</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/letsWiggle.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -149,7 +154,7 @@
            <div itemprop="articleBody">
              
   <section id="lets-wiggle">
-<h1>Lets Wiggle<a class="headerlink" href="#lets-wiggle" title="Permalink to this heading"></a></h1>
+<h1>Lets Wiggle<a class="headerlink" href="#lets-wiggle" title="Permalink to this headline"></a></h1>
 <p>This is a tweening library that is configured in the inspector or in code.
 The <strong>Wiggle</strong> component, which is different from the <strong>LetsWiggle</strong> component,
 must be included in the scene for proper function. The <strong>World Manager</strong> component will
@@ -220,7 +225,7 @@ Create as many tweens as necessary to accomplish the desired effect.</p>
 </ul>
 <hr class="docutils" />
 <section id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading"></a></h2>
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline"></a></h2>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -290,7 +295,7 @@ gameobject belongs to a Transform or Rect Transform.</p></td>
 </section>
 <hr class="docutils" />
 <section id="wiggle-bar">
-<h2>Wiggle Bar<a class="headerlink" href="#wiggle-bar" title="Permalink to this heading"></a></h2>
+<h2>Wiggle Bar<a class="headerlink" href="#wiggle-bar" title="Permalink to this headline"></a></h2>
 <p>Open the bar and start adding tweens. Each tween will have at least a couple of fields to set, and all of them will
 share the properties below.</p>
 <table class="colwidths-given docutils align-default">
@@ -322,7 +327,7 @@ If not enabled, the tween will execute in series.</p></td>
 </section>
 <hr class="docutils" />
 <section id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading"></a></h2>
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline"></a></h2>
 <p>The Wiggle library is also accessible through static methods using the <strong>TwoBitMachines</strong> namespace.
 Below is an example of how to use the tweening library. It’s just a very long line of C# code. To
 get started, implement the <strong>Wiggle.Target</strong> static method to start chaining tweens.</p>

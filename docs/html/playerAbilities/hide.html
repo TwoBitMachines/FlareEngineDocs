@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,15 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
@@ -101,6 +103,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -134,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Hide</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Hide</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/hide.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -146,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="hide">
-<h1>Hide<a class="headerlink" href="#hide" title="Permalink to this heading"></a></h1>
+<h1>Hide<a class="headerlink" href="#hide" title="Permalink to this headline"></a></h1>
 <p>When implementing a stealth mechanic, it’s often useful to allow
 the player to hide behind objects like foliage. To achieve this, give
 each object that is meant to hide the player a Collider2D component that is set

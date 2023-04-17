@@ -16,3 +16,6 @@ is to jump on top of it.
 
    * - Exit
      - The button that must be pressed to exit a vehicle.
+
+   * - Exit On Death
+     - If enabled, the player will exit the vehicle when the player dies.

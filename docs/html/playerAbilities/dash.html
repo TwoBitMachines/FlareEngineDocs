@@ -15,12 +15,11 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hover" href="hover.html" />
+    <link rel="next" title="Hide" href="hide.html" />
     <link rel="prev" title="Crouch Slide" href="crouchSlide.html" /> 
 </head>
 
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
@@ -100,14 +103,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -132,8 +138,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Dash</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Dash</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/dash.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,7 +150,7 @@
            <div itemprop="articleBody">
              
   <section id="dash">
-<h1>Dash<a class="headerlink" href="#dash" title="Permalink to this heading"></a></h1>
+<h1>Dash<a class="headerlink" href="#dash" title="Permalink to this headline"></a></h1>
 <p>Increase the speed of the player to quickly cover distance.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -157,49 +163,61 @@
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><p>Dash Direction</p></td>
+<td><p>Enabling Horizontal Axis initiates a dash along the x-axis using left and right buttons,
+with the option of assigning only one button. With Multi Directional enabled, the player can dash
+in any of eight directions using assigned buttons.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Button Taps</p></td>
+<td><p>If Single Tap is enabled, pressing the button once will initiate a dash. If Double Tap is enabled, pressing the button twice
+within the specified time frame is required to initiate a dash.</p></td>
+</tr>
 <tr class="row-even"><td><p>Buttons</p></td>
 <td><p>The buttons that need to be tapped in order to trigger a dash.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Extra Button</p></td>
 <td><p>If pressed, this will immediately initiate a dash, bypassing the button tap settings.</p></td>
 </tr>
-<tr class="row-even"><td><p>Dash Direction</p></td>
-<td><p>If Horizontal Axis is enabled, the dash will occur along the x axis. In this state, only the left and right buttons are used. It is also possible
-to use only one button and leave the other empty. If Multi Directional is enabled, all the buttons that are set will be utilized to move the player in one of
-eight directions along the x and y axis.</p></td>
+<tr class="row-even"><td><p>On Dashing</p></td>
+<td><p>The Unity Event invoked when the player is dashing, and can be used to call a world effect.
+You will need to specify the name of the effect and the frequency at which the event should execute.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Button Taps</p></td>
-<td><p>If Single Tap is enabled, pressing the button only once will trigger a dash. If Double Tap is enabled, pressing the button twice is required
-to trigger a dash.</p></td>
-</tr>
-<tr class="row-even"><td><p>Tap Threshold</p></td>
-<td><p>If Double Tap is enabled, the threshold is the time interval in which the double tap must occur for the dash to trigger successfully.</p></td>
-</tr>
-<tr class="row-odd"><td><p>On Dash</p></td>
-<td><p>The Unity Event invoked when the player is dashing. You can call a world effect from this event. The name of the effect
-and the rate at which the event executes are required.</p></td>
-</tr>
-<tr class="row-even"><td><p>On Start</p></td>
+<tr class="row-odd"><td><p>On Start</p></td>
 <td><p>The Unity Event invoked when the player starts dashing. You can call a world effect from this event.</p></td>
 </tr>
-<tr class="row-odd"><td><p>On End</p></td>
+<tr class="row-even"><td><p>On End</p></td>
 <td><p>The Unity Event invoked when the player ends dashing. You can call a world effect from this event.</p></td>
 </tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
 <tr class="row-even"><td><p>Duration</p></td>
-<td><p>If Instant is enabled, the player will traverse the dash distance in one frame. If Incremental is enabled, the player will traverse the dash distance
-according to the dash time.</p></td>
+<td><p>With Instant enabled, the dash distance is covered in one frame; with Incremental enabled,
+the dash distance is covered gradually according to the Dash Time.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Dash Time</p></td>
-<td><p>The time it will take to traverse the dash distance;</p></td>
-</tr>
-<tr class="row-even"><td><p>Dash Distance</p></td>
+<tr class="row-odd"><td><p>Dash Distance</p></td>
 <td><p>The total distance traversed while dashing.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Cool Down</p></td>
+<tr class="row-even"><td><p>Cool Down</p></td>
 <td><p>The time interval before the next dash can be triggered.</p></td>
 </tr>
-<tr class="row-even"><td><p>Crouch</p></td>
-<td><p>If enabled, the player will change to a lower height while dashing. If the player is below a platform when the dash completes, the crouch signal will be set.</p></td>
+<tr class="row-odd"><td><p>Crouch</p></td>
+<td><p>If enabled, the player will change to a lower height while dashing. If the player
+is below a platform when the dash completes, the crouch signal will be set.</p></td>
+</tr>
+<tr class="row-even"><td><p>Air Dash Limit</p></td>
+<td><p>This determines the number of times the player can dash while in mid-air.
+Consecutive air dashes are only allowed if the player performs an air jump in between.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Can Take Damage</p></td>
 <td><p>If disabled, the player will not take damage while dashing. This assumes the player has a Health component.</p></td>
@@ -220,7 +238,7 @@ according to the dash time.</p></td>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="crouchSlide.html" class="btn btn-neutral float-left" title="Crouch Slide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="hover.html" class="btn btn-neutral float-right" title="Hover" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="hide.html" class="btn btn-neutral float-right" title="Hide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

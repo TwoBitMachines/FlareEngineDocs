@@ -25,8 +25,11 @@ texture. A shader then applies the pattern of the transition. On completion, it 
      - If Transition In, the transition will reach maximum coverage. If Transition Out, the transition will reach complete transparency.
        If Both, the system will execute TransitionIn and TransitionOut in that order.
 
-   * - Time
+   * - Transition Time
      - The duration of the transition.
+
+   * - Hold Time
+     - If type is Both, the time duration before Transition Out begins. This effectively holds the screen black for a brief moment.
 
    * - Reset Game
      - If enabled and type is Both, the game will be reset after Transition In completes and before Transition Out begins. Time scale will 

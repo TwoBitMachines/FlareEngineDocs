@@ -1,7 +1,7 @@
 Rope 
 ++++
 
-The player can use ropes to swing or for simple idle interactions. Add this component to an empty gameobject.
+The player can use ropes to swing or for simple idle interactions. Add this component to an empty game object.
 
 .. image:: ../images/interactables/RopeGif.gif
    :align: center
@@ -62,12 +62,12 @@ The player can use ropes to swing or for simple idle interactions. Add this comp
      - Both the start and end of the rope are anchored.
 
    * - Rope Sprite
-     - The system will create a gameobject for a tether with the corresponding sprite.
+     - The system will create a game object for a tether with the corresponding sprite.
        This will be used as a template to instantiate the remaining tethers. The second field corresponds to the size of the tether.
 
    * - Rope End (Optional)
      - Every time the rope is created, it destroys and recreates all the tethers. Sometimes the end tether contains components like Health. To prevent having to
-       add these components every time the rope is recreated, specify the end tether gameobject to prevent it from being destroyed.
+       add these components every time the rope is recreated, specify the end tether game object to prevent it from being destroyed.
    
    * - Create
      - Once all the settings are chosen, press this button to create the rope. Anytime you change the rope's position or a setting, recreate the rope to enact the changes.

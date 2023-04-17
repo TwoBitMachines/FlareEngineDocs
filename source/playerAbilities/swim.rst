@@ -24,7 +24,14 @@ will swim inside the body of water.
 
    * - Weight
      - How quickly the player sinks while swimming.
-  
+
+   * - Switch Button
+     - If water Switch Type is set to Yes, holding this button will transition the player from a floating state to a swimming state. To return to a floating state, the player 
+       must reach the top of the water.
+
+   * - Jump Out
+     - The force used to jump out of the water.
+
    * - Water Impact
      - The force exerted on the water upon entry. The force exerted while the player moves in the water will be proportional to this value and the player's velocity.
 
@@ -33,13 +40,6 @@ will swim inside the body of water.
 
    * - Water Friction Y
      - Water resistance applied to the player in the y direction.
-
-   * - Jump
-     - The force used to jump out of the water.
-
-   * - Switch Button
-     - If water Switch Type is set to Yes, holding this button will transition the player from a floating state to a swimming state. To return to a floating state, the player 
-       must reach the top of the water.
 
    * - On Enter Water
      - The Unity Event invoked when the player enters the water. Call a World Effect with the dynamic Activate method.

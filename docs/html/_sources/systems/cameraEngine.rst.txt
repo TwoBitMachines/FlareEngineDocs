@@ -72,7 +72,7 @@ Parallax
 ========
 
 Implement a parallax effect with infinite scrolling. Create the necessary parallax layers by clicking the 
-add button. Each layer will correspond to a gameobject which contains a Sprite Renderer (set the layer order manually).
+add button. Each layer will correspond to a game object which contains a Sprite Renderer (set the layer order manually).
 
 In the inspector, set the reference and the parallax rate, which is the rate at which 
 the layer will move with the camera. A value of 1 means the layer moves exactly with the camera. This is 
@@ -80,7 +80,7 @@ typically the value for the farthest layer, the background. A value of zero mean
 This is typically the value of the nearest layer, the foreground. The parallax rate for the y values should typically be smaller than the 
 x values.
 
-These layers can be organized outside the camera gameobject. That is, they are not required to be children of the camera.
+These layers can be organized outside the camera game object. That is, they are not required to be children of the camera.
 
 ------------
 

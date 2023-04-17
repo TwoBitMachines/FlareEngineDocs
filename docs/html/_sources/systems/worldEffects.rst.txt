@@ -1,7 +1,7 @@
 World Effects
 +++++++++++++
 
-The **WorldEffects** class will instantiate gameobjects and pool them. These gameobjects 
+The **WorldEffects** class will instantiate game objects and pool them. These game objects 
 typically represent some type of game effect like a particle system, but they can be anything. The most 
 common use case is to call an effect when an enemy is damaged.
 
@@ -13,7 +13,7 @@ name of the effect.
 
 When you create an effect, it must usually have the ability to deactivate itself when it's complete. For example,
 if you're using Sprite Engine to play a sprite effect, use the On Loop Once Unity Event to deactivate the 
-gameobject by choosing GameObect.SetActive to false. If you are using a particle system, you can use the 
+game object by choosing GameObect.SetActive to false. If you are using a particle system, you can use the 
 Basic Timer component that will deactivate the gameobect after a certain amount of time. When the object is 
 deactivated, the system will pool it and activate it again when it's needed.
 
@@ -28,9 +28,9 @@ There is also a Splatter effect you can apply to any surface. Any surface that w
 material SplatterSurface. The sprite that is the splatter must contain the material Splatter. This is great for 
 creating blood effects.
 
-To set this system up, create an empty gameobject and add the WorldEffects component to it. Place
-each gameobject effect as a child of this object and press the Grab Effects button to register them. The name of the 
-gameobject is the name of the effect the system will look for. During runtime, all the instantiated effects will 
+To set this system up, create an empty game object and add the WorldEffects component to it. Place
+each game object effect as a child of this object and press the Grab Effects button to register them. The name of the 
+game object is the name of the effect the system will look for. During runtime, all the instantiated effects will 
 be placed here.
 
 .. list-table::
@@ -76,7 +76,7 @@ reduce the amount of work and connections you have to make.
    * - Position
      - This position is where the effect will be instantiated. The position is usually determined by the collider of a character, but not always.
        For example, the center position is the exact center of the character's collider. For blood splatter, you might want to pick the bottom position 
-       to instantiate the gameobject effect near the feet of the enemy.
+       to instantiate the game object effect near the feet of the enemy.
 
    * - Quantity
      - The number of effects that you want to instantiate. You can also randomize this value between a min and max value.
@@ -91,7 +91,7 @@ reduce the amount of work and connections you have to make.
      - Apply a random offset to the position of the effect. The min and max values represent the range of possible offset values.
 
    * - Check For Walls
-     - If enabled, this will check if the effect is being instantiated inside a wall. If it is, the gameobject's position will
+     - If enabled, this will check if the effect is being instantiated inside a wall. If it is, the game objectt's position will
        be set to the center position of the character or object that is calling it.
        
    * - Effect Name

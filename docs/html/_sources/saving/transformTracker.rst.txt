@@ -7,7 +7,7 @@ about creating a unique ID name for each transform. This can be useful for savin
 killed enemies in the level. If this is the case, use the Reset AI node and check 
 if the enemy's transform is in this list. 
 
-To set this up, place this component on an empty gameobject. 
+To set this up, place this component on an empty game object. 
 
 .. list-table::
    :widths: 25 100

@@ -1,7 +1,7 @@
 Ladder
 ++++++
 
-The humble ladder is used for climbing. Add this component to an empty gameobject.
+The humble ladder is used for climbing. Add this component to an empty game object.
 
 .. image:: ../images/interactables/LadderGif.gif
    :align: center

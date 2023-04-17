@@ -15,13 +15,12 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Ground" href="ground.html" />
-    <link rel="prev" title="Hover" href="hover.html" /> 
+    <link rel="prev" title="Infinite Walk" href="infiniteWalk.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -108,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -132,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Swim</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Swim</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/swim.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="swim">
-<h1>Swim<a class="headerlink" href="#swim" title="Permalink to this heading"></a></h1>
+<h1>Swim<a class="headerlink" href="#swim" title="Permalink to this headline"></a></h1>
 <p>Allow the player to swim or float on any body of water. The body of water will determine
 if the player either floats or swims. If floating, the player will remain above the water line. If swimming, the player
 will swim inside the body of water.</p>
@@ -173,6 +178,13 @@ This force dictates how quickly the oscillations occur.</p></td>
 <tr class="row-even"><td><p>Weight</p></td>
 <td><p>How quickly the player sinks while swimming.</p></td>
 </tr>
+<tr class="row-odd"><td><p>Switch Button</p></td>
+<td><p>If water Switch Type is set to Yes, holding this button will transition the player from a floating state to a swimming state. To return to a floating state, the player
+must reach the top of the water.</p></td>
+</tr>
+<tr class="row-even"><td><p>Jump Out</p></td>
+<td><p>The force used to jump out of the water.</p></td>
+</tr>
 <tr class="row-odd"><td><p>Water Impact</p></td>
 <td><p>The force exerted on the water upon entry. The force exerted while the player moves in the water will be proportional to this value and the player’s velocity.</p></td>
 </tr>
@@ -181,13 +193,6 @@ This force dictates how quickly the oscillations occur.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Water Friction Y</p></td>
 <td><p>Water resistance applied to the player in the y direction.</p></td>
-</tr>
-<tr class="row-even"><td><p>Jump</p></td>
-<td><p>The force used to jump out of the water.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Switch Button</p></td>
-<td><p>If water Switch Type is set to Yes, holding this button will transition the player from a floating state to a swimming state. To return to a floating state, the player
-must reach the top of the water.</p></td>
 </tr>
 <tr class="row-even"><td><p>On Enter Water</p></td>
 <td><p>The Unity Event invoked when the player enters the water. Call a World Effect with the dynamic Activate method.</p></td>
@@ -209,7 +214,7 @@ the particle settings, too!</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="hover.html" class="btn btn-neutral float-left" title="Hover" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="infiniteWalk.html" class="btn btn-neutral float-left" title="Infinite Walk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="ground.html" class="btn btn-neutral float-right" title="Ground" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -103,7 +103,7 @@ To create an ItemSO, right click in the project window and go to Create/FlareEng
 
    * - Generic Float And String
      - The meaning of these values is completely arbitrary. They may not even be necessary at all. Their purpose relies entirely on what the item needs 
-       to execute. For example, when a firearm item is used, the corresponding event will simply activate or deactivate the gameobject 
+       to execute. For example, when a firearm item is used, the corresponding event will simply activate or deactivate the game object 
        of the real firearm, never even using these values. If it's a health item, only the Generic Float is required to specify the amount of health 
        that will be applied to a character. 
 
@@ -164,7 +164,7 @@ the health item in the inventory.
 
 Very similarly, if you want to use a firearm item, connect the Item Event to the Player Component 
 and choose the Dynamic method ToggleOrActivateOnly. That's it. Internally, the system will try to toggle 
-the active state of the firearm gameObject and turn off all other firearms (if any). This method will automatically set 
+the active state of the firearm game object and turn off all other firearms (if any). This method will automatically set 
 itemEventData.success to true, since in this case the item is not a consumable. The other values of ItemEventData are not used.  
 
 If you want to change the projectile of a firearm using an item, connect the Item Event to the Player 
@@ -183,8 +183,8 @@ it wants to modify, and it will use the generic float value to change the ammo a
 Item
 ====
 
-Attach this component to any gameobject that is an item. This item will become
-part of the inventory (and its gameobject will be deactivated) when a character makes contact with it. Attach a Circle Collider2D
+Attach this component to any game object that is an item. This item will become
+part of the inventory (and its game object will be deactivated) when a character makes contact with it. Attach a Circle Collider2D
 and set the isTrigger to true. Each item must correspond to an **ItemSO**. 
 
 .. list-table::
@@ -201,12 +201,15 @@ and set the isTrigger to true. Each item must correspond to an **ItemSO**.
    * - ItemSO
      - The reference to ItemSO. 
 
+   * - Add To Journal
+     - If the item is found, it will be added to the specified journal if it exists in the scene.
+
 ------------
 
 Inventory
 =========
 
-The Inventory contains the UI structure. Place this component on a Canvas gameobject. The slots (item containers) and accompanying
+The Inventory contains the UI structure. Place this component on a Canvas game object. The slots (item containers) and accompanying
 features can be arranged however you deem necessary. You can arrange the slots in a grid, in a vertical or horizontal bar, 
 or you can have just one slot. It's completely up to you.
 
@@ -245,7 +248,7 @@ Slots are the most important elements of the Inventory. Everything else is optio
      - If enabled, the item in the first slot will be used automatically.
 
    * - Toggle Inventory
-     - A button for toggling the active state of the Inventory gameobject. If no button is desired, set to None. If the button exists, specify if the game should pause when 
+     - A button for toggling the active state of the Inventory game object. If no button is desired, set to None. If the button exists, specify if the game should pause when 
        the Inventory is activated. Pausing the game will also block player input. If Block Player Input is enabled, only the player input will be paused when the inventory is open.
 
    * - Use Item - Slots
@@ -287,7 +290,7 @@ UI references are all optional and can be placed wherever necessary. If used, th
    * - Drag Item
      - The UI Image with a DragItem Component. If it exists, it will allow items to be dragged and swapped over slots. 
        The item's icon will appear next to the mouse as the item is being dragged. If the slots are using a Unity Grid Layout, 
-       attach a Layout Element component to this gameobject and set IgnoreLayout to true. This will allow the UI Image to move freely.
+       attach a Layout Element component to this game object and set IgnoreLayout to true. This will allow the UI Image to move freely.
 
    * - Remove Item
      - The UI button reference for removing items. If an item can be dropped, this element will become visible.

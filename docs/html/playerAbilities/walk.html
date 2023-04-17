@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="meleeAbility.html">Melee</a></li>
@@ -100,6 +103,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
@@ -133,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Walk</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Walk</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/playerAbilities/walk.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -145,7 +149,7 @@
            <div itemprop="articleBody">
              
   <section id="walk">
-<h1>Walk<a class="headerlink" href="#walk" title="Permalink to this heading"></a></h1>
+<h1>Walk<a class="headerlink" href="#walk" title="Permalink to this headline"></a></h1>
 <p>Allow the player to move in the x direction. This ability is enabled by default.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
@@ -168,11 +172,6 @@ A value of one means there is no smoothing.</p></td>
 <tr class="row-even"><td><p>Damp Air Change</p></td>
 <td><p>The resistance towards changing direction while the player is in the air.
 A value of zero means the player can instantly change direction in the air.</p></td>
-</tr>
-<tr class="row-odd"><td><p>Infinite Walk</p></td>
-<td><p>If enabled, the character will walk infinitely and change direction upon wall contact. To enter this state,
-specify the button or call InfiniteWalkActivate (bool value). You can also disable this ability by calling InfiniteWalkAbility (bool value).
-These methods are found on the Player component.</p></td>
 </tr>
 </tbody>
 </table>

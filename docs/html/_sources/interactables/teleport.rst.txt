@@ -1,7 +1,7 @@
 Teleport
 ++++++++
 
-Any gameobject that enters the collider2D on any gameobject with the Teleport component will be teleported to the specified destination. 
+Any game object that enters the collider2D on any game object with the Teleport component will be teleported to the specified destination. 
 It is perfectly possible to create bidirectional teleports that work together.
 
 .. image:: ../images/interactables/TeleportGif.gif
@@ -18,7 +18,7 @@ It is perfectly possible to create bidirectional teleports that work together.
      - 
 
    * - Destination
-     - The transform where the gameobject will be teleported to.
+     - The transform where the game object will be teleported to.
 
    * - Execute
      - If set to Automatic, the teleportation logic will execute immediately. If set to Button, you will need to 
@@ -27,7 +27,7 @@ It is perfectly possible to create bidirectional teleports that work together.
        set to Never Sleep, or the Teleportation on Button press will not work correctly.
 
    * - LayerMask
-     - Only gameobjects on this layer mask will be teleported.
+     - Only game objects on this layer mask will be teleported.
 
    * - Delay
      - Add a time delay before teleporting.
@@ -36,7 +36,7 @@ It is perfectly possible to create bidirectional teleports that work together.
      - The event invoked when the time delay begins. This only executes if delay is greater than zero.
 
    * - On Teleport
-     - The event invoked when a gameobject is teleported.
+     - The event invoked when a game object is teleported.
 
 .. important::
    You can easily set this up to teleport from room to room using rooms from the Safire Camera. You can also block player input 

@@ -1,24 +1,20 @@
 Melee
 +++++++
 
-Create a melee attack for the player to use against enemies. Each melee attack consists of a collider that will be used 
-to detect targets and an attack animation. It is possible to chain attacks based on user timing and hit success. 
-It is also possible to add velocity to each attack.
+Use a melee to attack enemies. You'll need a collider to deal damage and
+an attack animation. You'll be able to chain attacks and add velocity to
+each attack based on timing and hit success. 
 
-However, the attack animation has to be setup and executed elsewhere. If using Sprite Engine, set the attack animation 
-to loop once, and add a collider2D property to control the size and position of the collider on a per frame basis. 
-The Melee system will be in charge of enabling the collider, and setting the animation signal active. Once the attack 
-animation is complete, the **CompleteAttack** method must be called on the **Melee** class.
+However, the attack animation needs to be set up and executed elsewhere.
+If you're using Sprite Engine, set the attack animation to loop once, and 
+add a collider2D property to control the size and position of the collider on 
+a per-frame basis. Once the animation is complete, use the OnLoopOnce 
+event to call the **CompleteAttack** method on the **Melee** class.
 
-To create a melee, create a gameobject and set it as a child of the player transform. Add the collider that will 
-be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled. 
-
-The melee component also has the ability to execute a block to defend against enemy attacks. If blocking is enabled, 
-add a RigidBody2D to this gameobject and set Body Type to kinematic. You will also need to change the 
-layer to  World or Player. If set to World, this melee block will have the ability to block walking enemies. 
-The block animation should be set up in similar fashion to an attack animation. Configure the collider, but setting 
-the animation to loop will not be necessary. During runtime, this component will add the Health component to be able 
-to sense enemy attacks.
+To create a melee attack, add a collider to a gameobject and set it as a child of 
+the player transform. Then, add the Melee component and make sure the player has 
+the Melee ability enabled. The Melee system is in charge of enabling the collider
+and setting the animation signal active.
 
 .. list-table::
    :widths: 25 100
@@ -51,6 +47,13 @@ to sense enemy attacks.
 
    * - Cancel Others
      - If enabled, this melee attack will be able to cancel any active melee attack. This will only occur if Attack From Sleep is enabled.
+
+To enable blocking, add a RigidBody2D component to the melee gameobject and set the 
+Body Type to kinematic. Change the layer to World or Player. If set to World,
+the melee block will be able to block walking enemies. Set up the block animation
+in a similar fashion to the attack animation, but you don't need to set it to loop. 
+Configure the collider as necessary. At runtime, the component will add the 
+Health component to sense enemy attacks.
 
 .. list-table::
    :widths: 25 100
@@ -109,8 +112,8 @@ to sense enemy attacks.
    * - Damage
      - The amount of damage dealt to the target hit. 
   
-   * - Force
-     - The forced applied in the direction of damage.
+   * - Direction
+     - The direction in which the damage will be applied.
 
    * - Velocity x
      - The velocity applied to the combo in the x-direction. Additive Velocity will be added to player movement. Absolute Velocity will override player movement. Event Velocity 
@@ -128,8 +131,14 @@ to sense enemy attacks.
      - This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
        to the next combo before the current one finishes.
 
+   * - Recoil
+     - After an attack, apply a recoil force to the player in the specified direction.
+
+   * - Is Locked
+     - If enabled, this attack will be disabled until the UnlockAll or Unlock methods are called.
+
    * - On Combo Begin
-     - The event invoked when the Combo begins.
+     - The Unity Event invoked when the Combo begins.
      
 .. list-table::
    :widths: 50 200
@@ -143,5 +152,11 @@ to sense enemy attacks.
  
    * - CompleteAttack()
      - Call this method once the attack animation is complete.
+
+   * - UnlockAll()
+     - This will unlock all melee attacks that are currently locked.
+ 
+   * - Unlock(int index)
+     - This will unlock the melee attack at the specified index.
 
 **Signals:  meleeCombo, meleeLeft, meleeRight**

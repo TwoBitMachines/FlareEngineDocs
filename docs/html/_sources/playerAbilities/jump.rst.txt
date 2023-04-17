@@ -43,11 +43,11 @@ The most fundamental ability of any platformer.
    * - Glide Boost
      - The jump boost added to the air glide.
 
-   * - Glide Immediately
-     - If enabled, the player will bypass the air jump check and glide once the glide button is pressed. 
-
    * - Glide From Fall
      - If the player walks off a platform (without jumping), the player can still execute Air Glide or Air Jumps if enabled.
+
+   * - Glide Immediately
+     - If enabled, the player will bypass the air jump check and glide once the glide button is pressed. 
 
 .. list-table::
    :widths: 75 200

@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -100,10 +104,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="projectile.html">Projectiles</a></li>
@@ -133,8 +139,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Melee</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Melee</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/systems/melee.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -145,22 +151,19 @@
            <div itemprop="articleBody">
              
   <section id="melee">
-<h1>Melee<a class="headerlink" href="#melee" title="Permalink to this heading"></a></h1>
-<p>Create a melee attack for the player to use against enemies. Each melee attack consists of a collider that will be used
-to detect targets and an attack animation. It is possible to chain attacks based on user timing and hit success.
-It is also possible to add velocity to each attack.</p>
-<p>However, the attack animation has to be setup and executed elsewhere. If using Sprite Engine, set the attack animation
-to loop once, and add a collider2D property to control the size and position of the collider on a per frame basis.
-The Melee system will be in charge of enabling the collider, and setting the animation signal active. Once the attack
-animation is complete, the <strong>CompleteAttack</strong> method must be called on the <strong>Melee</strong> class.</p>
-<p>To create a melee, create a gameobject and set it as a child of the player transform. Add the collider that will
-be used to deal damage. Then add the Melee component. The player must also have the Melee ability enabled.</p>
-<p>The melee component also has the ability to execute a block to defend against enemy attacks. If blocking is enabled,
-add a RigidBody2D to this gameobject and set Body Type to kinematic. You will also need to change the
-layer to  World or Player. If set to World, this melee block will have the ability to block walking enemies.
-The block animation should be set up in similar fashion to an attack animation. Configure the collider, but setting
-the animation to loop will not be necessary. During runtime, this component will add the Health component to be able
-to sense enemy attacks.</p>
+<h1>Melee<a class="headerlink" href="#melee" title="Permalink to this headline"></a></h1>
+<p>Use a melee to attack enemies. You’ll need a collider to deal damage and
+an attack animation. You’ll be able to chain attacks and add velocity to
+each attack based on timing and hit success.</p>
+<p>However, the attack animation needs to be set up and executed elsewhere.
+If you’re using Sprite Engine, set the attack animation to loop once, and
+add a collider2D property to control the size and position of the collider on
+a per-frame basis. Once the animation is complete, use the OnLoopOnce
+event to call the <strong>CompleteAttack</strong> method on the <strong>Melee</strong> class.</p>
+<p>To create a melee attack, add a collider to a gameobject and set it as a child of
+the player transform. Then, add the Melee component and make sure the player has
+the Melee ability enabled. The Melee system is in charge of enabling the collider
+and setting the animation signal active.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -205,6 +208,12 @@ to sense enemy attacks.</p>
 </tr>
 </tbody>
 </table>
+<p>To enable blocking, add a RigidBody2D component to the melee gameobject and set the
+Body Type to kinematic. Change the layer to World or Player. If set to World,
+the melee block will be able to block walking enemies. Set up the block animation
+in a similar fashion to the attack animation, but you don’t need to set it to loop.
+Configure the collider as necessary. At runtime, the component will add the
+Health component to sense enemy attacks.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -278,8 +287,8 @@ to sense enemy attacks.</p>
 <tr class="row-odd"><td><p>Damage</p></td>
 <td><p>The amount of damage dealt to the target hit.</p></td>
 </tr>
-<tr class="row-even"><td><p>Force</p></td>
-<td><p>The forced applied in the direction of damage.</p></td>
+<tr class="row-even"><td><p>Direction</p></td>
+<td><p>The direction in which the damage will be applied.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Velocity x</p></td>
 <td><p>The velocity applied to the combo in the x-direction. Additive Velocity will be added to player movement. Absolute Velocity will override player movement. Event Velocity
@@ -297,8 +306,14 @@ the combo or skip to the next combo in the sequence. The same rules apply if Mus
 <td><p>This works like Early Timer. However, if the user presses the button after the specified time has expired, the system will immediately jump
 to the next combo before the current one finishes.</p></td>
 </tr>
+<tr class="row-odd"><td><p>Recoil</p></td>
+<td><p>After an attack, apply a recoil force to the player in the specified direction.</p></td>
+</tr>
+<tr class="row-even"><td><p>Is Locked</p></td>
+<td><p>If enabled, this attack will be disabled until the UnlockAll or Unlock methods are called.</p></td>
+</tr>
 <tr class="row-odd"><td><p>On Combo Begin</p></td>
-<td><p>The event invoked when the Combo begins.</p></td>
+<td><p>The Unity Event invoked when the Combo begins.</p></td>
 </tr>
 </tbody>
 </table>
@@ -318,6 +333,12 @@ to the next combo before the current one finishes.</p></td>
 </tr>
 <tr class="row-odd"><td><p>CompleteAttack()</p></td>
 <td><p>Call this method once the attack animation is complete.</p></td>
+</tr>
+<tr class="row-even"><td><p>UnlockAll()</p></td>
+<td><p>This will unlock all melee attacks that are currently locked.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unlock(int index)</p></td>
+<td><p>This will unlock the melee attack at the specified index.</p></td>
 </tr>
 </tbody>
 </table>

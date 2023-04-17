@@ -90,8 +90,8 @@ Settings
      - Name the wiggle.
  
    * - Target
-     - The gameobject that will be tweened. Set the reference here. The system will determine if the
-       gameobject belongs to a Transform or Rect Transform.
+     - The game object that will be tweened. Set the reference here. The system will determine if the
+       game object belongs to a Transform or Rect Transform.
 
    * - Loop All
      - Once all the tweens have executed, loop all of them by the specified amount.
@@ -100,7 +100,7 @@ Settings
      - If enabled, the system will use unscaledDeltaTime instead of deltaTime.
 
    * - Use Anchors
-     - If the gameobject is a Rect Transform, choose to move its position by anchoredPosition or position.
+     - If the game object is a Rect Transform, choose to move its position by anchoredPosition or position.
 
    * - Start Position
      - If enabled, reset the Transform to this position before executing the first tween.
@@ -118,7 +118,7 @@ Settings
      - If enabled, tweening execution will begin OnEnable.
   
    * - Off On Complete
-     - If enabled, the gameobject will deactivate once the tweening is complete.
+     - If enabled, the game object will deactivate once the tweening is complete.
 
 .. list-table::
    :widths: 50 200
@@ -171,11 +171,11 @@ Below is an example of how to use the tweening library. It's just a very long li
 get started, implement the **Wiggle.Target** static method to start chaining tweens.
 
 .. tip::
-   To deactivate the gameobject on tweening completion call the Deactivate method. 
+   To deactivate the game object on tweening completion call the Deactivate method. 
 
 .. code-block:: c#
 
-        Wiggle.Target (this.gameObject, useAnchors: false).
+        Wiggle.Target (this.game object, useAnchors: false).
         StartPosition (Vector3.zero).
         Move2D (Vector2.up, 2f, Tween.Linear).Loop (2).
         ScaleToX (0.5f, 2f, Tween.EaseIn).IsParallel ( ). // Scale x to 0.5f in 2 seconds
@@ -194,17 +194,17 @@ get started, implement the **Wiggle.Target** static method to start chaining twe
    * - Method
      - 
 
-   * - IsTweenActive (GameObject gameobject)
-     - Returns true if this gameobject has an active tween.
+   * - IsTweenActive (game object game object)
+     - Returns true if this game object has an active tween.
 
-   * - PauseTween (GameObject gameobject)
-     - Pause tweening on this gameobject.
+   * - PauseTween (game object game object)
+     - Pause tweening on this game object.
 
-   * - UnpauseTween (GameObject gameobject)
-     - Resume tweening on this gameobject.
+   * - UnpauseTween (game object game object)
+     - Resume tweening on this game object.
 
-   * - StopTween (GameObject gameobject)
-     - Stop tweening on this gameobject.
+   * - StopTween (game object game object)
+     - Stop tweening on this game object.
 
    * - PauseAllTweens ()
      - This will pause all active tweens.

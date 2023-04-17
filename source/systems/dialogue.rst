@@ -1,14 +1,16 @@
 Dialogue
 ++++++++
 
-This is an interactive dialogue system for the player and NPCs. Create conversations, add message effects, call Unity Events, and
-even include simple animations for complex interactions. All this is accomplished within the inspector window.
+This is a dialogue system that enables players and NPCs to interact dynamically. The 
+system allows users to create engaging conversations, complete with message effects, 
+simple animations, and Unity Events, within a single inspector window.
 
-The setup requires at least two components: **Dialogue**, where the dialogue between the characters is created and stored,
-and **DialogueUI**, which controls the UI elements that will display the dialogue. The Dialogue component will typically
-exist on an NPC, an empty gameobject, or wherever it is needed, and the DialogueUI should exist on a canvas element, to properly
-reference all the necessary UI elements. If the UI and message need special effects, the **LetsWiggle** component, a tweening library, 
-can move and scale UI elements, and the **TextMeshProEffects** can add a typewriting effect, among other effects, to the message.
+To set up the system, a minimum of two components are required: **Dialogue**, which 
+stores character conversations, and **DialogueUI**, which manages the UI elements that
+display the dialogue. Dialogue can be attached to an empty gameObject, while DialogueUI
+should be placed on a UI Canvas. You can also utilize additional effects, such as 
+movement and scaling, with the **LetsWiggle** component, and typewriting effects with 
+**TextMeshProEffects**, to enhance the overall experience.
 
 .. note:: 
    When dialogue is started, player input will be automatically blocked.
@@ -29,18 +31,21 @@ can move and scale UI elements, and the **TextMeshProEffects** can add a typewri
      - If this button exists, the user will be able to escape any dialogue.
 
    * - Skip Button
-     - If this button exists, the user will be able to skip to the next message in the conversation.
+     - If this button exists, the user will be able to skip to the next message in the conversation at any time.
 
    * - Block Inventories
      - If enabled, any inventory trying to open will be blocked from opening.
 
-   * - Position Icon
+   * - Messenger Icon Relative
      - If enabled, the messenger icons will be positioned on the left or right of the message box,
        depending on the relative position of the messengers.
 
    * - Is Random
      - If enabled, this will display random conversations. If this is desired,
        enable the Is Random flag that also exists in each conversation for any conversation that should be treated as random.
+
+   * - Events
+     - The Unity Events invoked when the player begins and exits a conversation.
 
 .. list-table::
    :widths: 25 100
@@ -50,7 +55,7 @@ can move and scale UI elements, and the **TextMeshProEffects** can add a typewri
      - 
 
    * - BeginConversation()
-     - Call this method to begin the conversation. This will also set the gameobject active true.
+     - Call this method to begin the conversation. This will also set this gameObject active true.
  
    * - EndConversation()
      - Call this method to end the conversation.
@@ -89,7 +94,7 @@ Create any messenger that is relevant to the dialogue.
 ------------
 
 It's also possible to save the state of the conversation. Once an important event occurs, the conversation can be progressed 
-to a difference state so the player and npc can continue with a new conversation.
+to a difference state so the player and NPC can continue with a new conversation.
 
 .. list-table::
    :widths: 25 100
@@ -104,7 +109,7 @@ to a difference state so the player and npc can continue with a new conversation
 
    * - Conversation List
      - Click the add button to add a conversation. Each conversation in the list represents a conversation state where the player and
-       npc will begin the conversation. Once an important event occurs, call SaveConversationState ( ) on this component. This can 
+       NPC will begin the conversation. Once an important event occurs, call SaveConversationState ( ) on this component. This can 
        be called from anywhere. And the next time the Dialogue window opens, it will continue with the next conversation in the list.
 
 ------------

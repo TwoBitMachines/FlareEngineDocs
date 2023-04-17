@@ -136,7 +136,7 @@ Node Editor Window
 |
 
 If using AITree, a node editor will be required to create the nodes and to configure the node hierarchy.
-In Unity, go to Window/BehaviorTreeEditor to open the node editor window. The window can be zoomed and dragged. Next, select a gameobject and add the AITree component.
+In Unity, go to Window/BehaviorTreeEditor to open the node editor window. The window can be zoomed and dragged. Next, select a game object and add the AITree component.
 You will then see a single node appear in the editor. This is Root, which is the entry point into the Behavior Tree and all nodes and branches belong to it.
 
 Right click anywhere in the node editor and the node context menu will appear. Select a node to create and it will too appear in the node editor.
@@ -246,7 +246,7 @@ Inspector
      - If enabled and if the AI has a Collider2D, it will deal damage to any object with a Health component that exists on the specified layer.
 
    * - Create Units
-     - If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (gameobjects) necessary. 
+     - If an AI is part of a group of units that operate under the same AI logic, use this to create the number of units (game objects) necessary. 
        Every time you make a change to the FSM or BehaviorTree, recreate the units to ensure they all have the same code by pressing this button. 
        The system will do its best to keep superficial transform settings unique.
 
@@ -308,7 +308,7 @@ AI Attacks, Damage
 
 There are four ways an AI can attack another character. First, in the AI options enable Damage. 
 The system will use the existing collider on the AI. Once a character comes into contact with the AI, it will be dealt damage.
-Second, and very similar, use the **Damage** class. Simply add this component to any gameobject. Add a Collider2D and enable isTrigger.  
+Second, and very similar, use the **Damage** class. Simply add this component to any game object. Add a Collider2D and enable isTrigger.  
 This is particular useful for static objects like spikes.
 
 .. list-table::

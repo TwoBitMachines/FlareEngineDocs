@@ -8,7 +8,7 @@ Both work, but the first one is recommended as it is a more intuitive approach.
 Streamlined version
 ===================
 
-Add the **Check Point** component to an empty gameobject. You will then add check-point triggers to your level by clicking 
+Add the **Check Point** component to an empty game object. You will then add check-point triggers to your level by clicking 
 the add button and dragging the triggers in the scene. The player will be reset at the bottom center of the trigger.
 
 .. list-table::

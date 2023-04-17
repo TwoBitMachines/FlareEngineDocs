@@ -17,6 +17,12 @@ to this gameobject.
    * - Start On Ground
      - If enabled, the player will be able to start climbing a wall even if it's still touching the ground.
 
+   * - On Enter
+     - The Unity Event invoked when the player latches unto a wall.
+ 
+   * - On Exit
+     - The Unity Event invoked when the player gets off a wall.
+     
 Slide
 =====
 
@@ -57,8 +63,6 @@ Slide
        enabled for particle effects should have a way to disable themselves. You can use the class Basic Timer for this.
 
 **Signals: wall,  wallLeft, wallRight, wallSlide, wallClimb, wallSlideJump, autoCornerJump**
-
-------------
 
 Climb
 =====
@@ -112,8 +116,6 @@ Climb
 .. note:: 
    Once the player is near the top of a wall, it will automatically jump on top of the platform. If Corner Grab is enabled, this setting will be ignored.
 
-------------
-
 Corner Hang
 ===========
 .. list-table::
@@ -132,8 +134,6 @@ Corner Hang
 
 **Signals: wall, wallLeft, wallRight, wallHang**
 
-------------
-
 Corner Grab
 ===========
 .. list-table::
@@ -144,12 +144,19 @@ Corner Grab
      - 
 
    * - Type
-     - How will the player grab the corner? If Jump is enabled, the player will simply hold the corner until the jump button is pressed. If Pull Up or Pull Up Auto is enabled, a corner climb
-       animation will play. If Pull Up Auto is enabled, the player will start the corner climb animation immediately.
-       Press the blue button to add each sprite in the animation.
+     - How will the player grab the corner? If Jump is enabled, the player will simply hold the corner until the jump button is pressed.
+       If Pull Up or Pull Up Auto is enabled, a corner climb animation will play. If Pull Up Auto is enabled, the player 
+       will start the corner climb animation immediately. Press the blue button to add each sprite in the animation.
  
    * - Exit Grab
      - Once the Corner Grab state has been entered, the player can exit this state either by the specified button press or by player movement. 
+
+   * - Final Position
+     - When the corner climb animation is over, this will set the player's position on top of the platform. Sometimes its convenient to do this 
+       on the second to the last sprite or at the very last sprite. This will depend on how the sprites in the animation are set up.
+
+   * - Grab Offset
+     - This will offset the player's position while initially grabbing the corner
 
    * - Animation Time
      - The total duration of the corner climb animation. 
@@ -157,9 +164,15 @@ Corner Grab
    * - Sprite
      - A sprite in the corner climb animation.
 
-   * - Displacement
-     - The system will control the position of the player while climbing the corner. The displacement will offset the player according to the sprite that
-       is currently playing. This might take a little trial and error to get correct.
+   * - Offset
+     - The offset will displace the player's position for the current sprite that is playing. 
+       This might take a little trial and error to get correct.
+
+   * - On Animation Start
+     - The Unity Event invoked when the animation starts.
+
+   * - On Animation End
+     - The Unity Event invoked when the animation ends.
 
 **Signals: wall, wallLeft, wallRight, wallHold,  wallCornerGrab**
 

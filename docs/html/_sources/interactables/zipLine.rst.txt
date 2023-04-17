@@ -2,8 +2,8 @@ Zipline
 ++++++++
 
 Allow the player to zipline. This component works directly with Unity's Line Renderer. Modify the necessary settings there, mainly
-the width and color of the line. The player ability, **Ziplining** must be enabled. Place this component on an empty gameobject 
-and scene gizmos will appear. The gameobject's position will be the start position, and a red gizmo will modify the end position. 
+the width and color of the line. The player ability, **Ziplining** must be enabled. Place this component on an empty game object 
+and scene gizmos will appear. The game object's position will be the start position, and a red gizmo will modify the end position. 
 
 .. image:: ../images/interactables/ZipLineGif.gif
    :align: center

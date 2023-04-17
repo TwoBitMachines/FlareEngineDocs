@@ -34,6 +34,9 @@ The player must have the Firearms ability enabled (for recoil to work and for ap
    * - Local Position
      - The local position of the firearm.
 
+   * - Stop Velocity
+     - If enabled, the character will stop moving for the specified time while shooting a projectile.
+
    * - Off Near Wall
      - If the character is next to a wall and the weapon is inside the wall, setting this true
        will prevent the weapon from shooting. This will ensure the weapon cannot shoot into another

@@ -15,7 +15,6 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -57,14 +56,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/jump.html">Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/wall.html">Wall</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ceiling.html">Ceiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/cannon.html">Cannon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouch.html">Crouch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/ground.html">Ground</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/firearms.html">Firearms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/slopeSlide.html">Slope Slide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/staticFlying.html">Static Flying</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pushBlock.html">Push Block</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/pickAndThrow.html">Pick And Throw</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/meleeAbility.html">Melee</a></li>
@@ -87,7 +90,10 @@
 <p class="caption" role="heading"><span class="caption-text">Interactables</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="bridge.html">Bridge</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Foliage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Foliage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#foliage-sway">Foliage Sway</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="friction.html">Friction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="highJump.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ladder.html">Ladder</a></li>
@@ -100,14 +106,17 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../systems/audioManager.html">Audio Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/dialogue.html">Dialogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/dialogueBubble.html">Dialogue Bubble</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/quest.html">Quest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../worldManager/sceneManagement.html">Scene Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worldManager/screenTransition.html">Screen Transition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/textMesh.html">Text Mesh Pro Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/worldEffects.html">World Effects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/reactionProfile.html">Reaction Profile</a></li>
@@ -132,8 +141,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active">Foliage</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Foliage</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/interactables/foliage.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -144,7 +153,7 @@
            <div itemprop="articleBody">
              
   <section id="foliage">
-<h1>Foliage<a class="headerlink" href="#foliage" title="Permalink to this heading"></a></h1>
+<h1>Foliage<a class="headerlink" href="#foliage" title="Permalink to this headline"></a></h1>
 <p>Decorate an environment with foliage to make it come alive. The foliage can sway with the wind and respond
 to all characters. Add this component to an empty gameobject.</p>
 <a class="reference internal image-reference" href="../_images/FoliageGif.gif"><img alt="../_images/FoliageGif.gif" class="align-center" src="../_images/FoliageGif.gif" style="width: 100%;" /></a>
@@ -202,7 +211,7 @@ this process to work correctly. As a reminder, this component is working with Te
 <td><p>The current Texture2D image of the foliage. The delete button will remove this Texture2D and all of its instances from the scene.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Orientation</p></td>
-<td><p>This determines what vertices to sway. If Bottom is enabled, place foliage on ground. If Top is enabled, place foliage on a ceiling. If Left or Right are enabled, place foliage on walls.</p></td>
+<td><p>This setting determines which vertices will sway. For instance, selecting “Bottom” will sway foliage located at ground level.</p></td>
 </tr>
 <tr class="row-even"><td><p>Depth</p></td>
 <td><p>Specify the rendering order of the Texture2D images relative to each other. As of now, there is no way specify a sorting layer.
@@ -247,6 +256,41 @@ Characters are either in front or in back of the foliage – never in between.</
 <p>The foliage system was designed with performance in mind. All foliage instances exist in code only (they’re not gameobjects), and the character interactions
 are handled by Unity’s Job System.</p>
 </div>
+<section id="foliage-sway">
+<h2>Foliage Sway<a class="headerlink" href="#foliage-sway" title="Permalink to this headline"></a></h2>
+<p>This component can be applied to background props, such as trees, to create a swaying effect.
+This effect is achieved through a shader that moves the vertex position, rather than the game object’s
+position. Please note that this only works with objects that have SpriteRenderers containing
+the material FoliageSway.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Orientation</p></td>
+<td><p>This setting determines which vertices will sway. For instance, selecting “Bottom” will sway foliage located at ground level.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Is Random</p></td>
+<td><p>Enabling this feature will set minimum and maximum values for the swaying properties, from which a random value will be selected.</p></td>
+</tr>
+<tr class="row-even"><td><p>Amplitude</p></td>
+<td><p>The swaying displacement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>The number of waves in the swaying motion.</p></td>
+</tr>
+<tr class="row-even"><td><p>Speed</p></td>
+<td><p>The rate at which the swaying motion occurs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 

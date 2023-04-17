@@ -53,7 +53,7 @@ will be stretched to the specified length, stretching its sprite.
      - If an enemy is captured, the offset position of the enemy relative to the tongue tip.
 
    * - Deactivate Target
-     - If enabled, the capture enemy's gameobject will be deactivated during closing length.
+     - If enabled, the capture enemy's game object will be deactivated during closing length.
 
    * - Weapon
      - A list of Firearms Yoshi can use to shoot projectiles after eating an enemy. The CapturedByYoshi node will contain a weapon index. 

@@ -4,8 +4,8 @@ World Manager
 The **World Manager** is in charge of running the game scripts in order. It's also in charge of  
 saving, pausing, resetting the game, and world events.
 
-Each scene must contain exactly **one** World Manager for proper game function. Simply create a gameobject,
-add this component, and make sure it's always enabled. This gameobject should never be destroyed.
+Each scene must contain exactly **one** World Manager for proper game function. Simply create a game object,
+add this component, and make sure it's always enabled. This game object should never be destroyed.
 
 .. image:: ../images/WorldManager.png
    :align: center
@@ -81,7 +81,7 @@ World Events
 ============
 
 Send messages so world objects can react to important world events. These events are usually created by special events 
-in the game, like the player dying. In response, any gameobject that is registered as a listener will be alerted and
+in the game, like the player dying. In response, any game object that is registered as a listener will be alerted and
 react accordingly.
 
 To create a World Event, go to Add World Event, name the event, and click the add button. The World Event is 
@@ -90,7 +90,7 @@ actually a scriptable object (**WorldEventSO**) that can be found in the AssetsF
 Once the World Event has been created, it's going to need a triggering event and event listeners. **WorldEventTrigger** will be 
 placed on the object that will trigger the event. To continue the example, when the player dies, its Health component will
 call WorldEventTrigger via Unity Event, and that will send an event to all the listeners. **WorldEventListener** is placed on 
-any gameobject that needs to react to the event, like a UI element or an enemy AI.
+any game object that needs to react to the event, like a UI element or an enemy AI.
 
 .. list-table::
    :widths: 25 100

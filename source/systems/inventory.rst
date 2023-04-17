@@ -201,6 +201,9 @@ and set the isTrigger to true. Each item must correspond to an **ItemSO**.
    * - ItemSO
      - The reference to ItemSO. 
 
+   * - Add To Journal
+     - If the item is found, it will be added to the specified journal if it exists in the scene.
+
 ------------
 
 Inventory
