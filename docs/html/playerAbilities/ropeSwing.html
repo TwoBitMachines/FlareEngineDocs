@@ -124,6 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/saveMenu.html">Save Menu</a></li>
 </ul>
 
         </div>
@@ -152,7 +153,14 @@
              
   <section id="rope">
 <h1>Rope<a class="headerlink" href="#rope" title="Permalink to this headline"></a></h1>
-<p>The player can interact with ropes.</p>
+<p>The player can interact with ropes in the game. In recent updates, it is now
+possible to climb a rope. As a result, there are a few signals you
+should be aware of when interacting with ropes.</p>
+<p>rope: true when the player is on the rope.
+ropeSwinging: true when the player’s x input is not zero.
+ropeHanging: true when the player is at the end of the rope.
+ropeHolding: true when the player is not at the end of the rope.
+ropeClimbing: true when the player is actively climbing the rope.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
@@ -191,6 +199,7 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Signals: rope, ropeClimbing, ropeHanging, ropeHolding, ropeSwinging</strong></p>
 </section>
 
 

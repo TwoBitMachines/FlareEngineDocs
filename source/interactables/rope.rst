@@ -23,8 +23,12 @@ The player can use ropes to swing or for simple idle interactions. Add this comp
      - If Swing is enabled, the player will swing on the rope. If Idle is enabled, the player 
        will pass through the rope, causing it to move.
  
-   * - Rope End Radius      
-     - If Swing is enabled, once player and end tether are within this radius, the player will latch onto the rope automatically.
+   * - Search Radius      
+     - The distance which the player and end tether must be within for the player to automatically
+       latch onto the rope when Swing is enabled.
+
+   * - Is Climbable   
+     - If enabled, the player can climb the rope.
 
 .. list-table::
    :widths: 25 100

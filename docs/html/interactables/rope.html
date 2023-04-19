@@ -61,6 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
@@ -108,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
@@ -122,6 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/saveMenu.html">Save Menu</a></li>
 </ul>
 
         </div>
@@ -174,8 +177,12 @@
 <td><p>If Swing is enabled, the player will swing on the rope. If Idle is enabled, the player
 will pass through the rope, causing it to move.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Rope End Radius</p></td>
-<td><p>If Swing is enabled, once player and end tether are within this radius, the player will latch onto the rope automatically.</p></td>
+<tr class="row-odd"><td><p>Search Radius</p></td>
+<td><p>The distance which the player and end tether must be within for the player to automatically
+latch onto the rope when Swing is enabled.</p></td>
+</tr>
+<tr class="row-even"><td><p>Is Climbable</p></td>
+<td><p>If enabled, the player can climb the rope.</p></td>
 </tr>
 </tbody>
 </table>
