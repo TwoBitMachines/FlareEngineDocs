@@ -61,6 +61,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
@@ -108,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../systems/equipment.html">Equipment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/firearm.html">Firearm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/inventory.html">Inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../systems/journal.html">Journal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/letsWiggle.html">Lets Wiggle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/melee.html">Melee</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../systems/projectile.html">Projectiles</a></li>
@@ -128,6 +130,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="saveMenu.html">Save Menu</a></li>
 </ul>
 
         </div>
@@ -241,7 +244,6 @@ be updated. This means the check-point system works in terms of priority. If the
 to check-point 2, the system will not revert back to check-point 1. And on a game reset, the AIFSM will move the player to the
 desired location of the check-point that matches the saved value with its index.</p>
 </section>
-<hr class="docutils" />
 <section id="how-are-the-check-points-aware-of-each-other">
 <h2>How are the check-points aware of each other?<a class="headerlink" href="#how-are-the-check-points-aware-of-each-other" title="Permalink to this headline"></a></h2>
 <p>World Float is the glue that holds everything together. Each check-point comes with a World Float, and each World Float
@@ -250,7 +252,6 @@ to the same variable in memory, so they all reference the same data. And equally
 a signal to each World Float that shares the same name and it will update their values to match. For this broadcast signal to work,
 the Broadcast Value must be enabled for each World Float. This will ensure all the World Floats are working with the same value.</p>
 </section>
-<hr class="docutils" />
 <section id="how-does-the-check-point-fsm-work">
 <h2>How does the Check-Point FSM work?<a class="headerlink" href="#how-does-the-check-point-fsm-work" title="Permalink to this headline"></a></h2>
 <p>The FSM has three states. The first state, ResetPoint, will check if the World Float matches its index. If it does, the state will

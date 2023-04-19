@@ -82,8 +82,6 @@ be updated. This means the check-point system works in terms of priority. If the
 to check-point 2, the system will not revert back to check-point 1. And on a game reset, the AIFSM will move the player to the 
 desired location of the check-point that matches the saved value with its index.
 
-------------
-
 How are the check-points aware of each other? 
 =============================================
 
@@ -92,8 +90,6 @@ must have exactly the same name as all the others. If each World Float has the s
 to the same variable in memory, so they all reference the same data. And equally important, each time a World Float is modified it will send 
 a signal to each World Float that shares the same name and it will update their values to match. For this broadcast signal to work, 
 the Broadcast Value must be enabled for each World Float. This will ensure all the World Floats are working with the same value.
-
-------------
 
 How does the Check-Point FSM work?
 ==================================
