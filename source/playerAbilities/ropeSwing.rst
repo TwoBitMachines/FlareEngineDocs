@@ -1,7 +1,7 @@
 Rope
 ++++
 
-The player can interact with ropes in the game. In recent updates, it is now 
+The player can interact with ropes. In recent updates, it is now 
 possible to climb a rope. As a result, there are a few signals you
 should be aware of when interacting with ropes.
 
