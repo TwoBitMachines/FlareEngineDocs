@@ -124,6 +124,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/saveMenu.html">Save Menu</a></li>
 </ul>
 
         </div>
@@ -165,21 +166,27 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Climb</p></td>
-<td><p>If Manual is enabled, specify the buttons (Up, Down) for climbing the ladder. If Automatic is enabled, the player will climb
-the ladder automatically.</p></td>
+<td><p>For Manual mode, use Up and Down buttons to climb ladder; for Automatic mode, ladder climbing is automatic.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Climb Speed</p></td>
+<tr class="row-odd"><td><p>Up, Down</p></td>
+<td><p>Climbing buttons.</p></td>
+</tr>
+<tr class="row-even"><td><p>Climb Speed</p></td>
 <td><p>How quickly the player climbs the ladder.</p></td>
 </tr>
-<tr class="row-even"><td><p>Stand On Top</p></td>
-<td><p>If enabled, the player can stand on top of the ladder.</p></td>
+<tr class="row-odd"><td><p>Auto Latch</p></td>
+<td><p>Player latches to ladder at zero velocity.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Align To Center</p></td>
-<td><p>If enabled, the player’s x position will align with the center of the ladder.</p></td>
+<tr class="row-even"><td><p>Jump</p></td>
+<td><p>Jump force from ladder.</p></td>
 </tr>
-<tr class="row-even"><td><p>Can Jump Up</p></td>
-<td><p>If enabled, the player will be able to jump straight up in the direction of the ladder. To initiate this correctly, the user input in the x
-direction must be zero.</p></td>
+<tr class="row-odd"><td><p>Jump Fall Point</p></td>
+<td><p>If non-zero, it determines the distance from the jump point where the
+player can land back on the ladder. This feature allows the player to jump within
+the ladder and still fall down if necessary.</p></td>
+</tr>
+<tr class="row-even"><td><p>Fence Flip</p></td>
+<td><p>If the ladder has fence flip enabled, the button the player must press to enter a fence flip.</p></td>
 </tr>
 </tbody>
 </table>

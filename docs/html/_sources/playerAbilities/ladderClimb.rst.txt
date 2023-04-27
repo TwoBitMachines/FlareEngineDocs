@@ -12,21 +12,27 @@ The player can climb ladders.
      - 
  
    * - Climb  
-     - If Manual is enabled, specify the buttons (Up, Down) for climbing the ladder. If Automatic is enabled, the player will climb
-       the ladder automatically.
+     - For Manual mode, use Up and Down buttons to climb ladder; for Automatic mode, ladder climbing is automatic.
+
+   * - Up, Down
+     - Climbing buttons.
 
    * - Climb Speed
      - How quickly the player climbs the ladder.
-  
-   * - Stand On Top
-     - If enabled, the player can stand on top of the ladder.
+ 
+   * - Auto Latch
+     - Player latches to ladder at zero velocity.
 
-   * - Align To Center
-     - If enabled, the player's x position will align with the center of the ladder.
+   * - Jump
+     - Jump force from ladder.
 
-   * - Can Jump Up
-     - If enabled, the player will be able to jump straight up in the direction of the ladder. To initiate this correctly, the user input in the x 
-       direction must be zero.
+   * - Jump Fall Point
+     - If non-zero, it determines the distance from the jump point where the
+       player can land back on the ladder. This feature allows the player to jump within 
+       the ladder and still fall down if necessary.
+
+   * - Fence Flip
+     - If the ladder has fence flip enabled, the button the player must press to enter a fence flip.
 
 .. list-table::
    :widths: 25 100

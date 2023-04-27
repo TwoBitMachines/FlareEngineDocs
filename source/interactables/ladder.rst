@@ -22,6 +22,18 @@ The humble ladder is used for climbing. Add this component to an empty gameobjec
    * - Size   
      - The width and height of the ladder.
 
-   * - Position On Awake
-     - If enabled, the ladder will reposition itself on Awake in case it was moved.
-   
+   * - Stand On Top
+     - If enabled, the player can stand on top of the ladder.
+
+   * - Align To Center
+     - If enabled, the player's x position will align with the center of the ladder.
+
+   * - Can Jump Up
+     - When enabled, the player can jump vertically in the direction of the ladder, 
+       but only if their X input is zero.
+
+   * - Fence Flip
+     - This option is still a work in progress.
+
+   * - Fence Reverse
+     - This option is still a work in progress.
