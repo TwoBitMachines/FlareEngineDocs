@@ -54,23 +54,12 @@ added automatically. You will then see this.
    * - Sprite State
      - Create an animation state machine.
 
-Once a sprite has been created, the sprite menu will appear. Rearrange, add, and delete sprites here. 
-You can also test the play rate by adjusting the global speed slider. This will set the speed for all the 
-sprites instantly. For customization, each sprite can also be applied an individual play speed. 
-
-.. image:: ../images/Running.gif
-   :align: center
-   
-|
-
-Extra animation Options.
-
 .. list-table::
    :widths: 25 100
    :header-rows: 1
 
    * - Property
-     - 
+     - Extra animation Options.
 
    * - Synchronize
      - This can synchronize two animations. For example, if you have an idle 
@@ -87,6 +76,15 @@ Extra animation Options.
    * - Loop Once Event
      - If loop once is enabled, this Unity Event will be invoked once the animation has completed its loop.
    
+Once a sprite has been created, the sprite menu will appear. Rearrange, add, and delete sprites here. 
+You can also test the play rate by adjusting the global speed slider. This will set the speed for all the 
+sprites instantly. For customization, each sprite can also be applied an individual play speed. 
+
+.. image:: ../images/Running.gif
+   :align: center
+   
+|
+
 Sprite Swap
 ===========
 
