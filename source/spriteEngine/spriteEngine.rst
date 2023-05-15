@@ -93,15 +93,16 @@ Sprite Swap
 To create different player skins, use the Sprite Swap scriptable object by right-clicking and 
 selecting Create/FlareEngine/SpriteSwap. Open the object and add the necessary skins. Each 
 skin will require animations that you will also need to add such as Idle, Run, etc. 
-Make sure that the animation names match across all skins and with the 
-default animations in Sprite Engine. Also, each animation should have the same number 
+Make sure these animation names match across all skins, including the default animations 
+in Sprite Engine. Also, each animation should have the same number 
 of frames as all its counterparts.
 
-To switch to a new skin, call the Swap method on the Sprite Swap scriptable object or 
-Sprite Engine and set the reference to the Sprite Swap scriptable object in Sprite Engine.
+You will need to add Sprite Swap as a reference to Sprite Engine. During runtime, 
+to switch to a new skin, call the Swap method on the Sprite Swap scriptable object (or 
+Sprite Engine) and specify the name of the skin you wish to switch to.
 
-For more information, check out the tidbit SpriteSwap demo scene to see how to create 
-and switch between skins using the Sprite Swap scriptable object.
+For more details, check out the SpriteSwapping demo scene to see how Sprite Swap is 
+set up to switch between skins.
 
 Signals
 =======
