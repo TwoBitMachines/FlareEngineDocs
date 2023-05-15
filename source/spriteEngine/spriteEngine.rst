@@ -40,10 +40,13 @@ added automatically. You will then see this.
      - Add properties to each sprite to modify, like a Transform or Collider2D.
 
    * - Options Icon
-     - If necessary, set the sprite to loop once and set the OnLoopOnce event. Loop Start Index specifies where to start playing the sprite once it's already played once.
+     - Extra animation options.
 
    * - Drop Icon
-     - Gives the option to replace all the current sprites.
+     - Replace all the current sprites.
+
+   * - Sprite Swap Icon
+     - Set the reference for a Sprite Swap scriptable object.
 
    * - Signals
      - Signals are used to control the animation state.
@@ -59,6 +62,46 @@ sprites instantly. For customization, each sprite can also be applied an individ
    :align: center
    
 |
+
+Extra animation Options.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+
+   * - Synchronize
+     - This can synchronize two animations. For example, if you have an idle 
+       shoot animation and then the player starts to run, the run shoot animation will synchronize
+       to complete the shooting animation. To use this, enable and ensure that both 
+       animations have the same Sync ID int value. The Sync ID should not be zero.
+ 
+   * - Loop Once
+     - This will cause the animation to only loop once.
+
+   * - Loop Start Index
+     - This specifies the index from which the sprite should start playing after it has already been played once.
+
+   * - Loop Once Event
+     - If loop once is enabled, this Unity Event will be invoked once the animation has completed its loop.
+   
+Sprite Swap
+===========
+
+To create different player skins, use the Sprite Swap scriptable object by right-clicking and 
+selecting Create/FlareEngine/SpriteSwap. Open the object and add the necessary skins. Each 
+skin will require animations that you will also need to add such as Idle, Run, etc. 
+Make sure that the animation names match across all skins and with the 
+default animations in Sprite Engine. Also, each animation should have the same number 
+of frames as all its counterparts.
+
+To switch to a new skin, call the Swap method on the Sprite Swap scriptable object or 
+Sprite Engine and set the reference to the Sprite Swap scriptable object in Sprite Engine.
+
+For more information, check out the tidbit SpriteSwap demo scene to see how to create 
+and switch between skins using the Sprite Swap scriptable object.
 
 Signals
 =======

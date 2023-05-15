@@ -46,6 +46,7 @@
 <p class="caption" role="heading"><span class="caption-text">Sprite Engine</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sprite Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sprite-swap">Sprite Swap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#state">State</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#transition">Transition</a></li>
@@ -67,6 +68,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/crouchSlide.html">Crouch Slide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/dash.html">Dash</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hide.html">Hide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../playerAbilities/highJumpAbility.html">High Jump</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/hover.html">Hover</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/infiniteWalk.html">Infinite Walk</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../playerAbilities/swim.html">Swim</a></li>
@@ -129,6 +131,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../saving/checkPoint.html">Check-Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/saveMenu.html">Save Menu</a></li>
 </ul>
 
         </div>
@@ -197,15 +200,18 @@ added automatically. You will then see this.</p>
 <td><p>Add properties to each sprite to modify, like a Transform or Collider2D.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Options Icon</p></td>
-<td><p>If necessary, set the sprite to loop once and set the OnLoopOnce event. Loop Start Index specifies where to start playing the sprite once it’s already played once.</p></td>
+<td><p>Extra animation options.</p></td>
 </tr>
 <tr class="row-even"><td><p>Drop Icon</p></td>
-<td><p>Gives the option to replace all the current sprites.</p></td>
+<td><p>Replace all the current sprites.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Signals</p></td>
+<tr class="row-odd"><td><p>Sprite Swap Icon</p></td>
+<td><p>Set the reference for a Sprite Swap scriptable object.</p></td>
+</tr>
+<tr class="row-even"><td><p>Signals</p></td>
 <td><p>Signals are used to control the animation state.</p></td>
 </tr>
-<tr class="row-even"><td><p>Sprite State</p></td>
+<tr class="row-odd"><td><p>Sprite State</p></td>
 <td><p>Create an animation state machine.</p></td>
 </tr>
 </tbody>
@@ -217,6 +223,48 @@ sprites instantly. For customization, each sprite can also be applied an individ
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
+<p>Extra animation Options.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Synchronize</p></td>
+<td><p>This can synchronize two animations. For example, if you have an idle
+shoot animation and then the player starts to run, the run shoot animation will synchronize
+to complete the shooting animation. To use this, enable and ensure that both
+animations have the same Sync ID int value. The Sync ID should not be zero.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loop Once</p></td>
+<td><p>This will cause the animation to only loop once.</p></td>
+</tr>
+<tr class="row-even"><td><p>Loop Start Index</p></td>
+<td><p>This specifies the index from which the sprite should start playing after it has already been played once.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loop Once Event</p></td>
+<td><p>If loop once is enabled, this Unity Event will be invoked once the animation has completed its loop.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="sprite-swap">
+<h2>Sprite Swap<a class="headerlink" href="#sprite-swap" title="Permalink to this headline"></a></h2>
+<p>To create different player skins, use the Sprite Swap scriptable object by right-clicking and
+selecting Create/FlareEngine/SpriteSwap. Open the object and add the necessary skins. Each
+skin will require animations that you will also need to add such as Idle, Run, etc.
+Make sure that the animation names match across all skins and with the
+default animations in Sprite Engine. Also, each animation should have the same number
+of frames as all its counterparts.</p>
+<p>To switch to a new skin, call the Swap method on the Sprite Swap scriptable object or
+Sprite Engine and set the reference to the Sprite Swap scriptable object in Sprite Engine.</p>
+<p>For more information, check out the tidbit SpriteSwap demo scene to see how to create
+and switch between skins using the Sprite Swap scriptable object.</p>
+</section>
 <section id="signals">
 <h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline"></a></h2>
 <p>Signals are simple booleans that play an essential role in the animation state machine.
