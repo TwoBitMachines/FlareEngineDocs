@@ -1,15 +1,14 @@
 Projectiles
 +++++++++++
 
+Projectiles are used for shooting, and there are four basic types: Bullet, Instant, 
+Short Range, and Grappling Gun. Each type can be customized to create a wide variety
+of options. When a projectile hits a game object that has a Health component and 
+exists in the target layer, it will deal damage.
 
-Projectiles are for shooting. There are three basic types: Bullet, Instant, and Short Range, and each once can be customized 
-to create plenty of variety. Each type will deal damage to any gameobject that has a Health component
-and exists in the target layer of the projectile. 
-
-In general, the Projectile component should exist in a gameobject that has a static parent to preserve the local 
-positions of the projectiles. The Projectile component will create an object pool and manage the life cycle of all its projectiles.
-
-------------
+To ensure the positions of the projectiles are preserved, it is recommended to have 
+the **Projectile** component in a game object with a static parent. The Projectile component 
+takes care of creating an object pool and managing the life cycle of all the projectiles.
 
 Projectile
 ==========
@@ -23,7 +22,7 @@ Projectile
      - Name the projectile. This must be unique for identification purposes.
 
    * - Projectile Type. 
-     - A Bullet is a discrete gameobject. An Instant is a raycast. Short Range is a BoxCollider2D.
+     - A Bullet is a discrete gameobject. Instant is a raycast. Short Range is a BoxCollider2D. Grappling Gun is a raycast with a LineRenderer.
  
    * - Ammo Type 
      - If Discrete is enabled, the ammo count will be decreased by a unit of one. If Continuous is enabled,
@@ -74,8 +73,6 @@ Projectile
 
    * - AmmoPercent()
      - Returns the percent of ammo remaining.
-
-------------
 
 Bullet
 ======
@@ -189,8 +186,6 @@ Basic
 
 This is the most basic bullet. It has no extra properties.
 
-------------
-
 Bounce 
 ======
 
@@ -224,8 +219,6 @@ This bullet will bounce off walls. By default, this will check for World and Pla
    Bounce and Bounce4R work exactly the same. However, Bounce4R uses four raycasts to detect walls. Use Bounce4R
    if more perfect collisions are necessary.
 
-------------
-
 Colliding
 =========
 
@@ -246,10 +239,8 @@ This bullet uses a Collider2D instead of raycasts to detect targets.
    to the bullet, or else there will be no collisions. The target layer should be used primarily for enemies
    and not wall collisions.
 
-------------
-
 Seeker
-=======
+======
 
 This bullet will curve, change directions, to follow  a target.
 
@@ -276,8 +267,6 @@ This bullet will curve, change directions, to follow  a target.
    Since the Seeker bullet can take wide turns, the target layer should not contain walls or else 
    the bullet will deactivate on a wall collision.
 
-------------
-
 Stick To Wall
 =============
 
@@ -296,7 +285,7 @@ This bullet can stick to walls. Perfect for arrows!
    * - OnStickToWallExpire
      - The Unity Event invoked when the bullet is done sticking to the wall. The bullet's position is returned.
 
-------------
+-----------
 
 Instant
 =======
@@ -345,7 +334,7 @@ A raycast is used to instantly hit a target.
    It's possible to place a sprite on this projectile to act as a visual laser. Set the Sprite Pivot to Left to properly
    scale the sprite image from firearm to hit point.
 
-------------
+-----------
 
 Short Range
 ===========
@@ -379,7 +368,60 @@ A BoxCollider2D will search for targets to hit.
    Place a sprite to go along with the BoxCollider2D. There's also a Flame Thrower component made specifically for this projectile type.
    Place it on this gameobject and configure the particle properties to shoot some flames!
 
-------------
+-----------
+
+Grappling Gun
+=============
+
+The Grappling Gun projectile differs from the other types as its primary purpose is not to 
+inflict damage. Instead, it is designed to attach to walls and enable players to propel 
+themselves towards the wall for traversal within a level. To visualize the grappling rope, 
+a LineRenderer, is required. This LineRenderer can be included in the same component as 
+the Projectile. 
+
+For proper function, this projectile should exist on gameobject that is a child of the 
+player. Please refer to the GrapplingGun tidbit scene for an example.
+
+.. list-table::
+   :widths: 25 100
+   :header-rows: 1
+
+   * - Property
+     - 
+   * - Layer
+     - The target layer the grappling gun can attach to.
+       
+   * - Line Renderer
+     - Reference to the Line Renderer component and the number of points it can have.
+
+   * - Line Length
+     - Maximum and minimum rope length. If a wall is beyond the max range, no attach
+       point is found. If retract is enabled, the min length is the shortest possible length.
+
+   * - Shoot Curve
+     - Animates the rope during shooting. Specify the curve animation and amplitude.
+
+   * - Shoot Speed
+     - Determines the speed of the shooting curve animation.
+      
+   * - Swing Force
+     - Applies force to the swinging motion of the rope when the player moves in the x direction.
+
+   * - Jump Away
+     - Applies a jump force to the player, allowing them to detach from the grappling gun.
+
+   * - Gravity
+     - Applies gravitational force to the rope.
+
+   * - Retract
+     - When enabled, the grappling gun propels towards the attached wall at the specified speed.
+
+   * - Friction
+     - Applies friction to the retracting rope.
+
+   * - Type
+     - If set to Automatic, the rope will retract automatically. Otherwise, manual retraction requires pressing a button.
+
 
 Projectile Inventory
 ====================

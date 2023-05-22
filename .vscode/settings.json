@@ -27,5 +27,6 @@
                         "zipline",
                         "ziplines",
                         "Ziplining"
-            ]
+            ],
+            "iis.configDir": ""
 }
