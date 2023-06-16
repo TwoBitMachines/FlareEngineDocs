@@ -36,8 +36,7 @@ pressing the Esc key.
 **RebindNewInput** is a script created by Unity. In this script, you will specify the Action, 
 which represents the New Input you wish to modify. This script holds references to UI elements.
 
-**RebindInputButtonSO** is another script created by Unity. In this script, you will also 
-specify the Action, representing the New Input you want to modify.
+**RebindInputButtonSO** will modify old inputs.
 
 .. list-table::
    :widths: 25 100
