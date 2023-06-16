@@ -169,6 +169,11 @@ please check the tidbit scene OptionsBindingMenu</p>
 <p>For key bindings, the system utilizes two scripts. To rebind keys for the new
 Input System, use <strong>RebindNewInput</strong> created by Unity. To rebind keys for
 the old input system, use <strong>RebindInputButtonSO</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Since the old inputs are being stored in scriptable objects, any key changes you make
+during runtime will not reset on PlayMode exit.</p>
+</div>
 <section id="id1">
 <h2>Options Binding Menu<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
 <p>This component holds the UI references and configures their events. Additionally,
