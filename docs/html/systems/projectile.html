@@ -138,6 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../saving/transformTracker.html">Transform Tracker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/worldVariables.html">World Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../saving/saveMenu.html">Save Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../saving/optionsBindingMenu.html">Options Binding Menu</a></li>
 </ul>
 
         </div>
@@ -604,8 +605,14 @@ inflict damage. Instead, it is designed to attach to walls and enable players to
 themselves towards the wall for traversal within a level. To visualize the grappling rope,
 a LineRenderer, is required. This LineRenderer can be included in the same component as
 the Projectile.</p>
-<p>For proper function, this projectile should exist on gameobject that is a child of the
+<p>For proper function, this projectile should exist on a gameobject that is a child of the
 player. Please refer to the GrapplingGun tidbit scene for an example.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Change the local positions of the grappling gun and grappling rope to determine where to shoot
+and extend the rope from. Since the grappling gun is a Firearm, it’s local position will need
+to be changed in the Firearm component.</p>
+</div>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />

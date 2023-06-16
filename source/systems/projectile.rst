@@ -379,8 +379,13 @@ themselves towards the wall for traversal within a level. To visualize the grapp
 a LineRenderer, is required. This LineRenderer can be included in the same component as 
 the Projectile. 
 
-For proper function, this projectile should exist on gameobject that is a child of the 
+For proper function, this projectile should exist on a gameobject that is a child of the 
 player. Please refer to the GrapplingGun tidbit scene for an example.
+
+.. tip:: 
+   Change the local positions of the grappling gun and grappling rope to determine where to shoot 
+   and extend the rope from. Since the grappling gun is a Firearm, it's local position will need 
+   to be changed in the Firearm component.
 
 .. list-table::
    :widths: 25 100
