@@ -29,13 +29,18 @@ the parent canvas object.
 Rebind Keys
 ===========
 
-When the rebind button is pressed, the system will wait for any input to be 
-pressed and use that as the new key. The only way to cancel a rebind is by 
+Use the provided Rebind objects in the example scene as templates. It is possible 
+to represent the binding key as a label or an icon. If implementing Icons,
+populate the **SetInputIcons** with sprites for both the old and new inputs. These components 
+can be found in the parent canvas. Finally, each **RebindKey** should have an image element 
+as a child to represent the Icon.
+
+When the **RebindKey** is pressed, the system will wait for any input to be 
+pressed and use that as the new key. As of now, the only way to cancel a rebind is by 
 pressing the Esc key.
 
 **RebindNewInput** is a script created by Unity. In this script, you will specify the Action, 
 which represents the New Input you wish to modify. This script holds references to UI elements.
-
 **RebindInputButtonSO** will modify old inputs.
 
 .. list-table::

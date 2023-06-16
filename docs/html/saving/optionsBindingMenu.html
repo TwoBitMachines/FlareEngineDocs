@@ -183,12 +183,17 @@ the parent canvas object.</p>
 </section>
 <section id="rebind-keys">
 <h2>Rebind Keys<a class="headerlink" href="#rebind-keys" title="Permalink to this headline"></a></h2>
-<p>When the rebind button is pressed, the system will wait for any input to be
-pressed and use that as the new key. The only way to cancel a rebind is by
+<p>Use the provided Rebind objects in the example scene as templates. It is possible
+to represent the binding key as a label or an icon. If implementing Icons,
+populate the <strong>SetInputIcons</strong> with sprites for both the old and new inputs. These components
+can be found in the parent canvas. Finally, each <strong>RebindKey</strong> should have an image element
+as a child to represent the Icon.</p>
+<p>When the <strong>RebindKey</strong> is pressed, the system will wait for any input to be
+pressed and use that as the new key. As of now, the only way to cancel a rebind is by
 pressing the Esc key.</p>
 <p><strong>RebindNewInput</strong> is a script created by Unity. In this script, you will specify the Action,
-which represents the New Input you wish to modify. This script holds references to UI elements.</p>
-<p><strong>RebindInputButtonSO</strong> will modify old inputs.</p>
+which represents the New Input you wish to modify. This script holds references to UI elements.
+<strong>RebindInputButtonSO</strong> will modify old inputs.</p>
 <table class="colwidths-given docutils align-default">
 <colgroup>
 <col style="width: 20%" />
